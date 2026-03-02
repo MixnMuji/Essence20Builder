@@ -1,0 +1,5 @@
+﻿- 3/2/24
+Soon I would like to run the transformers rpg so I'm making a character builder app, but first I must familize myself with winfomrs and the like. Today we explored the grids and things
+the first page should be able to have a dropbar where you select yoursystem and build accordinlying
+todo - add drobbox, with games, each game will have static buttons to select expansions and whatnot, also make it so that if one game is selected others can not be because I'm
+sure people will try to break that.
