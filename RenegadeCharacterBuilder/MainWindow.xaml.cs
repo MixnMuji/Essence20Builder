@@ -12,6 +12,15 @@ using System.Xml.Linq;
 
 namespace RenegadeCharacterBuilder
 {
+    public enum GameSelected
+    {
+        Transfomers = 0,
+        PowerRangers =1,
+        GiJoe =2,
+        Mlp = 3
+
+        //remeber in check to cut whitspace from string
+    }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -20,15 +29,12 @@ namespace RenegadeCharacterBuilder
         public MainWindow()
         {
             InitializeComponent();
+            ComboBox1.ItemsSource = Enum.GetValues(typeof(GameSelected));
         }
 
-        private void PbtnclickProceed(object sender, RoutedEventArgs e)
+        private void proceed_Click(object sender, RoutedEventArgs e)
         {
-            if(!string.IsNullOrWhiteSpace(txtname.Text) && !lstGames.Items.Contains(txtname.Text))
-            {
-                lstGames.Items.Add(txtname.Text);
-                txtname.Clear();
-            }
+            // run switch cases to determine slection and then route to next page!s
         }
     }
 }
