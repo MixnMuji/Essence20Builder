@@ -6,3 +6,8 @@ sure people will try to break that.
 
 -3/3/26
 added framework for skeleton of model for transformerscharacterclass, tomorrow we will look at the book and come up with the formulas for getting the dervived stats and the like
+
+-3/4 Ok today was fun so I had to think about how many objects to layer into each other and came to appreicate the human brain, for the actual character class I'll have to have final stat that can be
+reffernced that adds all the priors. but yeah the data flow is Character->orign->chasssis->mode -> stat
+likewise To factor roles and level ups I made a dictionary that will have all the values for level ups and perks so I need to make a fuction for leveling up anyways tomorrow well make more 
+pages and begin tha actual model bonding hopefully/
