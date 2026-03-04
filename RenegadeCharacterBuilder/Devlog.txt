@@ -3,3 +3,6 @@ Soon I would like to run the transformers rpg so I'm making a character builder 
 the first page should be able to have a dropbar where you select yoursystem and build accordinlying
 todo - add drobbox, with games, each game will have static buttons to select expansions and whatnot, also make it so that if one game is selected others can not be because I'm
 sure people will try to break that.
+
+-3/3/26
+added framework for skeleton of model for transformerscharacterclass, tomorrow we will look at the book and come up with the formulas for getting the dervived stats and the like
