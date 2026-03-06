@@ -11,3 +11,5 @@ added framework for skeleton of model for transformerscharacterclass, tomorrow w
 reffernced that adds all the priors. but yeah the data flow is Character->orign->chasssis->mode -> stat
 likewise To factor roles and level ups I made a dictionary that will have all the values for level ups and perks so I need to make a fuction for leveling up anyways tomorrow well make more 
 pages and begin tha actual model bonding hopefully/
+
+-3/5 Added page for transformers data slection will need to add a name for the stackbox so that it can loop and add the appropriate jsons with the tag feature, will need to also make a rerout from main page to this one.
