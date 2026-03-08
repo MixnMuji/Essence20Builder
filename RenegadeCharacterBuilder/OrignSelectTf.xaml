@@ -1,0 +1,50 @@
+﻿<Page x:Class="RenegadeCharacterBuilder.OrignSelectTf"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RenegadeCharacterBuilder"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OrignSelectTf"
+      Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width ="200"/>
+            <ColumnDefinition Width ="200"/>
+            <ColumnDefinition Width ="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Label Content="Choose your faction" Grid.Row="0"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+
+
+            <RadioButton Content="Autobot" GroupName="Faction" Margin="3"/>
+            <RadioButton Content="Decepticon" GroupName="Faction" Margin="3"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1" Margin="0,40,0,0">
+            <Label Content="Origins" FontSize="30" VerticalAlignment="Center"></Label>
+            <RadioButton Content="Champion" GroupName="Orign"/>
+            <Expander Header="Details" Margin="10,0,0,0">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Hit Die: d10"/>
+                    <TextBlock Text="Primary Ability: Strength"/>
+                    <TextBlock Text="Perks:" FontWeight="Bold"/>
+                    <TextBlock Text="- Second Wind"/>
+                    <TextBlock Text="- Action Surge"/>
+                </StackPanel>
+            </Expander>
+
+
+        </StackPanel>
+        
+    </Grid>
+</Page>

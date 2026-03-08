@@ -19,10 +19,7 @@
       
         <ComboBox Grid.Row="2" 
                   Name="ComboBox1" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,10,0,0">
-            <ComboBoxItem Content ="Transfomers" />
-            <ComboBoxItem Content= "Power Rangers"/>
-            <ComboBoxItem Content= "Gi Joe"/>
-            <ComboBoxItem Content="My little Pony: Friendship is Magic"/>
+      
         </ComboBox>
 
         <Button Grid.Row="2"
@@ -33,6 +30,8 @@
                 Click="proceed_Click"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"/>
+
+        <Frame Name="MainFrame"/>
     </Grid>
 
 </Window>

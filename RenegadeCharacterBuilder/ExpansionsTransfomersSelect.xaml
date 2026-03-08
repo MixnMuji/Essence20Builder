@@ -50,7 +50,8 @@
             Content="Countinue"
             Margin="10"
             Height=" 80"
-            Width="400"/>
+            Width="400"
+            Click="Countinue_click"/>
 
     </Grid>
 </Page>

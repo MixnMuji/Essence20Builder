@@ -35,8 +35,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         {
             this.Name = Name;
             this.Pronouns = Pronouns;
-            this.Origin = Origin;
-            this.Role = Role;
+            
+        
             this.Level = Level;
             Faction = faction;
             this.Languages = Languages;

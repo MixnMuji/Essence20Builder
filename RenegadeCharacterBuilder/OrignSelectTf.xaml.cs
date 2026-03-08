@@ -14,18 +14,13 @@ using System.Windows.Shapes;
 namespace RenegadeCharacterBuilder
 {
     /// <summary>
-    /// Interaction logic for ExpansionsTransfomersSelect.xaml
+    /// Interaction logic for OrignSelectTf.xaml
     /// </summary>
-    public partial class ExpansionsTransfomersSelect : Page
+    public partial class OrignSelectTf : Page
     {
-        public ExpansionsTransfomersSelect()
+        public OrignSelectTf()
         {
             InitializeComponent();
-        }
-
-        private void Countinue_click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new OrignSelectTf());
         }
     }
 }
