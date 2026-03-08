@@ -14,4 +14,6 @@ pages and begin tha actual model bonding hopefully/
 
 -3/5 Added page for transformers data slection will need to add a name for the stackbox so that it can loop and add the appropriate jsons with the tag feature, will need to also make a rerout from main page to this one.
 
--3-6 flow should be game slect=> expansions=> Origin/ alliegence => Influences => Stats => Perks => Weapons
+-3/8 flow should be game slect=> expansions=> Origin/ alliegence => Influences => Stats => Perks => Weapons
+Update added orgin page basics got introduced to a new type of box the expandable which will let me show data which will be nice for the classes, messed aroudn with grid and margin and am slowly learning how to lay things out
+added navigation and learned that a window shouldn't have stuff so tomorrow we will add a start page to get rid of artifcats from window, finish origin page, consider jsons etc.

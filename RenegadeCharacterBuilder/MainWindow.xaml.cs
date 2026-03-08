@@ -30,7 +30,7 @@ namespace RenegadeCharacterBuilder
         {
             InitializeComponent();
             ComboBox1.ItemsSource = Enum.GetValues(typeof(GameSelected));
-           
+            MainFrame.Navigate(new MainWindow());
         }
 
         private void proceed_Click(object sender, RoutedEventArgs e)
