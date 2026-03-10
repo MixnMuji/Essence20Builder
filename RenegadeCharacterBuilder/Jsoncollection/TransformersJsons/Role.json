@@ -1,0 +1,111 @@
+{
+            "Role": "Analyst",
+            "Levels": [
+
+                {
+                    "Level": 1,
+                    "perks": "Analyze Target, Informed Accuracy, Unsprising",
+                    "SpeedBost": 1,
+                    "SmartsBoost": 1
+                },
+
+                {
+                    "Level": 2,
+                    "perks": "data Analyst",
+                    "smartsBoost": 1
+                },
+                {
+                    "Level": 3,
+                    "perks": "focus perk",
+                    "socialBoost": 1
+                },
+                {
+                    "Level": 4,
+                    "perks": "General Perk",
+                    "speedBoost": 1
+                },
+                {
+                    "Level": 5,
+                    "perks": "Determine probablity",
+                    "smartsBoost": 1
+                },
+                {
+                    "Level": 6,
+                    "perks": "Focus Perk",
+                    "strenghBoost": 1
+                },
+                {
+                    "Level": 7,
+                    "perks": "Quick Study",
+                    "socialBoost": 1
+                },
+                {
+                    "Level": 8,
+                    "perks": "General Perk",
+                    "speedBoost": 1
+                },
+                {
+                    "Level": 9,
+                    "perks": "pinpoint",
+                    "smartsBoost": 1
+                },
+                {
+                    "Level": 10,
+                    "perks": "Focus Perk"
+                    
+                },
+                {
+                    "Level": 11,
+                    "perks": "General Perk",
+                    "soicalBoost": 1
+                },
+                {
+                    "Level": 12,
+                    "perks": "postmordem interogation",
+                    "strengthBoost": 1
+                },
+                {
+                    "Level": 13,
+                    "perks": "Target Breakdown",
+                    "speedBoost": 1
+                },
+                {
+                    "Level": 14,
+                    "perks": "pyschoanalyst",
+                    "smartsBoost": 1
+                },
+                {
+                    "Level": 15,
+                    "perks": "General perk",
+                    "socialBoost": 1
+                },
+                {
+                    "Level": 16,
+                    "perks": "just the facts",
+                    "speedBoost": 1
+                },
+                {
+                    "Level": 17,
+                    "perks": "Focus Perk",
+                    "strengthBoost": 1
+                },
+                {
+                    "Level": 18,
+                    "perks": "Swift Study",
+                    "smartsBoost": 1
+                },
+                {
+                    "Level": 19,
+                    "perks": "General Perk",
+                    "socialBoost": 1
+                },
+                {
+                    "Level": 20,
+                    "perks": "Focus Perk",
+                    "smartsBoost": 1
+                }
+
+            ]
+            
+        }
+

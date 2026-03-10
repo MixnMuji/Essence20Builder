@@ -17,3 +17,7 @@ pages and begin tha actual model bonding hopefully/
 -3/8 flow should be game slect=> expansions=> Origin/ alliegence => Influences => Stats => Perks => Weapons
 Update added orgin page basics got introduced to a new type of box the expandable which will let me show data which will be nice for the classes, messed aroudn with grid and margin and am slowly learning how to lay things out
 added navigation and learned that a window shouldn't have stuff so tomorrow we will add a start page to get rid of artifcats from window, finish origin page, consider jsons etc.
+
+3-10
+worked on jsons its just typing text nothing too fancy will need to put all the jsons in a json for refference when done or some on load stuff need to study them more also need to keep in mind focuses 
+for levels when revelant. anyways good day
