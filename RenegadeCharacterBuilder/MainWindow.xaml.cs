@@ -29,29 +29,10 @@ namespace RenegadeCharacterBuilder
         public MainWindow()
         {
             InitializeComponent();
-            ComboBox1.ItemsSource = Enum.GetValues(typeof(GameSelected));
-            MainFrame.Navigate(new MainWindow());
+          
+            MainFrame.Navigate(new startpage());
         }
 
-        private void proceed_Click(object sender, RoutedEventArgs e)
-        {
-            GameSelected selected = (GameSelected)ComboBox1.SelectedItem;
-            // run switch cases to determine slection and then route to next page!s
-            switch (selected)
-            {
-                case GameSelected.Transfomers:
-                    MainFrame.Navigate(new ExpansionsTransfomersSelect());
-                    break;
-                case GameSelected.PowerRangers:
-                    MessageBox.Show("Power Rangers not implented yet");
-                    break;
-                case GameSelected.Mlp:
-                    MessageBox.Show("My Little Pony not implented yet");
-                    break;
-                case GameSelected.GiJoe:
-                    MessageBox.Show("Gi Joe not Implimented yet");
-                    break;
-            }
-        }
+     
     }
 }
