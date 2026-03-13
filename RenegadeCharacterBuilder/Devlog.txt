@@ -21,3 +21,6 @@ added navigation and learned that a window shouldn't have stuff so tomorrow we w
 3-10
 worked on jsons its just typing text nothing too fancy will need to put all the jsons in a json for refference when done or some on load stuff need to study them more also need to keep in mind focuses 
 for levels when revelant. anyways good day
+
+3-12 Fixed issues with window percisting by adding startpage and the nmessed around with jsons but Skipped to far ahead so I can't navigate to roles yet, can't see data to check if it works
+	made role page, to do acually do orign and then do flow as intented, fixed problem when slections are null on starpage.

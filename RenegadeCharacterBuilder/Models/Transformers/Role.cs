@@ -5,7 +5,7 @@ using System.Windows.Media.Animation;
 
 namespace RenegadeCharacterBuilder.Models.Transformers
 {
-    internal class Role
+    public class Role
     {
         public string RoleName { get; set; }
         public List<RoleLevel> levels { get; set; }
