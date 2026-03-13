@@ -1,0 +1,127 @@
+{
+    "origins": [
+        {
+            "Name": "Champion",
+            "SocialIncrease": 1,
+            "OriginSkill": "Increase your persuasion or streetwise skill using the esscense score above",
+            "StartingHealth": 3,
+            "OriginBenefit": "I know a bot",
+            "BotMode": {
+                "Movement": 40,
+                "Type": "Land",
+                "Size": "large"
+            },
+            "AltMode": {
+                "Movement": 60,
+                "Type": "Ground",
+                "Size": "Long",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": "Ram (driving), driving skill, range reach,( 1 blunt damage,trip)"
+            }
+        },
+        {
+            "Name": "Cutter",
+            "StrengthIncrease": 1,
+            "OriginSkill": "increase your Althetics or might score using the Strength Essence score above",
+            "StartingHealth": 3,
+            "OriginBenefit": {
+                "Name": "Surface Invasion",
+                "Effect": "Once per scene, after moving in your alt mode, You can move an addtional 10 feet ground movment. If you do, you can make a single attack as a free action, with the benefit of suprise even if it isn't the first round of combat'"
+            },
+
+            "BotMode": {
+                "Movement": 30,
+                "Type": "Land or Water",
+                "Size": "Common or large"
+            },
+            "AltMode": {
+                "Movement": 45,
+                "Type": "Aquatic",
+                "Size": "Common or long",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": "Ram (driving), driving skill, range reach,( 1 blunt damage,trip)"
+
+            }
+        },
+        {
+            "Name": "LookOut",
+            "Speedincrease": 1,
+            "Socialincrease": 1,
+            "OriginSkill": "increase finese, inflitration, decpetion, or streetwise skill. the skill must make the score of your essance increase",
+            "StartingHealth": 2,
+            "OriginBenefit": {
+                "Name": "Look out",
+                "Effect": "You gain +2 to evasion, and can defend with evasion even if you are unaware of the attack."
+            },
+
+            "BotMode": {
+                "Movement": 30,
+                "Type": "Land",
+                "Size": "Common"
+            },
+            "AltMode": {
+                "Movement": 45,
+                "Type": "Aquatic",
+                "Movement2": 20,
+                "Type2": "Aerial",
+                "Size": "Common",
+                "Crew": 1,
+                "FirePoints": 1,
+                "Attack": "Ram (driving), driving skill, range reach,( 1 blunt damage,trip)"
+
+            }
+        },
+        {
+            "Name": "MonoLith",
+            "StrengthIncrease": 1,
+            "OriginSkill": "increase either your brawn or might skill",
+            "StartingHealth": 4,
+            "OriginBenefit": {
+                "Name": "Large and in charge",
+                "Effect": "Choose a social skill, you gain an upshift on skill test with that skill if the target is smaller than you,"
+            },
+
+            "BotMode": {
+                "Movement": 20,
+                "Type": "Ground",
+                "Size": "Huge"
+            },
+            "AltMode": {
+                "Movement": 45,
+                "Type": "Ground",
+                "Size": "Extended",
+                "Crew": 6,
+                "FirePoints": 4,
+                "Attack": "Ram (driving), driving skill, range reach,( 2 blunt damage,trip)"
+
+            }
+        },
+        {
+            "Name": "MonoLith",
+            "StrengthIncrease": 1,
+            "OriginSkill": "increase either your brawn or might skill",
+            "StartingHealth": 4,
+            "OriginBenefit": {
+                "Name": "Large and in charge",
+                "Effect": "Choose a social skill, you gain an upshift on skill test with that skill if the target is smaller than you,"
+            },
+
+            "BotMode": {
+                "Movement": 20,
+                "Type": "Ground",
+                "Size": "Huge"
+            },
+            "AltMode": {
+                "Movement": 45,
+                "Type": "Ground",
+                "Size": "Extended",
+                "Crew": 6,
+                "FirePoints": 4,
+                "Attack": "Ram (driving), driving skill, range reach,( 2 blunt damage,trip)"
+
+            }
+        }
+    ]
+} 
