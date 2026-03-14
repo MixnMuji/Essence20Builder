@@ -99,27 +99,106 @@
             }
         },
         {
-            "Name": "MonoLith",
-            "StrengthIncrease": 1,
-            "OriginSkill": "increase either your brawn or might skill",
-            "StartingHealth": 4,
+            "Name": "OutRider",
+            "SmartsIncrease": 1,
+            "OriginSkill": "increase either your alertness or survival",
+            "StartingHealth": 3,
             "OriginBenefit": {
-                "Name": "Large and in charge",
-                "Effect": "Choose a social skill, you gain an upshift on skill test with that skill if the target is smaller than you,"
+                "Name": "Take Point",
+                "Effect": "YOu never suffer the effects of rough terrain, and in any turn in which in you end your move in rough terrain, you are considered to be in conver until the start of your next turn"
             },
 
             "BotMode": {
-                "Movement": 20,
+                "Movement": 30,
                 "Type": "Ground",
-                "Size": "Huge"
+                "Size": "Common or Large"
             },
             "AltMode": {
                 "Movement": 45,
                 "Type": "Ground",
-                "Size": "Extended",
-                "Crew": 6,
-                "FirePoints": 4,
-                "Attack": "Ram (driving), driving skill, range reach,( 2 blunt damage,trip)"
+                "Size": "Common or Long",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": "Ram (driving), driving skill, range reach,(1 blunt damage,trip)"
+
+            }
+        },
+        {
+            "Name": "RainMaker",
+            "SpeedIncrease": 1,
+            "OriginSkill": "increase either your intitative or targeting skill",
+            "StartingHealth": 4,
+            "OriginBenefit": {
+                "Name": "The Feircest Among you",
+                "Effect": "You have an additonal Reinforced Intergrated Weapon Hardpoint. Additionally at 1st level you are trained to use machine guns, at 7th level you are trained to use Heavy Machine guns and rocket luanchers, and at 14th level you are trained to use artillery cannons and missles, You suffer a snag on skill test to blend in"
+            },
+
+            "BotMode": {
+                "Movement": 30,
+                "Type": "Ground",
+                "Size": "Large"
+            },
+            "AltMode": {
+                "Movement": 45,
+                "Type": "Ground",
+                "Size": "Long",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": "Ram (driving), driving skill, range reach,(1 blunt damage,trip)"
+
+            }
+        },
+        {
+            "Name": "Seeker",
+            "SpeedIncrease": 1,
+            "OriginSkill": "increase either your acrobatics or driving skill",
+            "StartingHealth": 3,
+            "OriginBenefit": {
+                "Name": "Hover",
+                "Effect": "When flying in bot mode you don't have to move on your turn."
+            },
+
+            "BotMode": {
+                "Movement": 30,
+                "Type": "Ground",
+                "Move2": 30,
+                "type": "Aerial",
+                "Size": "Large"
+            },
+            "AltMode": {
+                "Movement": 60,
+                "Type": "Aerial",
+                "Size": "Long",
+                "Crew": 2,
+                "FirePoints": 0,
+                "Attack": "Ram (driving), driving skill, range reach,(1 blunt damage,trip)"
+
+            }
+        },
+        {
+            "Name": "Support",
+            "SmartsIncrease": 1,
+            "OriginSkill": "increase either your science or technology skill",
+            "StartingHealth": 4,
+            "OriginBenefit": {
+                "Name": "In case of emergency",
+                "Effect": "You have two additonal integrated hardpoints(non-weapon) and may choose to begin play with two attached options from the support equipment list."
+            },
+
+            "BotMode": {
+                "Movement": 30,
+                "Type": "Ground",
+                "Size": "Large"
+            },
+            "AltMode": {
+                "Movement": 35,
+                "Type": "Aerial",
+                "Movement2": 45,
+                "type2":  "Ground",
+                "Size": "Long",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": "Ram (driving), driving skill, range reach,(1 blunt damage,trip)"
 
             }
         }
