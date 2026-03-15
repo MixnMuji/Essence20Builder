@@ -21,30 +21,67 @@
             <ColumnDefinition Width ="*"/>
         </Grid.ColumnDefinitions>
 
+        <ItemsControl Grid.Row="1" ItemsSource="{Binding tfOrgins}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="0,10">
+                        <RadioButton Content="{Binding Name}" GroupName="tfOrgins"/>
+                        <Expander Header="Details" Margin="10,0,0,0">
+                            <StackPanel Margin="10">
 
+                                <TextBlock Text="Starting Health:" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding StartingHealth}"/>
+                                <TextBlock Text="Origin Skill:" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding OriginSkill}"/>
+                                <TextBlock Text="Strength Increase:" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding StrengthIncrease}"/>
+                                <TextBlock Text="Smarts Increase:" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding SmartsIncrease}"/>
+                                <TextBlock Text="Social Increase:" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding SocialIncrease}"/>
+                                <TextBlock Text="Speed Increase:" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding SpeedIncrease}"/>
+
+                                <TextBlock Text="BotMode Stats:" FontWeight="Bold"/>
+                                <TextBlock Text="Movement" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding BotMode.Movement}"/>
+                                <TextBlock Text="{Binding BotMode.Type}"/>
+                                <TextBlock Text="Size:"/>
+                                <TextBlock Text="{Binding BotMode.Size}"/>
+
+
+                                <TextBlock Text="Altmode Stats:"/>
+                                <TextBlock Text="Movement" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding AltMode.Movement}"/>
+                                <TextBlock Text="{Binding AltMode.Type}"/>
+                                <TextBlock Text="Crew Size:"/>
+                                <TextBlock Text="{Binding AltMode.Crew}"/>
+                                <TextBlock Text="Fire points:"/>
+                                <TextBlock Text="{Binding AltMode.FirePoints}"/>
+                                <TextBlock Text="{Binding AltMode.Attack}"/>
+
+                                <TextBlock Text="Benefit:" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding OriginBenefit.Name}"/>
+                                <TextBlock Text="{Binding OriginBenefit.Effect}"/>
+
+
+
+
+
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
         <Label Content="Choose your faction" Grid.Row="0"/>
-        <StackPanel Orientation="Horizontal" Grid.Row="1">
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2">
 
 
             <RadioButton Content="Autobot" GroupName="Faction" Margin="3"/>
             <RadioButton Content="Decepticon" GroupName="Faction" Margin="3"/>
         </StackPanel>
         
-        <StackPanel Grid.Row="1" Margin="0,40,0,0">
-            <Label Content="Origins" FontSize="30" VerticalAlignment="Center"></Label>
-            <RadioButton Content="Champion" GroupName="Orign"/>
-            <Expander Header="Details" Margin="10,0,0,0">
-                <StackPanel Margin="10">
-                    <TextBlock Text="Hit Die: d10"/>
-                    <TextBlock Text="Primary Ability: Strength"/>
-                    <TextBlock Text="Perks:" FontWeight="Bold"/>
-                    <TextBlock Text="- Second Wind"/>
-                    <TextBlock Text="- Action Surge"/>
-                </StackPanel>
-            </Expander>
-
-
-        </StackPanel>
         
     </Grid>
 </Page>

@@ -4,10 +4,12 @@ using System.Text;
 
 namespace RenegadeCharacterBuilder.Models.Transformers
 {
-    internal class Botmode
+    public class Botmode
     {
-        string movement;
-        string size;
-        string ability;
+        public int Movement { get; set; }
+
+        public string Type { get; set; }
+        public string Size { get; set; }
+        
     }
 }

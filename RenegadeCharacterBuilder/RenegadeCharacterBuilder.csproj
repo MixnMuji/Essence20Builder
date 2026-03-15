@@ -12,4 +12,10 @@
     <Folder Include="Jsoncollection\TransformersJsons\Roles\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Jsoncollection\TransformersJsons\Origins.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

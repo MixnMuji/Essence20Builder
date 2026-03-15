@@ -24,3 +24,10 @@ for levels when revelant. anyways good day
 
 3-12 Fixed issues with window percisting by adding startpage and the nmessed around with jsons but Skipped to far ahead so I can't navigate to roles yet, can't see data to check if it works
 	made role page, to do acually do orign and then do flow as intented, fixed problem when slections are null on starpage.
+
+3-13 
+Nothing crazy or spectacual just making jsons for core tf origins
+
+3-14
+Big day as it is the start of my vaction from both jobs, Alright to day we finihsed the json and bounded it to the xaml page, ran into a snag with names not making up, had to directly make a path to the json as well.
+New errors, names not populating, sub objects not populating such as botmode health, or movement etc. so we will fix that tommorrow ya!

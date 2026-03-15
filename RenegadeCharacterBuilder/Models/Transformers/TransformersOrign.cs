@@ -4,22 +4,24 @@ using System.Text;
 
 namespace RenegadeCharacterBuilder.Models.Transformers
 {
-    internal class TransformersOrign
+    public class TransformersOrign
     {
-        int health { get; set; }
-        List<string> LanguagesSpoken { get; set; }
-        string OrignBenefit { get; set; }
-        int statIncrease { get; set; }
+        public int StartingHealth { get; set; }
+        public string OriginSkill { get; set; }
+        public int? StrengthIncrease { get; set; }
+        public int? SmartsIncrease { get; set;}
+        public int? SocialIncrease { get; set; }
+        public int? SpeedIncrease{ get; set; }
 
-        Chassis chassis { get; set; } // object for chasis is not yet made
+        public Botmode botMode { get; set;}
+        public Altmode altmode { get; set; }
 
-        public TransformersOrign(string name, int basehealth, string orignBenefit, int statInscrease, List<string> languages, Chassis basecassis)
+
+        public TransformersOrign()
         {
-            this.health = basehealth;
-            this.LanguagesSpoken = languages;
-            this.statIncrease = statInscrease;
-            this.chassis = basecassis;
+            
         }
 
     }
 }
+

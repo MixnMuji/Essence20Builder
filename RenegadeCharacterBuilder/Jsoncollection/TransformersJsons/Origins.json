@@ -1,11 +1,14 @@
 {
-    "origins": [
+    "Origins": [
         {
             "Name": "Champion",
             "SocialIncrease": 1,
             "OriginSkill": "Increase your persuasion or streetwise skill using the esscense score above",
             "StartingHealth": 3,
-            "OriginBenefit": "I know a bot",
+            "OriginBenefit": {
+                "Name": "I know A bot",
+                "Effect": "You can spend an energon point to delcare you have a previous positive relationship with an npc. This can be an enemy. Although this is not likely to change their objectives, they may go easy on you, or secretly help you in your objectives."
+            },
             "BotMode": {
                 "Movement": 40,
                 "Type": "Land",
@@ -194,7 +197,7 @@
                 "Movement": 35,
                 "Type": "Aerial",
                 "Movement2": 45,
-                "type2":  "Ground",
+                "type2": "Ground",
                 "Size": "Long",
                 "Crew": 2,
                 "FirePoints": 2,

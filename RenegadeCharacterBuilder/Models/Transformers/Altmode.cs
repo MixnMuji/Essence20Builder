@@ -4,13 +4,17 @@ using System.Text;
 
 namespace RenegadeCharacterBuilder.Models.Transformers
 {
-    internal class Altmode
+    public class Altmode
     {
-        string movment;
-        string size;
-        int crew;
-        int hardpoints;
-        string ability;
+        public string Movment { get; set; }
+        public  string Type { get; set; }
+        public string? Movement2 { get; set; }
+
+        public string? Type2 { get; set; }
+        public string Size { get; set; }
+        public int Crew { get; set; }
+        public int Hardpoints { get; set; }
+        public string Attack { get; set; }
 
     }
 }

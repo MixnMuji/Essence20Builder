@@ -4,10 +4,9 @@ using System.Text;
 
 namespace RenegadeCharacterBuilder.Models.Transformers
 {
-    internal class Chassis
+    internal class OriginBenefitTf
     {
-        string name;
-        Botmode baseform;
-        Altmode vechilemode; 
+        string Name { get; set; }
+        string Effect { get; set; }
     }
 }
