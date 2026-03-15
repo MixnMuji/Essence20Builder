@@ -6,6 +6,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
 {
     public class TransformersOrign
     {
+        public string Name { get; set; }
         public int StartingHealth { get; set; }
         public string OriginSkill { get; set; }
         public int? StrengthIncrease { get; set; }
@@ -13,8 +14,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public int? SocialIncrease { get; set; }
         public int? SpeedIncrease{ get; set; }
 
-        public Botmode botMode { get; set;}
-        public Altmode altmode { get; set; }
+        public Botmode BotMode { get; set;}
+        public Altmode AltMode { get; set; }
 
 
         public TransformersOrign()

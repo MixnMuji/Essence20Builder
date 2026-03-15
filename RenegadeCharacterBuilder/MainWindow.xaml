@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RenegadeCharacterBuilder"
         mc:Ignorable="d"
-        Title="Essance20" Height="1000" Width="800">
+        Title="Essance20" Height="800" Width="800">
     
     <Grid Margin="20">
       

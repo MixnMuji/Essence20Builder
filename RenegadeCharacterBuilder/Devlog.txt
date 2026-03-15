@@ -31,3 +31,7 @@ Nothing crazy or spectacual just making jsons for core tf origins
 3-14
 Big day as it is the start of my vaction from both jobs, Alright to day we finihsed the json and bounded it to the xaml page, ran into a snag with names not making up, had to directly make a path to the json as well.
 New errors, names not populating, sub objects not populating such as botmode health, or movement etc. so we will fix that tommorrow ya!
+
+3-15
+Issue was with names spellchecked the json now all is working! whoo hoo. Added a characterstate thing to make sure data can persist between pages and a way to assign that to the character
+tomorrow make proceed for next page and also maybe add expansions.

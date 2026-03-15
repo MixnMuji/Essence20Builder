@@ -9,7 +9,7 @@ using System.Windows.Media.Animation;
 namespace RenegadeCharacterBuilder.Models.Transformers
 {
     // these fields will be used to make a new object and the stats will mirror what's on the sheet as well
-    internal class TransfomersCharacterModel
+    public class TransfomersCharacterModel
     {
         public string Name { get; set; }
         public string Pronouns { get; set; }
@@ -27,30 +27,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public int social { get; set; }
         //need object for attacks put them in a list
 
-        public TransfomersCharacterModel(  string? Name, string? Pronouns, string Origin, string Role, int Level,
-                                    Alliegence faction, List<string>? Languages, List<string> Influences, List<string> hangups,
-                                    int health, int strenght, int speed, int smarts, int social)
+        public TransfomersCharacterModel()
         
                 // redo the constructor to make it so that the optional ones are at the end and have default values;
         {
-            this.Name = Name;
-            this.Pronouns = Pronouns;
             
-        
-            this.Level = Level;
-            Faction = faction;
-            this.Languages = Languages;
-            this.Influences = Influences;
-            Hang_Ups = hangups;
-            this.health = health;
-            this.strenght = strenght;
-            this.speed = speed;
-            // put dirvied stats between stats like this
-            this.smarts = smarts;
-            this.social = social;
-
-                //after this statments put logic for derived stats
-        
         }
     }
 

@@ -197,7 +197,7 @@
                 "Movement": 35,
                 "Type": "Aerial",
                 "Movement2": 45,
-                "type2": "Ground",
+                "Type2": "Ground",
                 "Size": "Long",
                 "Crew": 2,
                 "FirePoints": 2,

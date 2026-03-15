@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RenegadeCharacterBuilder.Models;
 using RenegadeCharacterBuilder.Models.Transformers;
 using RenegadeCharacterBuilder.Models.Transformers.Roots;
 
@@ -27,15 +28,22 @@ namespace RenegadeCharacterBuilder
         {
             InitializeComponent();
             LoadOrigins();
-            MessageBox.Show(tfOrgins.Count.ToString());
             DataContext = this;
+   
         }
         void LoadOrigins()
         {
             string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "Origins.json");
             string json = File.ReadAllText(path);
+            MessageBox.Show(json);
             var originRoot = JsonSerializer.Deserialize<TFOriginsRoot>(json);
             tfOrgins = originRoot.Origins;
+        }
+       private void OriginSelected(object sender, RoutedEventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            var selectedOrigin = rb.DataContext as TransformersOrign;
+            TFCharacterSession.CurrentTransfomer.Orign = selectedOrigin;
         }
     }
 }
