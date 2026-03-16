@@ -85,7 +85,12 @@
             <RadioButton Content="Autobot" GroupName="Faction" Margin="3"/>
             <RadioButton Content="Decepticon" GroupName="Faction" Margin="3"/>
         </StackPanel>
-        
-        
+        <Button Grid.Column="2"
+                Grid.Row="2"
+                Content="Continue To Influences"
+                Height="200"
+                Width="200"
+                Click="ToInfluences"/>
+
     </Grid>
 </Page>

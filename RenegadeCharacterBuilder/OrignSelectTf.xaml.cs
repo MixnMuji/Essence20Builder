@@ -35,7 +35,6 @@ namespace RenegadeCharacterBuilder
         {
             string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "Origins.json");
             string json = File.ReadAllText(path);
-            MessageBox.Show(json);
             var originRoot = JsonSerializer.Deserialize<TFOriginsRoot>(json);
             tfOrgins = originRoot.Origins;
         }
@@ -44,6 +43,17 @@ namespace RenegadeCharacterBuilder
             RadioButton rb = sender as RadioButton;
             var selectedOrigin = rb.DataContext as TransformersOrign;
             TFCharacterSession.CurrentTransfomer.Orign = selectedOrigin;
+        }
+
+        private void ToInfluences(object sender, RoutedEventArgs e)
+        {
+           if(TFCharacterSession.CurrentTransfomer.Orign == null)
+            {
+                MessageBox.Show("You must pick an Origin Before continuing");
+
+            }
+            else
+            NavigationService.Navigate(new TFInfluencePage());
         }
     }
 }

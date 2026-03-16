@@ -35,3 +35,5 @@ New errors, names not populating, sub objects not populating such as botmode hea
 3-15
 Issue was with names spellchecked the json now all is working! whoo hoo. Added a characterstate thing to make sure data can persist between pages and a way to assign that to the character
 tomorrow make proceed for next page and also maybe add expansions.
+
+-little more work now that I'm on vaction, added a Influences page must make json for it, made navigation property and check to make sure an orgin is slected
