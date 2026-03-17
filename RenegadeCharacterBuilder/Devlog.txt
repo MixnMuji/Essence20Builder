@@ -37,3 +37,8 @@ Issue was with names spellchecked the json now all is working! whoo hoo. Added a
 tomorrow make proceed for next page and also maybe add expansions.
 
 -little more work now that I'm on vaction, added a Influences page must make json for it, made navigation property and check to make sure an orgin is slected
+
+
+3-16
+lazy day made the influences models and json, as well as hang-ups model and json. Then made a model to track expansion state.
+To do make sure character has both influences and json model inside. Likewise make page for influnecs with data binding and all that.

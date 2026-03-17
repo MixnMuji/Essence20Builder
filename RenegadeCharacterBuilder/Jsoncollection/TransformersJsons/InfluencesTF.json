@@ -1,0 +1,52 @@
+{{
+  "Influences": [
+    {
+      "Name": "Bureaucrat",
+      "Perk": "When using the lend assistance action, you grant the recipient an edge and shift up to their skill test."
+    },
+    {
+      "Name": "Cube Player",
+      "Perk": "You gain an edge on Social and Smarts skills connected to competitive sports. Additionally you gain an upshift on skill tests related to cube."
+    },
+    {
+      "Name": "Experiment",
+      "Perk": "Choose one: 1) Gain an upshift when shoving or attempting to break a grapple. 2) Your carrying weight is doubled. 3) You gain an edge on technology skill checks in which you are not familiar with specific technology alien to you (for example Earth automotives for Cybertronians). 4) You have one additional integrated non-weapon hardpoint."
+    },
+    {
+      "Name": "Former Senator",
+      "Perk": "Choose a deception or persuasion specialization, whether or not you invested in that specialization. You gain an edge on skill tests when that specialization comes into play."
+    },
+    {
+      "Name": "Gladiator",
+      "Perk": "Choose an intimidation specialization, whether or not you invested in that specialization. You gain an edge on skill tests when that specialization comes into play."
+    },
+    {
+      "Name": "Hunter",
+      "Perk": "Choose a survival specialization, whether or not you invested in that specialization. You gain an edge on skill tests when that specialization comes into play."
+    },
+    {
+      "Name": "Inventor",
+      "Perk": "You get an edge on skill tests to use any technology of your own creation. Additionally you can always ignore 1 downshift on skill tests to use any technology of your own creation."
+    },
+    {
+      "Name": "Machinist",
+      "Perk": "When using a skill test of any kind to repair or upgrade a Cybertronian or Cybertronian technology, gain an edge."
+    },
+    {
+      "Name": "Racer",
+      "Perk": "Choose a driving specialization, whether or not you invested in that specialization. You gain an edge on skill tests when that specialization comes into play."
+    },
+    {
+      "Name": "Scavenger",
+      "Perk": "Choose a streetwise specialization, whether or not you invested in that specialization. You gain an edge on skill tests when that specialization comes into play."
+    },
+    {
+      "Name": "Security",
+      "Perk": "When you are surprised you can take a move action and roll a skill test. You still cannot take a standard action."
+    },
+    {
+      "Name": "War Veteran",
+      "Perk": "When making an alertness skill test to gain information or understanding of the current battlefield, you gain an edge."
+    }
+  ]
+}

@@ -35,7 +35,7 @@
             <CheckBox Content="Core Rule Book" IsChecked="True"/>  
             <CheckBox Content="Decepticon Directive"/>
             <CheckBox Content="Technorganic Secrets"/>
-            <CheckBox Content="Transformers One"/>
+            <CheckBox Content="Enigma of Combination"/>
             <CheckBox Content="Field Guide to Action and Adventure (Coming soon..)" IsEnabled="False"/>
 
             

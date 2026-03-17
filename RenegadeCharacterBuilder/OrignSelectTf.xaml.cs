@@ -12,8 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using RenegadeCharacterBuilder.Models;
 using RenegadeCharacterBuilder.Models.Transformers;
+using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.Roots;
 
 namespace RenegadeCharacterBuilder

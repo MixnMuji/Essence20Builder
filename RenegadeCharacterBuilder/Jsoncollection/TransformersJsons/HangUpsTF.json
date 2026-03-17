@@ -1,0 +1,56 @@
+{
+  "Hang_ups": [
+    {
+      "Name": "Distressed",
+      "Effect": "You are often distracted by worries and concerns that may or may not be relevant to the current situation. When making an alertness test to gain a better understanding of potential dangers to others, take a downshift."
+    },
+    {
+      "Name": "Earthspoiled",
+      "Effect": "You are excited by and attached to the cornucopia of beautiful treasures Earth and human culture have to offer you. When exposed to a gorgeous piece of Earth art or culture, your skill tests suffer 1 downshift."
+    },
+    {
+      "Name": "Glacial",
+      "Effect": "Your personality is cold and uncharismatic, and you struggle to connect with others. Many consider you rude or hostile even when you're not. Take a downshift on all persuasion skill tests unless you're using the Truth specialty."
+    },
+    {
+      "Name": "Idolizer",
+      "Effect": "You have something of a hero worship complex. The hero you cherish and follow might be one of your teammates. Or it might be one of the many heroes of the Cybertronian wars. Your will power is 9 + Smarts."
+    },
+    {
+      "Name": "Impulsive",
+      "Effect": "You are reckless and rash. Taking that shot at a Decepticon when your mission is only reconnaissance. No matter the circumstances you never gain the bonus of surprise. Additionally you gain a downshift on your first skill test after you roll initiative."
+    },
+    {
+      "Name": "Mode attachment",
+      "Effect": "You are deeply attached to one of your modes. When you choose this hang up either your bot mode or one of your alt modes. When converting into that selected mode you must make a technology skill test when converting against a DIF equal to 10 + half your level (rounded up). If you fail, you cannot change forms that turn and the action is lost."
+    },
+    {
+      "Name": "Skeptical",
+      "Effect": "You are an objective observer, and concepts such as hope and inspiration do not impact you. You gain no benefit when an ally uses Lend Assistance on you."
+    },
+    {
+      "Name": "Subordinate",
+      "Effect": "You are most comfortable knowing your specific place in the chain of command, even if it is at the bottom. You often struggle to make your own decisions without receiving orders from a superior. Take a downshift to any skill test not directly related to your mission as stated."
+    },
+    {
+      "Name": "Treacherous",
+      "FlavorText": "You are untrustworthy, unreliable, and everyone knows it.",
+      "Effect": "You can never use the Lend Assistance action."
+    },
+    {
+      "Name": "Vainglorious",
+      "FlavorText": "You are pompous and self-important, and your reputation and good looks take precedence over being effective (this does not necessarily mean you are ineffective).",
+      "Effect": "On your first turn, after you roll initiative, you must spend your standard action delivering a speech to your enemies or preening and chest thrusting."
+    },
+    {
+      "Name": "Violent",
+      "FlavorText": "You are eager for war and seek to be the center of conflict.",
+      "Effect": "Any skill check you make in combat that is not explicitly related to said combat takes a downshift."
+    },
+    {
+      "Name": "Whimsical",
+      "FlavorText": "You do not take anything seriously and like to focus on light-hearted fun and playing tricks on your friends.",
+      "Effect": "Whenever you make an infiltration skill test that is not just for fun, take a downshift."
+    }
+  ]
+}
