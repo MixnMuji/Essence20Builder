@@ -6,6 +6,6 @@ namespace RenegadeCharacterBuilder.Models.Transformers.Roots
 {
     public class TFInfluencesRoot
     {
-        public List<InfluencesTF> Influences {get; set;}
+        public List<InfluencesTF> Influences { get; set;}
     }
 }

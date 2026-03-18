@@ -23,14 +23,44 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Influences" FontSize="25" FontStretch="UltraExpanded"/>
-        <ItemCollection>
-            
-        </ItemCollection>
+        <ItemsControl ItemsSource="{Binding tfInfluences}" Grid.Row="1">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="10,10,10,10">
+                        <CheckBox Content="{Binding Name}"/>
+                        <Expander HorizontalAlignment="Stretch">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                                <TextBlock Text="{Binding Effect}"/>
+                            </ScrollViewer>
+                        </Expander>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+
+        </ItemsControl>
+
+
         <TextBlock Text="Hang-Ups" FontSize="25" FontStretch="UltraExpanded" Grid.Column="1"/>
-        <ItemCollection>
-            
-        </ItemCollection>    
-        
-        
+        <ItemsControl ItemsSource="{Binding tfHangups}" Grid.Row="1" Grid.Column="1">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="10,10,10,10">
+                        <CheckBox Content="{Binding Name}"/>
+                        <Expander HorizontalAlignment="Stretch">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                                <TextBlock Text="{Binding Effect}"/>
+                            </ScrollViewer>
+                        </Expander>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+
+        </ItemsControl>
+
+
+
+
     </Grid>
 </Page>

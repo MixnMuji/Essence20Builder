@@ -30,29 +30,28 @@ namespace RenegadeCharacterBuilder
             InitializeComponent();
             LoadTFInfluneces();
             LoadTFHangUps();
-            
+            DataContext = this;
         }
         void LoadTFInfluneces()
         {
-            string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "InfluencesTF");
+            string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "InfluencesTF.json");
             string influencesJson = File.ReadAllText(path);
             var influencesRoot = JsonSerializer.Deserialize<TFInfluencesRoot>(influencesJson);
-            MessageBox.Show(influencesRoot == null ? "Root NULL" : "Root OK");
+            //MessageBox.Show(influencesRoot == null ? "Root NULL" : "Root OK");
 
-            MessageBox.Show(influencesRoot?.Influences == null
-                ? "List NULL"
-                : $"List count: {influencesRoot.Influences.Count}");
+        
+               
             tfInfluences = influencesRoot.Influences;
        
         }
         void LoadTFHangUps()
         {
-            string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "HangUpsTF");
+            string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "HangUpsTF.json");
             string hangUpsJson = File.ReadAllText(path);
             var hangupsRoot = JsonSerializer.Deserialize<TFHangUpsRoot>(hangUpsJson);
-            MessageBox.Show(hangupsRoot == null ? "Hangups Null" : "hangups ok");
+            //MessageBox.Show(hangupsRoot == null ? "Hangups Null" : "hangups ok");
 
-            tfHangups = hangupsRoot.Hangups;
+            tfHangups = hangupsRoot.Hang_ups;
         }
 
     }

@@ -6,6 +6,6 @@ namespace RenegadeCharacterBuilder.Models.Transformers.Roots
 {
     public class TFHangUpsRoot
     {
-        public List<HangUps> Hangups { get; set; }
+        public List<HangUps> Hang_ups { get; set; }
     }
 }
