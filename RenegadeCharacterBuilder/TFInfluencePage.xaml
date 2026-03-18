@@ -10,6 +10,27 @@
       Background="White">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="385"/>
+            <ColumnDefinition Width="auto"/>
+          
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Influences" FontSize="25" FontStretch="UltraExpanded"/>
+        <ItemCollection>
+            
+        </ItemCollection>
+        <TextBlock Text="Hang-Ups" FontSize="25" FontStretch="UltraExpanded" Grid.Column="1"/>
+        <ItemCollection>
+            
+        </ItemCollection>    
+        
         
     </Grid>
 </Page>

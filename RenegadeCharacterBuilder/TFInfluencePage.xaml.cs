@@ -30,19 +30,28 @@ namespace RenegadeCharacterBuilder
             InitializeComponent();
             LoadTFInfluneces();
             LoadTFHangUps();
+            
         }
         void LoadTFInfluneces()
         {
             string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "InfluencesTF");
             string influencesJson = File.ReadAllText(path);
             var influencesRoot = JsonSerializer.Deserialize<TFInfluencesRoot>(influencesJson);
+            MessageBox.Show(influencesRoot == null ? "Root NULL" : "Root OK");
+
+            MessageBox.Show(influencesRoot?.Influences == null
+                ? "List NULL"
+                : $"List count: {influencesRoot.Influences.Count}");
             tfInfluences = influencesRoot.Influences;
+       
         }
         void LoadTFHangUps()
         {
             string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "HangUpsTF");
             string hangUpsJson = File.ReadAllText(path);
             var hangupsRoot = JsonSerializer.Deserialize<TFHangUpsRoot>(hangUpsJson);
+            MessageBox.Show(hangupsRoot == null ? "Hangups Null" : "hangups ok");
+
             tfHangups = hangupsRoot.Hangups;
         }
 
