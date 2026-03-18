@@ -8,6 +8,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
     {
         public string Name { get; set; }
         public string Perk { get; set; }
+
+        public bool isChecked { get; set; }
     
     }
 }

@@ -7,6 +7,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
     public class HangUps
     {
         public string Name { get; set; }
-      public string Effect { get; set; }
+        public string Effect { get; set; }
+        public bool isChecked { get; set; } 
     }
 }

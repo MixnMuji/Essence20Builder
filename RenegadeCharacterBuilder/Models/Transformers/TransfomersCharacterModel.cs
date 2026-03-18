@@ -18,8 +18,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public int Level { get; set; }
         public Alliegence Faction { get; set; }
         public List<string> Languages { get; set; }
-        public List<string> Influences { get; set; }
-        public List<string> Hang_Ups { get; set; }
+        public List<InfluencesTF> Influences { get; set; }
+        public List<HangUps> Hang_Ups { get; set; }
         public int health { get; set; }
         public int strenght { get; set; }
         public int speed { get; set; }

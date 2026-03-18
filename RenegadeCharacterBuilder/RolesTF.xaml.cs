@@ -25,12 +25,12 @@ namespace RenegadeCharacterBuilder
         public RolesTF()
         {
             InitializeComponent();
-            LoadRole();
+            //LoadRole();
             DataContext = CurrentRole;
         }
         public void LoadRole()
         {
-            string json = File.ReadAllText("AnalystTF.json");
+            //string json = File.ReadAllText("AnalystTF.json");
             CurrentRole = JsonSerializer.Deserialize<Role>(json) ?? new Role();
         }
     }

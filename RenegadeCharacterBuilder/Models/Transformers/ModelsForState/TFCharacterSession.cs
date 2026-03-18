@@ -8,5 +8,6 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ModelsForState
     public static class TFCharacterSession
     {
         public static TransfomersCharacterModel CurrentTransfomer { get; set; }
+        
     }
 }

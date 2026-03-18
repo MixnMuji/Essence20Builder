@@ -47,7 +47,8 @@ namespace RenegadeCharacterBuilder
 
         private void ToInfluences(object sender, RoutedEventArgs e)
         {
-           if(TFCharacterSession.CurrentTransfomer.Orign == null)
+      
+           if (TFCharacterSession.CurrentTransfomer.Orign == null)
             {
                 MessageBox.Show("You must pick an Origin Before continuing");
 
