@@ -1,0 +1,214 @@
+{
+  "Roles": [
+    {
+      "Name": "Analyst",
+      "Levels": [
+        {
+          "Level": 1,
+          "Perks": "Analyze Target, Informed Accuracy, Unsurprising",
+          "SpeedBoost": 1,
+          "SmartsBoost": 1
+        },
+        {
+          "Level": 2,
+          "Perks": "Data Analyst",
+          "SmartsBoost": 1
+        },
+        {
+          "Level": 3,
+          "Perks": "Focus Perk",
+          "SocialBoost": 1
+        },
+        {
+          "Level": 4,
+          "Perks": "General Perk",
+          "SpeedBoost": 1
+        },
+        {
+          "Level": 5,
+          "Perks": "Determine Probability",
+          "SmartsBoost": 1
+        },
+        {
+          "Level": 6,
+          "Perks": "Focus Perk",
+          "StrengthBoost": 1
+        },
+        {
+          "Level": 7,
+          "Perks": "Quick Study",
+          "SocialBoost": 1
+        },
+        {
+          "Level": 8,
+          "Perks": "General Perk",
+          "SpeedBoost": 1
+        },
+        {
+          "Level": 9,
+          "Perks": "Pinpoint",
+          "SmartsBoost": 1
+        },
+        {
+          "Level": 10,
+          "Perks": "Focus Perk"
+        },
+        {
+          "Level": 11,
+          "Perks": "General Perk",
+          "SocialBoost": 1
+        },
+        {
+          "Level": 12,
+          "Perks": "Postmortem Interrogation",
+          "StrengthBoost": 1
+        },
+        {
+          "Level": 13,
+          "Perks": "Target Breakdown",
+          "SpeedBoost": 1
+        },
+        {
+          "Level": 14,
+          "Perks": "Psychoanalyst",
+          "SmartsBoost": 1
+        },
+        {
+          "Level": 15,
+          "Perks": "General Perk",
+          "SocialBoost": 1
+        },
+        {
+          "Level": 16,
+          "Perks": "Just the Facts",
+          "SpeedBoost": 1
+        },
+        {
+          "Level": 17,
+          "Perks": "Focus Perk",
+          "StrengthBoost": 1
+        },
+        {
+          "Level": 18,
+          "Perks": "Swift Study",
+          "SmartsBoost": 1
+        },
+        {
+          "Level": 19,
+          "Perks": "General Perk",
+          "SocialBoost": 1
+        },
+        {
+          "Level": 20,
+          "Perks": "Focus Perk",
+          "SmartsBoost": 1
+        }
+      ]
+    }, {"Name": "FieldCommander",
+        "Levels":[
+            {"Level": 1,
+             "Perks":"Issue Command, Prepare For war",
+             "StrengthBoost": 1,
+
+            },
+            {"Level": 2,
+             "Perks":"Inreffuable Order",
+             "SocialBoost": 1,
+
+            },
+            {"Level": 3,
+             "FocusProgression": 1,
+             "SpeedBoost": 1,
+
+            },
+            {"Level": 4,
+             "GeneralPerkCount": 1,
+             "StrengthBoost": 1,
+
+            },
+            {"Level": 5,
+             "Perks":"Synch Up",
+             "SocialBoost": 1,
+
+            },
+            {"Level": 6,
+             "FocusProgression": 1,
+             "SmartsBoost": 1,
+
+            },
+            {"Level": 7,
+             "Perks":"Stoic",
+             "SpeedBoost": 1,
+
+            },
+            {"Level": 8,
+             "GeneralPerkCount": 1,
+             "StrengthBoost": 1,
+
+            },
+            {"Level": 9,
+             "Perks":"Battle Scan",
+             "SocialBoost": 1,
+
+            },
+            {"Level": 10,
+             "FocusProgression": 1,
+             
+
+            },
+            {"Level": 11,
+             "GeneralPerkCount": 1,
+             "SpeedBoost": 1,
+
+            },
+            {"Level": 12,
+             "Perks":"Hardened",
+             "SmartsBoost": 1,
+
+            },
+            {"Level": 13,
+             "Perks":"Let Cool Heads Prevail",
+             "StrengthBoost": 1,
+
+            },
+            {"Level": 14,
+             "Perks":"The First Rule of Solidering",
+             "SocialBoost": 1,
+
+            },
+            {"Level": 15,
+             "Perks":"Complex Command",
+             "SpeedBoost": 1,
+
+            },
+            {"Level": 16,
+             "GeneralPerkCount": 1,
+             "StrengthBoost": 1,
+
+            },
+            {"Level": 17,
+             "FocusProgression": 1,
+             "SmartsBoost": 1,
+
+            },
+            {"Level": 18,
+             "Perks":"Stand Together",
+             "SocialBoost": 1,
+
+            },
+            {"Level": 19,
+             "GeneralPerkCount": 1,
+             "SpeedBoost": 1,
+
+            },
+            {"Level": 19,
+             "FocusProgression": 1,
+             "SocialBoost": 1,
+
+            }
+            
+        ]
+       }
+}
+  ]
+ 

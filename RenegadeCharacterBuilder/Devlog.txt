@@ -46,3 +46,6 @@ To do make sure character has both influences and json model inside. Likewise ma
 
 3-17
 Tecnically worked into the next day built xaml page with databind from jsosns. next need logic to check that influences hang up boxes are even and then I can progress forward and save them to char session.
+
+finsihed up logic and navigation for influences and json, fixed typos so that code works started work on roles , decided to put all in a json but divide by expansion (ofc), made new modes to 
+allocate levles too and perks whoo hoo, up next continue the json, and rewrite old json data to match new scheme.

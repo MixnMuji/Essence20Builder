@@ -7,18 +7,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers
 {
     public class Role
     {
-        public string RoleName { get; set; }
-        public List<RoleLevel> levels { get; set; }
+        public string Name { get; set; }
 
-        public class RoleLevel
-        {
-            public int Level { get; set; }
-            public string perks { get; set; }
+        public List<LevelTF> Levels { get; set; }
 
-            public int? SpeedBoost { get; set; }
-            public int? SmartsBoost { get; set; }
-            public int? STrengthBoost { get; set; }
-            public int? SocialBoost { get; set; }
-        }
+        
+
     }
 }
