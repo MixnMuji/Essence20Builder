@@ -5,102 +5,127 @@
       "Levels": [
         {
           "Level": 1,
-          "Perks": "Analyze Target, Informed Accuracy, Unsurprising",
+          "Perks":[
+              { "Name":"Analyze Target", 
+                 "Effect":"You see the enemy as walking datafiles of valuable information. As a standard action make an alertness skill test against the Willpower or Cleverness of a target you can see. On a successs you learn a valuable piece of infomation of yur choice about them. such as their rank in a specific skill, or a defense score." }
+              ,{"Name":"Informed Accuracy", 
+                "Effect":"To know your enememy is to know their weaknesss. When you attack a creature you've used Analyze Target on this Combat, you gain upshift on the attack equal to the times you've used Analyze Target on them'" },
+               {"Name":"Unsurprising", 
+                "Effect":"Odds are low that you get caught off guard. If you would be Surprised you can act, but instead treat your speed score as if it were equal to your level(up to your actual speed score)" }
+          ], 
           "SpeedBoost": 1,
           "SmartsBoost": 1
         },
         {
           "Level": 2,
-          "Perks": "Data Analyst",
+          "Perk":{ "Name":"Data Analyst",
+                   "Effect":"At 2nd level gain an Edge on Science and Technology Skill test related to extracting or processing data. such as hacking into an enemy computer. IF the extracting process usally takes 2 rounds or longer it takes you half the time"},
           "SmartsBoost": 1
         },
         {
           "Level": 3,
-          "Perks": "Focus Perk",
+          "FocusProgression": 1,
           "SocialBoost": 1
         },
         {
           "Level": 4,
-          "Perks": "General Perk",
+         "FocusProgression": 1,
           "SpeedBoost": 1
         },
         {
           "Level": 5,
-          "Perks": "Determine Probability",
+          "Perks":{"Name": "Determine Probability",
+                   "Effect":"At 5th level , once per turn, instead of  using a standard action which requires a skill test, you can use a free action to run a simulation of you using that Standard Action. Roll the skill test as if you were actually attempting the Skill Test. If this simulated action succeeds you can use your standard action to use the results of the simulated test instead of making the skill test. On a failure you can ignore the results and use your standard action differently"
+          },
           "SmartsBoost": 1
         },
         {
           "Level": 6,
-          "Perks": "Focus Perk",
+          "FocusProgression": 1,
           "StrengthBoost": 1
         },
         {
           "Level": 7,
-          "Perks": "Quick Study",
+          "Perks":{ "Name":"Quick Study",
+                    "Effect":"At 7th level, using Analyze Target is a move action, or Standard Action."
+          },
           "SocialBoost": 1
         },
         {
           "Level": 8,
-          "Perks": "General Perk",
+          "FocusProgression": 1,
           "SpeedBoost": 1
         },
         {
           "Level": 9,
-          "Perks": "Pinpoint",
+          "Perks":{ "Name": "Pinpoint",
+                    "Effect":"At 9th level when you use the aim action, instead of 1 upshift on your shot, you can choose to Ignore one of the targets Armor Upgrades for each Free action you spend Aiming."
+
+          },
           "SmartsBoost": 1
         },
         {
           "Level": 10,
-          "Perks": "Focus Perk"
+          "FocusProgression": 1
         },
         {
           "Level": 11,
-          "Perks": "General Perk",
+          "FocusProgression": 1,
           "SocialBoost": 1
         },
         {
           "Level": 12,
-          "Perks": "Postmortem Interrogation",
+          "Perk": {"Name": "Postmortem Interrogation",
+                   "Effect":"At 12th Level, once per scene, you can extracted information from a defeated cybertronian. Roll a Science or Technology Skill test against a DIF equal to the targets level or threat level. On a success you can ask the GM a question. The Gm must answer truthfully, but from the defeated cybertronians perspective. You may ask another question for every 5 points you exceed the DIF."},
           "StrengthBoost": 1
         },
         {
           "Level": 13,
-          "Perks": "Target Breakdown",
+          "Perk":{"Name": "Target Breakdown",
+                  "Effect":"At 13th level, you can spend a number of free actions equal to the number of times you've used Analyze Target on a target to give an ally upshift on an attack against the target equal to that number"
+
+          },
           "SpeedBoost": 1
         },
         {
           "Level": 14,
-          "Perks": "Psychoanalyst",
+          "Perk": {"Name": "Psychoanalyst",
+                   "Effect":"At 14th level as a standard action  you can roll a Science or Technology Skill Test against the Willpower or Cleverness of a target that can hear you. On a sucess the target suffers the Stun 2 effect"
+
+                   },
           "SmartsBoost": 1
         },
         {
           "Level": 15,
-          "Perks": "General Perk",
+          "FocusProgression": 1,
           "SocialBoost": 1
         },
         {
           "Level": 16,
-          "Perks": "Just the Facts",
+          "Perk": {"Name": "Just the Facts",
+                   "Effect":"At 16th level you become immune to Deception Skill Tests from creatures your level or lower, and resistance to Deception Skill Test from creatures higher level than you."
+          },
           "SpeedBoost": 1
         },
         {
           "Level": 17,
-          "Perks": "Focus Perk",
+          "FocusProgression": 1,
           "StrengthBoost": 1
         },
         {
           "Level": 18,
-          "Perks": "Swift Study",
+          "Perk": {"Name": "Swift Study",
+                   "Effect": "At 18th level using Analyze target is a free action. You can use any number of free actions on Analyze Target on a single turn. but you can only target one creature a turn"
           "SmartsBoost": 1
         },
         {
           "Level": 19,
-          "Perks": "General Perk",
+          "FocusProgression": 1,
           "SocialBoost": 1
         },
         {
           "Level": 20,
-          "Perks": "Focus Perk",
+          "FocusProgression": 1,
           "SmartsBoost": 1
         }
       ]
@@ -122,7 +147,7 @@
 
             },
             {"Level": 4,
-             "GeneralPerkCount": 1,
+             "FocusProgression": 1,
              "StrengthBoost": 1,
 
             },
