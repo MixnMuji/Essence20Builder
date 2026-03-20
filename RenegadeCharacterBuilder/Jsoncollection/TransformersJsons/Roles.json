@@ -1,18 +1,19 @@
 {
   "Roles": [
-    {
-      "Name": "Analyst",
+        {"Name": "Analyst",
        "CyberTronianPerk":"Work the Numbers: At the begining of every round of combat after the first, you can spend an energon point, to move a creature in combat up or down one place in initiative order.",
-        "Focus":"Manipulator or Spec-Ops"
+        "Focus":"Manipulator or Spec-Ops",
         "Training":{"EssenceIncrease":1,
                     "Score":"Speed and Smarts",
-                    "RolesSkills":"Gain one rank in two of the following skills: Alertness, finesse,infiltration, iniative, science, or Technology",
+                    "RolesSkills":"Gain one rank in two of the following skills: Alertness, finesse,infiltration, iniative, science, or Technology"
+
+        },
         "Qualifications":
         {
             "ArmorUpgrades":" You are tained in standard Armor Upgrades",
             "Weapons":"You are trained in one handed weapons, including weapons tha can be used one or two handed."
         },
-      "Levels": [
+      "Levels":[
         {
           "Level": 1,
           "Perks":[
@@ -125,7 +126,8 @@
         {
           "Level": 18,
           "Perk": {"Name": "Swift Study",
-                   "Effect": "At 18th level using Analyze target is a free action. You can use any number of free actions on Analyze Target on a single turn. but you can only target one creature a turn"
+                   "Effect": "At 18th level using Analyze target is a free action. You can use any number of free actions on Analyze Target on a single turn. but you can only target one creature a turn"}
+          ,
           "SmartsBoost": 1
         },
         {
@@ -139,12 +141,16 @@
           "SmartsBoost": 1
         }
       ]
-    }, {"Name": "FieldCommander",
+    }, 
+     
+        {"Name": "FieldCommander",
         "CyberTronianPerk":"Never Forsaken: Once Per Scene, when an ally no further away from you than your fastest movement in alt mode takes Damage, you can spend an Energon Point to move adjacent to that ally, converting if you need to, and take the Damage instead, even if the attack would not normally penetrate your defenses.",
         "Focus":"Ambassador, or Strategeist",
         "Training":{"EssenceIncrease":1,
                     "Score":"Strength and Soical",
-                    "RolesSkills":"Gain one rank in two skills from the follwoing: Brawn, Dception, Intimidation, Might, Performance, or Persuasion",
+                    "RolesSkills":"Gain one rank in two skills from the follwoing: Brawn, Dception, Intimidation, Might, Performance, or Persuasion"
+
+        },
         "Qualifications":
         {
             "ArmorUpgrades":"You are trained in limited Armor Upgrades",
@@ -153,114 +159,331 @@
         "Levels":[
             {"Level": 1,
              "Perk":[{"Name":"Issue Command",
-                      "Effect":""
+                      "Effect":"As a move action you can issue a command, granting allies who follow your command an upshift to a skill test or a +1 to Defense based on certain circumstances. You set the terms and the bonus allies recieve,This bonuse last until the begining of your next turn."
                      },
                      {"Name":"Prepare for War",
-                      "Effect":""
+                      "Effect":"When you roll for Initative and you are not Suprised, you gain an edge on your Initiative skill test"
                      }
 
              ],
-             "StrengthBoost": 1,
+             "StrengthBoost": 1
 
             },
             {"Level": 2,
-             "Perks":"Inreffuable Order",
-             "SocialBoost": 1,
+             "Perk":{"Name": "Inreffuable Order",
+                     {"Effect":"At 2nd level, as a Standard Action, you can make a perusuasion Skill Test against a target whoese level is no higher than yours. On a sucess give that target a one word order. As long as the order does not put the target in immediate harm, violate one of their core beliefs, and can be accomplished with a move action, they use their move action to follow the command to the best of their abilty on their next turn."
+
+                     },
+             "SocialBoost": 1
 
             },
             {"Level": 3,
              "FocusProgression": 1,
-             "SpeedBoost": 1,
+             "SpeedBoost": 1
 
             },
             {"Level": 4,
              "FocusProgression": 1,
-             "StrengthBoost": 1,
+             "StrengthBoost": 1
 
             },
             {"Level": 5,
-             "Perks":"Synch Up",
-             "SocialBoost": 1,
+             "Perk":{"Name": "Synch Up",
+                      "Effect":"At 5th level once per turn when an ally attacks and misses a target within your range, you can immediately attack that target, even though it is not yoru turn."
+
+                      },
+             "SocialBoost": 1
 
             },
             {"Level": 6,
              "FocusProgression": 1,
-             "SmartsBoost": 1,
+             "SmartsBoost": 1
 
             },
             {"Level": 7,
-             "Perks":"Stoic",
-             "SpeedBoost": 1,
+             "Perk":{"Name":"Stoic",
+                      "Effect":"At 7th level as a move action, you can stand tall for all to see. You take a penealty to eveasion up to -3 and can't defend with Toughness untill the beginning of your nex turn. Your alies each gain a number of Free actions equal to the penalty you took to your Evasion, on their next turn."
+
+             },
+             "SpeedBoost": 1
 
             },
             {"Level": 8,
              "GeneralPerkCount": 1,
-             "StrengthBoost": 1,
+             "StrengthBoost": 1
 
             },
             {"Level": 9,
-             "Perks":"Battle Scan",
-             "SocialBoost": 1,
+             "Perk":{"Name": "Battle Scan",
+                      "Effect": "At 9th level, whe nyou roll Initiative,  you learn the Threat Levels of every enemy that you're aware of in this combat."
+             },
+             "SocialBoost": 1
 
             },
             {"Level": 10,
-             "FocusProgression": 1,
+             "FocusProgression": 1
              
 
             },
             {"Level": 11,
              "GeneralPerkCount": 1,
-             "SpeedBoost": 1,
+             "SpeedBoost": 1
 
             },
             {"Level": 12,
-             "Perks":"Hardened",
-             "SmartsBoost": 1,
+             "Perk":{"Name" :"Hardened",
+                     "Effect":"At 12th level you become trained in restricted  Armor Upgrades, and gain +1 health."
+
+                     },
+             "SmartsBoost": 1
 
             },
             {"Level": 13,
-             "Perks":"Let Cool Heads Prevail",
-             "StrengthBoost": 1,
+             "Perk":{"Name": "Let Cool Heads Prevail",
+                     "Effect":"At 13th level, outside of combat, when you role a Social Skill Test with Specialization, you can score a critical sucecess with the d2" 
+                     },
+             "StrengthBoost": 1
 
             },
             {"Level": 14,
-             "Perks":"The First Rule of Solidering",
-             "SocialBoost": 1,
+             "Perk":{"Name": "The First Rule of Solidering",
+                     "Effect": "At 14th level when you roll for Initiative, you can Issue a Command for free"
+                        },
+             "SocialBoost": 1
 
             },
             {"Level": 15,
-             "Perks":"Complex Command",
-             "SpeedBoost": 1,
+             "Perk":{"Name":"Complex Command",
+                     "Effect":"At 15th level, when you issue a command, you can issue two commands. Each command must have different terms and benefits. Allies that meet both terms recieve both benefits"
+
+                     },
+             "SpeedBoost": 1
 
             },
             {"Level": 16,
              "GeneralPerkCount": 1,
-             "StrengthBoost": 1,
+             "StrengthBoost": 1
 
             },
             {"Level": 17,
              "FocusProgression": 1,
-             "SmartsBoost": 1,
+             "SmartsBoost": 1
 
             },
             {"Level": 18,
-             "Perks":"Stand Together",
-             "SocialBoost": 1,
+             "Perk":{"Name":"Stand Together",
+                     "Effect":"At 18th level, once per scene, as a Standard action, you can make a DIF15 Persuasion Skill Test. On a success, all allies Repair 1 Damage. This is multipled on a Critical Success or a high degree of success"
+
+                     },
+             "SocialBoost": 1
 
             },
             {"Level": 19,
              "GeneralPerkCount": 1,
-             "SpeedBoost": 1,
+             "SpeedBoost": 1
 
             },
             {"Level": 19,
              "FocusProgression": 1,
-             "SocialBoost": 1,
+             "SocialBoost": 1
 
             }
             
         ]
-       }
+       },
+        {
+  "Name": "",
+
+  "CyberTronianPerk": "",
+
+  "Focus": "",
+
+  "Training": {
+    "EssenceIncrease": 0,
+    "Score": "",
+    "RolesSkills": ""
+  },
+
+  "Qualifications": {
+    "ArmorUpgrades": "",
+    "Weapons": ""
+  },
+
+  "Levels": [
+    {
+      "Level": 1,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        },
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 2,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 3,
+      "FocusProgression": 1,
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 4,
+      "FocusProgression": 1,
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 5,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 6,
+      "FocusProgression": 1,
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 7,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 8,
+      "GeneralPerkCount": 1,
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 9,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 10,
+      "FocusProgression": 1
+    },
+
+    {
+      "Level": 11,
+      "GeneralPerkCount": 1,
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 12,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 13,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 14,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 15,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 16,
+      "GeneralPerkCount": 1,
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 17,
+      "FocusProgression": 1,
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 18,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 19,
+      "GeneralPerkCount": 1,
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 20,
+      "FocusProgression": 1,
+      "SocialBoost": 1
+    }
+  ]
+}
 }
   ]
  
