@@ -49,3 +49,5 @@ Tecnically worked into the next day built xaml page with databind from jsosns. n
 
 finsihed up logic and navigation for influences and json, fixed typos so that code works started work on roles , decided to put all in a json but divide by expansion (ofc), made new modes to 
 allocate levles too and perks whoo hoo, up next continue the json, and rewrite old json data to match new scheme.
+
+3-19 Made changes to json need to add feilds for training cybertonian Perk, equaliment traing and and qualifications, and focus()

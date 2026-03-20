@@ -2,6 +2,16 @@
   "Roles": [
     {
       "Name": "Analyst",
+       "CyberTronianPerk":"Work the Numbers: At the begining of every round of combat after the first, you can spend an energon point, to move a creature in combat up or down one place in initiative order.",
+        "Focus":"Manipulator or Spec-Ops"
+        "Training":{"EssenceIncrease":1,
+                    "Score":"Speed and Smarts",
+                    "RolesSkills":"Gain one rank in two of the following skills: Alertness, finesse,infiltration, iniative, science, or Technology",
+        "Qualifications":
+        {
+            "ArmorUpgrades":" You are tained in standard Armor Upgrades",
+            "Weapons":"You are trained in one handed weapons, including weapons tha can be used one or two handed."
+        },
       "Levels": [
         {
           "Level": 1,
@@ -130,9 +140,26 @@
         }
       ]
     }, {"Name": "FieldCommander",
+        "CyberTronianPerk":"Never Forsaken: Once Per Scene, when an ally no further away from you than your fastest movement in alt mode takes Damage, you can spend an Energon Point to move adjacent to that ally, converting if you need to, and take the Damage instead, even if the attack would not normally penetrate your defenses.",
+        "Focus":"Ambassador, or Strategeist",
+        "Training":{"EssenceIncrease":1,
+                    "Score":"Strength and Soical",
+                    "RolesSkills":"Gain one rank in two skills from the follwoing: Brawn, Dception, Intimidation, Might, Performance, or Persuasion",
+        "Qualifications":
+        {
+            "ArmorUpgrades":"You are trained in limited Armor Upgrades",
+            "Weapons":"You are trained in ballistic weapons and melee weapons"
+        },
         "Levels":[
             {"Level": 1,
-             "Perks":"Issue Command, Prepare For war",
+             "Perk":[{"Name":"Issue Command",
+                      "Effect":""
+                     },
+                     {"Name":"Prepare for War",
+                      "Effect":""
+                     }
+
+             ],
              "StrengthBoost": 1,
 
             },
