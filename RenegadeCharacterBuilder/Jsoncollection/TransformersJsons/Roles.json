@@ -177,17 +177,20 @@
              "SocialBoost": 1
 
             },
-            {"Level": 3,
+            {
+             "Level": 3,
              "FocusProgression": 1,
              "SpeedBoost": 1
 
             },
-            {"Level": 4,
+            {
+             "Level": 4,
              "FocusProgression": 1,
              "StrengthBoost": 1
 
             },
-            {"Level": 5,
+            {
+             "Level": 5,
              "Perk":{"Name": "Synch Up",
                       "Effect":"At 5th level once per turn when an ally attacks and misses a target within your range, you can immediately attack that target, even though it is not yoru turn."
 
@@ -195,12 +198,14 @@
              "SocialBoost": 1
 
             },
-            {"Level": 6,
+            {
+             "Level": 6,
              "FocusProgression": 1,
              "SmartsBoost": 1
 
             },
-            {"Level": 7,
+            {
+             "Level": 7,
              "Perk":{"Name":"Stoic",
                       "Effect":"At 7th level as a move action, you can stand tall for all to see. You take a penealty to eveasion up to -3 and can't defend with Toughness untill the beginning of your nex turn. Your alies each gain a number of Free actions equal to the penalty you took to your Evasion, on their next turn."
 
@@ -208,29 +213,29 @@
              "SpeedBoost": 1
 
             },
-            {"Level": 8,
+            { "Level": 8,
              "GeneralPerkCount": 1,
              "StrengthBoost": 1
 
             },
-            {"Level": 9,
+            { "Level": 9,
              "Perk":{"Name": "Battle Scan",
                       "Effect": "At 9th level, whe nyou roll Initiative,  you learn the Threat Levels of every enemy that you're aware of in this combat."
              },
              "SocialBoost": 1
 
             },
-            {"Level": 10,
+            { "Level": 10,
              "FocusProgression": 1
              
 
             },
-            {"Level": 11,
+            { "Level": 11,
              "GeneralPerkCount": 1,
              "SpeedBoost": 1
 
             },
-            {"Level": 12,
+            { "Level": 12,
              "Perk":{"Name" :"Hardened",
                      "Effect":"At 12th level you become trained in restricted  Armor Upgrades, and gain +1 health."
 
@@ -283,7 +288,7 @@
              "SpeedBoost": 1
 
             },
-            {"Level": 19,
+            {"Level": 20,
              "FocusProgression": 1,
              "SocialBoost": 1
 
@@ -291,8 +296,403 @@
             
         ]
        },
+        
+  {"Name": "Gunner",
+
+  "CyberTronianPerk": "Imprompturret: When you conver from Bot Mode with balsistic weapons in your external hardpoints, you can spend an Energon Point to treat the firearms as intergrated Harpoint weapons in your alt mode for the rest of the scene.",
+
+  "Focus": "Gunslinger or SharpShooter",
+
+  "Training": {
+    "EssenceIncrease": 1,
+    "Score": "Speed and Smarts",
+    "RolesSkills": "Gain one Rank in Two from the follwing: Alertness, Initative, Survial or Targeting."
+  },
+
+  "Qualifications": {
+    "ArmorUpgrades": " You are trained in limited Armor upgrades",
+    "Weapons": "You are trained in projectile weapons and Qualified in standard and limited balistic weapons"
+  },
+
+  "Levels": [
+    {
+      "Level": 1,
+      "Perk": [
         {
-  "Name": "",
+          "Name": "Armament",
+          "Effect": "You gain an aditional integrated Weapon Hardpoint"
+        },
+        {
+          "Name": "Pistol Whip",
+          "Effect": "When you have a Ballistic Weapon in an External Hardpoint it also counts as a Close Combat Bludgeon. You do not add any benefits you normally gain from attacks with a Ballistic Weapon when you use Close Combat Bludgeon."
+        },
+        {
+          "Name": "Rapid Reload",
+          "Effect": "Reloading Weapons with the Reload trait is a free action for you."
+        }
+      ],
+      "SpeedBoost": 1,
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 2,
+      "Perk": [
+        {
+          "Name": "Coververing Fire",
+          "Effect": "At 2nd Level, if you attack and miss, the target of your attack suffers a Snag if they attack on their next turn."
+        }
+      ],
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 3,
+      "FocusProgression": 1,
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 4,
+      "GeneralPerkCount": 1,
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 5,
+      "Perk": [
+        {
+          "Name": "Nowhere's safe'",
+          "Effect": "At 5th Level when you fire at a target in cover you suffer one fewer downshift on the attack."
+        }
+      ],
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 6,
+      "FocusProgression": 1,
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 7,
+      "Perk": [
+        {
+          "Name": "Bang Bang",
+          "Effect": "At 7th level you can attack twice instead of once when you use the Attack action to attack with a ballistic weapon."
+        }
+      ],
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 8,
+      "GeneralPerkCount": 1,
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 9,
+      "Perk": [
+        {
+          "Name": "Worth a Shot",
+          "Effect": "At 9th Level, once per scene other than combat, you can use a ballistic weapon as a Standard Kit of a Specialization of your choice, and may use Targeting instead of the normal skill a Skill Test Calls for."
+        }
+      ],
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 10,
+      "FocusProgression": 1
+    },
+
+    {
+      "Level": 11,
+      "GeneralPerkCount": 1,
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 12,
+      "Perk": [
+        {
+          "Name": "Scratch Resistant",
+          "Effect": "At 12th level, you become trained in Restrictied Armor Upgrades"
+        }
+      ],
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 13,
+      "Perk": [
+        {
+          "Name": "Absoutely Nowhere's safe",
+          "Effect": "At 13th Level, when you fire at a target in cover, you suffer two fewer downshifts on the attack, down to a maximum of zero downsjifts."
+        }
+      ],
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 14,
+      "Perk": [
+        {
+          "Name": "Worth Another Shot",
+          "Effect": "At 14th level you can use Worth a SHot twice per scene or once during combat."
+        }
+      ],
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 15,
+      "GeneralPerkCount": 1,
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 16,
+      "Perk": [
+        {
+          "Name": "Hard Target",
+          "Effect": "At 16th Level when you take cover attackers targeting you take 3 downshifts instead of two"
+        }
+      ],
+       "SocialBoost": 1
+    },
+
+    {
+      "Level": 17,
+      "FocusProgression": 1,
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 18,
+      "Perk": [
+        {
+          "Name": "Bang Bang Bang",
+          "Effect": "At 18th level you can attack 3 times isntead of once when you use the Attack action to attack with a ballistic Weapon"
+        }
+      ],
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 19,
+      "GeneralPerkCount": 1,
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 20,
+      "FocusProgression": 1,
+      "SpeedBoost": 1
+    }
+  ]
+},
+
+  {"Name": "ModeMaster",
+
+  "CyberTronianPerk": "Full Hybrid: You can spend an Energon Point to partially convert as a Free action. You gain the benefits of both your Bot mode and Alt mode, your choice of either modes size,and your choice of either mode's movment.'",
+
+  "Focus": "MicroLinked or Triple-Changer",
+
+  "Training": {
+    "EssenceIncrease": 1,
+    "Score": "Any two but you can not pick the same twice",
+    "RolesSkills": "Any two skills but but they must be of the esscane score increases you picked"
+  },
+
+  "Qualifications": {
+    "ArmorUpgrades": "You are trained in standard Armor upgrades",
+    "Weapons": "You are trained in standard weapons"
+  },
+
+  "Levels": [
+    {
+      "Level": 1,
+      "Perk": [
+        {
+          "Name": "Custom Frame",
+          "Effect": ""
+        },
+        {
+          "Name": "Mass Shift",
+          "Effect": ""
+        }
+        {
+          "Name": "Quick Change",
+          "Effect": ""
+        }
+      ],
+      
+    },
+
+    {
+      "Level": 2,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 3,
+      "FocusProgression": 1,
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 4,
+      "FocusProgression": 1,
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 5,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 6,
+      "FocusProgression": 1,
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 7,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 8,
+      "GeneralPerkCount": 1,
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 9,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 10,
+      "FocusProgression": 1
+    },
+
+    {
+      "Level": 11,
+      "GeneralPerkCount": 1,
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 12,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 13,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 14,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 15,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 16,
+      "GeneralPerkCount": 1,
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 17,
+      "FocusProgression": 1,
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 18,
+      "Perk": [
+        {
+          "Name": "",
+          "Effect": ""
+        }
+      ],
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 19,
+      "GeneralPerkCount": 1,
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 20,
+      "FocusProgression": 1,
+      "SocialBoost": 1
+    }
+  ]
+},
+
+   {"Name": "",
 
   "CyberTronianPerk": "",
 
@@ -484,6 +884,7 @@
     }
   ]
 }
+
 }
   ]
  
