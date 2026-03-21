@@ -518,18 +518,209 @@
       "Perk": [
         {
           "Name": "Custom Frame",
-          "Effect": ""
+          "Effect": "At 1st level, you can choose a custom array of Essence Ssore Progressions. Designate which Essence Scores(Strength, Speed,Smarts, and Social) is first,second,thrid, and forth priority. Each Essence Score increases based on the progression you assign it. First: O Increase this Essence score at 2nd,5th,9th,14th,18th, and 20th levles/ Second: Increase this essence score at 3rd,7th,11th,15th, and 19th levels. Third: INcrease this Essence score at 4th,8th,13th and 16th levels. Fourth: increase this esssence score at 6th, 12th, adn 17th levles. Once you make this desigination you can not change it. The proiority of your essence scores does not relate to the Essence scores your incread at level one"
         },
         {
           "Name": "Mass Shift",
-          "Effect": ""
+          "Effect": "Once Per scene as a move action, you can change the composition of your body parts and gain one of the following benefits for the remainder of the scene * + 1 to the Defense of your choice. * Upshift on SKill Test of a Skill of your choice. * Double your Reach. * Gain 1 Temporary Health. YOu can use Masss Shift two times per day at 1st level. You gain additonal uses per day as outlined on the Table: ModeMaster. As you gain levles you can choose from a list of Perks called Hybridizaton, Hybridizations all relate to mass shift uses per day. You regain all of your Mass shift uses after a 6 hour rest"
         }
         {
           "Name": "Quick Change",
-          "Effect": ""
+          "Effect": "As wtith the General Perk of the same name, slect one conversion sequence (such as alt mode to bot mode, bot mode to alt mode, or one alt mode to another) That sequence requires a Free Action to enact instead of a Standar Action"
         }
       ],
       
+    },
+
+    {
+      "Level": 2,
+      "Perk": [
+        {
+          "Name": "Hybridization",
+          "Effect": "Varies"
+        }
+      ]
+    },
+
+    {
+      "Level": 3,
+      "FocusProgression": 1
+
+    },
+
+    {
+      "Level": 4,
+      "GeneralPerkCount": 1
+      
+    },
+
+    {
+      "Level": 5,
+      "Perk": [
+        {
+          "Name": "Jack of All Forms",
+          "Effect": "At 5th lrvel you can use Mass Shift twice in one scene. Each time takes one of your mass Masss Shift uses for the day. YOu can not benefit form the same choice tiwce. If you have the Hold that SShape Hybridization, you gain the benefits of  only One Mass Shift, but instead of lasting until you mass shift again, at the end of any scene in which you have 2 mass shifts in effect, you choose which one ends"
+        }
+      ],
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 6,
+      "FocusProgression": 1,
+     
+    },
+
+    {
+      "Level": 7,
+      "Perk": [
+        {
+          "Name": "Hybridization",
+          "Effect": ""
+        }
+      ],
+    
+    },
+
+    {
+      "Level": 8,
+      "GeneralPerkCount": 1,
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 9,
+      "Perk": [
+        {
+          "Name": "Quick Change 2",
+          "Effect": "At 9th level you gain the benefits of Quick Change again, applied to a different conversion sequence"
+        }
+      ]
+    },
+
+    {
+      "Level": 10,
+      "FocusProgression": 1
+    },
+
+    {
+      "Level": 11,
+      "GeneralPerkCount": 1,
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 12,
+      "Perk": [
+        {
+          "Name": "Hybridization",
+          "Effect": ""
+        }
+      ],
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 13,
+      "Perk": [
+        {
+          "Name": "Helical Spring",
+          "Effect": "At 13th level when you convert to Bot Mode, you can move 10ft as part of the action to Convert, when you Convert to alt Mode, you can Ram without needing to move 10ft first"
+        }
+      ],
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 14,
+      "Perk": [
+        {
+          "Name": "Hybridization",
+          "Effect": ""
+        }
+      ]
+    },
+
+    {
+      "Level": 15,
+      "GeneralPerkCount": 1
+
+    },
+
+    {
+      "Level": 16,
+      "Perk": [
+        {
+          "Name": "Master of All Forms",
+          "Effect": "At 16th level, you are not limited in how many times you can use Mass Shift in one scene. Eac time takes one of your uses of Mass Shift for the day, lasting until the end of the scene as usual"
+        }
+      ],
+    },
+
+    {
+      "Level": 17,
+      "FocusProgression": 1
+
+    },
+
+    {
+      "Level": 18,
+      "Perk": [
+        {
+          "Name": "Hybridization",
+          "Effect": "Varies"
+        }
+      ]
+    },
+
+    {
+      "Level": 19,
+      "GeneralPerkCount": 1
+     
+    },
+
+    {
+      "Level": 20,
+      "FocusProgression": 1
+    }
+  ]
+},
+
+   {"Name": "Scientist",
+
+  "CyberTronianPerk": "Intrafilum: When treating an adjacent Cybertronian you can spend one Energon point to restore 1 health",
+
+  "Focus": "Mediical officer, or Gadgeteer",
+
+  "Training": {
+    "EssenceIncrease": 1,
+    "Score": "Strength and Smarts",
+    "RolesSkills": "Gain one rank in two of the follwing skills: Brawn, Conditioning, Science, or Technology"
+  },
+
+  "Qualifications": {
+    "ArmorUpgrades": "You are Trained in limited Armor Upgrades",
+    "Weapons": "You are trained in electic weapons and explosivies"
+  },
+
+  "Levels": [
+    {
+      "Level": 1,
+      "Perk": [
+        {
+          "Name": "Broad Understanding",
+          "Effect": "Outside of Combat so long as you have at least one Science Specialization, you roll a Science Skill Test as if you were Specialized, although Skill test outside of your specialization suffer 2 downshifts"
+        },
+        {
+          "Name": "Circuit Breaker",
+          "Effect": "You can use the Tecnology skill for attacks with electric weapons"
+        },
+        {
+          "Name": "Energon Battery",
+          "Effect": "You store a number of personal Energon Points equal to your highest essence score, not your lowest"
+        }
+      ],
+      "StrengthBoost": 1
     },
 
     {
@@ -690,9 +881,11 @@
       "SocialBoost": 1
     }
   ]
+}
+
 },
 
-   {"Name": "",
+  {"Name": "",
 
   "CyberTronianPerk": "",
 
