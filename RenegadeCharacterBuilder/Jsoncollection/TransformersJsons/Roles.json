@@ -1083,21 +1083,21 @@
 },
 
 
-  {"Name": "",
+  {"Name": "Warrior",
 
-  "CyberTronianPerk": "",
+  "CyberTronianPerk": "Hardcore: When you take enough damage to be deafeated, you can spend an Energon Point to instead lose a limb but otherwise ignore the effect of the attack. You can use Hardcore as long as you have Energon points and limbs to spare.",
 
-  "Focus": "",
+  "Focus": "Sentinal or Wrecker",
 
   "Training": {
-    "EssenceIncrease": 0,
-    "Score": "",
-    "RolesSkills": ""
+    "EssenceIncrease": 1,
+    "Score": "Strength and Smarts",
+    "RolesSkills": "Gain a Rank in two of the following, Alertness,Brawn,Conditioning, Culture, Might or Survial."
   },
 
   "Qualifications": {
-    "ArmorUpgrades": "",
-    "Weapons": ""
+    "ArmorUpgrades": "You are trained in Limited and Restricted Armor Upgrades",
+    "Weapons": "You are trained in all weapons and Qualified in Might Weapons"
   },
 
   "Levels": [
@@ -1105,26 +1105,32 @@
       "Level": 1,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Foot Soldier",
+          "Effect": "When in Bot mode treat your Speed as if it was 2 higher when calculating how many Free Actions you get on your turn."
         },
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Manifest Melee Weapon",
+          "Effect": "As a Free Action, Once per combat, you can create an intergrated Energon Weapon without needing to spend an Energon Point as long as the weapon you create is a Standard Melee weapon. This weapon last until the end of combat, or  until you are defeated."
+        },
+        {
+          "Name": "Wisdom Through Experience",
+          "Effect": "Once per scene, following a combat, when looking for clues or theorizing about enemy plans, you may ask the GM if one of your ideas has merit. The GM must answer truthfully, and provide a Hint as to why they gave that answer."
         }
+
       ],
-      "StrengthBoost": 1
+      "StrengthBoost": 1,
+      "SmartsBoost":1
     },
 
     {
       "Level": 2,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Charge",
+          "Effect": "If you move at least 10ft from your past position(not just stepping into the next square and back again), and then Attack with a Might weapon immediately after, you gain 1 upshift on the Might Skill Test"
         }
       ],
-      "SocialBoost": 1
+      "StrengthBoost": 1
     },
 
     {
@@ -1135,33 +1141,33 @@
 
     {
       "Level": 4,
-      "FocusProgression": 1,
-      "StrengthBoost": 1
+      "GeneralPerkCount": 1,
+      "SmartsBoost": 1
     },
 
     {
       "Level": 5,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Tough it Out",
+          "Effect": "At 5th Level, once per  Combat you can make a Brawn Skill Test to REpair your damage as a Standar action. The DIF is the same as teh Tchnology SKill Test to Repair damage."
         }
       ],
-      "SocialBoost": 1
+      "StrengthBoost": 1
     },
 
     {
       "Level": 6,
       "FocusProgression": 1,
-      "SmartsBoost": 1
+      "SocialBoost": 1
     },
 
     {
       "Level": 7,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Expanded Arsenal",
+          "Effect": "At 7th Level when you Manifest a Melee Weapon, you can create a Limited Melee Weapon"
         }
       ],
       "SpeedBoost": 1
@@ -1170,18 +1176,18 @@
     {
       "Level": 8,
       "GeneralPerkCount": 1,
-      "StrengthBoost": 1
+      "SmartsBoost": 1
     },
 
     {
       "Level": 9,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "No Escape",
+          "Effect": "At 9th Level, once per round when an enemy moves within the Reach of your melee weapon, you interrupt their movement to immediately attack them."
         }
       ],
-      "SocialBoost": 1
+      "StrengthBoost": 1
     },
 
     {
@@ -1199,67 +1205,68 @@
       "Level": 12,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Battle Hardened",
+          "Effect": "At 12th Level you gain +1 health. Additionally, you gain a Limted or Restricted weapon of your choic as personal gear. You must meet the requirments of the weapon to choose it."
         }
       ],
-      "SmartsBoost": 1
+      "SocialBoost": 1
     },
 
     {
       "Level": 13,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Extended Attack",
+          "Effect": "At 13th Level, as a Move Action, you can double the Reach of a Melee Weapon until the beginning of your next turn."
         }
       ],
-      "StrengthBoost": 1
+      "SmartsBoost": 1
     },
 
     {
       "Level": 14,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "How I got these dents",
+          "Effect": "At 14th Level you gain 1 upshift on Intimidation Skill Test equal to the amount of damage you currently have"
         }
       ],
-      "SocialBoost": 1
+      "StrengthBoost": 1
     },
 
     {
       "Level": 15,
-      "Perk": [
-        {
-          "Name": "",
-          "Effect": ""
-        }
-      ],
+      "GeneralPerkCount": 1
       "SpeedBoost": 1
     },
 
     {
       "Level": 16,
-      "GeneralPerkCount": 1,
-      "StrengthBoost": 1
+      "Perk": [
+        {
+          "Name": "Instruments of Destruction",
+          "Effect": "At 16th Level, when you Manifest a Melee Weapon, you can create a Restricted Melee Weapon"
+        }
+      ],
+      
+      "SmartsBoost": 1
     },
 
     {
       "Level": 17,
       "FocusProgression": 1,
-      "SmartsBoost": 1
+      "SocialBoost": 1
     },
 
     {
       "Level": 18,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Solider On",
+          "Effect": "At 18th Level, if an attack targetting you scores a Critical Hit, once per Combat you may attempt a Brawn Skill Test against a DIF equal to 10+ the Damage dealt to ignore the attack."
         }
       ],
-      "SocialBoost": 1
+      "StrengthBoost": 1
     },
 
     {
@@ -1271,7 +1278,7 @@
     {
       "Level": 20,
       "FocusProgression": 1,
-      "SocialBoost": 1
+      "StrengthBoost": 1
     }
   ]
 }
