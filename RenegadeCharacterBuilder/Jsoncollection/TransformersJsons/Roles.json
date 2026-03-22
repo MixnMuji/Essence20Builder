@@ -727,11 +727,11 @@
       "Level": 2,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Walk Them through it",
+          "Effect": "At 2nd level allies without ranks in Technology or Science can Lend Assitence to you on Technology and Science Skill Tests."
         }
       ],
-      "SocialBoost": 1
+      "SmartsBoost": 1
     },
 
     {
@@ -742,7 +742,7 @@
 
     {
       "Level": 4,
-      "FocusProgression": 1,
+      "GeneralPerkCount": 1,
       "StrengthBoost": 1
     },
 
@@ -750,25 +750,25 @@
       "Level": 5,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Thesis",
+          "Effect": "At 5th Level, outside of Combat, once per scene, you can use Science in place of another Smarts-based Skill for a Skill TEst, but the Skill Test Takes longer. If the Skill TEst takes less than a full turn, it takes your full turn. Otherwise it takes twice as long as stated"
         }
       ],
-      "SocialBoost": 1
+      "SmartsBoost": 1
     },
 
     {
       "Level": 6,
       "FocusProgression": 1,
-      "SmartsBoost": 1
+      "SocialBoost": 1
     },
 
     {
       "Level": 7,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Agument Power",
+          "Effect": "At 7th level, you can give an ally 1 upshift on a skill test as a Free Action. Once per combat, you can give an ally 2 upshift on a SKill TEst as a Free Action."
         }
       ],
       "SpeedBoost": 1
@@ -784,11 +784,11 @@
       "Level": 9,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Energon Bank",
+          "Effect": " At 9th Level, with your permission allies withing 30ft can spend your Energon Points instead of their own to gain the benefits of an ability that uses Energon Points."
         }
       ],
-      "SocialBoost": 1
+      "SmartsBoost": 1
     },
 
     {
@@ -806,19 +806,19 @@
       "Level": 12,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Applied Science",
+          "Effect": "At 12th level, once per scene, you can use Broad Understanding and Thesis in Combat."
         }
       ],
-      "SmartsBoost": 1
+      "SocialBoost": 1
     },
 
     {
       "Level": 13,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Overcharge Engines",
+          "Effect": "At 13th level, you can use Technology to go faster, Once per turn make a Technology Skill Test as a Free action. Until the end of your turn, increase your Movements a number of feet equal to your skill Test results, rounded up to the enarest 5. This movement ingores Rough Terrain penalties."
         }
       ],
       "StrengthBoost": 1
@@ -828,45 +828,45 @@
       "Level": 14,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Flashy",
+          "Effect": "At 14h Level, when you sucessfully attack with an Electronic Weapon, you can make a Science Skill Test against the Toughness of the target of your attack. On a success they become Blinded 2."
         }
       ],
-      "SocialBoost": 1
+      "SmartsBoost": 1
     },
 
     {
       "Level": 15,
-      "Perk": [
-        {
-          "Name": "",
-          "Effect": ""
-        }
-      ],
+      "GeneralPerkCount": 1,
       "SpeedBoost": 1
     },
 
     {
       "Level": 16,
-      "GeneralPerkCount": 1,
+      "Perk": [
+        {
+          "Name": "Techno Babble",
+          "Effect": "At 16th level, you can use Thesis in place of Social-Based Skills as well, you can use Thesis three times per scene outside of combat, or once per combat, and Thesis no longer takes extra time to use."
+        }
+      ],
       "StrengthBoost": 1
     },
 
     {
       "Level": 17,
       "FocusProgression": 1,
-      "SmartsBoost": 1
+      "SocialBoost": 1
     },
 
     {
       "Level": 18,
       "Perk": [
         {
-          "Name": "",
-          "Effect": ""
+          "Name": "Multiplication",
+          "Effect": "At 18th Level, double the listed number of uses and all numeric benefits of your Scientist Role Perks. For Example you can use Agument Power Twice per turn to gaive an ally 2 upshift on a Skill Test as a Free action, and Tiwce per combat to give an ally 4 upshift on a Skill Test as a Free action."
         }
       ],
-      "SocialBoost": 1
+      "SmartsBoost": 1
     },
 
     {
@@ -878,12 +878,210 @@
     {
       "Level": 20,
       "FocusProgression": 1,
-      "SocialBoost": 1
+      "SmartsBoost": 1
     }
   ]
-}
 
 },
+
+  {"Name": "Scout",
+
+  "CyberTronianPerk": "Disappear: As a free action, you can spend an Energon Point to turn invisible until the end of your turn",
+
+  "Focus": "Outrider or Prowler",
+
+  "Training": {
+    "EssenceIncrease": 1,
+    "Score": "Spped and Social",
+    "RolesSkills": "Gain one Rank in two of the following: Alertness, Deception, inflitration, Initative, and Streetwise."
+  },
+
+  "Qualifications": {
+    "ArmorUpgrades": "You are trained in limited Armor Upgrades",
+    "Weapons": "You are trained in  silent weapons"
+  },
+
+  "Levels": [
+    {
+      "Level": 1,
+      "Perk": [
+        {
+          "Name": "Ally Awareness",
+          "Effect": "If an ally has an ability that effects allies within a certain range, you gain the benefits of that ability as long as you are in 5 times the range of the ability. Additionally, once per scene as a Free Action, you can use the memory of advice an ally once gave you to gain the benefits of Lend Assistance."
+        },
+        {
+          "Name": "Forward Observation",
+          "Effect": "Alertness is both a Smarts and Social Skill for you. When you roll an Alertness Skill Test, and the creatures you're observing aren't aware of you, you can score a critical sucess with your d2."
+        },
+         {
+          "Name": "Keen Sensors",
+          "Effect": "You gain the Accute Sense General perk."
+        }
+      ],
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 2,
+      "Perk": [
+        {
+          "Name": "Mark Target",
+          "Effect": "At 2nd level, at the begining of a scene(including combat, designate a creature you see, or a specific individual you expect will be in the scene. You gain 1 upshift on Skill Test related to that creature until the end of the scene."
+        }
+      ],
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 3,
+      "FocusProgression": 1,
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 4,
+      "GeneralPerkCount": 1,
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 5,
+      "Perk": [
+        {
+          "Name": "Hidden in Plain sight",
+          "Effect": "At 5th level you can Hide, even if you do not have cover, darkness, or another effect that limits the vision of observers."
+        }
+      ],
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 6,
+      "FocusProgression": 1,
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 7,
+      "Perk": [
+        {
+          "Name": "Hindsight",
+          "Effect": "At 7th level, when discussing a pervious scene, you can make a new Alertness Skill Test about it as though you were still there. You gain an Edge on these Skill Tests."
+        }
+      ],
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 8,
+      "GeneralPerkCount": 1,
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 9,
+      "Perk": [
+        {
+          "Name": "Mimicry Vocoder",
+          "Effect": "At 9th Level you can recreate teh voice of an individual you're head speak. You automatically open locks that require a voice print. When speaking with creatures who can't see you clearly, you automatically deceive them if the yhave only a passing familiarity with the individual you're imitating. YOu gain an Edge on Deception Skill Tests to convince creatures more familiar with the individual you're immitating. If you are disguised as teh individual, you can use this ability to gain an Edge on your Decption Skill Test to determine how convincing your disguise is."
+        }
+      ],
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 10,
+      "FocusProgression": 1
+    },
+
+    {
+      "Level": 11,
+      "GeneralPerkCount": 1,
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 12,
+      "Perk": [
+        {
+          "Name": "Resourceful",
+          "Effect": "At 12th Level. before rolling for Initiative, choose one of te following benefits, which last untill the end of Combat (where applicable) *Roll Initiative Skill Tests with an Edge *Gain one temporary Health * +10ft to one type of Movement *Act Normally if you would be surprised. *An ally who can hear you gains the benefits of Mark Target for the creature you designated."
+        }
+      ],
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 13,
+      "Perk": [
+        {
+          "Name": "Additional Marks",
+          "Effect": "At 13th Level, you can use Mark Target on up to five creatures you see, or two specific individuals."
+        }
+      ],
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 14,
+      "Perk": [
+        {
+          "Name": "New Plan",
+          "Effect": "At 14th Level, when you use a Contingency Action, if the triggering action never occurs, you gain an additional Move Action or two additional Free actions on your next turn."
+        }
+      ],
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 15,
+      "GeneralPerkCount": 1,
+      "SmartsBoost": 1
+    },
+
+    {
+      "Level": 16,
+      "Perk": [
+        {
+          "Name": "Extremely Resourcefull",
+          "Effect": "At 16th Level, when you use Resourcefull, you gain two benefits instead of one"
+        }
+      ],
+      
+      "SocialBoost": 1
+    },
+
+    {
+      "Level": 17,
+      "FocusProgression": 1,
+      "StrengthBoost": 1
+    },
+
+    {
+      "Level": 18,
+      "Perk": [
+        {
+          "Name": "Mark Everybot",
+          "Effect": "At 18th Level, once per day, you can use Mark Target on every creaure in a scene, even those who enter the scene later."
+        }
+      ],
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 19,
+      "GeneralPerkCount": 1,
+      "SpeedBoost": 1
+    },
+
+    {
+      "Level": 20,
+      "FocusProgression": 1,
+      "SmartsBoost": 1
+    }
+  ]
+},
+
 
   {"Name": "",
 

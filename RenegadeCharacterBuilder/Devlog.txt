@@ -51,3 +51,9 @@ finsihed up logic and navigation for influences and json, fixed typos so that co
 allocate levles too and perks whoo hoo, up next continue the json, and rewrite old json data to match new scheme.
 
 3-19 Made changes to json need to add feilds for training cybertonian Perk, equaliment traing and and qualifications, and focus()
+
+3-20
+boring and simple day just working on the Role jsons, lots text lots of things to consider when choices are made.
+
+3-22 
+Forgot to write yesterday more jsons plan to finish the roles today and start the xaml page. Note to self qulaifcaiotns would be better as an enum.
