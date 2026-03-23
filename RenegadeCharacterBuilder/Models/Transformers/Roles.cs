@@ -5,10 +5,10 @@ using System.Windows.Media.Animation;
 
 namespace RenegadeCharacterBuilder.Models.Transformers
 {
-    public class Role
+    public class Roles
     {
         public string Name { get; set; }
-        public string CyberTronianPerk { get; set }
+        public string CyberTronianPerk { get; set; }
         public string? Focus { get; set; }
         
         public TrainingTF Training { get; set; }

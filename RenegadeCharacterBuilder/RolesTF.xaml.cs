@@ -21,17 +21,20 @@ namespace RenegadeCharacterBuilder
     /// </summary>
     public partial class RolesTF : Page
     {
-        public Role CurrentRole { get; set; }
+        public List<Roles> tfRoles { get; set; }
         public RolesTF()
         {
             InitializeComponent();
-            //LoadRole();
-            DataContext = CurrentRole;
+            LoadRoles();
+            DataContext = this;
         }
-        public void LoadRole()
+        public void LoadRoles()
         {
-            //string json = File.ReadAllText("AnalystTF.json");
-            CurrentRole = JsonSerializer.Deserialize<Role>(json) ?? new Role();
+            string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "Roles.json");
+            var json = File.ReadAllText(path);
+            var RoleRoot = JsonSerializer.Deserialize<Role>(json);
+            tfRoles = RoleRoot.Roles;
+            
         }
     }
 }
