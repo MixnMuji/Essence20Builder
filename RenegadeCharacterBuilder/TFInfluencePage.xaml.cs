@@ -37,7 +37,7 @@ namespace RenegadeCharacterBuilder
             LoadTFHangUps();
             DataContext = this;
         }
-        void LoadTFInfluneces()
+        public void LoadTFInfluneces()
         {
             string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "InfluencesTF.json");
             string influencesJson = File.ReadAllText(path);
@@ -49,7 +49,7 @@ namespace RenegadeCharacterBuilder
             tfInfluences = influencesRoot.Influences;
        
         }
-        void LoadTFHangUps()
+        public void LoadTFHangUps()
         {
             string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "HangUpsTF.json");
             string hangUpsJson = File.ReadAllText(path);

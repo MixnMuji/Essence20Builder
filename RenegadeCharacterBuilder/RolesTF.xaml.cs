@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
+using System.Runtime.CompilerServices;
+using System.Security.AccessControl;
 using System.Text;
 using System.Text.Json;
 using System.Windows;
@@ -20,9 +24,15 @@ namespace RenegadeCharacterBuilder
     /// <summary>
     /// Interaction logic for RolesTF.xaml
     /// </summary>
-    public partial class RolesTF : Page
+    public partial class RolesTF : Page, INotifyPropertyChanged
     {
-        public List<Roles> tfRoles { get; set; }
+        public ObservableCollection<Roles> tfRoles { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private int _currentIndex;
+        private Roles _currentRole;
+        private Point _startPoint;
+       
         public RolesTF()
         {
             InitializeComponent();
@@ -34,8 +44,77 @@ namespace RenegadeCharacterBuilder
             string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "Roles.json");
             var json = File.ReadAllText(path);
             var RoleRoot = JsonSerializer.Deserialize<TFRolesRoot>(json);
-            tfRoles = RoleRoot.Roles;
+            tfRoles = new ObservableCollection<Roles>(RoleRoot?.Roles ?? new List<Roles>());
+            CurrentIndex = 0;
+
             
+        }
+        public void Next()
+        {
+            CurrentIndex++;
+        }
+
+        public void Previous()
+        {
+            CurrentIndex--;
+        }
+        public int CurrentIndex
+        {
+            get => _currentIndex;
+            set
+            {
+                if (tfRoles == null || tfRoles.Count == 0)
+                {
+                    return;
+                }
+                if (value < 0)
+                {
+                    _currentIndex = tfRoles.Count - 1;
+                }
+                else if (value >= tfRoles.Count)
+                {
+                    _currentIndex = 0;
+                }
+                else
+                {
+                    _currentIndex = value;
+                }
+                CurrentRole = tfRoles[_currentIndex];
+            }
+        }
+        public Roles CurrentRole
+        {
+            get => _currentRole;
+            set
+            {
+                _currentRole = value;
+                OnPropertyChanged();
+            }
+        }
+        private void OnMouseDown(object sender, MouseEventArgs e)
+        {
+            _startPoint = e.GetPosition(this);
+        }
+        private void OnMouseUp(object sender, MouseEventArgs e)
+        {
+            var endpoint = e.GetPosition(this);
+            double deltaX = endpoint.X - _startPoint.X;
+
+            if(Math.Abs(deltaX) > 50)
+            {
+                if(deltaX < 0)
+                {
+                    Next();
+                }
+                else
+                {
+                    Previous();
+                }
+            }
+        }
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }

@@ -10,24 +10,17 @@
       Background="White">
 
     <Grid>
-        <Grid>
-
-            <TextBlock FontSize="28" Text="{Binding Role}" Margin="10"/>
-
-            <ItemsControl ItemsSource="{Binding Levels}" Margin="10,50,10,10">
-                <ItemsControl.ItemTemplate>
-
+        <Grid MouseDown="OnMouseDown" MouseUp="OnMouseUp">
+            <ContentControl Content="{Binding CurrentRole}">
+                <ContentControl.ContentTemplate>
                     <DataTemplate>
-
-                        <Expander Header="{Binding Level}">
-                            <TextBlock Text="{Binding Perks}" Margin="10"/>
-                        </Expander>
-
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" FontSize="24"/>
+                            <TextBlock Text="{Binding CyberTronianPerk}" TextWrapping="Wrap"/>
+                        </StackPanel>
                     </DataTemplate>
-
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-
+                </ContentControl.ContentTemplate>
+            </ContentControl>
         </Grid>
     </Grid>
 </Page>
