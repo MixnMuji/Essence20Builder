@@ -9,14 +9,14 @@ namespace RenegadeCharacterBuilder.Models.Transformers
 
         public int Level { get; set; }
 
-        public Perk? Perk { get; set; }
+        public List<Perk?> Perk { get; set; }
 
         public int? GeneralPerkCount { get; set; } // is logic for when character gets perks
 
         public int? FocusProgression { get; set; } //same thing for general perk
         public int? SpeedBoost { get; set; }
         public int? SmartsBoost { get; set; }
-        public int? STrengthBoost { get; set; }
+        public int? StrengthBoost { get; set; }
         public int? SocialBoost { get; set; }
     }
     

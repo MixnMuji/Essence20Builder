@@ -6,7 +6,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
 {
   public class Perk
     {
-        string Name { get; set; }
-        string Effect { get; set; }
+       public string Name { get; set; }
+        public string Effect { get; set; }
     }
 }

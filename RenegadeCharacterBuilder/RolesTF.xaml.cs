@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RenegadeCharacterBuilder.Models.Transformers;
+using RenegadeCharacterBuilder.Models.Transformers.Roots;
 
 namespace RenegadeCharacterBuilder
 {
@@ -32,7 +33,7 @@ namespace RenegadeCharacterBuilder
         {
             string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "Roles.json");
             var json = File.ReadAllText(path);
-            var RoleRoot = JsonSerializer.Deserialize<Role>(json);
+            var RoleRoot = JsonSerializer.Deserialize<TFRolesRoot>(json);
             tfRoles = RoleRoot.Roles;
             
         }

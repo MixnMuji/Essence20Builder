@@ -13,7 +13,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="385"/>
             <ColumnDefinition Width="auto"/>
-          
+
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -30,7 +30,7 @@
                         <CheckBox Content="{Binding Name}" IsChecked="{Binding isChecked, Mode=TwoWay}"/>
                         <Expander HorizontalAlignment="Stretch">
                             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-                                <TextBlock Text="{Binding Effect}"/>
+                                <TextBlock Text="{Binding Perk}"/>
                             </ScrollViewer>
                         </Expander>
 
@@ -41,8 +41,8 @@
         </ItemsControl>
 
 
-        <TextBlock Text="Hang-Ups" FontSize="25" FontStretch="UltraExpanded" Grid.Row="1"  Grid.Column="1"/>
-        <ItemsControl ItemsSource="{Binding tfHangups}" Grid.Row="1" Grid.Column="1">
+        <TextBlock Text="Hang-Ups" FontSize="25" FontStretch="UltraExpanded" Grid.Row="0"  Grid.Column="1"/>
+        <ItemsControl ItemsSource="{Binding tfHangups}" Grid.Row="1" Grid.Column="1" Margin="350,0,0,0">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="10,10,10,10">
@@ -59,7 +59,7 @@
 
         </ItemsControl>
 
-        <Button Content="To Roles!" Click="ProceedToRoles" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        <Button Content="To Roles!" Click="ProceedToRoles" Grid.Column="1" Margin="0,0,-27,0" Width="78" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
 
 
     </Grid>
