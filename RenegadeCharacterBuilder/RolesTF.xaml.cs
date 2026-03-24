@@ -43,6 +43,7 @@ namespace RenegadeCharacterBuilder
         {
             string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "Roles.json");
             var json = File.ReadAllText(path);
+          
             var RoleRoot = JsonSerializer.Deserialize<TFRolesRoot>(json);
             tfRoles = new ObservableCollection<Roles>(RoleRoot?.Roles ?? new List<Roles>());
             CurrentIndex = 0;
@@ -80,6 +81,7 @@ namespace RenegadeCharacterBuilder
                     _currentIndex = value;
                 }
                 CurrentRole = tfRoles[_currentIndex];
+                OnPropertyChanged();
             }
         }
         public Roles CurrentRole

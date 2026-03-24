@@ -12,7 +12,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="385"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
 
 
         </Grid.ColumnDefinitions>
@@ -23,7 +23,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Influences" FontSize="25" FontStretch="UltraExpanded"/>
-        <ItemsControl ItemsSource="{Binding tfInfluences}" Grid.Row="1" >
+        <ItemsControl ItemsSource="{Binding tfInfluences}" Grid.Row="2" >
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="10,10,10,10">
@@ -40,9 +40,9 @@
 
         </ItemsControl>
 
-
+        
         <TextBlock Text="Hang-Ups" FontSize="25" FontStretch="UltraExpanded" Grid.Row="0"  Grid.Column="1"/>
-        <ItemsControl ItemsSource="{Binding tfHangups}" Grid.Row="1" Grid.Column="1" Margin="350,0,0,0">
+        <ItemsControl ItemsSource="{Binding tfHangups}" Grid.Row="2" Grid.Column="1">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="10,10,10,10">
@@ -59,7 +59,8 @@
 
         </ItemsControl>
 
-        <Button Content="To Roles!" Click="ProceedToRoles" Grid.Column="1" Margin="0,0,-27,0" Width="78" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        <Button Content="To Roles!" Click="ProceedToRoles" Grid.Column="1" Grid.Row="0" Width="78" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+        
 
 
     </Grid>

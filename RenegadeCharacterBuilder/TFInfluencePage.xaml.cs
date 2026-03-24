@@ -88,7 +88,6 @@ namespace RenegadeCharacterBuilder
             }
 
             NavigationService.Navigate(new RolesTF());
-           
         }
     }
 }

@@ -31,7 +31,8 @@
         },
         {
           "Level": 2,
-          "Perk":[{ "Name":"Data Analyst",
+          "Perk":[
+                    { "Name":"Data Analyst",
                    "Effect":"At 2nd level gain an Edge on Science and Technology Skill test related to extracting or processing data. such as hacking into an enemy computer. IF the extracting process usally takes 2 rounds or longer it takes you half the time"
 
                   }],
@@ -61,7 +62,8 @@
         },
         {
           "Level": 7,
-          "Perk":[{ "Name":"Quick Study",
+          "Perk":[
+              { "Name":"Quick Study",
                     "Effect":"At 7th level, using Analyze Target is a move action, or Standard Action."
           }],
           "SocialBoost": 1
@@ -101,7 +103,7 @@
           "Perk":[{"Name": "Target Breakdown",
                   "Effect":"At 13th level, you can spend a number of free actions equal to the number of times you've used Analyze Target on a target to give an ally upshift on an attack against the target equal to that number"
 
-          }],
+                   }],
           "SpeedBoost": 1
         },
         {
@@ -119,7 +121,8 @@
         },
         {
           "Level": 16,
-          "Perk":[ {"Name": "Just the Facts",
+          "Perk":[
+              {"Name": "Just the Facts",
                    "Effect":"At 16th level you become immune to Deception Skill Tests from creatures your level or lower, and resistance to Deception Skill Test from creatures higher level than you."
           }],
           "SpeedBoost": 1
@@ -131,7 +134,7 @@
         },
         {
           "Level": 18,
-          "Perk":[ {"Name": "Swift Study",
+          "Perk":[{"Name": "Swift Study",
                    "Effect": "At 18th level using Analyze target is a free action. You can use any number of free actions on Analyze Target on a single turn. but you can only target one creature a turn"
 
                    }],
@@ -251,9 +254,9 @@
 
             },
             {"Level": 13,
-             "Perk":{"Name": "Let Cool Heads Prevail",
+             "Perk":[{"Name": "Let Cool Heads Prevail",
                      "Effect":"At 13th level, outside of combat, when you role a Social Skill Test with Specialization, you can score a critical sucecess with the d2" 
-                     },
+                     }],
              "StrengthBoost": 1
 
             },
@@ -283,10 +286,10 @@
 
             },
             {"Level": 18,
-             "Perk":{"Name":"Stand Together",
+             "Perk":[{"Name":"Stand Together",
                      "Effect":"At 18th level, once per scene, as a Standard action, you can make a DIF15 Persuasion Skill Test. On a success, all allies Repair 1 Damage. This is multipled on a Critical Success or a high degree of success"
 
-                     },
+                     }],
              "SocialBoost": 1
 
             },
@@ -369,7 +372,7 @@
       "Level": 5,
       "Perk": [
         {
-          "Name": "Nowhere's safe'",
+          "Name": "Nowhere's safe",
           "Effect": "At 5th Level when you fire at a target in cover you suffer one fewer downshift on the attack."
         }
       ],
@@ -504,7 +507,7 @@
 
   {"Name": "ModeMaster",
 
-  "CyberTronianPerk": "Full Hybrid: You can spend an Energon Point to partially convert as a Free action. You gain the benefits of both your Bot mode and Alt mode, your choice of either modes size,and your choice of either mode's movment.'",
+  "CyberTronianPerk": "Full Hybrid: You can spend an Energon Point to partially convert as a Free action. You gain the benefits of both your Bot mode and Alt mode, your choice of either modes size,and your choice of either mode's movment.",
 
   "Focus": "MicroLinked or Triple-Changer",
 
@@ -534,7 +537,7 @@
         {
           "Name": "Quick Change",
           "Effect": "As wtith the General Perk of the same name, slect one conversion sequence (such as alt mode to bot mode, bot mode to alt mode, or one alt mode to another) That sequence requires a Free Action to enact instead of a Standar Action"
-        }],
+        }]
       
     },
 
@@ -573,7 +576,7 @@
 
     {
       "Level": 6,
-      "FocusProgression": 1,
+      "FocusProgression": 1
      
     },
 
@@ -584,7 +587,7 @@
           "Name": "Hybridization",
           "Effect": ""
         }
-      ],
+      ]
     
     },
 

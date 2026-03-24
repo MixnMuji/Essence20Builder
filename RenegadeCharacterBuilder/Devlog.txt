@@ -57,3 +57,8 @@ boring and simple day just working on the Role jsons, lots text lots of things t
 
 3-22 
 Forgot to write yesterday more jsons plan to finish the roles today and start the xaml page. Note to self qulaifcaiotns would be better as an enum.
+
+
+3-23
+fixed up typos for role json, found error in fluence binidng fixed binding name, and moved to roles button, this somehow broke the page so half the data won't load, started putting in methods to impliment a slide for seeing roles we'll see how it works 
+I fix the hangups now! yay!
