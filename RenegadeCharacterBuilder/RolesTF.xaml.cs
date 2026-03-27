@@ -50,15 +50,7 @@ namespace RenegadeCharacterBuilder
 
             
         }
-        public void Next()
-        {
-            CurrentIndex++;
-        }
 
-        public void Previous()
-        {
-            CurrentIndex--;
-        }
         public int CurrentIndex
         {
             get => _currentIndex;
@@ -93,30 +85,20 @@ namespace RenegadeCharacterBuilder
                 OnPropertyChanged();
             }
         }
-        private void OnMouseDown(object sender, MouseEventArgs e)
-        {
-            _startPoint = e.GetPosition(this);
-        }
-        private void OnMouseUp(object sender, MouseEventArgs e)
-        {
-            var endpoint = e.GetPosition(this);
-            double deltaX = endpoint.X - _startPoint.X;
-
-            if(Math.Abs(deltaX) > 50)
-            {
-                if(deltaX < 0)
-                {
-                    Next();
-                }
-                else
-                {
-                    Previous();
-                }
-            }
-        }
+       
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        private void NextRoleDisplay(object sender, RoutedEventArgs e)
+        {
+            CurrentIndex++;
+        }
+
+        private void PerviousRoleDisplay(object sender, RoutedEventArgs e)
+        {
+            CurrentIndex--;
         }
     }
 }

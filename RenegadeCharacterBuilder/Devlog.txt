@@ -62,3 +62,12 @@ Forgot to write yesterday more jsons plan to finish the roles today and start th
 3-23
 fixed up typos for role json, found error in fluence binidng fixed binding name, and moved to roles button, this somehow broke the page so half the data won't load, started putting in methods to impliment a slide for seeing roles we'll see how it works 
 I fix the hangups now! yay!
+
+fixed json for real this time Carosol added but is unresponsive and has no animation, needs visual cues may also need to switch to just arrows with an on click effect
+
+3-26 
+had minor break menatlly with jobs returning, thought about carsol hated the swipe don't need to change logic but instead activations add two buttons on bottom with a ONclick to go previous or next!
+
+3-27
+
+Got off my lazy streak added buttons need to reado data binding to show the levles and have them have expandables also add radio button for selection and need to save to character state

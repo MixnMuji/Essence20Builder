@@ -10,8 +10,12 @@
       Background="White">
 
     <Grid>
-        <Grid MouseDown="OnMouseDown" MouseUp="OnMouseUp">
-            <ContentControl Content="{Binding CurrentRole}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+            <ContentControl Content="{Binding CurrentRole}" Grid.Row="1">
                 <ContentControl.ContentTemplate>
                     <DataTemplate>
                         <StackPanel>
@@ -21,6 +25,8 @@
                     </DataTemplate>
                 </ContentControl.ContentTemplate>
             </ContentControl>
-        </Grid>
+        <Button Content="Next Role" HorizontalAlignment="Center" Margin="200,0,0,0" Grid.Row="2" Width="100" Height="30" Click="NextRoleDisplay"/>
+        <Button Content="Pervious Role" HorizontalAlignment="Center" Margin="-200,0,0,0" Grid.Row="2" Width="100" Height="30" Click="PerviousRoleDisplay"/>
+
     </Grid>
 </Page>
