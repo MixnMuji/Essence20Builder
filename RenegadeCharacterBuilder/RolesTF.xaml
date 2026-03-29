@@ -21,10 +21,57 @@
                         <StackPanel>
                             <TextBlock Text="{Binding Name}" FontSize="24"/>
                             <TextBlock Text="{Binding CyberTronianPerk}" TextWrapping="Wrap"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ContentControl.ContentTemplate>
-            </ContentControl>
+                        <ItemsControl ItemsSource="{Binding Training}">
+                           
+                                <StackPanel>
+                                    <TextBlock Text="{Binding EssenceIncrease, StringFormat= Essence Increase: {0}}"/>
+                                    <TextBlock Text="{Binding Score, StringFormat=Score Increased: {0}}"/>
+                                    <TextBlock Text="{Binding RolesSkills, StringFormat=Skill Pool: {0}}"/>
+                                </StackPanel>
+                           
+                        </ItemsControl>
+
+                        <ItemsControl ItemsSource="{Binding Qualifications}">
+                            <TextBlock Text="{Binding ArmorUpgradese, StringFormat= Armor Qualifications: {0}}"/>
+                            <TextBlock Text="{Binding Weapons, StringFormat=Weapon Qualifications: {0}}"/>
+                        </ItemsControl>
+                        
+
+                        <ItemsControl ItemsSource="{Binding Levels}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Expander Header="{Binding Level}">
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding GeneralPerkCount}"/>
+                                            <TextBlock Text="{Binding FocusProgression}"/>
+                                            <TextBlock Text="{Binding SpeedBoost}"/>
+                                            <TextBlock Text="{Binding SmartsBoost}"/>
+                                            <TextBlock Text="{Binding StrengthBoost}"/>
+                                            <TextBlock Text="{Binding SocialBoost}"/>
+
+                                            <ItemsControl ItemsSource="{Binding Perk}">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel Margin="10,5,0,5">
+                                                            <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                                            <TextBlock Text="{Binding Effect}" TextWrapping="Wrap"/>
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </StackPanel>
+
+                                    </Expander>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
+
+
         <Button Content="Next Role" HorizontalAlignment="Center" Margin="200,0,0,0" Grid.Row="2" Width="100" Height="30" Click="NextRoleDisplay"/>
         <Button Content="Pervious Role" HorizontalAlignment="Center" Margin="-200,0,0,0" Grid.Row="2" Width="100" Height="30" Click="PerviousRoleDisplay"/>
 
