@@ -21,20 +21,20 @@
                         <StackPanel>
                             <TextBlock Text="{Binding Name}" FontSize="24"/>
                             <TextBlock Text="{Binding CyberTronianPerk}" TextWrapping="Wrap"/>
-                        <ItemsControl ItemsSource="{Binding Training}">
-                           
-                                <StackPanel>
+
+                            <StackPanel DataContext="{Binding Training}">
                                     <TextBlock Text="{Binding EssenceIncrease, StringFormat= Essence Increase: {0}}"/>
                                     <TextBlock Text="{Binding Score, StringFormat=Score Increased: {0}}"/>
                                     <TextBlock Text="{Binding RolesSkills, StringFormat=Skill Pool: {0}}"/>
                                 </StackPanel>
                            
-                        </ItemsControl>
 
-                        <ItemsControl ItemsSource="{Binding Qualifications}">
-                            <TextBlock Text="{Binding ArmorUpgradese, StringFormat= Armor Qualifications: {0}}"/>
+                        
+                            <StackPanel DataContext="{Binding Qualifications}">
+                                <TextBlock Text="{Binding ArmorUpgradese, StringFormat= Armor Qualifications: {0}}"/>
                             <TextBlock Text="{Binding Weapons, StringFormat=Weapon Qualifications: {0}}"/>
-                        </ItemsControl>
+                            </StackPanel>
+                        
                         
 
                         <ItemsControl ItemsSource="{Binding Levels}">

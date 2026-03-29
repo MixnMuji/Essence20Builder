@@ -75,3 +75,7 @@ Got off my lazy streak added buttons need to reado data binding to show the levl
 3-29
 Slowling down in coding which is not fun to see. Learned definitavely today about itemscontrol collections and data template, basically when you have list you got to include those for each entry found out about 
 style to modify when values are null may add alter may say fuck it. learned about {0} to plug in bound data, very cool. Added the role page need to make role selections feel like binding it on countinue.
+
+Qualifcations and training not showing up, also need to add scroller
+
+-Fixed issue was using itemControl with singles just use dataContext for objects not part of a list! cool next add scroll bar

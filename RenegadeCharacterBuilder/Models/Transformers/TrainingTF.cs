@@ -11,3 +11,5 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public string RolesSkills { get; set; }
     }
 }
+
+
