@@ -41,26 +41,31 @@
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Expander Header="{Binding Level}">
-                                        <StackPanel>
-                                            <TextBlock Text="{Binding GeneralPerkCount}"/>
-                                            <TextBlock Text="{Binding FocusProgression}"/>
-                                            <TextBlock Text="{Binding SpeedBoost}"/>
-                                            <TextBlock Text="{Binding SmartsBoost}"/>
-                                            <TextBlock Text="{Binding StrengthBoost}"/>
-                                            <TextBlock Text="{Binding SocialBoost}"/>
+                                        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                                         HorizontalScrollBarVisibility="Auto"
+                                                        MaxHeight="400">
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding GeneralPerkCount, StringFormat= Gernal Perk Count: +{0}}"/>
+                                                <TextBlock Text="{Binding FocusProgression, StringFormat= Focus Progression: +{0}}"/>
+                                                <TextBlock Text="{Binding SpeedBoost, StringFormat= Speed Essence: +{0}}"/>
+                                                <TextBlock Text="{Binding SmartsBoost, StringFormat= Smarts Essence: +{0}}"/>
+                                                <TextBlock Text="{Binding StrengthBoost, StringFormat= Strength Essence: +{0}}"/>
+                                                <TextBlock Text="{Binding SocialBoost, StringFormat= Social Essence: +{0}}"/>
 
-                                            <ItemsControl ItemsSource="{Binding Perk}">
-                                                <ItemsControl.ItemTemplate>
-                                                    <DataTemplate>
-                                                        <StackPanel Margin="10,5,0,5">
-                                                            <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
-                                                            <TextBlock Text="{Binding Effect}" TextWrapping="Wrap"/>
-                                                        </StackPanel>
-                                                    </DataTemplate>
-                                                </ItemsControl.ItemTemplate>
-                                            </ItemsControl>
-                                        </StackPanel>
-
+                                                <ItemsControl ItemsSource="{Binding Perk}">
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate>
+                                                           
+                                                                <StackPanel Margin="10,5,0,5">
+                                                                    <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                                                    <TextBlock Text="{Binding Effect}" TextWrapping="Wrap"/>
+                                                                </StackPanel>
+                                                            
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                            </StackPanel>
+                                        </ScrollViewer>
                                     </Expander>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>

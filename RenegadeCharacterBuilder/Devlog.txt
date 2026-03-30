@@ -79,3 +79,5 @@ style to modify when values are null may add alter may say fuck it. learned abou
 Qualifcations and training not showing up, also need to add scroller
 
 -Fixed issue was using itemControl with singles just use dataContext for objects not part of a list! cool next add scroll bar
+
+Edit Added scrolbar and added my dev shortcut thank god, need to figure out how to not show data if null will get messy fast I'm sure, anyways minor progress is a win

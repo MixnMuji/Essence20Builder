@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RenegadeCharacterBuilder.Models.Transformers;
 
 namespace RenegadeCharacterBuilder
 {
@@ -51,6 +52,23 @@ namespace RenegadeCharacterBuilder
                     break;
                  
             }
+        }
+
+        private void DevMode(object sender, RoutedEventArgs e)
+        {
+            if(devSelection.SelectedItem == null)
+            {
+                MessageBox.Show("Need choice");
+                return;
+            }
+            var page = devSelection.SelectionBoxItem;
+            switch (page)
+            {
+                case "Roles":
+                    NavigationService.Navigate(new RolesTF());
+                    break;
+            }
+
         }
     }
 }

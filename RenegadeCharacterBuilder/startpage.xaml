@@ -24,16 +24,18 @@
               Name="ComboBox1" Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,10,0,0">
 
             </ComboBox>
-        <ComboBox Grid.Row="2" Width="300" Height="50" HorizontalAlignment="Left">
+        <ComboBox Name="devSelection" Grid.Row="2" Width="300" Height="50" HorizontalAlignment="Left">
             <ComboBoxItem Content="Origins"/>
             <ComboBoxItem Content="Roles"/>
             <ComboBoxItem Content="Influences"/>
-            
-
-
+            <ComboBoxItem Content="Gernal Perks"/>
+            <ComboBoxItem Content="Armory"/>
 
         </ComboBox>
-            <Button Grid.Row="2"
+        <Button Grid.Row="2" Grid.Column="1" Width="50" Height="50" Content="skip" Click="DevMode"/>
+            
+            
+        <Button Grid.Row="2"
             Margin="20"
             Content="Proceed"
             Width="300"
