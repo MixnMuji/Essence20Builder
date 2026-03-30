@@ -84,3 +84,7 @@ Edit Added scrolbar and added my dev shortcut thank god, need to figure out how 
 
 - made a structed grid but cuts data off might have to make a viewModel and slective command to make it show that only the slected level is in the view, fixed issue with expander to show level with header
 used itempanel template insteaed.
+
+3-30 
+
+Tried to fuck around changing view and state and etc wasted 3 hours accomplished nothing and learned to restore to an old git verison whoo hoo
