@@ -15,6 +15,9 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="1"
+              VerticalScrollBarVisibility="Auto"
+              HorizontalScrollBarVisibility="Disabled">
             <ContentControl Content="{Binding CurrentRole}" Grid.Row="1">
                 <ContentControl.ContentTemplate>
                     <DataTemplate>
@@ -23,59 +26,70 @@
                             <TextBlock Text="{Binding CyberTronianPerk}" TextWrapping="Wrap"/>
 
                             <StackPanel DataContext="{Binding Training}">
-                                    <TextBlock Text="{Binding EssenceIncrease, StringFormat= Essence Increase: {0}}"/>
-                                    <TextBlock Text="{Binding Score, StringFormat=Score Increased: {0}}"/>
-                                    <TextBlock Text="{Binding RolesSkills, StringFormat=Skill Pool: {0}}"/>
-                                </StackPanel>
-                           
+                                <TextBlock Text="{Binding EssenceIncrease, StringFormat= Essence Increase: {0}}"/>
+                                <TextBlock Text="{Binding Score, StringFormat=Score Increased: {0}}"/>
+                                <TextBlock Text="{Binding RolesSkills, StringFormat=Skill Pool: {0}}"/>
+                            </StackPanel>
 
-                        
+
+
                             <StackPanel DataContext="{Binding Qualifications}">
                                 <TextBlock Text="{Binding ArmorUpgradese, StringFormat= Armor Qualifications: {0}}"/>
-                            <TextBlock Text="{Binding Weapons, StringFormat=Weapon Qualifications: {0}}"/>
+                                <TextBlock Text="{Binding Weapons, StringFormat=Weapon Qualifications: {0}}"/>
                             </StackPanel>
-                        
-                        
 
-                        <ItemsControl ItemsSource="{Binding Levels}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Expander Header="{Binding Level}">
-                                        <ScrollViewer VerticalScrollBarVisibility="Auto"
+
+
+                            <ItemsControl ItemsSource="{Binding Levels}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <UniformGrid Columns="3"/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+
+
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Expander>
+                                            <Expander.Header>
+                                                <TextBlock Text="{Binding Level, StringFormat= Level : {0}}"/>
+                                            </Expander.Header>
+                                            <ScrollViewer VerticalScrollBarVisibility="Auto"
                                                          HorizontalScrollBarVisibility="Auto"
                                                         MaxHeight="400">
-                                            <StackPanel>
-                                                <TextBlock Text="{Binding GeneralPerkCount, StringFormat= Gernal Perk Count: +{0}}"/>
-                                                <TextBlock Text="{Binding FocusProgression, StringFormat= Focus Progression: +{0}}"/>
-                                                <TextBlock Text="{Binding SpeedBoost, StringFormat= Speed Essence: +{0}}"/>
-                                                <TextBlock Text="{Binding SmartsBoost, StringFormat= Smarts Essence: +{0}}"/>
-                                                <TextBlock Text="{Binding StrengthBoost, StringFormat= Strength Essence: +{0}}"/>
-                                                <TextBlock Text="{Binding SocialBoost, StringFormat= Social Essence: +{0}}"/>
+                                                <StackPanel>
+                                                    <TextBlock Text="{Binding GeneralPerkCount, StringFormat= Gernal Perk Count: +{0}}"/>
+                                                    <TextBlock Text="{Binding FocusProgression, StringFormat= Focus Progression: +{0}}"/>
+                                                    <TextBlock Text="{Binding SpeedBoost, StringFormat= Speed Essence: +{0}}"/>
+                                                    <TextBlock Text="{Binding SmartsBoost, StringFormat= Smarts Essence: +{0}}"/>
+                                                    <TextBlock Text="{Binding StrengthBoost, StringFormat= Strength Essence: +{0}}"/>
+                                                    <TextBlock Text="{Binding SocialBoost, StringFormat= Social Essence: +{0}}"/>
 
-                                                <ItemsControl ItemsSource="{Binding Perk}">
-                                                    <ItemsControl.ItemTemplate>
-                                                        <DataTemplate>
-                                                           
+                                                    <ItemsControl ItemsSource="{Binding Perk}">
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+
                                                                 <StackPanel Margin="10,5,0,5">
                                                                     <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
                                                                     <TextBlock Text="{Binding Effect}" TextWrapping="Wrap"/>
                                                                 </StackPanel>
-                                                            
-                                                        </DataTemplate>
-                                                    </ItemsControl.ItemTemplate>
-                                                </ItemsControl>
-                                            </StackPanel>
-                                        </ScrollViewer>
-                                    </Expander>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
 
-                    </StackPanel>
-                </DataTemplate>
-            </ContentControl.ContentTemplate>
-        </ContentControl>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </StackPanel>
+                                            </ScrollViewer>
+                                        </Expander>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
 
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ContentControl.ContentTemplate>
+            </ContentControl>
+        </ScrollViewer>
 
         <Button Content="Next Role" HorizontalAlignment="Center" Margin="200,0,0,0" Grid.Row="2" Width="100" Height="30" Click="NextRoleDisplay"/>
         <Button Content="Pervious Role" HorizontalAlignment="Center" Margin="-200,0,0,0" Grid.Row="2" Width="100" Height="30" Click="PerviousRoleDisplay"/>

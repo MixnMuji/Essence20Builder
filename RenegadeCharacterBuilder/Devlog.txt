@@ -81,3 +81,6 @@ Qualifcations and training not showing up, also need to add scroller
 -Fixed issue was using itemControl with singles just use dataContext for objects not part of a list! cool next add scroll bar
 
 Edit Added scrolbar and added my dev shortcut thank god, need to figure out how to not show data if null will get messy fast I'm sure, anyways minor progress is a win
+
+- made a structed grid but cuts data off might have to make a viewModel and slective command to make it show that only the slected level is in the view, fixed issue with expander to show level with header
+used itempanel template insteaed.
