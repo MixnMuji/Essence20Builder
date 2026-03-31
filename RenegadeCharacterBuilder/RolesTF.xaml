@@ -93,6 +93,7 @@
 
         <Button Content="Next Role" HorizontalAlignment="Center" Margin="200,0,0,0" Grid.Row="2" Width="100" Height="30" Click="NextRoleDisplay"/>
         <Button Content="Pervious Role" HorizontalAlignment="Center" Margin="-200,0,0,0" Grid.Row="2" Width="100" Height="30" Click="PerviousRoleDisplay"/>
+        <Button Content="Select Current Role and Continue" HorizontalAlignment="Right" Grid.Row="2"  Margin="10,10,10,10" Click="ContinueToGeneralPerks"/>
 
     </Grid>
 </Page>

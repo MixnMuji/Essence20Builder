@@ -88,3 +88,5 @@ used itempanel template insteaed.
 3-30 
 
 Tried to fuck around changing view and state and etc wasted 3 hours accomplished nothing and learned to restore to an old git verison whoo hoo
+
+Got overmyself and did actual work though minor added, button to proceed to general perks, checks if you want the role then naviagtes, will not run in dev mode which is fine.

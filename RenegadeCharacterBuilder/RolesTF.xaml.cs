@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RenegadeCharacterBuilder.Models.Transformers;
+using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.Roots;
 
 namespace RenegadeCharacterBuilder
@@ -99,6 +100,28 @@ namespace RenegadeCharacterBuilder
         private void PerviousRoleDisplay(object sender, RoutedEventArgs e)
         {
             CurrentIndex--;
+        }
+
+        private void ContinueToGeneralPerks(object sender, RoutedEventArgs e)
+        {
+            
+            MessageBoxResult result= MessageBox.Show(
+                "Select Role and continue?", 
+                "Confirm",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question
+                );
+
+            if(result == MessageBoxResult.Yes)
+            {
+                TFCharacterSession.CurrentTransfomer.Role = CurrentRole; //Mind you you can't proceed if you use dev mode
+                NavigationService.Navigate(new GeneralPerksTF());
+            }
+            else
+            {
+                return;
+            }
+         
         }
     }
 }
