@@ -90,3 +90,11 @@ used itempanel template insteaed.
 Tried to fuck around changing view and state and etc wasted 3 hours accomplished nothing and learned to restore to an old git verison whoo hoo
 
 Got overmyself and did actual work though minor added, button to proceed to general perks, checks if you want the role then naviagtes, will not run in dev mode which is fine.
+
+BIG REMINDER STILL NEED TO CHANGE STYLE FOR WHEN DATA is NULL in Levels Also need vertical slidebar!
+
+3-31 
+Had to step back and today will just be a planning day due to work overload irl. Next is not perks next is Scores and skill allocation
+
+-Need a pointbank variable which will be equal to Base plus+ Role+ Chasis, need a specialized skill pool that is tied to how many points are gained so check role for that comparision.
+-Added layout found out you can nest column and row definitions thank goodnes. 
