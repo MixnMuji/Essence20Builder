@@ -18,6 +18,7 @@ namespace RenegadeCharacterBuilder
     /// </summary>
     public partial class ScoreSkillAllocationTF : Page
     {
+        public int pointBank = 9;
         public ScoreSkillAllocationTF()
         {
             InitializeComponent();

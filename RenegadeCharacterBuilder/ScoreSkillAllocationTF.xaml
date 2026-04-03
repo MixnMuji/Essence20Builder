@@ -12,12 +12,19 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="355"/>
+            <RowDefinition Height="360"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+       
+        
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -25,8 +32,46 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
+                
             </Grid.ColumnDefinitions>
+
+            
+            <!--Names Strength stuff-->
+            <TextBlock Grid.Row="0"  Text="Strength" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="1"  Text="Athletics" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="2"  Text="Brawn" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="3"  Text="Conditioning" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="4"  Text="Intimidation" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="5"  Text="Might" HorizontalAlignment="Center"/>
+            
+            <!-- Speed Stuff-->
+            <TextBlock Grid.Row="0" Grid.Column="1"  Text="Speed" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="1" Grid.Column="1"  Text="Acrobatics" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="2" Grid.Column="1"  Text="Driving" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="3" Grid.Column="1"  Text="Finesse" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="4" Grid.Column="1"  Text="Infiltration" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="5" Grid.Column="1"  Text="Inititave" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="6" Grid.Column="1"  Text="Targeting" HorizontalAlignment="Center"/>
+            
+            
+            <!-- Smarts Stuff-->
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="Smarts" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="1" Grid.Column="2" Text="Alertness" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="2" Grid.Column="2" Text="Culture" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="3" Grid.Column="2" Text="Science" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="4" Grid.Column="2" Text="Survival" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="5" Grid.Column="2" Text="Technology" HorizontalAlignment="Center"/>
+            
+            
+            <!-- Social Stuff-->
+            <TextBlock Grid.Row="0"  Grid.Column="3" Text="Social" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="1"  Grid.Column="3" Text="Animal Handling" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="2"  Grid.Column="3" Text="Deception" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="3"  Grid.Column="3" Text="Preformance" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="4"  Grid.Column="3" Text="Persuasion" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="5"  Grid.Column="3" Text="Streetwise" HorizontalAlignment="Center"/>
+            
+            
         </Grid>
     </Grid>
 </Page>
