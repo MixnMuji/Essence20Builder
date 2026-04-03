@@ -37,7 +37,12 @@
 
             
             <!--Names Strength stuff-->
+         
             <TextBlock Grid.Row="0"  Text="Strength" HorizontalAlignment="Center"/>
+            <Button Grid.Row="0"  Content="-" Click="SubtracFromoScore" Height="15" Width="10" HorizontalAlignment="Center" Margin="0,0,50,0" VerticalAlignment="Bottom" />
+            <TextBlock Text="{Binding Strength}" HorizontalAlignment="Center" Margin="0,0,0,2" VerticalAlignment="Bottom"></TextBlock>
+            <Button Grid.Row="0" Content="+" Click="AddToScore" Height="15" Width="10" HorizontalAlignment="Center" Margin="5,0,-50,0" VerticalAlignment="Bottom"/>
+
             <TextBlock Grid.Row="1"  Text="Athletics" HorizontalAlignment="Center"/>
             <TextBlock Grid.Row="2"  Text="Brawn" HorizontalAlignment="Center"/>
             <TextBlock Grid.Row="3"  Text="Conditioning" HorizontalAlignment="Center"/>

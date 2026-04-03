@@ -98,3 +98,6 @@ Had to step back and today will just be a planning day due to work overload irl.
 
 -Need a pointbank variable which will be equal to Base plus+ Role+ Chasis, need a specialized skill pool that is tied to how many points are gained so check role for that comparision.
 -Added layout found out you can nest column and row definitions thank goodnes. 
+
+4-3 
+Began tables for scores and essence learned the importance of dataContext

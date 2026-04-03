@@ -27,6 +27,7 @@
         <ComboBox Name="devSelection" Grid.Row="2" Width="300" Height="50" HorizontalAlignment="Left">
             <ComboBoxItem Content="Origins"/>
             <ComboBoxItem Content="Roles"/>
+            <ComboBoxItem Content="Scores"/>
             <ComboBoxItem Content="Influences"/>
             <ComboBoxItem Content="Gernal Perks"/>
             <ComboBoxItem Content="Armory"/>

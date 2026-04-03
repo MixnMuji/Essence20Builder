@@ -67,6 +67,9 @@ namespace RenegadeCharacterBuilder
                 case "Roles":
                     NavigationService.Navigate(new RolesTF());
                     break;
+                case "Scores":
+                    NavigationService.Navigate(new ScoreSkillAllocationTF());
+                    break;
             }
 
         }
