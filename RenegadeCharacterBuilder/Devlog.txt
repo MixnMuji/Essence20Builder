@@ -101,3 +101,6 @@ Had to step back and today will just be a planning day due to work overload irl.
 
 4-3 
 Began tables for scores and essence learned the importance of dataContext
+
+-edit for tomorrow things are getting messy fast add view models for skill and score page! 
+whoo who
