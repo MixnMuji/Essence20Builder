@@ -104,3 +104,6 @@ Began tables for scores and essence learned the importance of dataContext
 
 -edit for tomorrow things are getting messy fast add view models for skill and score page! 
 whoo who
+
+4-4 
+breakthrough day startedviewmodel but instead need to make skills and Stats as an object with the logic and then just bring them over.

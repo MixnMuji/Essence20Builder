@@ -19,60 +19,7 @@ namespace RenegadeCharacterBuilder
     /// </summary>
     public partial class ScoreSkillAllocationTF : Page, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        private int _pointBank = 9;
-        public int SocialSkilbank;
-        public int StrengthSkilbank;
-        public int SpeedlSkilbank;
-        public int SmartslSkilbank;
-
-        //for binding
-
-        
-        private int _strength =1;
-        private int _speed = 1;
-        private int _smarts= 1;
-        private int _social= 1;
-
-        public int PointsBank
-        {
-            get => _pointBank;
-            set
-            {
-                _pointBank = value;
-                OnPropertyChanged(nameof(PointsBank));
-            }
-        }
-        public int Strength {
-            get => _strength; 
-                set { _strength = value;
-                OnPropertyChanged(nameof(Strength));
-                    } 
-        } 
-        public int Smarts
-        {
-            get => _smarts;
-            set { _smarts = value;
-                OnPropertyChanged(nameof(Smarts));
-
-            }
-        }
-        public int Speed 
-                { get => _speed;
-            set { _speed = value;
-                OnPropertyChanged(nameof(Speed));
-            } 
-        }
-        public int Social
-        {
-            get => _social;
-            set
-            {
-                _social = value;
-                OnPropertyChanged(nameof(Social));
-            }
-        }
-
+       
         public ScoreSkillAllocationTF()
         {
             InitializeComponent();
@@ -179,14 +126,6 @@ namespace RenegadeCharacterBuilder
             }
 
         }
-        public  void AddToSkill(object sender, RoutedEventArgs e)
-        {
-            //logic which checks the skills corresponding stat
-            // if current points in skill > score return message box show. "Cannot have more points in skill that base essance score"
-        }
-        public  void SubtracFromSkill(object sender, RoutedEventArgs e)
-        {
-
-        }
+   
     }
 }
