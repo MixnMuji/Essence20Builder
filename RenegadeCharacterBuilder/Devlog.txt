@@ -107,3 +107,7 @@ whoo who
 
 4-4 
 breakthrough day startedviewmodel but instead need to make skills and Stats as an object with the logic and then just bring them over.
+
+4-5 
+
+Note to self I slow down when learning something new made generic model for sklls and learning about the properties of get and set and how it relates to privacy settings scope in C#
