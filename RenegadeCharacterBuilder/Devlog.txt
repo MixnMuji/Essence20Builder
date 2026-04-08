@@ -111,3 +111,8 @@ breakthrough day startedviewmodel but instead need to make skills and Stats as a
 4-5 
 
 Note to self I slow down when learning something new made generic model for sklls and learning about the properties of get and set and how it relates to privacy settings scope in C#
+
+4-6/7
+
+late programming night and bad day made models and methods for skill and scores need logic in viewmodel next but after thant we can cook and move on thank god haha. thought about responsibilites
+and where to put checks etc. view model is where points bank will live etc.
