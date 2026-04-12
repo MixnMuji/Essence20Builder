@@ -4,212 +4,115 @@ using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Animation;
 
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
-    public class CharScorePageModelTF: INotifyPropertyChanged
+    public class CharScorePageModelTF:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private int _pointBank = 9;
-        public int SocialSkilbank;
-        public int StrengthSkilbank;
-        public int SpeedlSkilbank;
-        public int SmartslSkilbank;
 
-        private int _strength = 1;
-        private int _speed = 1;
-        private int _smarts = 1;
-        private int _social = 1;
-
-
-        /*perhaps make a dictionary to show key scores and assoiated stats? that way if statments can check skills int value to essance score (if skillsun(all scores for related score) > Score){Messsage.box.Show
-        "Skills can not have more total ranks than Corresponding essence score)
-         */
+        public ScoreTF Strength { get; }
 
         //Strength skills
-        private int _athletics;
-        private int _brawn;
-        private int _conditioning;
-        private int _intimidation;
-        private int _might;
+       
 
-        //speed skills
-        private int _acrobatics;
-        private int _driving;
-        private int _finnese;
-        private int _infiltration;
-        private int _initative;
-        private int _targeting;
+        public ScoreTF Speed { get; }
+        public ScoreTF Smarts { get; }
+        public ScoreTF Soical { get; }
 
-        //smarts skills
-        private int _alertness;
-        private int _culture;
-        private int _science;
-        private int _surviaval;
-        private int _Technology;
+        public CharScorePageModelTF()
+        {
+            //Strength block
+            Strength = new ScoreTF("Strength", new List<SkillTF>
+            {
+                new SkillTF("Athletics"),
+                new SkillTF("Brawn"),
+                new SkillTF("Conditioning"),
+                new SkillTF("Intimidation"),
+                new SkillTF("Might"),
+            });
+
+            Speed = new ScoreTF("Speed", new List<SkillTF>
+            {
+                new SkillTF("Acrobatics"),
+                new SkillTF("Driving"),
+                new SkillTF("Finesse"),
+                new SkillTF("Inflitration"),
+                new SkillTF("Inititave"),
+                new SkillTF("Targeting"),
 
 
-        //socail skills
-        private int _animalHandling;
-        private int _deception;
-        private int _preformance;
-        private int _persuasion;
-        private int _streetwise;
+
+            });
+
+            Smarts = new ScoreTF("Smarts", new List<SkillTF>
+            {
+                new SkillTF("Alertness"),
+                new SkillTF("Culture"),
+                new SkillTF("Science"),
+                new SkillTF("Survival"),
+                new SkillTF("Technology"),
+                new SkillTF("Targeting"),
+
+             });
+
+            Soical = new ScoreTF("Soical", new List<SkillTF>
+            {
+                new SkillTF("Animal Handling"),
+                new SkillTF("Deception"),
+                new SkillTF("Preformance"),
+                new SkillTF("Preformance"),
+                new SkillTF("Persuasion"),
+                new SkillTF("Streetwise"),
+
+             });
+
+
+            /*
+             *  <TextBlock Grid.Row="1"  Grid.Column="3" Text="Animal Handling" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="2"  Grid.Column="3" Text="Deception" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="3"  Grid.Column="3" Text="Preformance" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="4"  Grid.Column="3" Text="Persuasion" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="5"  Grid.Column="3" Text="Streetwise" HorizontalAlignment="Center"/>
+             */
+
+        }
+
+
+
+
+
         public int PointsBank
         {
             get => _pointBank;
             set
             {
-                _pointBank = value;
-                OnPropertyChanged(nameof(PointsBank));
+                PointsBank = value;
+                NotifyPropertyChanged(nameof(PointsBank));
             }
         }
-        public int Strength
-        {
-            get => _strength;
-            set
-            {
-                _strength = value;
-                OnPropertyChanged(nameof(Strength));
-            }
-        }
-        public int Smarts
-        {
-            get => _smarts;
-            set
-            {
-                _smarts = value;
-                OnPropertyChanged(nameof(Smarts));
 
-            }
-        }
-        public int Speed
+        public void AddPointsToScore(ScoreTF targetScore)
         {
-            get => _speed;
-            set
+            if (PointsBank > 0)
             {
-                _speed = value;
-                OnPropertyChanged(nameof(Speed));
+                targetScore.AddToScore();
+                PointsBank -= 1;
+            }else
+            {
+                MessageBox.Show("You have no more points to allocate");
             }
         }
-        public int Social
+        public void DecreasePontsFromScore(ScoreTF targetScore)
         {
-            get => _social;
-            set
-            {
-                _social = value;
-                OnPropertyChanged(nameof(Social));
-            }
+            targetScore.SubtractFromScore();
+            PointsBank += 1;
         }
-        private void OnPropertyChanged(string name)
+        private void NotifyPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-        public void AddToScore(object sender, RoutedEventArgs e)
-        {
-            // logic that binds button to skill
-            var btn = sender as Button;
-
-            string? stat = btn.Tag.ToString();
-            if (stat == null || PointsBank <= 0)
-            {
-                MessageBox.Show("No more points to spend");
-                return;
-            }
-            switch (stat)
-            {
-                case "Strength":
-                    Strength += 1;
-                    PointsBank -= 1;
-                    break;
-                case "Speed":
-                    Speed += 1;
-                    PointsBank -= 1;
-                    break;
-                case "Smarts":
-                    Smarts += 1;
-                    PointsBank -= 1;
-                    break;
-                case "Social":
-                    Social += 1;
-                    PointsBank -= 1;
-                    break;
-            }
-
-        }
-        public void SubtracFromoScore(object sender, RoutedEventArgs e)
-        {
-            // logic that binds button to skill
-            var btn = sender as Button;
-
-            string? stat = btn.Tag.ToString();
-            if (stat == null)
-            {
-                MessageBox.Show("Null exception");
-                return;
-            }
-            switch (stat)
-            {
-                case "Strength":
-                    if (Strength == 1)
-                    {
-                        MessageBox.Show("Stat must be equal to at least 1");
-                        break;
-                    }
-                    else
-                    {
-                        Strength -= 1;
-                        PointsBank += 1;
-                        break;
-                    }
-                case "Speed":
-                    if (Speed == 1)
-                    {
-                        MessageBox.Show("Stat must be equal to at least 1");
-                        break;
-                    }
-                    else
-                    {
-                        Speed -= 1;
-                        PointsBank += 1;
-                        break;
-                    }
-                case "Smarts":
-                    if (Smarts == 1)
-                    {
-                        MessageBox.Show("Stat must be equal to at least 1");
-                        break;
-                    }
-                    else
-                    {
-                        Smarts -= 1;
-                        PointsBank += 1;
-                        break;
-                    }
-                case "Social":
-                    if (Social == 1)
-                    {
-                        MessageBox.Show("Stat must be equal to at least 1");
-                        break;
-                    }
-                    else
-                    {
-                        Social -= 1;
-                        PointsBank += 1;
-                        break;
-                    }
-            }
-
-
-        }
-        public void AddToSkill(object sender, RoutedEventArgs e)
-        {
-            //logic which checks the skills corresponding stat
-            // if current points in skill > score return message box show. "Cannot have more points in skill that base essance score"
-        }
-        public void SubtracFromSkill(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

@@ -6,10 +6,10 @@ using System.Windows;
 
 namespace RenegadeCharacterBuilder.Models.Transformers
 {
-    internal class ScoreTF: INotifyPropertyChanged
+    public class ScoreTF : INotifyPropertyChanged
     {
         private string name { get; init; }
-        private int currentRank;
+        private int currentRank {get; set;} = 1;
 
         private List<SkillTF> correspondingSkills = new();
 
@@ -27,12 +27,17 @@ namespace RenegadeCharacterBuilder.Models.Transformers
             }
         }
 
+        public ScoreTF(string name, List<SkillTF> correspondingSkills)
+        {
+            this.name = name;
+            this.correspondingSkills = correspondingSkills;
+        }
         public bool CanIncreaseSkill()
         {
             int total = correspondingSkills.Sum(s => s.SkillScore);
             return total < CurrentRank;
         }
-        public void increaseSkill(SkillTF skill)
+        public void IncreaseSkill(SkillTF skill)
         {
             if (!CanIncreaseSkill())
             {
@@ -40,7 +45,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
             }
             skill.SkillScore += 1;
         }
-        public void decreaseSkill(SkillTF skill)
+        public void DecreaseSkill(SkillTF skill)
         {
             if(skill.SkillScore <= 0){
                 throw new InvalidOperationException("Skill Scores can not be less than zero");

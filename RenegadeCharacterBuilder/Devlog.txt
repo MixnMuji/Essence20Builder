@@ -116,3 +116,10 @@ Note to self I slow down when learning something new made generic model for skll
 
 late programming night and bad day made models and methods for skill and scores need logic in viewmodel next but after thant we can cook and move on thank god haha. thought about responsibilites
 and where to put checks etc. view model is where points bank will live etc.
+
+4-12 Long break finished
+
+
+Learn the importance of constructors to save me from hardcoding all the skills in the  viewmodel redified my view of viewmodel, where as before I was thinking of it as a page I needed to shift it being a 
+model to tell me what parts are going to be part of a page like the pieces it needs to function.
+added the scores and skills.
