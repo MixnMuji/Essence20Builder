@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing.Printing;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,124 +10,41 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace RenegadeCharacterBuilder
 {
     /// <summary>
     /// Interaction logic for ScoreSkillAllocationTF.xaml
     /// </summary>
-    public partial class ScoreSkillAllocationTF : Page, INotifyPropertyChanged
+    public partial class ScoreSkillAllocationTF : Page
     {
-       
+        public CharScorePageModelTF Viewmodel { get; }
         public ScoreSkillAllocationTF()
         {
             InitializeComponent();
-            DataContext = this;
-        }
-
-        private void OnPropertyChanged(string name)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-        public  void AddToScore(object sender, RoutedEventArgs e)
-        {
-            // logic that binds button to skill
-            var btn = sender as Button;
-
-            string? stat = btn.Tag.ToString();
-            if(stat == null || PointsBank <= 0)
-            {
-                MessageBox.Show("No more points to spend");
-                return;
-            }
-            switch (stat)
-            {
-                case "Strength":
-                    Strength += 1;
-                    PointsBank -= 1;
-                    break;
-                case "Speed":
-                    Speed += 1;
-                    PointsBank -= 1;
-                    break;
-                case "Smarts":
-                    Smarts += 1;
-                    PointsBank -= 1;
-                    break;
-                case "Social":
-                    Social += 1;
-                    PointsBank -= 1;
-                    break;
-            }
-            
-        }
-        public  void SubtracFromoScore(object sender, RoutedEventArgs e)
-        {
-            // logic that binds button to skill
-            var btn = sender as Button;
-
-            string? stat = btn.Tag.ToString();
-            if (stat == null)
-            {
-                MessageBox.Show("Null exception");
-                return;
-            }
-            switch (stat)
-            {
-                case "Strength":
-                    if (Strength == 1)
-                    {
-                        MessageBox.Show("Stat must be equal to at least 1");
-                        break;
-                    }
-                    else
-                    {
-                        Strength -= 1;
-                        PointsBank += 1;
-                        break;
-                    }
-                case "Speed":
-                    if (Speed == 1)
-                    {
-                        MessageBox.Show("Stat must be equal to at least 1");
-                        break;
-                    }
-                    else
-                    {
-                        Speed -= 1;
-                        PointsBank += 1;
-                        break;
-                    }
-                case "Smarts":
-                    if (Smarts == 1)
-                    {
-                        MessageBox.Show("Stat must be equal to at least 1");
-                        break;
-                    }
-                    else
-                    {
-                        Smarts -= 1;
-                        PointsBank += 1;
-                        break;
-                    }
-                case "Social":
-                    if (Social == 1)
-                    {
-                        MessageBox.Show("Stat must be equal to at least 1");
-                        break;
-                    }
-                    else
-                    {
-                        Social -= 1;
-                        PointsBank += 1;
-                        break;
-                    }
-            }
+            Viewmodel = new CharScorePageModelTF();
+            DataContext = Viewmodel;
 
         }
-   
+
+        /* template for later 
+        <TextBlock Grid.Row="0"  Text= "Strength" HorizontalAlignment= "Center" />
+            < Button Grid.Row= "0"  Content= "-" Click= "SubtracFromoScore" Height= "15" Width= "10" HorizontalAlignment= "Center" Margin= "0,0,50,0" VerticalAlignment= "Bottom" Tag= "Strength" />
+            < TextBlock Text= "{Binding Strength}" HorizontalAlignment= "Center" Margin= "0,0,0,2" VerticalAlignment= "Bottom" ></ TextBlock >
+            < Button Grid.Row= "0" Content= "+" Click= "AddToScore" Height= "15" Width= "10" HorizontalAlignment= "Center" Margin= "5,0,-50,0" VerticalAlignment= "Bottom" Tag= "Strength" />
+
+        */
+
+
+
+
+
     }
 }

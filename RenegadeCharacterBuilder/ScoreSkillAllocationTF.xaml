@@ -15,82 +15,35 @@
             <RowDefinition Height="360"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-       
-        
+
+
         <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+            
+
+            <ItemsControl ItemsSource="{Binding Scores}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}"/>
+                            <ItemsControl ItemsSource="{Binding SkillsTF}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                
+                            </ItemsControl>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
                 
-            </Grid.ColumnDefinitions>
-
-            
-            <!--Names Strength stuff-->
-         
-            <TextBlock Grid.Row="0"  Text="Strength" HorizontalAlignment="Center"/>
-            <Button Grid.Row="0"  Content="-" Click="SubtracFromoScore" Height="15" Width="10" HorizontalAlignment="Center" Margin="0,0,50,0" VerticalAlignment="Bottom" Tag="Strength" />
-            <TextBlock Text="{Binding Strength}" HorizontalAlignment="Center" Margin="0,0,0,2" VerticalAlignment="Bottom"></TextBlock>
-            <Button Grid.Row="0" Content="+" Click="AddToScore" Height="15" Width="10" HorizontalAlignment="Center" Margin="5,0,-50,0" VerticalAlignment="Bottom" Tag="Strength"/>
-
-            <TextBlock Grid.Row="1"  Text="Athletics" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="2"  Text="Brawn" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="3"  Text="Conditioning" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="4"  Text="Intimidation" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="5"  Text="Might" HorizontalAlignment="Center"/>
-            
-            <!-- Speed Stuff-->
-            <TextBlock Grid.Row="0" Grid.Column="1"  Text="Speed" HorizontalAlignment="Center"/>
-            <Button Grid.Row="0" Grid.Column="1" Content="-" Click="SubtracFromoScore" Height="15" Width="10" HorizontalAlignment="Center" Margin="0,0,50,0" VerticalAlignment="Bottom" Tag="Speed"/>
-            <TextBlock Text="{Binding Speed}" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,2" VerticalAlignment="Bottom"></TextBlock>
-            <Button Grid.Row="0" Grid.Column="1" Content="+" Click="AddToScore" Height="15" Width="10" HorizontalAlignment="Center" Margin="5,0,-50,0" VerticalAlignment="Bottom" Tag="Speed"/>
-            
-            <TextBlock Grid.Row="1" Grid.Column="1"  Text="Acrobatics" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="2" Grid.Column="1"  Text="Driving" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="3" Grid.Column="1"  Text="Finesse" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="4" Grid.Column="1"  Text="Infiltration" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="5" Grid.Column="1"  Text="Inititave" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="6" Grid.Column="1"  Text="Targeting" HorizontalAlignment="Center"/>
-            
-            
-            <!-- Smarts Stuff-->
-            <TextBlock Grid.Row="0" Grid.Column="2" Text="Smarts" HorizontalAlignment="Center"/>
-            <Button Grid.Row="0" Grid.Column="2" Content="-" Click="SubtracFromoScore" Height="15" Width="10" HorizontalAlignment="Center" Margin="0,0,50,0" VerticalAlignment="Bottom" Tag="Smarts"/>
-            <TextBlock Text="{Binding Smarts}" Grid.Column="2" HorizontalAlignment="Center" Margin="0,0,0,2" VerticalAlignment="Bottom"></TextBlock>
-            <Button Grid.Row="0" Grid.Column="2" Content="+" Click="AddToScore" Height="15" Width="10" HorizontalAlignment="Center" Margin="5,0,-50,0" VerticalAlignment="Bottom" Tag="Smarts"/>
-            
-            <TextBlock Grid.Row="1" Grid.Column="2" Text="Alertness" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="2" Grid.Column="2" Text="Culture" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="3" Grid.Column="2" Text="Science" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="4" Grid.Column="2" Text="Survival" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="5" Grid.Column="2" Text="Technology" HorizontalAlignment="Center"/>
-            
-            
-            <!-- Social Stuff-->
-            <TextBlock Grid.Row="0"  Grid.Column="3" Text="Social" HorizontalAlignment="Center"/>
-            <Button Grid.Row="0" Grid.Column="3" Content="-" Click="SubtracFromoScore" Height="15" Width="10" HorizontalAlignment="Center" Margin="0,0,50,0" VerticalAlignment="Bottom" Tag="Social"/>
-            <TextBlock Text="{Binding Social}" Grid.Column="3" HorizontalAlignment="Center" Margin="0,0,0,2" VerticalAlignment="Bottom"></TextBlock>
-            <Button Grid.Row="0" Grid.Column="3" Content="+" Click="AddToScore" Height="15" Width="10" HorizontalAlignment="Center" Margin="5,0,-50,0" VerticalAlignment="Bottom" Tag="Social"/>
-            
-            <TextBlock Grid.Row="1"  Grid.Column="3" Text="Animal Handling" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="2"  Grid.Column="3" Text="Deception" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="3"  Grid.Column="3" Text="Preformance" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="4"  Grid.Column="3" Text="Persuasion" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="5"  Grid.Column="3" Text="Streetwise" HorizontalAlignment="Center"/>
-            
+            </ItemsControl>
+          
             
         </Grid>
-        
+      
         <!-- Header Stuff-->
         <TextBlock Grid.Row="0" Text="Scores and Skills"/>
         <TextBlock Grid.Row="0" HorizontalAlignment="Right" Text="{Binding PointsBank, StringFormat= Remaining Points : {0}}"/>

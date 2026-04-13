@@ -123,3 +123,6 @@ and where to put checks etc. view model is where points bank will live etc.
 Learn the importance of constructors to save me from hardcoding all the skills in the  viewmodel redified my view of viewmodel, where as before I was thinking of it as a page I needed to shift it being a 
 model to tell me what parts are going to be part of a page like the pieces it needs to function.
 added the scores and skills.
+
+4-12 lazy-ish day had an interview woohoo, recursion bug with pointbank may need to start score page over , need public fields for name in skill and score, also need a constructor to hold the data like 
+score name, coressponnding skill and, 

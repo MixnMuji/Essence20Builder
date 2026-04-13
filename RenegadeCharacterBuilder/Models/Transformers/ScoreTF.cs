@@ -10,8 +10,9 @@ namespace RenegadeCharacterBuilder.Models.Transformers
     {
         private string name { get; init; }
         private int currentRank {get; set;} = 1;
-
-        private List<SkillTF> correspondingSkills = new();
+        public List<SkillTF> SkillsTF { get; }
+        public string Name { get; }
+        private List<SkillTF> correspondingSkills { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public int CurrentRank
@@ -26,11 +27,15 @@ namespace RenegadeCharacterBuilder.Models.Transformers
                 }
             }
         }
-
-        public ScoreTF(string name, List<SkillTF> correspondingSkills)
+        public List<SkillTF> CorrespondingSkills
         {
-            this.name = name;
-            this.correspondingSkills = correspondingSkills;
+            get => correspondingSkills;
+            set => correspondingSkills = value;
+        }
+        public ScoreTF(string name, List<SkillTF> CorrespondingSkills)
+        {
+            Name = name;
+            SkillsTF = CorrespondingSkills;
         }
         public bool CanIncreaseSkill()
         {

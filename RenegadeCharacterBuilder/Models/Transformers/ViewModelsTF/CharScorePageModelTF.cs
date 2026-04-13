@@ -13,6 +13,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public event PropertyChangedEventHandler PropertyChanged;
         private int _pointBank = 9;
 
+        public List <ScoreTF> Scores { get; }
+
         public ScoreTF Strength { get; }
 
         //Strength skills
@@ -24,6 +26,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public CharScorePageModelTF()
         {
+           
             //Strength block
             Strength = new ScoreTF("Strength", new List<SkillTF>
             {
@@ -68,6 +71,13 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 new SkillTF("Streetwise"),
 
              });
+            Scores = new List<ScoreTF>
+            {
+            Strength,
+            Speed,
+            Smarts,
+            Soical
+            };
 
 
             /*
@@ -89,7 +99,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             get => _pointBank;
             set
             {
-                PointsBank = value;
+                _pointBank = value;
                 NotifyPropertyChanged(nameof(PointsBank));
             }
         }

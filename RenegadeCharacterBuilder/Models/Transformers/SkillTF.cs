@@ -10,13 +10,13 @@ namespace RenegadeCharacterBuilder.Models.Transformers
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private string name { get; set; }
-
+        public string Name { get; }
 
         private int _skillScore { get; set; } = 0;
 
         public SkillTF(string name)
         {
-            this.name = name;
+            Name = name;
         }
         public int SkillScore{
             get => _skillScore;
