@@ -34,14 +34,6 @@ namespace RenegadeCharacterBuilder
 
         }
 
-        /* template for later 
-        <TextBlock Grid.Row="0"  Text= "Strength" HorizontalAlignment= "Center" />
-            < Button Grid.Row= "0"  Content= "-" Click= "SubtracFromoScore" Height= "15" Width= "10" HorizontalAlignment= "Center" Margin= "0,0,50,0" VerticalAlignment= "Bottom" Tag= "Strength" />
-            < TextBlock Text= "{Binding Strength}" HorizontalAlignment= "Center" Margin= "0,0,0,2" VerticalAlignment= "Bottom" ></ TextBlock >
-            < Button Grid.Row= "0" Content= "+" Click= "AddToScore" Height= "15" Width= "10" HorizontalAlignment= "Center" Margin= "5,0,-50,0" VerticalAlignment= "Bottom" Tag= "Strength" />
-
-        */
-
 
 
 

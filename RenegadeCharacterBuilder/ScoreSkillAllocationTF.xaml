@@ -21,19 +21,27 @@
             
 
             <ItemsControl ItemsSource="{Binding Scores}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="4"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
                             <TextBlock Text="{Binding Name}"/>
-                            <Button Grid.Row= "0"  Content= "-" Command="{Binding DataContext.RemovePointsFromScore, RelativeSource= {RelativeSource AncestorType=Page}}" CommandParameter="{Binding}" Height= "15" Width= "10" HorizontalAlignment= "Center" Margin= "0,0,50,0" VerticalAlignment= "Bottom" />
+                            <Button Grid.Row= "0"  Content= "-" Command="{Binding DataContext.RemovePointsFromScore, RelativeSource= {RelativeSource AncestorType=Page}}" CommandParameter="{Binding}" Height= "15" Width= "10"  Margin= "0,0,50,0" VerticalAlignment= "Bottom" />
                             <TextBlock Text="{Binding CurrentRank}" HorizontalAlignment= "Center" Margin= "0,0,0,2" VerticalAlignment= "Bottom" />
-                            <Button Grid.Row= "0" Content= "+" Command="{Binding DataContext.AddpointsToScore, RelativeSource= {RelativeSource AncestorType=Page}}" CommandParameter="{Binding}" Height= "15" Width= "10" HorizontalAlignment= "Center" Margin= "5,0,-50,0" VerticalAlignment= "Bottom" Tag= "Strength" />
+                            <Button Grid.Row= "0" Content= "+" Command="{Binding DataContext.AddpointsToScore, RelativeSource= {RelativeSource AncestorType=Page}}" CommandParameter="{Binding}" Height= "15" Width= "10"  Margin= "5,0,-50,0" VerticalAlignment= "Bottom"  />
 
-                            <ItemsControl ItemsSource="{Binding SkillsTF}">
+                            <ItemsControl ItemsSource="{Binding CorrespondingSkills}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
                                             <TextBlock Text="{Binding Name}"/>
+                                            <Button Grid.Row= "0"  Content= "-" Command="{Binding DataContext.DecreaseSkllCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}" Height= "15" Width= "10" Margin= "0,0,50,0" VerticalAlignment= "Bottom" />
+                                            <TextBlock Text="{Binding SkillScore}" HorizontalAlignment= "Center" Margin= "0,0,0,2" VerticalAlignment= "Bottom" />
+                                            <Button Grid.Row= "0" Content= "+" Command="{Binding DataContext.IncreaseSkllCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}" Height= "15" Width= "10"  Margin= "5,0,-50,0" VerticalAlignment= "Bottom" Tag= "Strength" />
                                         </StackPanel>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>

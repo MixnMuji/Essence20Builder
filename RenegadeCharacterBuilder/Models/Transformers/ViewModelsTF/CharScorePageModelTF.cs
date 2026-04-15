@@ -14,8 +14,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public event PropertyChangedEventHandler PropertyChanged;
         private int _pointBank = 9;
 
+        
         public ICommand AddpointsToScore { get; }
         public ICommand RemovePointsFromScore { get; }
+        
+
         public List <ScoreTF> Scores { get; }
 
         public ScoreTF Strength { get; }
@@ -31,6 +34,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         {
             AddpointsToScore = new RelayCommand<ScoreTF>(AddPointsToScore);
             RemovePointsFromScore = new RelayCommand<ScoreTF>(DecreasePontsFromScore);
+         
             //Strength block
             Strength = new ScoreTF("Strength", new List<SkillTF>
             {
@@ -84,13 +88,6 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             };
 
 
-            /*
-             *  <TextBlock Grid.Row="1"  Grid.Column="3" Text="Animal Handling" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="2"  Grid.Column="3" Text="Deception" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="3"  Grid.Column="3" Text="Preformance" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="4"  Grid.Column="3" Text="Persuasion" HorizontalAlignment="Center"/>
-            <TextBlock Grid.Row="5"  Grid.Column="3" Text="Streetwise" HorizontalAlignment="Center"/>
-             */
 
         }
 

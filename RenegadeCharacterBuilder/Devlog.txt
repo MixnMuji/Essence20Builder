@@ -131,3 +131,9 @@ score name, coressponnding skill and,
 
 Added Commands instead of hardcored + and - need tolearn more abotu action commans I command relative source and the like, fix formating and also learn to change rows and things like that for when
 it populates!
+
+4-15
+
+leanred relative source  is to travel back to where commands exist, likewise scores should have comands set equal to the methods as wprf can only use comands and not binding for methods.
+To do put buttons in a stack pannel so they look good or something, also made grid.
+also get rid of excetpions make a boolian can increase or not increse and if not increase show error message or something!

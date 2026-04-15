@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using System.Windows;
+using System.Windows.Input;
 
 namespace RenegadeCharacterBuilder.Models.Transformers
 {
@@ -10,12 +11,27 @@ namespace RenegadeCharacterBuilder.Models.Transformers
     {
         private string name { get; init; }
         private int currentRank {get; set;} = 1;
-        public List<SkillTF> SkillsTF { get; }
         public string Name { get; }
         private List<SkillTF> correspondingSkills { get; set; }
 
+        public ICommand IncreaseSkllCommand { get; }
+        public ICommand DecreaseSkllCommand { get; }
+
         public event PropertyChangedEventHandler PropertyChanged;
-        public int CurrentRank
+      
+        public ScoreTF(string name, List<SkillTF> CorrespondingSkills)
+        {
+            Name = name;
+           correspondingSkills = CorrespondingSkills;
+
+
+            IncreaseSkllCommand = new RelayCommand<SkillTF>(IncreaseSkill);
+            DecreaseSkllCommand = new RelayCommand<SkillTF>(DecreaseSkill);
+        }
+
+
+
+          public int CurrentRank
         {
             get => currentRank;
             set
@@ -31,13 +47,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         {
             get => correspondingSkills;
             set => correspondingSkills = value;
-        }
-        public ScoreTF(string name, List<SkillTF> CorrespondingSkills)
-        {
-            Name = name;
-            SkillsTF = CorrespondingSkills;
-        }
-        public bool CanIncreaseSkill()
+        }public bool CanIncreaseSkill()
         {
             int total = correspondingSkills.Sum(s => s.SkillScore);
             return total < CurrentRank;
