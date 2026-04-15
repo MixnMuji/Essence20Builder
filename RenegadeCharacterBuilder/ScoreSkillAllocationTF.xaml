@@ -25,6 +25,10 @@
                     <DataTemplate>
                         <StackPanel>
                             <TextBlock Text="{Binding Name}"/>
+                            <Button Grid.Row= "0"  Content= "-" Command="{Binding DataContext.RemovePointsFromScore, RelativeSource= {RelativeSource AncestorType=Page}}" CommandParameter="{Binding}" Height= "15" Width= "10" HorizontalAlignment= "Center" Margin= "0,0,50,0" VerticalAlignment= "Bottom" />
+                            <TextBlock Text="{Binding CurrentRank}" HorizontalAlignment= "Center" Margin= "0,0,0,2" VerticalAlignment= "Bottom" />
+                            <Button Grid.Row= "0" Content= "+" Command="{Binding DataContext.AddpointsToScore, RelativeSource= {RelativeSource AncestorType=Page}}" CommandParameter="{Binding}" Height= "15" Width= "10" HorizontalAlignment= "Center" Margin= "5,0,-50,0" VerticalAlignment= "Bottom" Tag= "Strength" />
+
                             <ItemsControl ItemsSource="{Binding SkillsTF}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>

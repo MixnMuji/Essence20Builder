@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media.Animation;
 
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
@@ -13,6 +14,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public event PropertyChangedEventHandler PropertyChanged;
         private int _pointBank = 9;
 
+        public ICommand AddpointsToScore { get; }
+        public ICommand RemovePointsFromScore { get; }
         public List <ScoreTF> Scores { get; }
 
         public ScoreTF Strength { get; }
@@ -26,7 +29,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public CharScorePageModelTF()
         {
-           
+            AddpointsToScore = new RelayCommand<ScoreTF>(AddPointsToScore);
+            RemovePointsFromScore = new RelayCommand<ScoreTF>(DecreasePontsFromScore);
             //Strength block
             Strength = new ScoreTF("Strength", new List<SkillTF>
             {

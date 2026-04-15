@@ -126,3 +126,8 @@ added the scores and skills.
 
 4-12 lazy-ish day had an interview woohoo, recursion bug with pointbank may need to start score page over , need public fields for name in skill and score, also need a constructor to hold the data like 
 score name, coressponnding skill and, 
+
+4-14
+
+Added Commands instead of hardcored + and - need tolearn more abotu action commans I command relative source and the like, fix formating and also learn to change rows and things like that for when
+it populates!
