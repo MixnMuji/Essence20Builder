@@ -137,3 +137,6 @@ it populates!
 leanred relative source  is to travel back to where commands exist, likewise scores should have comands set equal to the methods as wprf can only use comands and not binding for methods.
 To do put buttons in a stack pannel so they look good or something, also made grid.
 also get rid of excetpions make a boolian can increase or not increse and if not increase show error message or something!
+
+-fixed buttons by putting them in stackpannel and Changing orientation to vertical, need to mess around with margins but more importantly make buttons bigger and add spacing between 
+elements in stack row!
