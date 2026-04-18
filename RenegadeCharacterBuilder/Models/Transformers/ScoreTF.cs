@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics.Eventing.Reader;
 using System.Text;
 using System.Windows;
+using System.Windows.Diagnostics;
 using System.Windows.Input;
 
 namespace RenegadeCharacterBuilder.Models.Transformers
@@ -52,20 +54,34 @@ namespace RenegadeCharacterBuilder.Models.Transformers
             int total = correspondingSkills.Sum(s => s.SkillScore);
             return total < CurrentRank;
         }
-        public void IncreaseSkill(SkillTF skill)
+
+        public bool TryIncreaseSKill(SkillTF skill)
         {
             if (!CanIncreaseSkill())
             {
-                throw new InvalidOperationException("Skill allocation exceeds essance score");
+                return false;
             }
-            skill.SkillScore += 1;
+            else
+            {
+                skill.SkillScore += 1;
+                return true;
+            }
+
+           
         }
-        public void DecreaseSkill(SkillTF skill)
+       
+        public bool DecreaseSkill(SkillTF skill)
         {
-            if(skill.SkillScore <= 0){
-                throw new InvalidOperationException("Skill Scores can not be less than zero");
+            if(skill.SkillScore <= 0)
+            {
+                return false;
             }
+            else { 
             skill.SkillScore -= 1;
+                return true;
+
+            }
+            
         }
         public void AddToScore()
         {
@@ -74,12 +90,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         }
         public void SubtractFromScore()
         {
-            if (CurrentRank <=1)
-            {
-                throw new InvalidOperationException("Scores can not be have a lower value than 1");
-            }
-            CurrentRank -= 1;
-           
+                CurrentRank -= 1;
+          
         }
         private void NotifyPropertyChanged(string name)
         {

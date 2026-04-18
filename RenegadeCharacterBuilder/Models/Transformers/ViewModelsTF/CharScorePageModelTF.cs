@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
+using static RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.CharScorePageModelTF;
 
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
@@ -18,6 +19,9 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public ICommand AddpointsToScore { get; }
         public ICommand RemovePointsFromScore { get; }
         
+        public ICommand AddPointsToSkill { get; }
+
+        public ICommand RemovePointsFromSkill { get; }
 
         public List <ScoreTF> Scores { get; }
 
@@ -25,7 +29,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         //Strength skills
        
-
+        public class SkillCommandParameter
+        {
+            public ScoreTF score { get; }
+            public SkillTF skill { get; }
+        }
         public ScoreTF Speed { get; }
         public ScoreTF Smarts { get; }
         public ScoreTF Soical { get; }
@@ -34,7 +42,9 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         {
             AddpointsToScore = new RelayCommand<ScoreTF>(AddPointsToScore);
             RemovePointsFromScore = new RelayCommand<ScoreTF>(DecreasePontsFromScore);
-         
+            AddPointsToSkill = new RelayCommand<SkillCommandParameter>(param => AddPointsToSkil(param.score, param.skill));
+            RemovePointsFromSkill = new RelayCommand<SkillCommandParameter>(param=>DecreasePointsFromSkill(param.score,param.skill));
+
             //Strength block
             Strength = new ScoreTF("Strength", new List<SkillTF>
             {
@@ -105,6 +115,30 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             }
         }
 
+
+        public void AddPointsToSkil(ScoreTF scoreTF,SkillTF skillTF)
+        {
+            if (!scoreTF.CanIncreaseSkill())
+            {
+                MessageBox.Show($"Total rank of skills in group {scoreTF} can not be greater than scores current value");
+            }
+            else
+            {
+                scoreTF.IncreaseSkill(skillTF);
+            }
+        }
+        public void DecreasePointsFromSkill(ScoreTF scoretf,SkillTF skill)
+        {
+            if (skill.SkillScore <= 0)
+            {
+                MessageBox.Show("can not lower score past 0. ");
+            }
+            else
+            {
+                scoretf.DecreaseSkill(skill);
+            }
+        }
+
         public void AddPointsToScore(ScoreTF targetScore)
         {
             if (PointsBank > 0)
@@ -118,8 +152,16 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         }
         public void DecreasePontsFromScore(ScoreTF targetScore)
         {
-            targetScore.SubtractFromScore();
-            PointsBank += 1;
+            if (targetScore.CurrentRank < 1)
+            {
+                MessageBox.Show("You can not decrese this score Lower than one");
+
+            }
+            else
+            {
+                targetScore.SubtractFromScore();
+                PointsBank += 1;
+            }
         }
         private void NotifyPropertyChanged(string name)
         {
