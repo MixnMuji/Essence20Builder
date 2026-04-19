@@ -27,13 +27,9 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public ScoreTF Strength { get; }
 
-        //Strength skills
+        
 
-        public class skillsScoreJoin //make it's own model
-        {
-            public ScoreTF Score { get; set; }
-            public SkillTF Skill { get; set; }
-        }
+      public ScoreTF Score { get; }
         public ScoreTF Speed { get; }
         public ScoreTF Smarts { get; }
         public ScoreTF Soical { get; }
@@ -42,8 +38,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         {
             AddpointsToScore = new RelayCommand<ScoreTF>(AddPointsToScore);
             RemovePointsFromScore = new RelayCommand<ScoreTF>(DecreasePontsFromScore);
-            AddPointsToSkill = new RelayCommand<skillsScoreJoin>(AddPointsToSkil);
-            RemovePointsFromSkill = new RelayCommand<skillsScoreJoin>(DecreasePointsFromSkill);
+            AddPointsToSkill = new RelayCommand<SkillsScoreJoin>(AddPointsToSkil);
+            RemovePointsFromSkill = new RelayCommand<SkillsScoreJoin>(DecreasePointsFromSkill);
 
 
             //Strength block
@@ -117,11 +113,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         }
 
 
-        public void AddPointsToSkil(skillsScoreJoin param)
+        public void AddPointsToSkil(SkillsScoreJoin param)
         {
             if (!param.Score.TryIncreaseSKill(param.Skill))
             {
-                MessageBox.Show($"points allocated to skills can not exceed value of Essance score current value {param.score.Name}");
+                MessageBox.Show($"points allocated to skills can not exceed value of Essance score current value {param.Score.Name}");
             }
             else
             {
@@ -129,7 +125,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             }
 
         }
-        public void DecreasePointsFromSkill(skillsScoreJoin param)
+        public void DecreasePointsFromSkill(SkillsScoreJoin param)
         {
             if (param.Skill.SkillScore <= 0)
             {

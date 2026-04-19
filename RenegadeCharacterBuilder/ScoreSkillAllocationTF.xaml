@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RenegadeCharacterBuilder"
+      xmlns:vm="clr-namespace:RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ScoreSkillAllocationTF"
@@ -45,13 +46,14 @@
                                             <StackPanel Orientation="Horizontal">
                                                 <Button  Content= "-" Command="{Binding DataContext.RemovePointsFromSkill, RelativeSource={RelativeSource AncestorType=Page}}">
                                                     <Button.CommandParameter>
-                                                        <local:skillsScoreJoin
-                                                      skill="{Binding}" 
-                                                      score="{Binding DataContext, RelativeSource={RelativeSource AncestorType=ItemsControl, AncestorLevel=2}}"/>
+                                                        <vm:SkillsScoreJoin
+                                                        Skill="{Binding}"
+                                                         Score="{Binding DataContext, RelativeSource={RelativeSource AncestorType=ItemsControl, AncestorLevel=2}}"/>
                                                     </Button.CommandParameter>
+                                                </Button>
 
 
-                                                    <TextBlock Text="{Binding SkillScore}" HorizontalAlignment= "Center" Margin= "0,0,0,2" VerticalAlignment= "Bottom" />
+                                                <TextBlock Text="{Binding SkillScore}" HorizontalAlignment= "Center" Margin= "0,0,0,2" VerticalAlignment= "Bottom" />
                                                 <Button  Content= "+" Command="{Binding DataContext.AddPointsToSkill, RelativeSource={RelativeSource AncestorType=Page}}" CommandParameter="{Binding}" Height= "15" Width= "10"  Margin= "5,0,-50,0" VerticalAlignment= "Bottom" />
                                             </StackPanel>
                                             </StackPanel>

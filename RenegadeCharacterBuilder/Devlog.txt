@@ -146,3 +146,9 @@ Learned Icommand can only take one parameter, boolians can apply logic, needed t
 
 -fix commands in viewmodel,
 fix xaml
+
+4-19
+
+tried makeing a vm to use for Score and skill method is fucked beyond belief so not much I can do honestly can't think of what I tried or added beyond that, waste of a day I guess
+
+try to find fix
