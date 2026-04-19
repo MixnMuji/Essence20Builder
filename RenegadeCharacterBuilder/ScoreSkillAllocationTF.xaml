@@ -43,8 +43,15 @@
                                         <StackPanel>
                                             <TextBlock Text="{Binding Name}"/>
                                             <StackPanel Orientation="Horizontal">
-                                                <Button  Content= "-" Command="{Binding DataContext.RemovePointsFromSkill, RelativeSource={RelativeSource AncestorType=Page}}" CommandParameter="{Binding}" Height= "15" Width= "10" Margin= "0,0,50,0" VerticalAlignment= "Bottom" />
-                                            <TextBlock Text="{Binding SkillScore}" HorizontalAlignment= "Center" Margin= "0,0,0,2" VerticalAlignment= "Bottom" />
+                                                <Button  Content= "-" Command="{Binding DataContext.RemovePointsFromSkill, RelativeSource={RelativeSource AncestorType=Page}}">
+                                                    <Button.CommandParameter>
+                                                        <local:skillsScoreJoin
+                                                      skill="{Binding}" 
+                                                      score="{Binding DataContext, RelativeSource={RelativeSource AncestorType=ItemsControl, AncestorLevel=2}}"/>
+                                                    </Button.CommandParameter>
+
+
+                                                    <TextBlock Text="{Binding SkillScore}" HorizontalAlignment= "Center" Margin= "0,0,0,2" VerticalAlignment= "Bottom" />
                                                 <Button  Content= "+" Command="{Binding DataContext.AddPointsToSkill, RelativeSource={RelativeSource AncestorType=Page}}" CommandParameter="{Binding}" Height= "15" Width= "10"  Margin= "5,0,-50,0" VerticalAlignment= "Bottom" />
                                             </StackPanel>
                                             </StackPanel>

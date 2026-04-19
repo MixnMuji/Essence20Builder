@@ -27,8 +27,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
            correspondingSkills = CorrespondingSkills;
 
 
-            IncreaseSkllCommand = new RelayCommand<SkillTF>(IncreaseSkill);
-            DecreaseSkllCommand = new RelayCommand<SkillTF>(DecreaseSkill);
+            //IncreaseSkllCommand = new RelayCommand<SkillTF>(TryIncreaseSKill);
+           // DecreaseSkllCommand = new RelayCommand<SkillTF>(DecreaseSkill);
         }
 
 

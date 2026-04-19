@@ -143,3 +143,6 @@ elements in stack row!
 
 4-18 
 Learned Icommand can only take one parameter, boolians can apply logic, needed to fix buooleans shifted to show error message instead of crash becasue that's annoying on user side
+
+-fix commands in viewmodel,
+fix xaml

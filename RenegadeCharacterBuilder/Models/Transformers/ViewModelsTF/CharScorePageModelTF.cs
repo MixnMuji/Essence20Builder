@@ -28,11 +28,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public ScoreTF Strength { get; }
 
         //Strength skills
-       
-        public class SkillCommandParameter
+
+        public class skillsScoreJoin //make it's own model
         {
-            public ScoreTF score { get; }
-            public SkillTF skill { get; }
+            public ScoreTF Score { get; set; }
+            public SkillTF Skill { get; set; }
         }
         public ScoreTF Speed { get; }
         public ScoreTF Smarts { get; }
@@ -42,8 +42,9 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         {
             AddpointsToScore = new RelayCommand<ScoreTF>(AddPointsToScore);
             RemovePointsFromScore = new RelayCommand<ScoreTF>(DecreasePontsFromScore);
-            AddPointsToSkill = new RelayCommand<SkillCommandParameter>(param => AddPointsToSkil(param.score, param.skill));
-            RemovePointsFromSkill = new RelayCommand<SkillCommandParameter>(param=>DecreasePointsFromSkill(param.score,param.skill));
+            AddPointsToSkill = new RelayCommand<skillsScoreJoin>(AddPointsToSkil);
+            RemovePointsFromSkill = new RelayCommand<skillsScoreJoin>(DecreasePointsFromSkill);
+
 
             //Strength block
             Strength = new ScoreTF("Strength", new List<SkillTF>
@@ -116,26 +117,27 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         }
 
 
-        public void AddPointsToSkil(ScoreTF scoreTF,SkillTF skillTF)
+        public void AddPointsToSkil(skillsScoreJoin param)
         {
-            if (!scoreTF.CanIncreaseSkill())
+            if (!param.Score.TryIncreaseSKill(param.Skill))
             {
-                MessageBox.Show($"Total rank of skills in group {scoreTF} can not be greater than scores current value");
+                MessageBox.Show($"points allocated to skills can not exceed value of Essance score current value {param.score.Name}");
             }
             else
             {
-                scoreTF.IncreaseSkill(skillTF);
+                param.Score.TryIncreaseSKill(param.Skill);
             }
+
         }
-        public void DecreasePointsFromSkill(ScoreTF scoretf,SkillTF skill)
+        public void DecreasePointsFromSkill(skillsScoreJoin param)
         {
-            if (skill.SkillScore <= 0)
+            if (param.Skill.SkillScore <= 0)
             {
                 MessageBox.Show("can not lower score past 0. ");
             }
             else
             {
-                scoretf.DecreaseSkill(skill);
+                param.Score.DecreaseSkill(param.Skill);
             }
         }
 
