@@ -13,7 +13,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public string Name { get; }
 
         private int _skillScore { get; set; } = 0;
-
+        public bool IsKeySkill { get; set; } = false;
         public SkillTF(string name)
         {
             Name = name;

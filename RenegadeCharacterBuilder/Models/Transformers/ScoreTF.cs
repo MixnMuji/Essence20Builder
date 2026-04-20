@@ -14,6 +14,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         private string name { get; init; }
         private int currentRank {get; set;} = 1;
         public string Name { get; }
+
+        public bool IsKeyScore { get; set; } = false;
         private List<SkillTF> correspondingSkills { get; set; }
 
         public ICommand IncreaseSkllCommand { get; }
@@ -72,7 +74,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
        
         public bool DecreaseSkill(SkillTF skill)
         {
-            if(skill.SkillScore <= 0)
+            if(skill.SkillScore <= 0 || skill.IsKeySkill== true && skill.SkillScore <=1)
             {
                 return false;
             }

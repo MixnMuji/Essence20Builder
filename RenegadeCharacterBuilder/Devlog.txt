@@ -157,4 +157,13 @@ possible fix stop trying to be fancy and get score by cheating and finding it th
 
 var score = Scores.First(s => s.CorrespondingSkills.Contains(skill));
 
-8:22 implamented change; it worked
+8:22pm implamented change; it worked
+
+
+- Todo: add booleian for effected by class and have that logic exectute via switch commands
+
+
+
+4-20
+
+Big breakthrough started logic for class slections and the like to add higher level scores and started a swtichcase to allocate things properly
