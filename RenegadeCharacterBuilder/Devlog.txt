@@ -152,3 +152,9 @@ fix xaml
 tried makeing a vm to use for Score and skill method is fucked beyond belief so not much I can do honestly can't think of what I tried or added beyond that, waste of a day I guess
 
 try to find fix
+
+possible fix stop trying to be fancy and get score by cheating and finding it through what the skill is, just pass the skill as it's own Icommand and save the headache, revist later
+
+var score = Scores.First(s => s.CorrespondingSkills.Contains(skill));
+
+8:22 implamented change; it worked

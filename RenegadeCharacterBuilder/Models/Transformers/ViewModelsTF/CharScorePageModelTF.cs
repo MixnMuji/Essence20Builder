@@ -38,8 +38,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         {
             AddpointsToScore = new RelayCommand<ScoreTF>(AddPointsToScore);
             RemovePointsFromScore = new RelayCommand<ScoreTF>(DecreasePontsFromScore);
-            AddPointsToSkill = new RelayCommand<SkillsScoreJoin>(AddPointsToSkil);
-            RemovePointsFromSkill = new RelayCommand<SkillsScoreJoin>(DecreasePointsFromSkill);
+            AddPointsToSkill = new RelayCommand<SkillTF>(AddPointsToSkil);
+            RemovePointsFromSkill = new RelayCommand<SkillTF>(DecreasePointsFromSkill);
 
 
             //Strength block
@@ -113,27 +113,29 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         }
 
 
-        public void AddPointsToSkil(SkillsScoreJoin param)
+        public void AddPointsToSkil(SkillTF skill)
         {
-            if (!param.Score.TryIncreaseSKill(param.Skill))
+            var score = Scores.First(s => s.CorrespondingSkills.Contains(skill));
+            if (!score.TryIncreaseSKill(skill))
             {
-                MessageBox.Show($"points allocated to skills can not exceed value of Essance score current value {param.Score.Name}");
+                MessageBox.Show($"points allocated to skills can not exceed value of Essance score current value {score.Name}");
             }
             else
             {
-                param.Score.TryIncreaseSKill(param.Skill);
+                score.TryIncreaseSKill(skill);
             }
 
         }
-        public void DecreasePointsFromSkill(SkillsScoreJoin param)
+        public void DecreasePointsFromSkill(SkillTF skill)
         {
-            if (param.Skill.SkillScore <= 0)
+            var score = Scores.First(s => s.CorrespondingSkills.Contains(skill));
+            if (skill.SkillScore <= 0)
             {
                 MessageBox.Show("can not lower score past 0. ");
             }
             else
             {
-                param.Score.DecreaseSkill(param.Skill);
+                score.DecreaseSkill(skill);
             }
         }
 
