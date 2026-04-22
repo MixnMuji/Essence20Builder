@@ -174,3 +174,7 @@ events need to be rased finish switch cases
 4-22
 
 added skills rather refomated so I can resue them after assinging for sklls and class etc
+
+need to change retunrs on role thing into list to return and then formate them into a new object that retukrns a list of type skill tf
+
+finsihed swith statment

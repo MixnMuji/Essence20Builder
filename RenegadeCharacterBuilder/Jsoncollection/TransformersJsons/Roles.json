@@ -316,7 +316,7 @@
   "Training": {
     "EssenceIncrease": 1,
     "Score": "Speed and Smarts",
-    "RolesSkills": "Gain one Rank in Two from the follwing: Alertness, Initative, Survial or Targeting."
+    "RolesSkills": "Gain one Rank in Two from the follwing: Alertness, Inititave, Survival or Targeting."
   },
 
   "Qualifications": {
@@ -901,8 +901,8 @@
 
   "Training": {
     "EssenceIncrease": 1,
-    "Score": "Spped and Social",
-    "RolesSkills": "Gain one Rank in two of the following: Alertness, Deception, inflitration, Initative, and Streetwise."
+    "Score": "Speed and Social",
+    "RolesSkills": "Gain one Rank in two of the following: Alertness, Deception, inflitration, Inititave, and Streetwise."
   },
 
   "Qualifications": {
@@ -1101,7 +1101,7 @@
   "Training": {
     "EssenceIncrease": 1,
     "Score": "Strength and Smarts",
-    "RolesSkills": "Gain a Rank in two of the following, Alertness,Brawn,Conditioning, Culture, Might or Survial."
+    "RolesSkills": "Gain a Rank in two of the following, Alertness,Brawn,Conditioning, Culture, Might or Survival."
   },
 
   "Qualifications": {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public ICommand AddPointsToSkill { get; }
 
         public ICommand RemovePointsFromSkill { get; }
+
+        public ICommand GetRoleForAllocations { get; }
 
         public List <ScoreTF> Scores { get; }
 
@@ -76,6 +79,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             AddPointsToSkill = new RelayCommand<SkillTF>(AddPointsToSkil);
             RemovePointsFromSkill = new RelayCommand<SkillTF>(DecreasePointsFromSkill);
             CharacterRoleForKeyScores = TFCharacterSession.CurrentTransfomer.Role.Name;
+         
 
             //Strenght skills
             Athletics = new SkillTF("Athletics");
@@ -159,16 +163,46 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             Soical
             };
 
+           
+
+        }
+
+        public string findRoleForStats()
+        {
             switch (CharacterRoleForKeyScores)
             {
                 case "Analyst":
                     defineScoresAndSkillChoice(Speed, Smarts, new List<SkillTF> { Alertness, Finesse, Inflitration, Inititave, Science, Technology });
-                break;
+                    break;
+
+                case "FieldCommander":
+                    defineScoresAndSkillChoice(Strength, Soical, new List<SkillTF> { Brawn, Deception, Intimidation, Might, Preformance, Persuasion });
+                    break;
+
+                case "Gunner":
+                    defineScoresAndSkillChoice(Speed, Smarts, new List<SkillTF> { Alertness, Inititave, Survival, Targeting });
+                    break;
+
+                case "ModeMaster": //this needs its own method unfortunately
+                    defineScoresAndSkillChoice(Speed, Smarts, new List<SkillTF> { Alertness, Finesse, Inflitration, Inititave, Science, Technology });
+                    break;
+
+                case "Scientist":
+                    defineScoresAndSkillChoice(Strength, Smarts, new List<SkillTF> { Brawn, Conditioning, Science, Technology });
+                    break;
+
+                case "Scout":
+                    defineScoresAndSkillChoice(Speed, Soical, new List<SkillTF> { Alertness, Deception, Inflitration, Inititave, Streetwise });
+                    break;
+
+                case "Warrior":
+                    defineScoresAndSkillChoice(Strength, Smarts, new List<SkillTF> { Alertness, Brawn, Conditioning, Culture, Might, Survival });
+                    break;
+
+
             }
-
+            return "";
         }
-
-
 
         public string defineScoresAndSkillChoice( ScoreTF IncreaseOne, ScoreTF IncreaseTwo, IEnumerable<SkillTF> Choices )
         {
@@ -213,10 +247,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             {
                 MessageBox.Show($"points allocated to skills can not exceed value of Essance score current value {score.Name}");
             }
-            else
-            {
-                score.TryIncreaseSKill(skill);
-            }
+         
+            
 
         }
         public void DecreasePointsFromSkill(SkillTF skill)
