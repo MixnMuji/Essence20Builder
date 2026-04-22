@@ -18,8 +18,6 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public bool IsKeyScore { get; set; } = false;
         private List<SkillTF> correspondingSkills { get; set; }
 
-        public ICommand IncreaseSkllCommand { get; }
-        public ICommand DecreaseSkllCommand { get; }
 
         public event PropertyChangedEventHandler PropertyChanged;
       

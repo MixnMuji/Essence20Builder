@@ -35,6 +35,40 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public ScoreTF Smarts { get; }
         public ScoreTF Soical { get; }
 
+        
+        public SkillTF Athletics { get; }
+        public SkillTF Brawn { get; }
+        public SkillTF Conditioning { get; }
+        public SkillTF Intimidation { get; }
+        public SkillTF Might { get; }
+
+
+        //Speed gets
+        public SkillTF Acrobatics { get; }
+        public SkillTF Driving { get; }
+        public SkillTF Finesse { get; }
+        public SkillTF Inflitration { get; }
+        public SkillTF Inititave { get; }
+        public SkillTF Targeting { get; }
+
+        //smarts gets
+
+        public SkillTF Alertness { get; }
+        public SkillTF Culture {get;}
+        public SkillTF Science { get; }
+        public SkillTF Survival{ get;}
+        public SkillTF Technology { get; }
+
+        public SkillTF AnimalHandling { get; }
+        public SkillTF Deception { get; }
+        public SkillTF Preformance { get; }
+        public SkillTF Persuasion { get; }
+        public SkillTF Streetwise { get; }
+      }
+        
+
+
+
         public CharScorePageModelTF()
         {
             AddpointsToScore = new RelayCommand<ScoreTF>(AddPointsToScore);
@@ -43,31 +77,55 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             RemovePointsFromSkill = new RelayCommand<SkillTF>(DecreasePointsFromSkill);
             CharacterRoleForKeyScores = TFCharacterSession.CurrentTransfomer.Role.Name;
 
-            switch (CharacterRoleForKeyScores)
-            {
-                case "Analyst":
-                    defineScoresAndSkillChoice(Speed, Smarts,{Alertness, finesse,infiltration, iniative, science, Technology})
-                break;
-            }
+            //Strenght skills
+            Athletics = new SkillTF("Athletics");
+            Brawn = new SkillTF("Brawn");
+            Conditioning = new SkillTF("Conditioning");
+            Intimidation = new SkillTF("Intimidation");
+            Might = new SkillTF("Might");
+
+
+            Acrobatics = new SkillTF("Acrobatics");
+            Driving = new SkillTF("Driving");
+            Finesse = new SkillTF("Finesse");
+            Inflitration = new SkillTF("Inflitration");
+            Inititave = new SkillTF("Inititave");
+            Targeting = new SkillTF("Targeting");
+
+
+            Alertness = new SkillTF("Alertness");
+            Culture = new SkillTF("Culture");
+            Science= new SkillTF("Science");
+            Survival = new SkillTF("Survival");
+            Technology= new SkillTF("Technology");
+
+
+            AnimalHandling = new SkillTF("Animal Handling");
+            Deception = new SkillTF("Deception");
+            Preformance = new SkillTF("Preformance");
+            Persuasion = new SkillTF("Persuasion");
+            Streetwise =new SkillTF("Streetwise");
+               
+           
             // define skills with name and a get and set them equal like Athletics = new Skilltf thletics also switch must come later after everything is defined or it will be null
             //Strength block
             Strength = new ScoreTF("Strength", new List<SkillTF>
             {
-                new SkillTF("Athletics"),
-                new SkillTF("Brawn"),
-                new SkillTF("Conditioning"),
-                new SkillTF("Intimidation"),
-                new SkillTF("Might"),
+                Athletics,
+                Brawn,
+                Conditioning,
+                Intimidation ,
+                Might
             });
 
             Speed = new ScoreTF("Speed", new List<SkillTF>
             {
-                new SkillTF("Acrobatics"),
-                new SkillTF("Driving"),
-                new SkillTF("Finesse"),
-                new SkillTF("Inflitration"),
-                new SkillTF("Inititave"),
-                new SkillTF("Targeting"),
+                Acrobatics,
+                Driving,
+                Finesse,
+                Inflitration,
+                Inititave,
+                Targeting
 
 
 
@@ -75,23 +133,22 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
             Smarts = new ScoreTF("Smarts", new List<SkillTF>
             {
-                new SkillTF("Alertness"),
-                new SkillTF("Culture"),
-                new SkillTF("Science"),
-                new SkillTF("Survival"),
-                new SkillTF("Technology"),
-                new SkillTF("Targeting"),
+                Alertness,
+                Culture,
+                Science,
+                Survival,
+                Technology
+               
 
              });
 
             Soical = new ScoreTF("Soical", new List<SkillTF>
             {
-                new SkillTF("Animal Handling"),
-                new SkillTF("Deception"),
-                new SkillTF("Preformance"),
-                new SkillTF("Preformance"),
-                new SkillTF("Persuasion"),
-                new SkillTF("Streetwise"),
+                AnimalHandling,
+                Deception,
+                Preformance,
+                Persuasion,
+                Streetwise,
 
              });
             Scores = new List<ScoreTF>
@@ -102,7 +159,12 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             Soical
             };
 
-
+            switch (CharacterRoleForKeyScores)
+            {
+                case "Analyst":
+                    defineScoresAndSkillChoice(Speed, Smarts, new List<SkillTF> { Alertness, Finesse, Inflitration, Inititave, Science, Technology });
+                break;
+            }
 
         }
 

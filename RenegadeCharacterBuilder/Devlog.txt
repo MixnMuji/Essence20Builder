@@ -166,4 +166,11 @@ var score = Scores.First(s => s.CorrespondingSkills.Contains(skill));
 
 4-20
 
+set all skills
 Big breakthrough started logic for class slections and the like to add higher level scores and started a swtichcase to allocate things properly
+
+events need to be rased finish switch cases
+
+4-22
+
+added skills rather refomated so I can resue them after assinging for sklls and class etc
