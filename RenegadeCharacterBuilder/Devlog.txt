@@ -178,3 +178,8 @@ added skills rather refomated so I can resue them after assinging for sklls and 
 need to change retunrs on role thing into list to return and then formate them into a new object that retukrns a list of type skill tf
 
 finsihed swith statment
+
+4-23 
+
+bad day can't focus need to make items controll boolean for visibility figure out selected skill etc
+Idk sleep on it and think

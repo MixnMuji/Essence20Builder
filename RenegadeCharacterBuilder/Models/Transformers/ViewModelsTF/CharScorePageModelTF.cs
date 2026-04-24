@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows;
@@ -17,6 +18,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public event PropertyChangedEventHandler PropertyChanged;
         private int _pointBank = 9;
 
+        public List<SkillTF> SkillsToBoost { get; }
         public string CharacterRoleForKeyScores { get; set; }
         public ICommand AddpointsToScore { get; }
         public ICommand RemovePointsFromScore { get; }
@@ -26,6 +28,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public ICommand RemovePointsFromSkill { get; }
 
         public ICommand GetRoleForAllocations { get; }
+
+        public EventHandler PickSkillsForClass { get; }
 
         public List <ScoreTF> Scores { get; }
 
@@ -204,28 +208,31 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             return "";
         }
 
-        public string defineScoresAndSkillChoice( ScoreTF IncreaseOne, ScoreTF IncreaseTwo, IEnumerable<SkillTF> Choices )
+        public List<SkillTF> defineScoresAndSkillChoice( ScoreTF IncreaseOne, ScoreTF IncreaseTwo, List<SkillTF> Choices )
         {
             IncreaseOne.CurrentRank += 1;
             IncreaseOne.IsKeyScore = true;
             IncreaseTwo.CurrentRank += 1;
             IncreaseTwo.IsKeyScore = true;
 
-            var skillList = new StringBuilder();
-            int i = 1;
+           
 
             foreach (var skill in Choices)
             {
-                skillList.AppendLine($"{i}) {skill.Name}");
-                i++;
+                SkillsToBoost.Add(skill);
             }
-            return skillList.ToString();
+            return SkillsToBoost;
             //take role scratch that it's in the switch case
             //add to scores and turn Keyscore into true
             // Create a list of List TF with options
             //pick a skill for loop listing options
             //after you pick remove the option from the list and pick again
             //changes boolian to SkillTF to true!
+
+        }
+        public void  GetKeySkill(object sender, RoutedEventArgs e)
+        {
+            var SkillChoice = RadioButton.
 
         }
 

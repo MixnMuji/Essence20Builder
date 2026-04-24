@@ -17,7 +17,15 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <ItemsControl ItemsSource="{Binding SkillsToBoost}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <RadioButton Content="{Binding Name}" IsChecked="{Binding IsSelected, Mode=TwoWay}"/>
 
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            
+        </ItemsControl>
         <Grid Grid.Row="1">
             
 
