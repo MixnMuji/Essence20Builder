@@ -183,3 +183,17 @@ finsihed swith statment
 
 bad day can't focus need to make items controll boolean for visibility figure out selected skill etc
 Idk sleep on it and think
+
+4-24
+we're going brainstorm for a bit
+
+so how do I display the list for selecting key scores and skills
+1) both list have inverse is visible is no visible
+2) tabs to direct users to pick key scores based off class with radio button which allows them to alternate skills, is flexible and does not need restart
+3) Intermediate page (this is bad don't do)
+
+I think I will use two which will show it in an easier way
+
+learn to take things slow the tab thing is a go
+
+tomorrow lets put them in in a item control with a radiobox allowing mutiple inputs

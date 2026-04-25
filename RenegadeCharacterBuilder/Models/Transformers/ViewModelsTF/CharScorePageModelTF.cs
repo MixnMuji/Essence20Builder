@@ -71,7 +71,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public SkillTF Preformance { get; }
         public SkillTF Persuasion { get; }
         public SkillTF Streetwise { get; }
-      }
+      
         
 
 
@@ -82,8 +82,12 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             RemovePointsFromScore = new RelayCommand<ScoreTF>(DecreasePontsFromScore);
             AddPointsToSkill = new RelayCommand<SkillTF>(AddPointsToSkil);
             RemovePointsFromSkill = new RelayCommand<SkillTF>(DecreasePointsFromSkill);
-            CharacterRoleForKeyScores = TFCharacterSession.CurrentTransfomer.Role.Name;
-         
+            //CharacterRoleForKeyScores = TFCharacterSession.CurrentTransfomer.Role.Name;
+            CharacterRoleForKeyScores = "Analyst";
+            
+           
+       
+
 
             //Strenght skills
             Athletics = new SkillTF("Athletics");
@@ -230,11 +234,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             //changes boolian to SkillTF to true!
 
         }
-        public void  GetKeySkill(object sender, RoutedEventArgs e)
-        {
-            var SkillChoice = RadioButton.
-
-        }
+       
 
         public int PointsBank
         {
