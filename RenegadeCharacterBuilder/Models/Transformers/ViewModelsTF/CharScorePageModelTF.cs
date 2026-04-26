@@ -19,6 +19,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         private int _pointBank = 9;
 
         public List<SkillTF> SkillsToBoost { get; }
+
+        private List<SkillTF> SelectedKeySkills { get;}
         public string CharacterRoleForKeyScores { get; set; }
         public ICommand AddpointsToScore { get; }
         public ICommand RemovePointsFromScore { get; }
@@ -29,7 +31,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public ICommand GetRoleForAllocations { get; }
 
-        public EventHandler PickSkillsForClass { get; }
+     
+
 
         public List <ScoreTF> Scores { get; }
 
@@ -72,18 +75,25 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public SkillTF Persuasion { get; }
         public SkillTF Streetwise { get; }
       
-        
+       
 
 
 
         public CharScorePageModelTF()
         {
+            SelectedKeySkills = new List<SkillTF>();
             AddpointsToScore = new RelayCommand<ScoreTF>(AddPointsToScore);
             RemovePointsFromScore = new RelayCommand<ScoreTF>(DecreasePontsFromScore);
             AddPointsToSkill = new RelayCommand<SkillTF>(AddPointsToSkil);
             RemovePointsFromSkill = new RelayCommand<SkillTF>(DecreasePointsFromSkill);
-            //CharacterRoleForKeyScores = TFCharacterSession.CurrentTransfomer.Role.Name;
-            CharacterRoleForKeyScores = "Analyst";
+            CharacterRoleForKeyScores = TFCharacterSession.CurrentTransfomer?.Role?.Name;
+            if (string.IsNullOrWhiteSpace(CharacterRoleForKeyScores))
+            {
+                CharacterRoleForKeyScores = "Analyst";
+            }
+
+
+            SkillsToBoost = new List<SkillTF>();
             
            
        
@@ -170,7 +180,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             Smarts,
             Soical
             };
-
+            
+            
            
 
         }
@@ -210,6 +221,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
             }
             return "";
+
+            
         }
 
         public List<SkillTF> defineScoresAndSkillChoice( ScoreTF IncreaseOne, ScoreTF IncreaseTwo, List<SkillTF> Choices )
@@ -224,6 +237,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             foreach (var skill in Choices)
             {
                 SkillsToBoost.Add(skill);
+                skill.PropertyChanged += SkillChanged;
             }
             return SkillsToBoost;
             //take role scratch that it's in the switch case
@@ -234,7 +248,46 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             //changes boolian to SkillTF to true!
 
         }
-       
+
+        private void SkillChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if(e.PropertyName != nameof(SkillTF.IsSelected))
+            {
+                return;
+            }
+            var skill = (SkillTF)sender;
+            if (skill.IsSelected)
+            {
+                if(SelectedKeySkills.Count >= 2)
+                {
+                    skill.IsSelected = false;
+                    MessageBox.Show("You may only have two Key skills");
+                    return;
+                }
+                SelectedKeySkills.Add(skill);
+            }
+            else
+            {
+                SelectedKeySkills.Remove(skill);
+            }
+
+            if(SelectedKeySkills.Count == 2)
+            {
+                defineKeySkills(SelectedKeySkills[0], SelectedKeySkills[1]);
+            }
+
+        }
+       public void defineKeySkills(SkillTF skill1, SkillTF skill2)
+        {
+            skill1.SkillScore = 1;
+            skill1.IsKeySkill = true;
+            skill2.SkillScore = 1;
+            skill2.IsKeySkill = true;
+
+            // so because this fires twice it makes the skill add 2 to the role, lets see if equals fixes that
+
+
+        }
 
         public int PointsBank
         {

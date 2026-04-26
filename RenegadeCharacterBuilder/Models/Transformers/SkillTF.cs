@@ -11,9 +11,37 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public event PropertyChangedEventHandler PropertyChanged;
         private string name { get; set; }
         public string Name { get; }
-
         private int _skillScore { get; set; } = 0;
-        public bool IsKeySkill { get; set; } = false;
+        private bool _isSelected;
+        private bool _isKeySkill;
+
+
+        public bool IsKeySkill
+        {
+            get => _isKeySkill;
+            set
+            {
+                if (_isKeySkill != value)
+                {
+                    _isKeySkill = value;
+                    NotifyPropertyChanged(nameof(IsKeySkill));
+                }
+            }
+        }
+     
+        public bool IsSelected
+        {
+            get => _isSelected;
+            set
+            {
+                if (_isSelected != value)
+                {
+                    _isSelected = value;
+
+                    NotifyPropertyChanged(nameof(SkillTF.IsSelected));
+                }
+            }
+        }
         public SkillTF(string name)
         {
             Name = name;

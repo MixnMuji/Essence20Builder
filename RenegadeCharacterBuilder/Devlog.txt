@@ -197,3 +197,8 @@ I think I will use two which will show it in an easier way
 learn to take things slow the tab thing is a go
 
 tomorrow lets put them in in a item control with a radiobox allowing mutiple inputs
+
+4-25 made the tabs work
+made th score allocation work,
+
+made an is slected status tractker to bind skills skills however when items are unslected score remains and can not be set lower need method for reseting also keep in mind the refires.

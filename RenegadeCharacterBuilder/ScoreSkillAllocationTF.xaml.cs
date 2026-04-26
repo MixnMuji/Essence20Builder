@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -30,7 +31,8 @@ namespace RenegadeCharacterBuilder
         {
             InitializeComponent();
             Viewmodel = new CharScorePageModelTF();
-            DataContext = Viewmodel;
+            Viewmodel.findRoleForStats();
+           DataContext = Viewmodel;
 
         }
 
