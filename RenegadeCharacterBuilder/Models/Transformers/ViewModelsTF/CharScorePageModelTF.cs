@@ -268,7 +268,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             }
             else
             {
+                skill.IsKeySkill = false;
+                skill.SkillScore -= 1;
                 SelectedKeySkills.Remove(skill);
+                return;
             }
 
             if(SelectedKeySkills.Count == 2)

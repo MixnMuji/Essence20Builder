@@ -32,17 +32,18 @@
                     </TabItem.Header>
                     <!-- stuff for key socres -->
 
-                    <ItemsControl ItemsSource="{Binding SkillsToBoost}">
+                    <StackPanel>
+                        <TextBlock Text="{Binding CharacterRoleForKeyScores, StringFormat='Your Current Role: {0}'}"/>
+                        <TextBlock Text="Select 2 Skills as your key skills."/>
+
+                        <ItemsControl ItemsSource="{Binding SkillsToBoost}">
                         <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                    <CheckBox Content="{Binding Name}" IsChecked="{Binding IsSelected, Mode=TwoWay}"/>
-                                </StackPanel>
-                            </DataTemplate>
+                                <DataTemplate>
+                                    <CheckBox Content="{Binding Name}" IsChecked="{Binding IsSelected, Mode=TwoWay}"></CheckBox>
+                                </DataTemplate>
                         </ItemsControl.ItemTemplate>
-
-
                     </ItemsControl>
+                    </StackPanel>
                 </TabItem>
                 
                 <!-- Tab 2 socres and stuff-->

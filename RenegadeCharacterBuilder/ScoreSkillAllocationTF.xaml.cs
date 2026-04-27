@@ -38,7 +38,17 @@ namespace RenegadeCharacterBuilder
 
 
 
-
+        /*
+         *<ItemsControl ItemsSource="{Binding CharacterRoleForKeyScores}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+         */
 
     }
 }

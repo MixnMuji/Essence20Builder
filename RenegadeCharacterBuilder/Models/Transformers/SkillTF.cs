@@ -24,7 +24,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
                 if (_isKeySkill != value)
                 {
                     _isKeySkill = value;
-                    NotifyPropertyChanged(nameof(IsKeySkill));
+                     NotifyPropertyChanged(nameof(IsKeySkill));
+                    
                 }
             }
         }
@@ -37,8 +38,9 @@ namespace RenegadeCharacterBuilder.Models.Transformers
                 if (_isSelected != value)
                 {
                     _isSelected = value;
-
-                    NotifyPropertyChanged(nameof(SkillTF.IsSelected));
+                   
+                        NotifyPropertyChanged(nameof(SkillTF.IsSelected));
+                   
                 }
             }
         }
