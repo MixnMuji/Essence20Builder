@@ -38,9 +38,6 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public ScoreTF Strength { get; }
 
-        
-
-      public ScoreTF Score { get; }
         public ScoreTF Speed { get; }
         public ScoreTF Smarts { get; }
         public ScoreTF Soical { get; }

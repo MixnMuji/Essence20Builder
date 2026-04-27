@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Common;
 using System.Drawing.Printing;
 using System.Reflection.Metadata;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -36,19 +38,26 @@ namespace RenegadeCharacterBuilder
 
         }
 
+        private void SaveScoresAndSkillsAndProcced(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show(
+                "Save Scores and Skills",
+                "Confirm",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question
+                );
+            if( result == MessageBoxResult.Yes)
+            {
+                TFCharacterSession.CurrentTransfomer.AssignScoresAndSkills(Viewmodel.Strength, Viewmodel.Speed, Viewmodel.Smarts, Viewmodel.Soical,
+                    Viewmodel.Athletics, Viewmodel.Brawn, Viewmodel.Conditioning, Viewmodel.Intimidation, Viewmodel.Might,
+                    Viewmodel.Acrobatics, Viewmodel.Driving, Viewmodel.Finesse, Viewmodel.Inflitration, Viewmodel.Inititave, Viewmodel.Targeting,
+                Viewmodel.Alertness, Viewmodel.Culture, Viewmodel.Science, Viewmodel.Survival, Viewmodel.Technology,
+                Viewmodel.AnimalHandling,Viewmodel.Deception,Viewmodel.Preformance, Viewmodel.Persuasion, Viewmodel.Streetwise);
 
+                //go back to character start and have level set if it's greater than 3 have them go to general perks, also if they have Roles, let them go to focus
+                //otherwise take to finalization page. Make finalization page!
+            }
 
-        /*
-         *<ItemsControl ItemsSource="{Binding CharacterRoleForKeyScores}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Name}"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-         */
-
+        }
     }
 }
