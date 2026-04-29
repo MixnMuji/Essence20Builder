@@ -207,3 +207,14 @@ made an is slected status tractker to bind skills skills however when items are 
 
 Fixed double allocation bug by having the logic subtract from score and turn off the key score mod,
 made method to let all skills and scores be allocated, that's basially it lol
+
+4-29
+
+Aparently I took a 3 day break anyways
+added character fluff page set levels to chose
+name
+description alleigence
+
+todo Figure out how to bind images to radio buttons,
+bind the data to its characater counterparts, 
+-link fluff in character flow with navigate
