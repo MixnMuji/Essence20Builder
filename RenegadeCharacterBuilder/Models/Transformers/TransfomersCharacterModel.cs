@@ -13,6 +13,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
     {
         public string Name { get; set; }
         public string Pronouns { get; set; }
+
+        public string Description { get; set; }
         public TransformersOrign Orign { get; set; }
         public Roles Role { get; set; }
         public int Level { get; set; }

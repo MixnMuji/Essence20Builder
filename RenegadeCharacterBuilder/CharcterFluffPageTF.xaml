@@ -15,7 +15,7 @@
             <RowDefinition Height="100"/>
             <RowDefinition Height="300"/>
             <RowDefinition Height="50"/>
-          
+
         </Grid.RowDefinitions>
         <StackPanel>
             <TextBlock Grid.Row="0" Text="Character Info"/>
@@ -31,33 +31,54 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-        
 
-       <!-- Name -->
-        <StackPanel Grid.Row="0" Grid.Column="0">
-        <TextBlock Text="Name"/>
-        <TextBox>Your Character's Name</TextBox>
+
+            <!-- Name -->
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <TextBlock Text="Name"/>
+                <TextBox x:Name="CharactersName">Your Character's Name</TextBox>
                 <!-- Pronouns -->
             </StackPanel>
             <StackPanel Grid.Row="1" Grid.Column="0">
                 <TextBlock Text="Description"/>
-                <TextBox>Your Characters Description</TextBox>
+                <TextBox x:Name="CharacterDescription">Your Characters Description</TextBox>
             </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="1">
+            <StackPanel Grid.Row="0" Grid.Column="1">
                 <TextBlock Text="Pronouns"/>
-                <TextBox>Your Character's Pronouns</TextBox>
+                <TextBox x:Name="CharacterPronouns">Your Character's Pronouns</TextBox>
 
             </StackPanel>
             <!-- Alleigence  Figure out how to add pics-->
             <StackPanel Grid.Row="1" Grid.Column="1">
                 <TextBlock Text="Characters Faction"></TextBlock>
                 <StackPanel Orientation="Horizontal">
-                    <RadioButton Name="AutoBot"  Checked="FactionChoice" Content="AutoBot" />
-                    <RadioButton Name="Decepticon" Checked="FactionChoice" Content="Decepticon"/>
+                    <RadioButton Name="AutoBot"  Checked="FactionChoice">
+                        <WrapPanel Height="91" RenderTransformOrigin="0.467,0.319">
+                            <StackPanel Height="155" Width="103" RenderTransformOrigin="0.534,0.749">
+                                <TextBlock Text="AutoBot"/>
+                                <Image Source="/Images/Transformers/auto.png" Height="75" Width="107" />
+
+
+
+                            </StackPanel>
+                        </WrapPanel>
+
+                    </RadioButton>
+
+                    <RadioButton Name="Decepticon" Checked="FactionChoice">
+                        <WrapPanel>
+                            <StackPanel>
+                                <TextBlock Text="Decepticon"/>
+                                <Image Source="/Images/Transformers/decept.png" Height="70" />
+                            </StackPanel>
+                        </WrapPanel>
+                    </RadioButton>
                 </StackPanel>
-
+                
             </StackPanel>
-
+            
         </Grid>
+
+        <Button Grid.Row="2" Width="200" HorizontalAlignment="Right" Content="Proceed?" Click="SaveChangesAndCountinue"/>
     </Grid>
 </Page>
