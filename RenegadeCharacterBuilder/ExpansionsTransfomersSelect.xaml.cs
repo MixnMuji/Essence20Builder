@@ -34,7 +34,7 @@ namespace RenegadeCharacterBuilder
 
         private void Countinue_click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new OrignSelectTf());
+            NavigationService.Navigate(new CharcterFluffPageTF());
         }
        
     }

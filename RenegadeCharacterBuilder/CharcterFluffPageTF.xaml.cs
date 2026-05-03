@@ -36,7 +36,7 @@ namespace RenegadeCharacterBuilder
             TFCharacterSession.CurrentTransfomer.Name = CharactersName.Text;
             TFCharacterSession.CurrentTransfomer.Pronouns = CharacterPronouns.Text;
             TFCharacterSession.CurrentTransfomer.Description = CharacterDescription.Text;
-
+            NavigationService.Navigate(new OrignSelectTf());
 
         }
 

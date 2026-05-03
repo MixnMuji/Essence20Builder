@@ -17,7 +17,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public string Description { get; set; }
         public TransformersOrign Orign { get; set; }
         public Roles Role { get; set; }
-        public int Level { get; set; }
+        public LevelTF Level { get; set; }
         public Alliegence Faction { get; set; }
         public List<string> Languages { get; set; }
         public List<InfluencesTF> Influences { get; set; }

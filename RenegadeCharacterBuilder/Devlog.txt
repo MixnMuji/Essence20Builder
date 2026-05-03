@@ -218,3 +218,11 @@ description alleigence
 todo Figure out how to bind images to radio buttons,
 bind the data to its characater counterparts, 
 -link fluff in character flow with navigate
+
+
+5-3
+
+I don't want to believe I've taken a massive break in coding so I'll check the git
+
+anyways, finshed page for fluff ran app found out that the role thing doesn't work.So tha'ts the goal
+added gen per page and final confiramation as well as focus page

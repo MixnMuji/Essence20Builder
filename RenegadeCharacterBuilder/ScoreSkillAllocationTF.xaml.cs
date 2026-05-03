@@ -54,6 +54,14 @@ namespace RenegadeCharacterBuilder
                 Viewmodel.Alertness, Viewmodel.Culture, Viewmodel.Science, Viewmodel.Survival, Viewmodel.Technology,
                 Viewmodel.AnimalHandling,Viewmodel.Deception,Viewmodel.Preformance, Viewmodel.Persuasion, Viewmodel.Streetwise);
 
+                if(TFCharacterSession.CurrentTransfomer.Level.Level > 1)
+                {
+                    NavigationService.Navigate(new GeneralPerksTF());
+                }
+                else
+                {
+                    NavigationService.Navigate(new FinalPageAndConfirmation());
+                }
                 //go back to character start and have level set if it's greater than 3 have them go to general perks, also if they have Roles, let them go to focus
                 //otherwise take to finalization page. Make finalization page!
             }
