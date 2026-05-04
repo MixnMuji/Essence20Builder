@@ -31,8 +31,6 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public ICommand GetRoleForAllocations { get; }
 
-     
-        public TransfomersCharacterModel  currentCharacter{ get; }
 
         public List <ScoreTF> Scores { get; }
 
@@ -83,8 +81,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             RemovePointsFromScore = new RelayCommand<ScoreTF>(DecreasePontsFromScore);
             AddPointsToSkill = new RelayCommand<SkillTF>(AddPointsToSkil);
             RemovePointsFromSkill = new RelayCommand<SkillTF>(DecreasePointsFromSkill);
-            currentCharacter = TFCharacterSession.CurrentTransfomer;
-            CharacterRoleForKeyScores = currentCharacter.Role.Name;
+            CharacterRoleForKeyScores = TFCharacterSession.CurrentTransfomer.Role.Name;
             if (string.IsNullOrWhiteSpace(CharacterRoleForKeyScores))
             {
                 CharacterRoleForKeyScores = "Analyst";

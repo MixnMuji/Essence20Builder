@@ -24,8 +24,6 @@ using static System.Net.Mime.MediaTypeNames;
 namespace RenegadeCharacterBuilder
 {
     /// <summary>
-    /// Interaction logic for ScoreSkillAllocationTF.xaml
-    /// </summary>
     public partial class ScoreSkillAllocationTF : Page
     {
         public CharScorePageModelTF Viewmodel { get; }
@@ -35,6 +33,7 @@ namespace RenegadeCharacterBuilder
             Viewmodel = new CharScorePageModelTF();
             Viewmodel.findRoleForStats();
            DataContext = Viewmodel;
+            MessageBox.Show(TFCharacterSession.CurrentTransfomer.Role.Name);
 
         }
 

@@ -226,3 +226,9 @@ I don't want to believe I've taken a massive break in coding so I'll check the g
 
 anyways, finshed page for fluff ran app found out that the role thing doesn't work.So tha'ts the goal
 added gen per page and final confiramation as well as focus page
+
+- Edit fixed bug it was literally me moving to the wrong page lol. Navigated to right page.
+
+Made class for General perks, focus, and made prequistes class to check if character meets general perk requirmenets
+
+TOD: categorize General Perk effects to be able to apply them in some way

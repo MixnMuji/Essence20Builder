@@ -115,7 +115,7 @@ namespace RenegadeCharacterBuilder
             if(result == MessageBoxResult.Yes)
             {
                 TFCharacterSession.CurrentTransfomer.Role = CurrentRole; //Mind you you can't proceed if you use dev mode
-                NavigationService.Navigate(new GeneralPerksTF());
+                NavigationService.Navigate(new ScoreSkillAllocationTF());
             }
             else
             {
