@@ -1,0 +1,47 @@
+{
+    "GeneralPerks":
+    [
+        {
+            "Name":"Acute Senses",
+            "Text": "Choose one of the five senses: (sight,hearing,taste,touch, or smell) You gain the following benefits : An Edge when rolling an Alertness Skill Test for if your chosen sense can be applied. An Upshift on a non-Alertness test where your chosen sense can be applied. You can chooe this Perk up to five times; once for each sense."
+        },
+        {
+            "Name":"Additional Alt Mode",
+            "PrequisiteTF":{
+                "levelRequirement":2
+            },
+            "Text": "Choose A chasis Tied to an Origin. You gain the alt mode benefits of that chasis as a second choice when you Convert. You cannot choose a Chassis whose Alt Mode Size is two Size Classes larger than the Alt Mode Size of your orignal Chassis unless you take the Size Change General Perk. When you gain a Perk taht applies to an Alt mode, choose which Alt Mode it applies to when you gain the Perk."
+        },
+        {
+            "Name":"All Out Attack",
+
+            "PrerequisiteTF":
+            {
+                "statRequirement":6,
+                "ApplicableStats":
+                ["Might",
+                 "Finesse",
+                 "Targeting"
+
+                ]
+                
+            },
+            "Text": "During your turn, you can voluntariliy take a downshift on your attacks with Might, Finesse, or targeting. For each downshift you take, you deal 1 additional damage to a single target hit by the attack, but enenemies gain an equal number of Upshifts to attack you until the start of your next turn."
+        },
+        {
+            "Name":"",
+            "PrerequisiteTF":
+            {
+                "ApplicableStats":
+                [
+
+                ],
+                "levelRequirement":2
+            },
+            "Text": ""
+        },
+        
+    ]
+
+    
+}
