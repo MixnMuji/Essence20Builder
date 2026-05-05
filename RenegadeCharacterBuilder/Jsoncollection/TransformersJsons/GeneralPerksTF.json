@@ -3,14 +3,18 @@
     [
         {
             "Name":"Acute Senses",
-            "Text": "Choose one of the five senses: (sight,hearing,taste,touch, or smell) You gain the following benefits : An Edge when rolling an Alertness Skill Test for if your chosen sense can be applied. An Upshift on a non-Alertness test where your chosen sense can be applied. You can chooe this Perk up to five times; once for each sense."
+            "Text": "Choose one of the five senses: (sight,hearing,taste,touch, or smell) You gain the following benefits : An Edge when rolling an Alertness Skill Test for if your chosen sense can be applied. An Upshift on a non-Alertness test where your chosen sense can be applied. You can chooe this Perk up to five times; once for each sense.",
+            "timesSelectable": 5
+        
         },
         {
             "Name":"Additional Alt Mode",
             "PrequisiteTF":{
                 "levelRequirement":2
             },
-            "Text": "Choose A chasis Tied to an Origin. You gain the alt mode benefits of that chasis as a second choice when you Convert. You cannot choose a Chassis whose Alt Mode Size is two Size Classes larger than the Alt Mode Size of your orignal Chassis unless you take the Size Change General Perk. When you gain a Perk taht applies to an Alt mode, choose which Alt Mode it applies to when you gain the Perk."
+            "Text": "Choose A chasis Tied to an Origin. You gain the alt mode benefits of that chasis as a second choice when you Convert. You cannot choose a Chassis whose Alt Mode Size is two Size Classes larger than the Alt Mode Size of your orignal Chassis unless you take the Size Change General Perk. When you gain a Perk taht applies to an Alt mode, choose which Alt Mode it applies to when you gain the Perk.",
+            "timesSelectable": 1
+            
         },
         {
             "Name":"All Out Attack",
@@ -26,20 +30,124 @@
                 ]
                 
             },
-            "Text": "During your turn, you can voluntariliy take a downshift on your attacks with Might, Finesse, or targeting. For each downshift you take, you deal 1 additional damage to a single target hit by the attack, but enenemies gain an equal number of Upshifts to attack you until the start of your next turn."
+            "Text": "During your turn, you can voluntariliy take a downshift on your attacks with Might, Finesse, or targeting. For each downshift you take, you deal 1 additional damage to a single target hit by the attack, but enenemies gain an equal number of Upshifts to attack you until the start of your next turn.",
+            "timesSelectable": 1
         },
         {
-            "Name":"",
+            "Name":"All Terrain Alt Mode",
+            "Text": "One of your alt mode can move in different ways. Choose a movement type you do not have access to in your alt mode. You gain that movement of that type 20ft.",
+            "timesSelectable": 1
+           
+        },
+         {
+            "Name":"Always Alert",
+            "Text": "Gain the follwing benefits: 1) You gain an edge when rolling for initiative 2) You can't be suprised while you are concious",
+            "timesSelectable": 1
+           
+         },
+          {
+            "Name":"Bot's Bot'",
+            "PrerequisiteTF":
+            {
+                "statRequirement":6,
+                "ApplicableStats":
+                ["Deception",
+                 "Persuasion"
+
+                ]
+            },
+            "Text": "You can use Deception or Persuasion instead of Alertness to determine if someone is lying, disguising intentions, or hiding something. With a success on your skill test you learn an important detail about the character.",
+             "timesSelectable": 1
+          },
+          {
+            "Name":"Cross-Training",
             "PrerequisiteTF":
             {
                 "ApplicableStats":
                 [
 
                 ],
+                "levelRequirement":6
+            },
+            "Text": "Choose a Role other than your own. You may select one of that Role's Perks that it gains at a level no higher than half your current level. You cannot choose a Role Perk with the same name as one in you own Role, (for example you may not pick extra attack if your Role offers it.) a Focus Perk, or a Level one Perk. You can Slecect this perk mutlitple times each time picking a differnt Role to gain a perk from.",
+             "timesSelectable": 8
+          },
+          {
+            "Name":"Daredevil",
+            "PrerequisiteTF":
+            {
+                "statRequirement":6,
+                "ApplicableStats":
+                ["Driving"
+
+                ]
+                
+            },
+            "Text": "Gain the Follwing Traits: 1) Gain an edge on Initiative rolls in an Alt Mode 2) Upshift 2 on Drvining Skill Tests in Alt Mode",
+            "timesSelectable": 1
+                
+          },
+         {
+            "Name":"Dig Deep",
+            
+            "Text": "Gain the following Benefits: 1) Once Per combat you can ignore 1 Damage by taking a Snag on all Skill Tests until the end of your next Turn",
+                 
+            "timesSelectable": 1
+          },
+         {
+            "Name":"Dodgy",
+            "PrerequisiteTF":
+            {
+                "statRequirement":3,
+                "ApplicableStats":
+                [
+                    "Speed"
+                ]
+             
+            },
+            "Text": "You gain +2 Evasion. Additionally, any turn where you do not move more than 5 feet, you can Defend as a Free action.",
+            "timesSelectable": 1
+          },
+         {
+            "Name":"Durabyllium Super Alloy",
+
+            "Text": "Gain +2 Toughness. Additionally when an opponent targets you with a Blunt, Cold, or Fire Attack, They suffer a downshift to their attack roll.",
+            "timesSelectable": 1
+          },
+         {
+            "Name":"Earlier is Better than Later",
+            "Text": "While in Alt mode, Free actions used for additoinal Movement add 10 feet to Movement instead of 5. Additionally, Exchanging Free actions for additional Movement is n9t limited",
+            "timesSelectable": 1
+          },
+         {
+            "Name":"Educated",
+            "PrerequisiteTF":
+            {
+                "statRequirement":3,
+                "ApplicableStats":
+                [
+                    "Smarts"
+                ]
+                
+            },
+            "Text": "Gain the Following Benefits 1) Gain fluenecy in 1 Language of your choice, 2) dd an additioanl Story Point to your Team's poolat the beginning of each game session; 3) Act as though Specialized in a single Smarts Skill, choosen when you take this Perk, once per day.'",
+            "timesSelectable": 1
+          },
+         {
+            "Name":"",
+            "PrerequisiteTF":
+            {
+                "statRequirement":6,
+                "ApplicableStats":
+                [
+
+                ],
                 "levelRequirement":2
             },
-            "Text": ""
-        },
+            "Text": "",
+            "timesSelectable": 1
+          },
+
         
     ]
 

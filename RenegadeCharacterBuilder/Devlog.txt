@@ -232,3 +232,9 @@ added gen per page and final confiramation as well as focus page
 Made class for General perks, focus, and made prequistes class to check if character meets general perk requirmenets
 
 TOD: categorize General Perk effects to be able to apply them in some way
+
+5-4
+
+Started json for general perks and Focuses
+
+TOD: method for applying stats should be done in character object
