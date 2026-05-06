@@ -238,3 +238,7 @@ TOD: categorize General Perk effects to be able to apply them in some way
 Started json for general perks and Focuses
 
 TOD: method for applying stats should be done in character object
+
+5-6
+
+Finished json for general perks next is focuses then we'll put them to sheets!
