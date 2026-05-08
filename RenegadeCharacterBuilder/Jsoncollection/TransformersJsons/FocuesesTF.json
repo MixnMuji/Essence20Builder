@@ -1,3 +1,144 @@
 {
+    "Focuses":
+    [
+        {"subclassName":"Medical Officer",
+         "statToBoost": "Smarts",
+         "skillsToboost":
+         [
+          "Science",
+          "Technology"
 
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"Patch up",
+              "AbilityEffect":"Once per turn, you can spend an Energon Point to make a Skill Test to Repair a Cbertronian or vechicle, or Heal an Organic lifeform as a Free Action. YOu always count as having a Standard Medicine Kit and a Standard Repair Kit on you."
+               
+
+          },
+          {
+              "AbilityName":"Sirens Blaring",
+              "AbilityEffect":"At 3rd level when Restting your Initiative, you gain an Edge and Upshift 1 on your Initative Skill Test"
+
+          },
+          {
+              "AbilityName":"Preventative Measures",
+              "AbilityEffect":"At 6th level you can treat a healthy ally. As long as the target doesn't have any Damage or Temporary Health, and you havent used Preventative Measures on them yet today, you can make a SCience or Technology Test as though you were Healing or Repairing them. They gain the amount of Temporary Health equal to the amount you would have Healed or Repaired."
+
+          },
+          {
+              "AbilityName":"Rocket Surgery",
+              "AbilityEffect":"At 10th level you can Heal or Repair an ally from 30ft away. Additionally, you always count as havling a Limited Mediine Kit and a Limited Repair Kit on you."
+
+          },
+          {
+              "AbilityName":"Intensive",
+              "AbilityEffect":"At 17th Level you are no longer limited in the number of times you can use Patch up on your turn. Additionally, when you Repair more than one Cybertonian on your turn, you can choose to roll Technology once and apply the result to all injured allies within 30ft. Finally you always count as having a Restricted Medicine Kit and a Restricted Repair Kit on you."
+
+          },
+          {
+              "AbilityName":"Miracle Worker",
+              "AbilityEffect":"At 20th level your d2 can trigger a Critical Sucess on SCience and Technology Skill Tests."
+
+
+
+         ]
+         },
+
+         {"subclassName":"",
+         "statToBoost": "",
+         "skillsToboost":
+         [
+
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          }
+
+         ]
+        },
+
+          {"subclassName":"",
+         "statToBoost": "",
+         "skillsToboost":
+         [
+
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          }
+
+         ]
+        },
+        
+    ]
 }
