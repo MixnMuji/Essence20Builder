@@ -46,42 +46,87 @@
          ]
          },
 
-         {"subclassName":"",
-         "statToBoost": "",
+         {"subclassName":"Gadgeteer",
+         "statToBoost": "Smarts",
          "skillsToboost":
          [
+             "Technology"
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"Technologogist",
+              "AbilityEffect":"When a Scientis Trole Perk only uses the Science Skill, you can use Science of Technology"
+
+          },
+          {
+              "AbilityName":"Construct",
+              "AbilityEffect":"At 3rd level, you can build any weapon, any Armor Upgrade, and any Kit. As a standard action, spend 1 Energon Point and make  a Technology Skill Test against the Requisition Difficulty of the item you are building, If you are building a Weapon or Armor Upgrade you are not trained with, or a Kit for a Specialization of a Skill you don't have Rank in, you suffer a Snag on this Skill Test. Someone with the appropriate training or Skill can negate the Snag if they Lend Assistance to you on their turn. On a failure your attempt is wasted but you do not spend your Energon Point."
+
+          },
+          {
+              "AbilityName":"Deconstruct",
+              "AbilityEffect":"At 6th level, as a Standard action, spend 1 Energon Point and make a Technology Skill Test against the Requisiton Difficulty of a Kit, Gear, or Weapon used by an adjacent enemy. The effects of a success depend on the Technology you targeted. Kit: the kit is destroyed. Gear: the Gear cannont be used unless subject to a DIF 10 Technology Skill Test to repair it. if YOu Crititcally Succeeeded deconstucting this gear, the  Dif increases to 20. Weapon: The attacker suffers a Snag using this weapon unless its subject to a Dif 10 Technology Skill Test to repair it. If you Critically Succeeded deconstructing this gear the Dif increase to 20."
+
+          },
+          {
+              "AbilityName":"Training Through Familiarity",
+              "AbilityEffect":"At 10th Level youbecome tarined in Limited Weapons, and can requistion Standar and Limited Kits even if you don't meet the prerequisite. You don't suffer a Snag when you Construct a Standar or limited Kit."
+
+          },
+          {
+              "AbilityName":"Siphon",
+              "AbilityEffect":"At 17th LLevel, as a Standar action, make a Technology SkillTEst against the Toughness or Evasion of an adjacent Cybertronian. On a success, you deal 1 Damage and gain 1 Energon point"
+
+          },
+          {
+              "AbilityName":"Perpetual Power Souce",
+              "AbilityEffect":"At 20th level, you no longer spend Energon Points when you Construct Equipment."
+
+          }
+
+         ]
+        },
+
+         {
+          "subclassName":"Manipulator",
+         "statToBoost": "Social",
+         "skillsToboost":
+         ["Deception",
+          "Persuassion",
+          "StreetWise",
 
          ],
          "ranks":
          [
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Diversion",
+              "AbilityEffect":"Roll a Deception, Intimidation, or Persuasion Skill Test against a targets Willpower or Cleverness as a Standaraction. On a success, if they attack you on their next turn, they suffer a Snag. If they don't attack you, your allies gain an Edge on attacks that target them. This last unitl the end of the next round."
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Holo-Projector",
+              "AbilityEffect":"At 3d level, as a move action, you can create a holographic image within 20ft of you until the end of your next turn. You gain an Edge on a Deception Skill Test, as long as the target of your Skill Test can see your holographic image and you use it to create a believeable but confusing sotuation, per the Gm's discreation'"
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"In My Sights",
+              "AbilityEffect":"At 6th level, when you use the Aim action, instead of gaining upshift on your attack, you can announce to the target taht you're aiming at them. You suffer downshift on your attack equal to the number of Free Actions you spent aiming (maximum downshift 3). but your allies gain that ammount of upshift on their attacks or the benefits of Pinpoint.'"
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Holographic Doubles",
+              "AbilityEffect":"At 10th Level as a Standar Action, you can create a Holographic copy of yourself adjacent to you. Once activiated, you can spend a Free action to create an additional Holographic double, until you run out of unoccupied adjacent spaces. Attacks that target you suffer 1 downshift for each Holographic Double. one Holographic double disappears whenver you're unsuccefully attacked, and whenever you roll a Skill Test. Otherwise, they last unitl the end of the scene."
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Electro-Disruptor",
+              "AbilityEffect":"At 17th level, you can use a communication device or Limited Communication Kit to hack a bot's brain. As a standard action outside of Combat, roll a Technology Skill Test against the Willpwer or Cleverness of a creature within range of the communication device taht you can see (either through surveilance equpiment or with your own sensors) On a success, the target becomes Mesmerized by you or an ally of your choice taht they can see for the remainder of the scene.'"
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Vanish",
+              "AbilityEffect":"At 20th Level you can turn Invisible as a Move action. This lasts until the end of the scene, you sucessfully attack a target, an enemy sucessfuly attacks you, or you end the effect as a Free Action."
 
           },
           {
@@ -92,8 +137,9 @@
 
          ]
         },
-
-          {"subclassName":"",
+          
+         {
+         "subclassName":"",
          "statToBoost": "",
          "skillsToboost":
          [

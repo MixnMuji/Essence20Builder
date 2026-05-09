@@ -249,3 +249,7 @@ nothing crazy made object forcuses
 need to make switch case to deterimne role to show subclasses
 
 made json for Focuceses
+
+5-8
+
+just added to Focus json
