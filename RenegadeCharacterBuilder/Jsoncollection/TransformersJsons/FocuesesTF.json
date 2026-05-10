@@ -139,6 +139,94 @@
         },
           
          {
+         "subclassName":"Spec Ops",
+         "statToBoost": "Soical",
+         "skillsToboost":
+         ["Deception",
+          "Persuasion",
+          "Streetwise"
+
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"Unassuming",
+              "AbilityEffect":"You gain 1 upshift on Deception and Infiltration Skill Tests. Additionally, you're Qualified with all one-handed Limited Weapons"
+
+          },
+          {
+              "AbilityName":"Target Vulnerability",
+              "AbilityEffect":"At 3rd Level, when you Attack with a one-handed weapon, you can also attempt an Alertness Skill Test against a targets Willpower or Cleverness. On a sucess, your attack deals 1 additional damage."
+
+          },
+          {
+              "AbilityName":"Whisper Campaign",
+              "AbilityEffect":"At 6th level, when you attempt a Social-based Skill Test, designate an adjacent creature. If you fail the Skill Test and there are negative consequences for failure, such as a lost of trust, you can try to have the consequences affect the designated creature instead. If the creature resists, roll a Contested Skill Test between your Deception and their Persuasion. YOu gain an Edge on this roll."
+
+          },
+          {
+              "AbilityName":"Exploit Trust",
+              "AbilityEffect":"At 10th level, when you attack a Surprised character, or if you attack a target outside of Combat, you gain an Edge on the attack and deal 1 additonal damage. If you've used Target Vulnerability on your target, this additanal damage stacks"
+
+          },
+          {
+              "AbilityName":"Opprotunist",
+              "AbilityEffect":"At 17th level, when you successfully attack a Stunned target, you extend the Stun effect by 1 round"
+
+          },
+          {
+              "AbilityName":"Precision",
+              "AbilityEffect":"At 20th level, you succeed with a high degree of success on attacks if your result exceeds upir targets Defemse bu 10 or more, instead of when your result doubles the targets Defense."
+
+          }
+
+         ]
+        },
+        {
+         "subclassName":"Ambassador",
+         "statToBoost": "Social",
+         "skillsToboost":
+         ["Deception",
+          "performance",
+          "Persuasion."
+
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"Bend a Knee Or Stand Tall",
+              "AbilityEffect":"When in discussion with a creature of a different Size Class, you gain upshift on INtimidatio or Persuasion Skill Tests equal to the number of Size Class differences between you. "
+
+          },
+          {
+              "AbilityName":"Bah-Weep-Graaaaagnah Wheep Ni Ni Bong",
+              "AbilityEffect":"At 3rd level, you can use language-based Skills liek Persuasion and Deception even if you and your target don't share a language.'"
+
+          },
+          {
+              "AbilityName":"Minimize Casualties",
+              "AbilityEffect":"At 6th level, when you Issue a Command in combat that does not involve harming any creatures, allies who meet the terms of the command receive double the benefits."
+
+          },
+          {
+              "AbilityName":"The Right of All Sentient Beings",
+              "AbilityEffect":"At 10th level, if the safty of a non-combantant is threathend during a Combat, you gain an Edge on Skill Tests to protect them until they are out of harms's way. If they are Defeated during the Combat, you gain an Edge on Skill Tests for the rest of Combat"
+
+          },
+          {
+              "AbilityName":"Not on My Watch",
+              "AbilityEffect":"At 17th Level, once per combat after an enemy sucessfully rolls a Skill Test without an Edge, you can target them with a Deception, Intimidation, or Persuassion Skill Test. On a success, you force them to roll an addiotnal d20 as though they had a Snag on the Skill Test."
+
+          },
+          {
+              "AbilityName":"Martyr",
+              "AbilityEffect":"At 20th Level, if you are Defeated in combat, your allies gain an Edge on Skill Tests for the rest of this Combat."
+
+          }
+
+         ]
+        },
+        {
          "subclassName":"",
          "statToBoost": "",
          "skillsToboost":
