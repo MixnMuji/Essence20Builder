@@ -227,6 +227,149 @@
          ]
         },
         {
+         "subclassName":"Strategist",
+         "statToBoost": "Smarts",
+         "skillsToboost":
+         [
+            "Alertess",
+            "Culture",
+            "Survival"
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"Strategize",
+              "AbilityEffect":"You can set a number of Contingency actions as Free actions up to your Smarts score. Each Contingency action must trigger on a different condition. only one of these Contingency actions can be used to attack"
+
+          },
+          {
+              "AbilityName":"Follow My Lead",
+              "AbilityEffect":"At 3rd level you can Issue a Command as a Free action if you meet the terms of the Command."
+
+          },
+          {
+              "AbilityName":"Watchful Eyes",
+              "AbilityEffect":"At 6th level make a Dif 10 Alertness Skill Test as a Standard action. On a success, one enemy within range of your weapon suffers a Snag on their first Skill Test on their turn. For every 5 your result beats the dif, you affect an addditonal enemy within range. This toatl doubles if your Alertness Skill Test is a Critical Success."
+
+          },
+          {
+              "AbilityName":"Flexible Directives",
+              "AbilityEffect":"At 10th level, once per scene, you can modify the numeric value of one of your other Perks by 1. For Example, you could increase the benefits of Issue Command to 2 upshift to a skill Test or +2 Denfense for a turn, or use Sync up twice. If a Perk confers a numeric penalty, you can use Flexible Directives to instead decrease the penalty by 1."
+
+          },
+          {
+              "AbilityName":"Lock Down",
+              "AbilityEffect":"At 17th level, your Attacks gain Immoblized 1 as an additonal effect"
+
+          },
+          {
+              "AbilityName":"Stronger Together",
+              "AbilityEffect":"At 20th level you gain +1 to your Defenses for every ally within 60ft. As a Free action, you can reduce this bonus by 1 to grant an ally within 60ft +1 to all their Defense until the beginning of your next turn."
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          }
+
+         ]
+        },
+        {
+         "subclassName":"",
+         "statToBoost": "",
+         "skillsToboost":
+         [
+
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          }
+
+         ]
+        },
+        {
+         "subclassName":"",
+         "statToBoost": "",
+         "skillsToboost":
+         [
+
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          }
+
+         ]
+        },
+        {
          "subclassName":"",
          "statToBoost": "",
          "skillsToboost":
