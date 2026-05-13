@@ -266,10 +266,92 @@
               "AbilityName":"Stronger Together",
               "AbilityEffect":"At 20th level you gain +1 to your Defenses for every ally within 60ft. As a Free action, you can reduce this bonus by 1 to grant an ally within 60ft +1 to all their Defense until the beginning of your next turn."
 
+          }
+
+         ]
+        },
+        {
+         "subclassName":"Gunslinger",
+         "statToBoost": "Spped",
+         "skillsToboost":
+         ["Acrobatics",
+          "Initative",
+          "Targeting"
+
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"Quick Draw",
+              "AbilityEffect":"You gain a pair of holsters as special External Weapon hardpoints. You can still only wield two hands of weapons at a time in your External Hardpoints, but you can switch two hands of weapons between your External Hardpoints as a Free action"
+
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Staright Shooter",
+              "AbilityEffect":"At 3rd level, as a Free action once per turn, you can gain 1 upshift when using a ballistic weapon for an action that has a downshift on the roll."
+
+          },
+          {
+              "AbilityName":"Gun Runner",
+              "AbilityEffect":"At 6th level, you can treat an Integrated Harpoint as Reinforced when you use it to fire ballistic weapons as a Free action."
+
+          },
+          {
+              "AbilityName":"Same Principle",
+              "AbilityEffect":"At 10th Level choose a weapon you are trained to use. All of your Gunner and Gunslinger perks that specify ballistic weapons also apply to this weapon."
+
+          },
+          {
+              "AbilityName":"Shoot Out",
+              "AbilityEffect":"At 17th level, once per turn, if an enemy within range of one of your ballistic weapons targets you with a ranged attack, instead of targeting one of your Defenses, you roll your attack Skill Test against theirs as a contested roll. If you lose, or the contested roll is a tie, the attack hits you. If you win, your shot deflects theirs and has no effect"
+
+          },
+          {
+              "AbilityName":"Bullet Barrage",
+              "AbilityEffect":"At 20th level, you can use an Attack action to fire each of your ballistic weapons in an External Hardpoint once, withou penalty."
+
+          }
+
+         ]
+        },
+        {
+         "subclassName":"SharpShooter",
+         "statToBoost": "Speed",
+         "skillsToboost":
+         [
+             "Infiltartion",
+             "Initiative"
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"Long Shot",
+              "AbilityEffect":"You do not suffer a Snag when attacking from long range with a ranged weapon"
+
+          },
+          {
+              "AbilityName":"Calculated Attack",
+              "AbilityEffect":"At 3rd level, when you Aim at a target with your Long Range Rifle, you can make a Science Skill Test against their Evasion or Cleverness. On a sucess, Aiming grants a 2 upshift instead of 1."
+
+          },
+          {
+              "AbilityName":"Piercing Shot",
+              "AbilityEffect":"At 6th Level, when making a ranged attack with your Long Range Rifle, and you have an Edge, you can critically jit with the d2. You must be Specialized in the Long Range Rifle to gain this benefit"
+
+          },
+          {
+              "AbilityName":"Specialty Flexibility",
+              "AbilityEffect":"At 10th level, within the normal range of your Long Range Rifle, it gains Stun 2, Intimdating and Maneuver as alternate effects."
+
+          },
+          {
+              "AbilityName":"Snipe From the Hip",
+              "AbilityEffect":"At 17th level, you ignore your Long Range Rifle's Mounted trait."
+
+          },
+          {
+              "AbilityName":"Drilling Shot",
+              "AbilityEffect":"At 20th Level, attacks with your Long Range Rifle ignore all bonuses to Defenses other than the base calculation."
 
           }
 
@@ -284,105 +366,6 @@
          ],
          "ranks":
          [
-          {
-              "AbilityName":"",
-              "AbilityEffect":""
-
-          },
-          {
-              "AbilityName":"",
-              "AbilityEffect":""
-
-          },
-          {
-              "AbilityName":"",
-              "AbilityEffect":""
-
-          },
-          {
-              "AbilityName":"",
-              "AbilityEffect":""
-
-          },
-          {
-              "AbilityName":"",
-              "AbilityEffect":""
-
-          },
-          {
-              "AbilityName":"",
-              "AbilityEffect":""
-
-          },
-          {
-              "AbilityName":"",
-              "AbilityEffect":""
-
-          }
-
-         ]
-        },
-        {
-         "subclassName":"",
-         "statToBoost": "",
-         "skillsToboost":
-         [
-
-         ],
-         "ranks":
-         [
-          {
-              "AbilityName":"",
-              "AbilityEffect":""
-
-          },
-          {
-              "AbilityName":"",
-              "AbilityEffect":""
-
-          },
-          {
-              "AbilityName":"",
-              "AbilityEffect":""
-
-          },
-          {
-              "AbilityName":"",
-              "AbilityEffect":""
-
-          },
-          {
-              "AbilityName":"",
-              "AbilityEffect":""
-
-          },
-          {
-              "AbilityName":"",
-              "AbilityEffect":""
-
-          },
-          {
-              "AbilityName":"",
-              "AbilityEffect":""
-
-          }
-
-         ]
-        },
-        {
-         "subclassName":"",
-         "statToBoost": "",
-         "skillsToboost":
-         [
-
-         ],
-         "ranks":
-         [
-          {
-              "AbilityName":"",
-              "AbilityEffect":""
-
-          },
           {
               "AbilityName":"",
               "AbilityEffect":""
