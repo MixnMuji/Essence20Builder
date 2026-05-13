@@ -358,6 +358,90 @@
          ]
         },
         {
+         "subclassName":"Microlnked",
+         "statToBoost": "Users Choice",
+         "skillsToboost":
+         [
+             "User's Choice"
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"Mini-con Ally",
+              "AbilityEffect":"A mini-con ally docks to your farme. They could be a distinct individual with whom you formed a deep bond or an ascpet of your personality made manifest."
+
+          },
+          {
+              "AbilityName":"Kitted Purpose",
+              "AbilityEffect":"At 3rd level, when your Mini-Con is docked to you, gain teh benefits of a Limited kit of a Speciality associated with their purpose"
+
+          },
+          {
+              "AbilityName":"Ambush Deployment",
+              "AbilityEffect":"At 6th level, if you deploy a Mini-con in combat, you and your Mini-Con (or Mini-Cons) gain an Edge on attacks targeting enemies adjacent to you"
+
+          },
+          {
+              "AbilityName":"Muti-Purpose",
+              "AbilityEffect":"At 10th Level chose one of the following: 1) Additonal Purpose: you Mini-con gains an additonal purpose.  2) Additonal Ally: you gain a second Mini-con"
+
+          },
+          {
+              "AbilityName":"Reinfored Bond",
+              "AbilityEffect":"At 17th Level, you gain +1 Health, and +2 to all Defenses. When you assign a Mini-Con Health when they deploy, you can also assign them +1, or +2 to all their Defenses, Reduce your bonus to Dfenses an equal amount."
+
+          },
+          {
+              "AbilityName":"Emergency Deployment and Docking",
+              "AbilityEffect":"At 20th Level, if you are Defeated with one or more docked Mini-con, your Mini-Cons Deploy with 2 Tempory Health Each. This Temporary Health lasts until the end of Combat, or when they take Damage. Additonally, wehn one of your Mini-Cons is Defeated but you're not,a tractor beam made of pure Energon and fuled by your bond deploys from your dock. Every turn it moves your Defated Mini-con 30ft closer to you, unitl your Defated Mini-Con is within your Reach."
+
+          }
+
+         ]
+        },
+         {
+         "subclassName":"Triple Changer",
+         "statToBoost": "User Choice",
+         "skillsToboost":
+         [
+             "User Choice"
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"Everything In threes",
+              "AbilityEffect":"You gain an additonal alt mode, Choose a Chassis tied to an Origin. You gain the ALt Mode benefits of that Chassis as a second choice when you Convert. You can not Choose a Chassis whose Alt Mode size is two Size classes Larger than the Alt Mode Size of your Original Chasis. When a rule Mentions 'Your Alt Mode' assume it applies to only one of your Alt Modes, either your current Alt mode or the ALt Mode of your choice if you're in Bot Mode when the rule comes into play. When you gain a Perk that applies to an Alt Mode, chose which alt Mode it applies to when you gain the Perk."
+
+          },
+          {
+              "AbilityName":"Unexpected Alternative",
+              "AbilityEffect":"At 3rd Level, when an enemy who has seen you Convert into only one of your Alt Modes sees you Convert into your other Altmode for the first time, you gain the Edge on Skill Tests Targeting them until the end of your next turn."
+
+          },
+          {
+              "AbilityName":"Shape Changer",
+              "AbilityEffect":"At 6th level, you become immune to Maneuver attaks and the Prone Condition. Momentarilly Acting Smaller doesn't cout as rough terrain for you."
+
+          },
+          {
+              "AbilityName":"Quick Change III",
+              "AbilityEffect":"At 10th Level you gain the benefits of Quick Change a third time"
+
+          },
+          {
+              "AbilityName":"Third Dimension",
+              "AbilityEffect":"At 17th Level, when you change Movement types during your move, you do not subtract the distance you have already moved from the new Movement type like you normally would. Instead, you move up to the full distance of your second move type"
+
+          },
+          {
+              "AbilityName":"Mercurial Nature",
+              "AbilityEffect":"At 20th Level, you gain a Hybridization, and ulimited uses of Mass Shift per day."
+
+          }
+
+         ]
+        },
+        {
          "subclassName":"",
          "statToBoost": "",
          "skillsToboost":
@@ -399,6 +483,133 @@
 
          ]
         },
+        {
+         "subclassName":"",
+         "statToBoost": "",
+         "skillsToboost":
+         [
+
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          }
+
+         ]
+        },
+        {
+         "subclassName":"",
+         "statToBoost": "",
+         "skillsToboost":
+         [
+
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          }
+
+         ]
+        },
+        {
+         "subclassName":"",
+         "statToBoost": "",
+         "skillsToboost":
+         [
+
+         ],
+         "ranks":
+         [
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          },
+          {
+              "AbilityName":"",
+              "AbilityEffect":""
+
+          }
+
+         ]
+        }
+       
         
     ]
 }
