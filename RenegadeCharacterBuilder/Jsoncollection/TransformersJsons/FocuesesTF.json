@@ -442,84 +442,87 @@
          ]
         },
         {
-         "subclassName":"",
-         "statToBoost": "",
+         "subclassName":"Outrider",
+         "statToBoost": "Spped",
          "skillsToboost":
-         [
+         ["Driving",
+          "Initiative"
 
          ],
          "ranks":
          [
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Burn Rubber",
+              "AbilityEffect":"On the first round of Combat, if you Push Yourself to buy additonal movement, you gain an additional 10ft of Movement in addtional movment. If you are suprised, you can still use a Move action to move and Free actions to gain additonal Movement, but you use the regular rules to Push Yourself."
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Barrel Through",
+              "AbilityEffect":"At 3rd level, you gain an upshift 1 on maneuver attacks. When you Ram a target if you moved at least 20ft before the attack, you deal 1 additonal damage on a success, including if you use Ram to Trip your target."
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Scramble",
+              "AbilityEffect":"At 6th level ,as a Standard action, you can force attacks to target your Evasion, even if the attack normally dictates the Defense of its targets. If the attack hits and nomally has an Effect with a numer vale reduce the Numeric effect by 1"
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Roll with it",
+              "AbilityEffect":"At 10th level, once per turn when you take Damage, you can immediately move 10ft away from the source of the attack."
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Caution to the Wind",
+              "AbilityEffect":"At 17th level, you can take a penalty up to -3 to all of your Defense to gain an equal upshift on a Skill Test"
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Dust Up",
+              "AbilityEffect":"At 20th level, when you use your Move action to move, you gain the benefits of Concealment until the beginning of your next turn."
 
           }
 
          ]
         },
         {
-         "subclassName":"",
-         "statToBoost": "",
+         "subclassName":"Prowler",
+         "statToBoost": "Speed",
          "skillsToboost":
-         [
+         ["Finesse",
+          "Infiltration",
+          "Targeting"
 
          ],
          "ranks":
          [
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Stunning Surprise",
+              "AbilityEffect":"WEhen you attack a creature who is unaware of your exact location, your attack deals Stun 1 in additon to its normal effect"
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Pop Out",
+              "AbilityEffect":"At 3rd level, when you attack while Hidden you can make an immediate Infiltration Skill Test against the Willpower or Cleverness of the enemies who could have seen you. On a success, you continue to gain the benefits of Hide after your attack."
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Silent as a shadow",
+              "AbilityEffect":"At 6th level all of your attacks and movement are considered Silent."
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Infiltrator",
+              "AbilityEffect":"At 10th level, once per scene outside of Combat, you can roll Infiltration in place of another Skill Test"
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Telltale Sign",
+              "AbilityEffect":"At 17th level, when you successfuly Popout, you can use your stealth to Frighten one creature who failed to notice you. Make an Infiltration Skill Test as a Free action, against you target's WillPower or Cleverness. On a success, they are Frightend 1. You can use Multiple Free actions to targe other creatures, or target the same creature up to three times, increasing the number of rounds they're frightened by 1 on a succesful Skill Test for each Free action you use."
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Knock Down, Drag out",
+              "AbilityEffect":"At 20th level, when you successfully use Stunning Suprise against a target at least 3 levels lower than you, your attack knocks the target Unconscious for 1 round. If you then use Pop out on the same turn, your INfiltration SKill Test to hid also hids their Unconsious body."
 
           }
 
