@@ -99,6 +99,12 @@ namespace RenegadeCharacterBuilder.Models.Transformers
             Persuasion = Pro;
             Streetwise = Street;
     }
+
+        public void ApplyGeneralPerk(GeneralPerksTF PerkTaken)
+        {
+            // put logic for each case here
+            // need a GeneralPerk Test list, and focus perk list
+        }
     }
 
    

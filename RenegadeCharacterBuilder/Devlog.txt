@@ -253,3 +253,9 @@ made json for Focuceses
 5-8
 
 just added to Focus json
+
+5-15
+I have been working this whole time just writing jsons doesn't matter much. Today made page Vm for Foccuses and logic for filtering subclasses. Made enum for Gernal perk types to later apply logic.
+
+TODO, finish switch cases for Focuses,
+TODO, Finish Logic for adding General perk in character

@@ -4,8 +4,8 @@
         {
             "Name":"Acute Senses",
             "Text": "Choose one of the five senses: (sight,hearing,taste,touch, or smell) You gain the following benefits : An Edge when rolling an Alertness Skill Test for if your chosen sense can be applied. An Upshift on a non-Alertness test where your chosen sense can be applied. You can chooe this Perk up to five times; once for each sense.",
-            "timesSelectable": 5
-        
+            "timesSelectable": 5,
+            "type":"AddText"
         },
         {
             "Name":"Additional Alt Mode",
@@ -13,8 +13,8 @@
                 "levelRequirement":2
             },
             "Text": "Choose A chasis Tied to an Origin. You gain the alt mode benefits of that chasis as a second choice when you Convert. You cannot choose a Chassis whose Alt Mode Size is two Size Classes larger than the Alt Mode Size of your orignal Chassis unless you take the Size Change General Perk. When you gain a Perk taht applies to an Alt mode, choose which Alt Mode it applies to when you gain the Perk.",
-            "timesSelectable": 1
-            
+            "timesSelectable": 1,
+            "type":"AddObject"
         },
         {
             "Name":"All Out Attack",
@@ -31,18 +31,21 @@
                 
             },
             "Text": "During your turn, you can voluntariliy take a downshift on your attacks with Might, Finesse, or targeting. For each downshift you take, you deal 1 additional damage to a single target hit by the attack, but enenemies gain an equal number of Upshifts to attack you until the start of your next turn.",
-            "timesSelectable": 1
+            "timesSelectable": 1,
+            "type":"AddText"
         },
         {
             "Name":"All Terrain Alt Mode",
             "Text": "One of your alt mode can move in different ways. Choose a movement type you do not have access to in your alt mode. You gain that movement of that type 20ft.",
-            "timesSelectable": 1
+            "timesSelectable": 1,
+            "type":"AddObject"
            
         },
          {
             "Name":"Always Alert",
             "Text": "Gain the follwing benefits: 1) You gain an edge when rolling for initiative 2) You can't be suprised while you are concious",
-            "timesSelectable": 1
+            "timesSelectable": 1,
+            "type":"AddText"
            
          },
           {
@@ -57,7 +60,8 @@
                 ]
             },
             "Text": "You can use Deception or Persuasion instead of Alertness to determine if someone is lying, disguising intentions, or hiding something. With a success on your skill test you learn an important detail about the character.",
-             "timesSelectable": 1
+             "timesSelectable": 1,
+                 "type":"AddText"
           },
           {
             "Name":"Cross-Training",
@@ -70,7 +74,9 @@
                 "levelRequirement":6
             },
             "Text": "Choose a Role other than your own. You may select one of that Role's Perks that it gains at a level no higher than half your current level. You cannot choose a Role Perk with the same name as one in you own Role, (for example you may not pick extra attack if your Role offers it.) a Focus Perk, or a Level one Perk. You can Slecect this perk mutlitple times each time picking a differnt Role to gain a perk from.",
-             "timesSelectable": 8
+            "timesSelectable": 8,
+            "type":"AddObject"
+
           },
           {
             "Name":"Daredevil",
@@ -84,7 +90,8 @@
                 
             },
             "Text": "Gain the Follwing Traits: 1) Gain an edge on Initiative rolls in an Alt Mode 2) Upshift 2 on Drvining Skill Tests in Alt Mode",
-            "timesSelectable": 1
+            "timesSelectable": 1,
+            "type":"AddText"
                 
           },
          {
@@ -92,8 +99,9 @@
             
             "Text": "Gain the following Benefits: 1) Once Per combat you can ignore 1 Damage by taking a Snag on all Skill Tests until the end of your next Turn",
                  
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddText"
+         },
          {
             "Name":"Dodgy",
             "PrerequisiteTF":
@@ -106,19 +114,22 @@
              
             },
             "Text": "You gain +2 Evasion. Additionally, any turn where you do not move more than 5 feet, you can Defend as a Free action.",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddBoth"
+         },
          {
             "Name":"Durabyllium Super Alloy",
 
             "Text": "Gain +2 Toughness. Additionally when an opponent targets you with a Blunt, Cold, or Fire Attack, They suffer a downshift to their attack roll.",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddBoth"
+         },
          {
             "Name":"Earlier is Better than Later",
             "Text": "While in Alt mode, Free actions used for additoinal Movement add 10 feet to Movement instead of 5. Additionally, Exchanging Free actions for additional Movement is n9t limited",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddText"
+         },
          {
             "Name":"Educated",
             "PrerequisiteTF":
@@ -130,9 +141,10 @@
                 ]
                 
             },
-            "Text": "Gain the Following Benefits 1) Gain fluenecy in 1 Language of your choice, 2) dd an additioanl Story Point to your Team's poolat the beginning of each game session; 3) Act as though Specialized in a single Smarts Skill, choosen when you take this Perk, once per day.'",
+            "Text": "Gain the Following Benefits 1) Gain fluenecy in 1 Language of your choice, 2) Add an additioanl Story Point to your Team's poolat the beginning of each game session; 3) Act as though Specialized in a single Smarts Skill, choosen when you take this Perk, once per day.'",
             "timesSelectable": 1
-          },
+            "type":"AddObject"
+         },
          {
             "Name":"Evasive Fighting",
             "PrerequisiteTF":
@@ -147,19 +159,22 @@
                 
             },
             "Text": "During your turn, you can voluntarily take Downshifts on your attacks with Might Finesse, or Targeting to force enemies to suffer the same number of Downshifts when Attacking you. You can't downshift lower than d2.'",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddText"
+         },
          {
             "Name":"Fast",
         
             "Text": "Gain the following Benefits: 1) Upshift 2 bonus to Initiative; 2) Increase all of your Movement types by 10 feet.",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddText"
+         },
          {
             "Name":"Field Repair",
             "Text": "Gain the following Benefits: 1) Once per scene, as long as you have a Repair Kit on you, you can Repair 1 Health on yourself or a Cybertronian ally as a Standard action without making a Technology Skill Test. 2) You gain an Edge On Technology Test to gain clues from offline or stasis-locked Cybertronians. These abilites do no work on other lifeforms.",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddText"
+         },
          {
             "Name":"Fuel Efficient",
             "PrerequisiteTF":
@@ -167,33 +182,39 @@
                 "levelRequirement":12
             },
             "Text": "When you spend an Energon point roll a d4. On a 4, regain the spent Energon point",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddText"
+         },
          {
             "Name":"Green",
             "Text": "Three times per day you do not suffer a snag when make an unskilled roll. at 5th level replace this General Perk with another you meet all prerequisites for.",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddText"
+         },
          {
             "Name":"Human Companion",
             "Text": "During your time on Earth, you've managed to make friends with a human earthling. Choose two Essences for your human companion to Specialize in. Those two Essences are equal to your current level divided by two(round up) +2. Your human companion purchases Skills and Specialities the same way a Standard PC.",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddObject"
+         },
          {
             "Name":"Linguistics",
             "Text": "Gain fluency in any 3 languages of your choice.",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddText"
+         },
          {
             "Name":"Mayhem Attack",
             "Text": "After making an Attack aided by an ally (such as by the Lend Assistance action or the Scientist Augment Power Role Perk) you can immediately spend a Free Action to make another Attack with the same bnefits.",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddText"
+         },
          {
             "Name":"Mentor",
             "Text": "Choose a Skill. You can associate that Skill with an additional Essence. For example You choose the Intimidation Skill and Social Essence. Now whenever you gain an Essence Point in Strength or Soical you can invest the Skill Point into Intimidation.",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddObject"
+         },
          {
             "Name":"Nose for Trouble",
             "PrerequisiteTF":
@@ -206,18 +227,21 @@
                 
             },
             "Text": "You Gain the follwing benefits: 1) You can use Streetwise in place of Alertness to search for clues or looking for traps; 2) you gain an Edge when setting or disarming traps; 3) In situations where you are sneaking or trespassing, you can use Streetwise instead of Initiative to set your turn order; 4) You can spend a Story Point ot modify your location in a minor way, such as adding an exit (for example, a hidden door or a tunnel through an underground hideout.) NOte that this modification can take work to utilize. Escape may get you out of one jam, but it could lead you to a worse one.",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddText"
+         },
         {
             "Name":"Now you Don't",
             "Text": "While in Alt Mode, when taking the Hide action, add 5 to your Skill TEst result. Additionally, as long as you remain in Alt Mode, you are considered to have Cover until your next turn even when out in the open.",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddText"
+        },
     {
             "Name":"Object Alt Mode",
             "Text": "You can change your Alt Mode to resemble a mundane object, decided upon when this Perk is chosen. It can be up to two Size Classes smaller than your Bot Mode. While this Alt mode has a base Movement value of 0, it grants Edge to all skill tests involving hiding blending in, or eavesdropping in applicable surroundings.",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddObject"
+    },
      {
             "Name":"Pack Mule",
             "PrerequisiteTF":
@@ -230,8 +254,9 @@
                 "levelRequirement":2
             },
             "Text": "Your Brawn is considered two points higher forcarrying capacity and satisfying equipment requirements. You can carry 3 additional hands of weapons",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddText"
+     },
         {
             "Name":"Photographic Memory",
             "PrerequisiteTF":
@@ -244,13 +269,15 @@
                 
             },
             "Text": "You can recall the tiniest details with ease from anythign you've seen in the last six months",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddText"
+        },
            {
             "Name":"Quick Change",
             "Text": "Select one conversion sequence (such as Alt Mode to Bot Mode, Bot Mode to Alt mode, or one Alt mode to another) That specific sequence only requires a Free action. This Perk can be taken multiple times, once for each conversion sequence.",
-            "timesSelectable": 4
-          },
+            "timesSelectable": 4,
+            "type":"AddText"
+           },
           {
             "Name":"Rapid Attack",
             "PrerequisiteTF":
@@ -264,7 +291,8 @@
                 ]
             },
             "Text": "When you attack with a weapon in an External Harpoint, you can spend 2 free actions to make an additonal attack with the same weapon once per turn.",
-            "timesSelectable": 1
+            "timesSelectable": 1,
+            "type":"AddText"
           },
           {
             "Name":"Razor Tongue",
@@ -277,13 +305,15 @@
                 ]
             },
             "Text": "Gain +2 Cleverness. Additionally, you deal 1 additional Damage on attacks that sucessfully target an enemy's Cleverness",
-            "timesSelectable": 1
+            "timesSelectable": 1,
+            "type":"AddBoth"
           },
                  {
             "Name":"Remove & Rebuild",
             "Text": "When a Defeated ally is down in a key area, you know the secret of good R&R - removing and rebuilding a crucial piece. If an ally is Defeated, you can use a Standard action and expend a Repair Kit to revive that ally with one remaining Health. Additonally, their Toughness and Evasion Defense increase by +1 until the end of their next turn.",
-            "timesSelectable": 1
-          },
+            "timesSelectable": 1,
+            "type":"AddText"
+                 },
           {
             "Name":"SharpShooters's Grace",
             "PrerequisiteTF":
@@ -295,18 +325,21 @@
                 ]
             },
             "Text": "Gain the following Benefits: 1) You no longer suffer a Snag when making a ranged attack outside of a weapon's normal range. 2) YOu gain Upshift 2 on ranged attacks made at targets farther than 30 feet away",
-            "timesSelectable": 1
+            "timesSelectable": 1,
+            "type":"AddText"
           },
           {
             "Name":"Size Change",
             "Text": "Your Alt Mode is significiantly bigger or smaller than your Bot Mode. Taking this Perk once means your Alt mode is one Size Class larger or smaller than your Bot Mode. YOu can take this Perk multiple times , once for each Alt Mode you want to change in size. This does mean you can have one Alt Mode tow Size Classes larger than another.",
-            "timesSelectable": 1
+            "timesSelectable": 1,
+            "type":"AddObject"
           },
                                       
           {
             "Name":"Team Player",
             "Text": "You're good at working with a team. If you spend a Standard action to Lend Assistance in a dangerous situation, the action generates one Story Point, if sucessful",
-            "timesSelectable": 1
+            "timesSelectable": 1,
+            "type":"AddText"
           },
           {
             "Name":"Terrifying Presence",
@@ -319,7 +352,8 @@
                 ]
             },
             "Text": "When you use Intimidation against a targets Willpower you can either: 1) Deal 1 damage; 2) Inflict the Frightened Condition for one turn; 3) Deal 1 Stun",
-            "timesSelectable": 1
+            "timesSelectable": 1,
+            "type":"AddText"
           },
           {
             "Name":"Tongues",
@@ -334,7 +368,8 @@
                 
             },
             "Text": "At the star of the mission you choose half of your known Languages; the rest you can declare you know at any time. This includes languages that you would have little chance of learning. You have an Edge on Skill Tests involving langauge, such as cracking codes, Solving ciphers, and witty repartee. In encounters where rolls do not help, you may instead get a freee clue from the GM.",
-            "timesSelectable": 1
+            "timesSelectable": 1,
+            "type":"AddText"
           },
           {
             "Name":"Veteran",
@@ -344,7 +379,8 @@
                 "levelRequirement":8
             },
             "Text": "Three times per mission, you can reroll a d20 on a skill test as long as you aren't suffering a snag",
-            "timesSelectable": 1
+            "timesSelectable": 1,
+            "type":"AddText"
           },
           {
             "Name":"Weapon Master",
@@ -360,7 +396,8 @@
                 
             },
             "Text": "When you attack with a weapon equiped to an Intergrated Hardpoint, you can spend 2 Free Actions to make an additonal Attack with the same weapon once per turn.",
-            "timesSelectable": 1
+            "timesSelectable": 1,
+            "type":"AddText"
           }
 
     ]
