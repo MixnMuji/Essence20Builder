@@ -529,84 +529,87 @@
          ]
         },
         {
-         "subclassName":"",
-         "statToBoost": "",
+         "subclassName":"Wrecker",
+         "statToBoost": "Strength",
          "skillsToboost":
-         [
+         ["Brawn",
+          "Conditioning",
+          "Might"
 
          ],
          "ranks":
          [
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Warrior Rush",
+              "AbilityEffect":"On the First turn of combat, double your Movements until the beginning of your next turn"
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Manifest Enhancement",
+              "AbilityEffect":"At 3rd level as a Free action once per round, you can manifest a Weapon Upgrade for a Melee weapon withou needing to spend an Energon Point. You can use this ability to create a Standard Weapon Updgrade. At 7th Leve, you can also manifest Limited Weapon Upgrades, and at 16th Level, you can also manifest Restricted Weapon Upgrades. You can use Manifest Enchancement on any Melee Weapon, not just a weapon you create with Manifest Melee Weapon."
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Plow",
+              "AbilityEffect":"At 6th level, when you make a Ram attack, either in your Alt Mode or driving a vehicle with a Ram attack, any Movement you make this turn ignores ROugh Terrain, and your Ram attack gains Mutiple Targets (3). You can use Ram on up to three targets within your Reach at any point in your movement."
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Duke it Out",
+              "AbilityEffect":"At 10th Level, once per combat as long as you haven't used your Standard action this turn, you can challenge a creature of your level or higher to fight you, one-on-one, as a Free action. They Must immediately accept or refuse. If they refuse, you gain an Edge on Skill Tests Targeting them until the beginning of your next turn. If they accept, you and your target both immediately make a Melee attack (with or without weapons, depending on if you specified in the challenge) as a Contested Skill Test. The winner deals their attack's effect to the loser. This does mean you could have used your Standard action to have your enemy damage you.'"
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Indomitable",
+              "AbilityEffect":"At 17th level, you become immune to the Frightened Condition and attempts to Intimidate you suffer a Snag."
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Last Stand",
+              "AbilityEffect":"At 20th Level if you are Defeated in combat you can first immediately take a full turn as long as you spend your actions doing everything you can to attack the creature that Defeated you."
 
           }
 
          ]
         },
         {
-         "subclassName":"",
-         "statToBoost": "",
+         "subclassName":"Sentinel",
+         "statToBoost": "Speed",
          "skillsToboost":
-         [
+         ["Finesse",
+          "Inititative"
 
          ],
          "ranks":
          [
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Stalwart Defense",
+              "AbilityEffect":"During Equipment Requistion and Assignment choose whether you defend yourself with a shield or a parrying weapon. Shield: On your turn, you can choose to gain +2 Toughness, +2 Evasion, or +1 Toughness and Evasion until the beginning of your next turn. Weapon: You gain a Close combat Blade, Close Combat Bludgeon, Short Blade, or Short Bludgeon. YOu gain 1 upshift on offhand attacks. On your turn you can choose to gain +1 Toughness or +1 Evasion until the beginning of your next turn."
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Wait for an Opening",
+              "AbilityEffect":"At 3rd level, when you attack on another creatures turn, such as wtih a Contingency action to Attack or your no Escape Perk, you gain an Edge on the Skill Test."
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Disarming Defenses",
+              "AbilityEffect":"At 6th Level when an attack misses you by an amout equal to your Stalwart Defense bonus to your Defense, you disarm the attacker of the weapon they attacked with."
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Stand Firm",
+              "AbilityEffect":"At 10th level, as a Move Action you can double the bonus granted your Stalward Defense until the beginning of your next turn."
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Sword And BOard",
+              "AbilityEffect":"At 17th  level, you gain both a Shield and parrying Weapon in one External Hardpoint. On your turn, you can choose to gain any one of the Follwing bonues to Defense until the beginning of your next turn: 1) +3 Toughness; 2) +3 Evasion; 3) +2 Toughness, +1 Evasion 4) +1 Toughness, +2 Evasion"
 
           },
           {
-              "AbilityName":"",
-              "AbilityEffect":""
+              "AbilityName":"Make an Opening",
+              "AbilityEffect":"At 20th Level once per turn you can take a Contingency action to Attack as a Free action."
 
           }
 
