@@ -17,6 +17,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public string Description { get; set; }
         public TransformersOrign Orign { get; set; }
         public Roles Role { get; set; }
+        public FocusTF sub { get; set; }
         public LevelTF Level { get; set; }
         public Alliegence Faction { get; set; }
         public List<string> Languages { get; set; }
@@ -58,6 +59,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public SkillTF Persuasion { get; set; }
         public SkillTF Streetwise { get; set; }
 
+        public List<FocusPerk> SubclassTextBlocks { get; set; }
+        public List<string> GeneralPerkTextBlock { get; set; }
         public TransfomersCharacterModel()
         
                 // redo the constructor to make it so that the optional ones are at the end and have default values;
@@ -104,6 +107,16 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         {
             // put logic for each case here
             // need a GeneralPerk Test list, and focus perk list
+        }
+        public void AddSubclassText()
+        {
+            
+            for(int i = 0;  i<= Level.FocusProgression; i++)
+            {
+                SubclassTextBlocks.Add(sub.ranks[i]);
+
+                //this will add the ranks so we can get the test later
+            }
         }
     }
 

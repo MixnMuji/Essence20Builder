@@ -33,39 +33,31 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             switch (currentRole)
             {
                 case "Analyst":
-                    /*
-                     * void LoadOrigins()
-        {
-            string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "Origins.json");
-            string json = File.ReadAllText(path);
-            var originRoot = JsonSerializer.Deserialize<TFOriginsRoot>(json);
-            tfOrgins = originRoot.Origins;
-        }
-                     */
+                    GetSubclassesFromJson("Manipulator", "Spec Ops");
                     break;
 
                 case "FieldCommander":
-                    
+                    GetSubclassesFromJson("Ambassador", "Strategist");
                     break;
 
                 case "Gunner":
-                    
+                    GetSubclassesFromJson("Gunslinger", "SharpShooter");
                     break;
 
                 case "ModeMaster": //this needs its own method unfortunately
-                    
+                    GetSubclassesFromJson("Microlnked", "Triple Changer");
                     break;
 
                 case "Scientist":
-                    
+                    GetSubclassesFromJson("Medical Officer", "Gadgeteer");
                     break;
 
                 case "Scout":
-                    
+                    GetSubclassesFromJson("Outrider", "Prowler");
                     break;
-
-                case "Warrior":
                     
+                case "Warrior":
+                    GetSubclassesFromJson("Wrecker", "Sentinel");
                     break;
             }
         }

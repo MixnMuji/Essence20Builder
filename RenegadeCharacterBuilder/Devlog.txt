@@ -257,5 +257,13 @@ just added to Focus json
 5-15
 I have been working this whole time just writing jsons doesn't matter much. Today made page Vm for Foccuses and logic for filtering subclasses. Made enum for Gernal perk types to later apply logic.
 
-TODO, finish switch cases for Focuses,
+TODO, finish switch cases for Focuses, DONE
+TODO, Finish Logic for adding General perk in character
+
+6-16
+
+Made the swtich case for focuses added objects to character class two list to display genreeal perks and focus ranks respectively,
+as well as a subclass.
+
+TODO: need to make page for focuces selection. and applying logic.
 TODO, Finish Logic for adding General perk in character
