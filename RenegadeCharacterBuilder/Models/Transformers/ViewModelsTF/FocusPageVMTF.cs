@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Data.Common;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -14,14 +17,44 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
     public class FocusPageVMTF
     {
-        /* Things we need
-         1) the characters class : to get subclasses
-        2) Subclasses
-        
-          */
-
+        public event PropertyChangedEventHandler PropertyChanged;
+        public ObservableCollection<FocusTF> twoChoices { get; set; }
         public string CharactersRoleToGetSubclasses { get; set; }
         public TFFocusesRoot ApplicableSubclasses { get; set; }
+
+        private FocusTF _currentSubclass;
+        public FocusTF CurrentSubclass;
+
+        private int _currentIndex;
+
+        public int Currentindex
+        {
+            get => _currentIndex;
+            set
+            {
+                if(twoChoices == null || twoChoices.Count == 0)
+                {
+                    return;
+                }
+                if(value < 0)
+                {
+                    _currentIndex = twoChoices.Count - 1;
+                }else if(value >= twoChoices.Count)
+                {
+                    _currentIndex = 0;
+                }
+                else
+                {
+                    _currentIndex = value;
+                }
+                CurrentSubclass = twoChoices[_currentIndex];
+                OnPropertyChanged();
+            }
+        }
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
 
         public FocusPageVMTF()
         {
@@ -68,6 +101,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             var AllSubclasses = JsonSerializer.Deserialize<TFFocusesRoot>(json);
             var filteredList = AllSubclasses.Sublcasses.Where(x => x.subclassName == option1 || x.subclassName == option2).ToList();
             ApplicableSubclasses = new TFFocusesRoot { Sublcasses = filteredList };
+            twoChoices = new ObservableCollection<FocusTF>(filteredList);
 
         }
 

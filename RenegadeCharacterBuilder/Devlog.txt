@@ -260,10 +260,18 @@ I have been working this whole time just writing jsons doesn't matter much. Toda
 TODO, finish switch cases for Focuses, DONE
 TODO, Finish Logic for adding General perk in character
 
-6-16
+5-16
 
 Made the swtich case for focuses added objects to character class two list to display genreeal perks and focus ranks respectively,
 as well as a subclass.
 
 TODO: need to make page for focuces selection. and applying logic.
 TODO, Finish Logic for adding General perk in character
+
+
+5-19
+
+Getting back into things after a break is a lesson in pain. Added the logic to make a list to get the data that needs to be shown on the page haven't really done the xmal yet
+made an on property changed.
+
+TODo:Write xaml

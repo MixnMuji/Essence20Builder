@@ -10,17 +10,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
+using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 
 namespace RenegadeCharacterBuilder
 {
+
     /// <summary>
     /// Interaction logic for FocusPerks.xaml
     /// </summary>
     public partial class FocusPerks : Page
     {
+        public FocusPageVMTF viewmodel{ get; }
         public FocusPerks()
         {
-            InitializeComponent();
+            viewmodel = new FocusPageVMTF();
+            viewmodel.GetSubClass(TFCharacterSession.CurrentTransfomer.Role.Name);
+            DataContext = viewmodel.ApplicableSubclasses;
+            
         }
     }
 }
