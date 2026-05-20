@@ -40,9 +40,7 @@
           {
               "AbilityName":"Miracle Worker",
               "AbilityEffect":"At 20th level your d2 can trigger a Critical Sucess on SCience and Technology Skill Tests."
-
-
-
+           }
          ]
          },
 
@@ -94,7 +92,7 @@
          "skillsToboost":
          ["Deception",
           "Persuassion",
-          "StreetWise",
+          "StreetWise"
 
          ],
          "ranks":

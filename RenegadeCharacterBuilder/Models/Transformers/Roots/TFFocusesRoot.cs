@@ -6,6 +6,6 @@ namespace RenegadeCharacterBuilder.Models.Transformers.Roots
 {
     public class TFFocusesRoot
     {
-        public List <FocusTF> Sublcasses { get; set; }
+        public List <FocusTF> Focuses { get; set; }
     }
 }

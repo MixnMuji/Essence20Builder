@@ -31,6 +31,7 @@
             <ComboBoxItem Content="Influences"/>
             <ComboBoxItem Content="Gernal Perks"/>
             <ComboBoxItem Content="Armory"/>
+            <ComboBoxItem Content="Focus"/>
 
         </ComboBox>
         <Button Grid.Row="2" Grid.Column="1" Width="50" Height="50" Content="skip" Click="DevMode"/>

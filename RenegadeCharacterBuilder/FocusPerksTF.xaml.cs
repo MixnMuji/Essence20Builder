@@ -24,9 +24,11 @@ namespace RenegadeCharacterBuilder
         public FocusPageVMTF viewmodel{ get; }
         public FocusPerks()
         {
+            InitializeComponent();
             viewmodel = new FocusPageVMTF();
-            viewmodel.GetSubClass(TFCharacterSession.CurrentTransfomer.Role.Name);
-            DataContext = viewmodel.ApplicableSubclasses;
+            //viewmodel.GetSubClass(TFCharacterSession.CurrentTransfomer.Role.Name);
+            viewmodel.GetSubClass();
+            DataContext = viewmodel;
             
         }
     }

@@ -15,15 +15,23 @@ using RenegadeCharacterBuilder.Models.Transformers.Roots;
 
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
-    public class FocusPageVMTF
+    public class FocusPageVMTF: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public ObservableCollection<FocusTF> twoChoices { get; set; }
         public string CharactersRoleToGetSubclasses { get; set; }
-        public TFFocusesRoot ApplicableSubclasses { get; set; }
+       
 
         private FocusTF _currentSubclass;
-        public FocusTF CurrentSubclass;
+        public FocusTF CurrentSubclass
+        {
+            get => _currentSubclass;
+            set
+            {
+                _currentSubclass = value;
+                OnPropertyChanged();
+            }
+        }
 
         private int _currentIndex;
 
@@ -58,12 +66,22 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public FocusPageVMTF()
         {
+
             CharactersRoleToGetSubclasses = TFCharacterSession.CurrentTransfomer.Role.Name;
+
+      
+
+            if (string.IsNullOrWhiteSpace(CharactersRoleToGetSubclasses))
+            {
+
+                CharactersRoleToGetSubclasses = "Analyst";
+            }
+
         }
 
-        public void GetSubClass(string currentRole)
+        public void GetSubClass()
         {
-            switch (currentRole)
+            switch (CharactersRoleToGetSubclasses)
             {
                 case "Analyst":
                     GetSubclassesFromJson("Manipulator", "Spec Ops");
@@ -96,14 +114,19 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         }
         public void GetSubclassesFromJson(string option1, string option2)
         {
-            string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JsonCollection", "TranformersJson", "FocuesesTF");
+            string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "FocuesesTF.json");
             string json = File.ReadAllText(path);
             var AllSubclasses = JsonSerializer.Deserialize<TFFocusesRoot>(json);
-            var filteredList = AllSubclasses.Sublcasses.Where(x => x.subclassName == option1 || x.subclassName == option2).ToList();
-            ApplicableSubclasses = new TFFocusesRoot { Sublcasses = filteredList };
+            var filteredList = AllSubclasses.Focuses.Where(x => x.subclassName == option1 || x.subclassName == option2).ToList();
             twoChoices = new ObservableCollection<FocusTF>(filteredList);
-
+            if (twoChoices.Count > 0)
+            {
+                Currentindex = 0;
+            }
+            CurrentSubclass = twoChoices[Currentindex];
         }
 
     }
-}
+
+  }
+

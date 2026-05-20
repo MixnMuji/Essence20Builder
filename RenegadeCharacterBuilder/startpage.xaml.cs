@@ -70,6 +70,9 @@ namespace RenegadeCharacterBuilder
                 case "Scores":
                     NavigationService.Navigate(new ScoreSkillAllocationTF());
                     break;
+                case "Focus":
+                    NavigationService.Navigate(new FocusPerks());
+                    break;
             }
 
         }

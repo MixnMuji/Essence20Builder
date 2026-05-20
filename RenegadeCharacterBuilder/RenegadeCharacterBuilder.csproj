@@ -27,6 +27,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Jsoncollection\TransformersJsons\FocuesesTF.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Jsoncollection\TransformersJsons\GeneralPerksTF.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Jsoncollection\TransformersJsons\Roles.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

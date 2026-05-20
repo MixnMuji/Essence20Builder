@@ -275,3 +275,14 @@ Getting back into things after a break is a lesson in pain. Added the logic to m
 made an on property changed.
 
 TODo:Write xaml
+
+5-20 
+
+First try at a xaml page since forever 400+ pages of json btw
+fixed errosrs in json, go focus page to load but it's blank
+
+figured out how to show data was forgetting initilize component. I stupid I guess. 
+
+TOD): ADD NEX AND PREVIOUS buttons
+TODO: figure out how to make radio box for stat options and the logic for that
+assign stuff to current character model

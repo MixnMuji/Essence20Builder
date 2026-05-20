@@ -10,6 +10,51 @@
       Background="White">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Focuses" FontSize="33"/>
+        <ContentControl Grid.Row="1" Content="{Binding CurrentSubclass}">
+            <ContentControl.ContentTemplate>
+                <DataTemplate>
+                    <StackPanel>
+
+                        <TextBlock Text="{Binding subclassName}"/>
+                        <TextBlock Text="{Binding statToBoost, StringFormat= Stat boosted +1: {0}}"/>
+                        <TextBlock Text="Select a skill to raise whenever you boost your key score"/>
+                        
+                        <!--Should show list of skills -->
+                        <ItemsControl ItemsSource="{Binding skillsToboost}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                        <ItemsControl ItemsSource="{Binding ranks}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding AbilityName}"/>
+                                        <TextBlock Text="{Binding AbilityEffect}"/>
+
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+
+
+
+
+                    </StackPanel>
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
     </Grid>
 </Page>
