@@ -31,5 +31,8 @@ namespace RenegadeCharacterBuilder
             DataContext = viewmodel;
             
         }
+
+        
+        
     }
 }

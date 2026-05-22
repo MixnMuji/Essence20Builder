@@ -286,3 +286,10 @@ figured out how to show data was forgetting initilize component. I stupid I gues
 TOD): ADD NEX AND PREVIOUS buttons
 TODO: figure out how to make radio box for stat options and the logic for that
 assign stuff to current character model
+
+5-21
+Made buttons low action day, need to refactor so it doesn't sit on top of choices.
+learned that you don't need methods in page if you have them on vm, in vm though if it does affect an specific object make it generic.
+
+TODO: figure out how to make radio box for stat options and the logic for that
+assign stuff to current character model

@@ -9,6 +9,8 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
+using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media.Media3D;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.Roots;
@@ -20,6 +22,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public event PropertyChangedEventHandler PropertyChanged;
         public ObservableCollection<FocusTF> twoChoices { get; set; }
         public string CharactersRoleToGetSubclasses { get; set; }
+        public ICommand DispalyNextSubclass { get; set; }
+        public ICommand DisplayPreviousSubclass { get; set; }
        
 
         private FocusTF _currentSubclass;
@@ -77,6 +81,9 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 CharactersRoleToGetSubclasses = "Analyst";
             }
 
+            DispalyNextSubclass = new RelayCommand<Object>(GetNextClass);
+            DisplayPreviousSubclass = new RelayCommand<Object>(GetPreviousClass);
+
         }
 
         public void GetSubClass()
@@ -123,9 +130,16 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             {
                 Currentindex = 0;
             }
-            CurrentSubclass = twoChoices[Currentindex];
+           
         }
-
+       public void GetNextClass(object obj)
+        {
+            Currentindex++;
+        }
+        public void GetPreviousClass(object obj)
+        {
+            Currentindex--;
+        }
     }
 
   }

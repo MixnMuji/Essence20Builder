@@ -25,7 +25,7 @@
                         <TextBlock Text="{Binding subclassName}"/>
                         <TextBlock Text="{Binding statToBoost, StringFormat= Stat boosted +1: {0}}"/>
                         <TextBlock Text="Select a skill to raise whenever you boost your key score"/>
-                        
+
                         <!--Should show list of skills -->
                         <ItemsControl ItemsSource="{Binding skillsToboost}">
                             <ItemsControl.ItemTemplate>
@@ -50,11 +50,14 @@
 
 
 
-
-
                     </StackPanel>
+                 
                 </DataTemplate>
             </ContentControl.ContentTemplate>
         </ContentControl>
+        
+        <!-- Buttons for next and right put it in its own row just above -->
+        <Button Content="Next" VerticalAlignment="Bottom" Grid.Row="1" HorizontalAlignment="Right"  Width="100" Height="50" Margin="10,0,10,10" Command="{Binding DispalyNextSubclass}"/>
+        <Button Content="Previous" VerticalAlignment="Bottom" Grid.Row="1" HorizontalAlignment="Left"  Width="100" Height="50" Margin="10,0,10,10" Command="{Binding DisplayPreviousSubclass}"/>
     </Grid>
 </Page>
