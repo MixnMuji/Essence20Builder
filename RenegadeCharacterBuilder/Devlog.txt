@@ -293,3 +293,7 @@ learned that you don't need methods in page if you have them on vm, in vm though
 
 TODO: figure out how to make radio box for stat options and the logic for that
 assign stuff to current character model
+
+5-22
+
+Minor day made proceed button and assigned subclass need to show text and stuff like that general perk stuff is next

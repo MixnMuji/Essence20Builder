@@ -32,7 +32,23 @@ namespace RenegadeCharacterBuilder
             
         }
 
-        
-        
+        private void SetSubclassandContinue(object sender, RoutedEventArgs e)
+        {
+            
+            MessageBoxResult result = MessageBox.Show(
+                "Select Subclasss and Continue",
+                "Confirm",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question
+
+                );
+            if (result == MessageBoxResult.Yes)
+            {
+                TFCharacterSession.CurrentTransfomer.sub = viewmodel.CurrentSubclass;
+                NavigationService.Navigate(new GeneralPerksTF());
+            }
+            else
+                return;
+        }
     }
 }
