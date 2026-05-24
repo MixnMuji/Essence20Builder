@@ -36,6 +36,11 @@ namespace RenegadeCharacterBuilder
             TFCharacterSession.CurrentTransfomer.Name = CharactersName.Text;
             TFCharacterSession.CurrentTransfomer.Pronouns = CharacterPronouns.Text;
             TFCharacterSession.CurrentTransfomer.Description = CharacterDescription.Text;
+
+            if (ComboBoxLevels.SelectedItem is int levelVal)
+            {
+                TFCharacterSession.CurrentTransfomer.CurrentLevel = levelVal;
+            }
             NavigationService.Navigate(new OrignSelectTf());
 
         }

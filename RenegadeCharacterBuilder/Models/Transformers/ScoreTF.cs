@@ -18,7 +18,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public bool IsKeyScore { get; set; } = false;
         private List<SkillTF> correspondingSkills { get; set; }
 
-
+        public SkillTF LinkedbyFocus { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
       
         public ScoreTF(string name, List<SkillTF> CorrespondingSkills)
@@ -64,6 +64,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
             else
             {
                 skill.SkillScore += 1;
+                LinkedbyFocus.SkillScore += 1;
                 return true;
             }
 
@@ -78,6 +79,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
             }
             else { 
             skill.SkillScore -= 1;
+            LinkedbyFocus.SkillScore -= 1;
                 return true;
 
             }

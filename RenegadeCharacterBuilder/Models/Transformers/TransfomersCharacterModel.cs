@@ -18,7 +18,9 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public TransformersOrign Orign { get; set; }
         public Roles Role { get; set; }
         public FocusTF sub { get; set; }
+        public string ChosenLinkedSkill { get; set; }
         public LevelTF Level { get; set; }
+        public int CurrentLevel { get; set; }
         public Alliegence Faction { get; set; }
         public List<string> Languages { get; set; }
         public List<InfluencesTF> Influences { get; set; }
@@ -59,12 +61,14 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public SkillTF Persuasion { get; set; }
         public SkillTF Streetwise { get; set; }
 
+        
+
         public List<FocusPerk> SubclassTextBlocks { get; set; }
         public List<string> GeneralPerkTextBlock { get; set; }
         public TransfomersCharacterModel()
         
-                // redo the constructor to make it so that the optional ones are at the end and have default values;
         {
+        
             
         }
         

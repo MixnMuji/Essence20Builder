@@ -297,3 +297,12 @@ assign stuff to current character model
 5-22
 
 Minor day made proceed button and assigned subclass need to show text and stuff like that general perk stuff is next
+
+5-23 
+
+Added Linked skills based off of subclasses fixed pages layout
+next is the Genral perks. and then we're done with all the nonsense.
+
+Set level value with new things as well
+
+NEED TO CHECK JSON FOR SPELLING MISTAKES BECAUSE I CAN NOT FIND SKILL WHEW HOO

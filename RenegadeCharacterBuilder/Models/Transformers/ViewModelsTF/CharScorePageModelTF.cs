@@ -175,8 +175,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             Smarts,
             Soical
             };
-            
-            
+
+            getLinkedSkillForScore();
            
 
         }
@@ -297,7 +297,15 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             }
         }
 
+        public void getLinkedSkillForScore()
+        {
+            //may need new object or boolean called linked skill
+            ScoreTF target = Scores.First(s=> s.Name== TFCharacterSession.CurrentTransfomer.sub.statToBoost); // this searches array for score
+            string skilltolink = TFCharacterSession.CurrentTransfomer.ChosenLinkedSkill;
+            target.LinkedbyFocus = target.CorrespondingSkills.First(c => c.Name == skilltolink); // we got the linked skill sweet
+            
 
+        }
         public void AddPointsToSkil(SkillTF skill)
         {
             var score = Scores.First(s => s.CorrespondingSkills.Contains(skill));
@@ -305,7 +313,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             {
                 MessageBox.Show($"points allocated to skills can not exceed value of Essance score current value {score.Name}");
             }
-         
+            
             
 
         }

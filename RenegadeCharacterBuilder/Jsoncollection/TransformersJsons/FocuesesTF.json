@@ -270,7 +270,7 @@
         },
         {
          "subclassName":"Gunslinger",
-         "statToBoost": "Spped",
+         "statToBoost": "Speed",
          "skillsToboost":
          ["Acrobatics",
           "Initative",

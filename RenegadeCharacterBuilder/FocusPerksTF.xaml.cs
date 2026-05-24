@@ -34,6 +34,12 @@ namespace RenegadeCharacterBuilder
 
         private void SetSubclassandContinue(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(TFCharacterSession.CurrentTransfomer.ChosenLinkedSkill))
+            {
+                MessageBox.Show("Select a skill to raise every time you raise score outlined in your Focus.");
+                return;
+            } 
+            
             
             MessageBoxResult result = MessageBox.Show(
                 "Select Subclasss and Continue",
@@ -44,11 +50,22 @@ namespace RenegadeCharacterBuilder
                 );
             if (result == MessageBoxResult.Yes)
             {
+                
                 TFCharacterSession.CurrentTransfomer.sub = viewmodel.CurrentSubclass;
-                NavigationService.Navigate(new GeneralPerksTF());
+                if (TFCharacterSession.CurrentTransfomer.CurrentLevel >= 4)
+                {
+                    NavigationService.Navigate(new GeneralPerksTF());
+                }
+                NavigationService.Navigate(new ScoreSkillAllocationTF());
             }
             else
                 return;
+        }
+
+        private void SkllChosen(object sender, RoutedEventArgs e)
+        {
+            RadioButton choice = (RadioButton)sender;
+            TFCharacterSession.CurrentTransfomer.ChosenLinkedSkill = choice.Content?.ToString();
         }
     }
 }
