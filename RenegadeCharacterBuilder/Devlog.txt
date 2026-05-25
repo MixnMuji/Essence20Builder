@@ -306,3 +306,8 @@ next is the Genral perks. and then we're done with all the nonsense.
 Set level value with new things as well
 
 NEED TO CHECK JSON FOR SPELLING MISTAKES BECAUSE I CAN NOT FIND SKILL WHEW HOO
+
+5-25
+
+spelling erros in json fixed, moved linkedscore skill increase to score increase and fixed bug
+next can make general perk page. SO Close!!!

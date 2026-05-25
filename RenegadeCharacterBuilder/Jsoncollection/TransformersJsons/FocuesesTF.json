@@ -91,8 +91,8 @@
          "statToBoost": "Social",
          "skillsToboost":
          ["Deception",
-          "Persuassion",
-          "StreetWise"
+          "Persuasion",
+          "Streetwise"
 
          ],
          "ranks":
@@ -185,8 +185,8 @@
          "statToBoost": "Social",
          "skillsToboost":
          ["Deception",
-          "performance",
-          "Persuasion."
+          "Preformance",
+          "Persuasion"
 
          ],
          "ranks":
@@ -273,7 +273,7 @@
          "statToBoost": "Speed",
          "skillsToboost":
          ["Acrobatics",
-          "Initative",
+          "Inititave",
           "Targeting"
 
          ],
@@ -318,7 +318,7 @@
          "skillsToboost":
          [
              "Infiltartion",
-             "Initiative"
+             "Inititave"
          ],
          "ranks":
          [
@@ -441,10 +441,10 @@
         },
         {
          "subclassName":"Outrider",
-         "statToBoost": "Spped",
+         "statToBoost": "Speed",
          "skillsToboost":
          ["Driving",
-          "Initiative"
+          "Inititave"
 
          ],
          "ranks":
@@ -575,7 +575,7 @@
          "statToBoost": "Speed",
          "skillsToboost":
          ["Finesse",
-          "Inititative"
+          "Inititave"
 
          ],
          "ranks":
