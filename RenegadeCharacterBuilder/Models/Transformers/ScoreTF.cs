@@ -87,12 +87,19 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         {
             
             CurrentRank += 1;
-            LinkedbyFocus.SkillScore += 1;
+
+            if (LinkedbyFocus != null)
+            {
+                LinkedbyFocus.SkillScore += 1;
+            }
         }
         public void SubtractFromScore()
         {
             CurrentRank -= 1;
-            LinkedbyFocus.SkillScore -= 1;
+            if (LinkedbyFocus != null)
+            {
+                LinkedbyFocus.SkillScore -= 1;
+            }
 
         }
         private void NotifyPropertyChanged(string name)

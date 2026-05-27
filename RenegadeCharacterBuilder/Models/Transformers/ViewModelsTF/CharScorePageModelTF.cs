@@ -159,7 +159,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
              });
 
-            Soical = new ScoreTF("Soical", new List<SkillTF>
+            Soical = new ScoreTF("Social", new List<SkillTF>
             {
                 AnimalHandling,
                 Deception,
@@ -302,7 +302,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             //may need new object or boolean called linked skill
             ScoreTF target = Scores.First(s=> s.Name== TFCharacterSession.CurrentTransfomer.sub.statToBoost); // this searches array for score
             string skilltolink = TFCharacterSession.CurrentTransfomer.ChosenLinkedSkill;
-            target.LinkedbyFocus = target.CorrespondingSkills.First(c => c.Name == skilltolink); // we got the linked skill sweet
+            target.LinkedbyFocus = target.CorrespondingSkills.First(c => c.Name == skilltolink);
+            // we got the linked skill sweet
             
 
         }

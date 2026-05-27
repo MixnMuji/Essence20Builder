@@ -311,3 +311,7 @@ NEED TO CHECK JSON FOR SPELLING MISTAKES BECAUSE I CAN NOT FIND SKILL WHEW HOO
 
 spelling erros in json fixed, moved linkedscore skill increase to score increase and fixed bug
 next can make general perk page. SO Close!!!
+
+5-27 fixed errors in focus json, fixed errors (syntax) in gernal perks json, made geralperks virtual model, and made the logic for getting through the json by requirements
+
+todo build page 

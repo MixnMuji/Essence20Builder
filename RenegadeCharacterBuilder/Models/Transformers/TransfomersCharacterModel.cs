@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Numerics;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows.Media.Animation;
 
@@ -61,14 +62,15 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public SkillTF Persuasion { get; set; }
         public SkillTF Streetwise { get; set; }
 
-        
+        public List<SkillTF> fullSkillList { get; set; }
+        public List<ScoreTF> fullScoreList { get; set; }
 
         public List<FocusPerk> SubclassTextBlocks { get; set; }
         public List<string> GeneralPerkTextBlock { get; set; }
         public TransfomersCharacterModel()
         
         {
-        
+            
             
         }
         
@@ -77,34 +79,43 @@ namespace RenegadeCharacterBuilder.Models.Transformers
             SkillTF Alert, SkillTF Cul , SkillTF Sci, SkillTF Sur, SkillTF Tech,
             SkillTF Ani, SkillTF Dec, SkillTF Pre, SkillTF Pro, SkillTF Street)
         {
-            Strenght = Str;
-           Speed = Spd;
-            Smarts = Smt;
-            Social = Soc;
-            Athletics = Ath;
-            Brawn = Bra;
-            Conditioning = Con;
-            Intimidation = Int;
-            Might = Mig;
+            fullScoreList = new List<ScoreTF>([ 
+                Strenght = Str,
+                Speed = Spd,
+                Smarts = Smt,
+                Social = Soc
+                
+            ]);
+            
+            fullSkillList = new List<SkillTF>([
+                
+                Athletics = Ath,
+                Brawn = Bra,
+                Conditioning = Con,
+                Intimidation = Int,
+                Might = Mig,
 
-            Acrobatics = Acro;
-            Driving = Dri;
-            Finesse = Fin;
-            Inflitration = Inf;
-            Inititave = Init;
-            Targeting = Tar;
+                Acrobatics = Acro,
+                Driving = Dri,
+                Finesse = Fin,
+                Inflitration = Inf,
+                Inititave = Init,
+                Targeting = Tar,
 
-            Alertness = Alert;
-            Culture = Cul;
-            Science = Sci;
-            Survival = Sur;
-            Technology = Tech;
+                Alertness = Alert,
+                Culture = Cul,
+                Science = Sci,
+                Survival = Sur,
+                Technology = Tech,
 
-            AnimalHandling = Ani;
-            Deception = Dec;
-            Preformance = Pre;
-            Persuasion = Pro;
-            Streetwise = Street;
+                AnimalHandling = Ani,
+                Deception = Dec,
+                Preformance = Pre,
+                Persuasion = Pro,
+                Streetwise = Street
+                ]);
+
+
     }
 
         public void ApplyGeneralPerk(GeneralPerksTF PerkTaken)

@@ -1,5 +1,5 @@
 {
-    "GeneralPerks":
+    "Gps":
     [
         {
             "Name":"Acute Senses",
@@ -9,7 +9,7 @@
         },
         {
             "Name":"Additional Alt Mode",
-            "PrequisiteTF":{
+            "requirment":{
                 "levelRequirement":2
             },
             "Text": "Choose A chasis Tied to an Origin. You gain the alt mode benefits of that chasis as a second choice when you Convert. You cannot choose a Chassis whose Alt Mode Size is two Size Classes larger than the Alt Mode Size of your orignal Chassis unless you take the Size Change General Perk. When you gain a Perk taht applies to an Alt mode, choose which Alt Mode it applies to when you gain the Perk.",
@@ -19,7 +19,7 @@
         {
             "Name":"All Out Attack",
 
-            "PrerequisiteTF":
+            "requirment":
             {
                 "statRequirement":6,
                 "ApplicableStats":
@@ -50,7 +50,7 @@
          },
           {
             "Name":"Bot's Bot'",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "statRequirement":6,
                 "ApplicableStats":
@@ -65,7 +65,7 @@
           },
           {
             "Name":"Cross-Training",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "ApplicableStats":
                 [
@@ -80,7 +80,7 @@
           },
           {
             "Name":"Daredevil",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "statRequirement":6,
                 "ApplicableStats":
@@ -104,7 +104,7 @@
          },
          {
             "Name":"Dodgy",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "statRequirement":3,
                 "ApplicableStats":
@@ -132,7 +132,7 @@
          },
          {
             "Name":"Educated",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "statRequirement":3,
                 "ApplicableStats":
@@ -142,12 +142,12 @@
                 
             },
             "Text": "Gain the Following Benefits 1) Gain fluenecy in 1 Language of your choice, 2) Add an additioanl Story Point to your Team's poolat the beginning of each game session; 3) Act as though Specialized in a single Smarts Skill, choosen when you take this Perk, once per day.'",
-            "timesSelectable": 1
+            "timesSelectable": 1,
             "type":"AddObject"
          },
          {
             "Name":"Evasive Fighting",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "statRequirement":6,
                 "ApplicableStats":
@@ -177,7 +177,7 @@
          },
          {
             "Name":"Fuel Efficient",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "levelRequirement":12
             },
@@ -217,7 +217,7 @@
          },
          {
             "Name":"Nose for Trouble",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "statRequirement":6,
                 "ApplicableStats":
@@ -244,7 +244,7 @@
     },
      {
             "Name":"Pack Mule",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "statRequirement":2,
                 "ApplicableStats":
@@ -259,7 +259,7 @@
      },
         {
             "Name":"Photographic Memory",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "statRequirement":4,
                 "ApplicableStats":
@@ -280,7 +280,7 @@
            },
           {
             "Name":"Rapid Attack",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "statRequirement":6,
                 "ApplicableStats":
@@ -296,7 +296,7 @@
           },
           {
             "Name":"Razor Tongue",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "statRequirement":4,
                 "ApplicableStats":
@@ -316,7 +316,7 @@
                  },
           {
             "Name":"SharpShooters's Grace",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "statRequirement":6,
                 "ApplicableStats":
@@ -343,7 +343,7 @@
           },
           {
             "Name":"Terrifying Presence",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "statRequirement":6,
                 "ApplicableStats":
@@ -357,7 +357,7 @@
           },
           {
             "Name":"Tongues",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "statRequirement":4,
                 "ApplicableStats":
@@ -373,7 +373,7 @@
           },
           {
             "Name":"Veteran",
-            "PrerequisiteTF":
+            "requirment":
             {
    
                 "levelRequirement":8
@@ -384,7 +384,7 @@
           },
           {
             "Name":"Weapon Master",
-            "PrerequisiteTF":
+            "requirment":
             {
                 "statRequirement":6,
                 "ApplicableStats":

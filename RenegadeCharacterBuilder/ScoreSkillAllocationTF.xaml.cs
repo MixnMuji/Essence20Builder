@@ -53,7 +53,7 @@ namespace RenegadeCharacterBuilder
                 Viewmodel.Alertness, Viewmodel.Culture, Viewmodel.Science, Viewmodel.Survival, Viewmodel.Technology,
                 Viewmodel.AnimalHandling,Viewmodel.Deception,Viewmodel.Preformance, Viewmodel.Persuasion, Viewmodel.Streetwise);
 
-                if(TFCharacterSession.CurrentTransfomer.Level.Level > 1)
+                if(TFCharacterSession.CurrentTransfomer.CurrentLevel >= 4)
                 {
                     NavigationService.Navigate(new GeneralPerksTF());
                 }
