@@ -315,3 +315,8 @@ next can make general perk page. SO Close!!!
 5-27 fixed errors in focus json, fixed errors (syntax) in gernal perks json, made geralperks virtual model, and made the logic for getting through the json by requirements
 
 todo build page 
+
+5-28 BIG DAY
+
+Made Skeleton or GenerPerks xaml pae and pagination stuff for content view of the perks
+TODo Make Acutal content control based of viewable slection etc whoo hoo

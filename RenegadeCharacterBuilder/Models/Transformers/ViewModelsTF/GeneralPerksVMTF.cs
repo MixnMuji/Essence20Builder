@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Text;
 using System.Text.Json;
@@ -8,12 +10,80 @@ using RenegadeCharacterBuilder.Models.Transformers.Roots;
 
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
-    public class GeneralPerksVMTF
+    public class GeneralPerksVMTF : INotifyPropertyChanged
     {
+        //need a view for pagination 
+        //need property changed to do that
+        //need General Perk bank
 
-        //make list here
+
+        public List<GeneralPerkTF> _qualifyingPerks { get; set; } = new(); // stores what data we use for pages.
+        public int resultsPerPage { get; set; } = 4;
+        public int totalPages => (int)Math.Ceiling((double)_qualifyingPerks.Count / resultsPerPage);
+
+
+
+        private ObservableCollection<GeneralPerkTF> _currentPagePerks { get; set; } = new();
+
+        public ObservableCollection<GeneralPerkTF> CurrentPagePerks
+        {
+            get => _currentPagePerks;
+            set
+            {
+                _currentPagePerks = value;
+                NotifyPropertyChanged(nameof(CurrentPagePerks));
+            }
+        }
+
+        
+
+
+        private int _generalPerksPointBank { get; set; } //this will show how many points we have to spend
+       public int GeneralPerksPointBank
+        {
+            get => _generalPerksPointBank;
+            set
+            {
+                if(_generalPerksPointBank != value)
+                {
+                    _generalPerksPointBank = value;
+                    NotifyPropertyChanged(nameof(GeneralPerksPointBank));
+
+                }
+            }
+        }
+      
+
+        
+        // THIS IS TO MONITORY WHAT PAGE WE'RE ON
+        private int _currentIndex;
+        public int CurrentIndex
+        {
+            get => _currentIndex;
+            set { if(_currentIndex != value)
+                {
+                    _currentIndex = value;
+                    NotifyPropertyChanged(nameof(CurrentIndex));
+                    RefreshPage();
+                }
+                }
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
         public GeneralPerksVMTF()
         {
+          
+
+        }
+
+        public void RefreshPage()
+        {
+            var pageItems = _qualifyingPerks
+                .Skip(CurrentIndex * resultsPerPage)
+                .Take(resultsPerPage);
+
+            CurrentPagePerks = new ObservableCollection<GeneralPerkTF>(pageItems);
 
         }
         public void GetApplicablePerks(int charLevel, List<SkillTF> CharacterSkillsVals, List<ScoreTF> ScoreVals)
@@ -41,25 +111,20 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 x.requirment.ApplicableStats.Contains(s.Name) && s.CurrentRank == x.requirment.statRequirement);
                 return meetsSkillRequirment || meetsScoreRequirment;
             });
-            var list = filtered.ToList();
+            _qualifyingPerks = filtered.ToList();
+            CurrentIndex = 0;
+            RefreshPage();
             
 
         }
+
+        private void NotifyPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+        
     }
 
     
 }
 
-/*
- stats that are checked for perks
-"Might",
-"Finesse",
-"Targeting"
-"Deception",
-"Persuasion"
-"Driving"
-"Speed"
-"Streetwise"
-"Brawn"
-"Smarts"
- */
