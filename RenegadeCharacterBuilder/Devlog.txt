@@ -320,3 +320,10 @@ todo build page
 
 Made Skeleton or GenerPerks xaml pae and pagination stuff for content view of the perks
 TODo Make Acutal content control based of viewable slection etc whoo hoo
+
+5-30
+
+Made Next and previous started xaml for content control and binding made ICommands
+Problem getting the perk count fix it returns null or some shit it crashes
+
+TODO FIX gernal perk count.

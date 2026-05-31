@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 
 namespace RenegadeCharacterBuilder
 {
@@ -18,9 +19,12 @@ namespace RenegadeCharacterBuilder
     /// </summary>
     public partial class GeneralPerksTF : Page
     {
+        public GeneralPerksVMTF viewmodel { get; set; }
         public GeneralPerksTF()
         {
             InitializeComponent();
+            viewmodel = new GeneralPerksVMTF();
+            
         }
 
 

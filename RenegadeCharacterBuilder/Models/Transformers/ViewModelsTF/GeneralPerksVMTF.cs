@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Windows.Input;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.Roots;
 
@@ -21,6 +22,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public int resultsPerPage { get; set; } = 4;
         public int totalPages => (int)Math.Ceiling((double)_qualifyingPerks.Count / resultsPerPage);
 
+        public ICommand NextPage { get; set; }
+        public ICommand PreviousPage { get; set; }
 
 
         private ObservableCollection<GeneralPerkTF> _currentPagePerks { get; set; } = new();
@@ -35,16 +38,16 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             }
         }
 
-        
+
 
 
         private int _generalPerksPointBank { get; set; } //this will show how many points we have to spend
-       public int GeneralPerksPointBank
+        public int GeneralPerksPointBank
         {
             get => _generalPerksPointBank;
             set
             {
-                if(_generalPerksPointBank != value)
+                if (_generalPerksPointBank != value)
                 {
                     _generalPerksPointBank = value;
                     NotifyPropertyChanged(nameof(GeneralPerksPointBank));
@@ -52,28 +55,36 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 }
             }
         }
-      
 
-        
+
+
         // THIS IS TO MONITORY WHAT PAGE WE'RE ON
         private int _currentIndex;
         public int CurrentIndex
         {
             get => _currentIndex;
-            set { if(_currentIndex != value)
+            set
+            {
+                if (_currentIndex != value)
                 {
                     _currentIndex = value;
                     NotifyPropertyChanged(nameof(CurrentIndex));
                     RefreshPage();
                 }
-                }
+            }
         }
         public event PropertyChangedEventHandler PropertyChanged;
 
 
         public GeneralPerksVMTF()
         {
-          
+
+            _generalPerksPointBank = TFCharacterSession.CurrentTransfomer.Level.GeneralPerkCount ?? 0; // error here
+            
+            
+            NextPage = new RelayCommand<Object>(NextPageOfResults);
+            PreviousPage = new RelayCommand<Object>(PreviousPageofResults);
+
 
         }
 
@@ -114,7 +125,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             _qualifyingPerks = filtered.ToList();
             CurrentIndex = 0;
             RefreshPage();
-            
+
 
         }
 
@@ -122,9 +133,42 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
-        
-    }
 
-    
+
+        public void NextPageOfResults(object obj)
+        {
+            if (CurrentIndex < totalPages - 1)
+            {
+                CurrentIndex++;
+            }
+
+
+        }
+
+        public void PreviousPageofResults(object obj)
+        {
+            if (CurrentIndex > 0)
+            {
+                CurrentIndex--;
+            }
+
+
+        }
+        public bool notatePerk(object obj)
+        {
+            if (GeneralPerksPointBank > 0)
+            {
+                GeneralPerksPointBank--;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
+    }
 }
 
