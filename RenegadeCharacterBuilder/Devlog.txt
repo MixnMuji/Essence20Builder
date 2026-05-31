@@ -327,3 +327,12 @@ Made Next and previous started xaml for content control and binding made IComman
 Problem getting the perk count fix it returns null or some shit it crashes
 
 TODO FIX gernal perk count.
+
+5-31
+
+Too much shit, messed around with xaml changed from content control to binding.
+made formula for settin general perk count in character tf session
+set data cntext in GernalPerksTF because I forogt
+. now the deserilzaer for the json isn't working
+
+Fix json deserizlier in GenralPerksVMTF

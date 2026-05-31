@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.IO;
 using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.Json;
 using System.Windows.Media.Animation;
+using RenegadeCharacterBuilder.Models.Transformers.Roots;
 
 namespace RenegadeCharacterBuilder.Models.Transformers
 {
@@ -21,6 +25,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public FocusTF sub { get; set; }
         public string ChosenLinkedSkill { get; set; }
         public LevelTF Level { get; set; }
+        public int ActualPerksToSpend { get; set; }
         public int CurrentLevel { get; set; }
         public Alliegence Faction { get; set; }
         public List<string> Languages { get; set; }
@@ -133,6 +138,26 @@ namespace RenegadeCharacterBuilder.Models.Transformers
                 //this will add the ranks so we can get the test later
             }
         }
+        public void GetGeneralPerkPonts()
+        {
+            string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "Roles.json");
+            var json = File.ReadAllText(path);
+            var RoleRoot = JsonSerializer.Deserialize<TFRolesRoot>(json);
+            var role = RoleRoot.Roles.First(r => r.Name == Role.Name);
+            int i = 0;
+            while(i< CurrentLevel)
+            {
+                if (role.Levels[i].GeneralPerkCount!= null)
+                {
+                    ActualPerksToSpend++;
+                }
+                i++;
+            }
+            
+            // find current level
+            // go to the json and look through it until we hit our level ie while Json.index >= level
+            // then we say if the level contains general perk, general perk count ++; which means we need a forloop
+        }
     }
 
    
@@ -142,5 +167,5 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         Descepticon = 1
 
     }
-    
+   
 }

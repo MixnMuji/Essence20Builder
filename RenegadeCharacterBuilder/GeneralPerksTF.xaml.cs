@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 
 namespace RenegadeCharacterBuilder
@@ -24,6 +25,8 @@ namespace RenegadeCharacterBuilder
         {
             InitializeComponent();
             viewmodel = new GeneralPerksVMTF();
+            viewmodel.GetApplicablePerks(TFCharacterSession.CurrentTransfomer.CurrentLevel, TFCharacterSession.CurrentTransfomer.fullSkillList, TFCharacterSession.CurrentTransfomer.fullScoreList);
+            DataContext = viewmodel;
             
         }
 

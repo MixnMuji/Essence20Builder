@@ -20,21 +20,20 @@
         <TextBlock Grid.Row="0" Text="General Perks" FontSize="33"/>
         
         <!-- Page logic in grid.row 1-->
-        <ContentControl Grid.Row="1" Content="{Binding CurrentPagePerks}">
-            <ContentControl.ContentTemplate>
+        <ItemsControl Grid.Row="1" ItemsSource="{Binding CurrentPagePerks}">
+            <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <CheckBox>
-                        <StackPanel DataContext="{Binding Gps}">
-   
+                        <StackPanel>
                             <TextBlock Text="{Binding Name}"/>
                             <TextBlock Text="{Binding Text}"/>
                         </StackPanel>
                     </CheckBox>
 
                 </DataTemplate>
-            </ContentControl.ContentTemplate>
+            </ItemsControl.ItemTemplate>
             
-        </ContentControl>
+        </ItemsControl>
         
         <!-- Controls for navigation-->
         <Button Grid.Row="2" Content="Next" HorizontalAlignment="Right" Height="50" Width="100" Margin="10,0,10,0" Command="{Binding NextPage}"/>

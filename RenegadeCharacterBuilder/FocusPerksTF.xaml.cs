@@ -52,10 +52,6 @@ namespace RenegadeCharacterBuilder
             {
                 
                 TFCharacterSession.CurrentTransfomer.sub = viewmodel.CurrentSubclass;
-                if (TFCharacterSession.CurrentTransfomer.CurrentLevel >= 4)
-                {
-                    NavigationService.Navigate(new GeneralPerksTF());
-                }
                 NavigationService.Navigate(new ScoreSkillAllocationTF());
             }
             else

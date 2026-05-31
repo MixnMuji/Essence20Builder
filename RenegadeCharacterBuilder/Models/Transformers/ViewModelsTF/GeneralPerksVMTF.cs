@@ -79,9 +79,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public GeneralPerksVMTF()
         {
 
-            _generalPerksPointBank = TFCharacterSession.CurrentTransfomer.Level.GeneralPerkCount ?? 0; // error here
-            
-            
+             TFCharacterSession.CurrentTransfomer.GetGeneralPerkPonts();
+            _generalPerksPointBank = TFCharacterSession.CurrentTransfomer.ActualPerksToSpend;
+
+
             NextPage = new RelayCommand<Object>(NextPageOfResults);
             PreviousPage = new RelayCommand<Object>(PreviousPageofResults);
 
@@ -101,7 +102,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         {
             string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "GeneralPerksTF.json");
             string json = File.ReadAllText(path);
-            var AllGeneralPerks = JsonSerializer.Deserialize<TFGeneralPerkRoot>(json);
+            var AllGeneralPerks = JsonSerializer.Deserialize<TFGeneralPerkRoot>(json); //check the name
             var filtered = AllGeneralPerks.Gps.Where(x =>
             {
                 if (x.requirment == null)
