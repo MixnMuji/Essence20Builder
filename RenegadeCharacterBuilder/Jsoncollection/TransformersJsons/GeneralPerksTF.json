@@ -155,8 +155,8 @@
                  "Finesse",
                  "Targeting"
 
-                ],
-                
+                ]
+
             },
             "Text": "During your turn, you can voluntarily take Downshifts on your attacks with Might Finesse, or Targeting to force enemies to suffer the same number of Downshifts when Attacking you. You can't downshift lower than d2.'",
             "timesSelectable": 1,
@@ -223,7 +223,7 @@
                 "ApplicableStats":
                 [
                     "Streetwise"
-                ],
+                ]
                 
             },
             "Text": "You Gain the follwing benefits: 1) You can use Streetwise in place of Alertness to search for clues or looking for traps; 2) you gain an Edge when setting or disarming traps; 3) In situations where you are sneaking or trespassing, you can use Streetwise instead of Initiative to set your turn order; 4) You can spend a Story Point ot modify your location in a minor way, such as adding an exit (for example, a hidden door or a tunnel through an underground hideout.) NOte that this modification can take work to utilize. Escape may get you out of one jam, but it could lead you to a worse one.",

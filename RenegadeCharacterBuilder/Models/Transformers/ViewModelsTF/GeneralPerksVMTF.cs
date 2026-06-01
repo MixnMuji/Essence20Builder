@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Windows.Input;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.Roots;
@@ -102,7 +103,16 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         {
             string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "GeneralPerksTF.json");
             string json = File.ReadAllText(path);
-            var AllGeneralPerks = JsonSerializer.Deserialize<TFGeneralPerkRoot>(json); //check the name
+            var options = new JsonSerializerOptions
+            {
+                Converters =
+                {
+                    new JsonStringEnumConverter()
+                }
+            };
+            var AllGeneralPerks = JsonSerializer.Deserialize<TFGeneralPerkRoot>(json,options); //check the name
+            
+          
             var filtered = AllGeneralPerks.Gps.Where(x =>
             {
                 if (x.requirment == null)

@@ -6,7 +6,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
 {
     public class GeneralPerkTF
     {
-        public string Name;
+        public string Name { get; set; }
 
         public PrequisiteTF? requirment { get; set; }
 
