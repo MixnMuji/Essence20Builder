@@ -342,3 +342,10 @@ edit 2 name field was messed up
 more imporntanly enums in jsons need to be convereted or it will always throw errors
 
 TODO, make the General perk page look nice give it formatting or a scroller
+
+6-1
+
+just added the total perks to pick thing, started apply perks logic  need add a dictiornary maybe for what to do?
+
+TODO MAKE LOGIC FOR GENERAL PERKS TO BE APPLIED
+MAKE LOGIC FOR CONTINUE BUTTON

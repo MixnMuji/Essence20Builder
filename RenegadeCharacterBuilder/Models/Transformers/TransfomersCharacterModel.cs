@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.Json;
 using System.Windows.Media.Animation;
 using RenegadeCharacterBuilder.Models.Transformers.Roots;
+using RenegadeCharacterBuilder.Models.Transformers.Enums;
 
 namespace RenegadeCharacterBuilder.Models.Transformers
 {
@@ -123,8 +124,17 @@ namespace RenegadeCharacterBuilder.Models.Transformers
 
     }
 
-        public void ApplyGeneralPerk(GeneralPerksTF PerkTaken)
+        public void ApplyGeneralPerk(GeneralPerkTF PerkTaken)
         {
+            if(PerkTaken.type == TfEnums.PerkType.AddText)
+            {
+                GeneralPerkTextBlock.Add(PerkTaken.Text);
+            }
+            if (PerkTaken.type == TfEnums.PerkType.AddObject);
+            {
+
+            }
+            if (PerkTaken.type == TfEnums.PerkType.AddBoth) ;
             // put logic for each case here
             // need a GeneralPerk Test list, and focus perk list
         }

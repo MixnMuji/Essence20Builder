@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using RenegadeCharacterBuilder.Models.Transformers.Enums;
 
 namespace RenegadeCharacterBuilder.Models.Transformers
 {
@@ -14,14 +15,9 @@ namespace RenegadeCharacterBuilder.Models.Transformers
 
         public int timesSelectable { get; set; }
 
-        public PerkType type { get; set; }
+        public TfEnums.PerkType type { get; set; }
         // public abstract void ApplyEffects(TransfomersCharacterModel characterModel);
         
     }
-    public enum PerkType
-    {
-        AddText = 0,
-        AddObject =1,
-        AddBoth = 2
-    }
+   
 }
