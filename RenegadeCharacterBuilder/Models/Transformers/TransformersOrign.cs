@@ -15,7 +15,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public int? SpeedIncrease{ get; set; }
 
         public Botmode BotMode { get; set;}
-        public Altmode AltMode { get; set; }
+        public List<Altmode> AltModes { get; set; }
 
 
         public TransformersOrign()

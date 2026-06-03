@@ -14,14 +14,17 @@
                 "Type": "Land",
                 "Size": "large"
             },
-            "AltMode": {
+            "AltModes":[
+            {
                 "Movement": 60,
                 "Type": "Ground",
                 "Size": "Long",
                 "Crew": 2,
                 "FirePoints": 2,
                 "Attack": "Ram (driving), driving skill, range reach,( 1 blunt damage,trip)"
+                    
             }
+            ]
         },
         {
             "Name": "Cutter",
@@ -38,7 +41,9 @@
                 "Type": "Land or Water",
                 "Size": "Common or large"
             },
-            "AltMode": {
+            "AltModes":
+            [ 
+                {
                 "Movement": 45,
                 "Type": "Aquatic",
                 "Size": "Common or long",
@@ -47,6 +52,7 @@
                 "Attack": "Ram (driving), driving skill, range reach,( 1 blunt damage,trip)"
 
             }
+            ]
         },
         {
             "Name": "LookOut",
@@ -64,7 +70,9 @@
                 "Type": "Land",
                 "Size": "Common"
             },
-            "AltMode": {
+            "AltModes":
+            [
+                {
                 "Movement": 45,
                 "Type": "Aquatic",
                 "Movement2": 20,
@@ -75,6 +83,7 @@
                 "Attack": "Ram (driving), driving skill, range reach,( 1 blunt damage,trip)"
 
             }
+            ]
         },
         {
             "Name": "MonoLith",
@@ -91,7 +100,9 @@
                 "Type": "Ground",
                 "Size": "Huge"
             },
-            "AltMode": {
+            "AltModes":
+            [
+                {
                 "Movement": 45,
                 "Type": "Ground",
                 "Size": "Extended",
@@ -100,6 +111,7 @@
                 "Attack": "Ram (driving), driving skill, range reach,( 2 blunt damage,trip)"
 
             }
+            ]
         },
         {
             "Name": "OutRider",
@@ -116,7 +128,9 @@
                 "Type": "Ground",
                 "Size": "Common or Large"
             },
-            "AltMode": {
+            "AltModes": 
+            [
+                {
                 "Movement": 45,
                 "Type": "Ground",
                 "Size": "Common or Long",
@@ -125,6 +139,7 @@
                 "Attack": "Ram (driving), driving skill, range reach,(1 blunt damage,trip)"
 
             }
+            ]
         },
         {
             "Name": "RainMaker",
@@ -141,7 +156,9 @@
                 "Type": "Ground",
                 "Size": "Large"
             },
-            "AltMode": {
+            "AltModes":
+            [
+                {
                 "Movement": 45,
                 "Type": "Ground",
                 "Size": "Long",
@@ -150,6 +167,7 @@
                 "Attack": "Ram (driving), driving skill, range reach,(1 blunt damage,trip)"
 
             }
+            ]
         },
         {
             "Name": "Seeker",
@@ -168,7 +186,9 @@
                 "type": "Aerial",
                 "Size": "Large"
             },
-            "AltMode": {
+            "AltModes":
+            [
+                {
                 "Movement": 60,
                 "Type": "Aerial",
                 "Size": "Long",
@@ -177,6 +197,7 @@
                 "Attack": "Ram (driving), driving skill, range reach,(1 blunt damage,trip)"
 
             }
+            ]
         },
         {
             "Name": "Support",
@@ -193,7 +214,9 @@
                 "Type": "Ground",
                 "Size": "Large"
             },
-            "AltMode": {
+            "AltModes":
+            [
+                {
                 "Movement": 35,
                 "Type": "Aerial",
                 "Movement2": 45,
@@ -204,6 +227,7 @@
                 "Attack": "Ram (driving), driving skill, range reach,(1 blunt damage,trip)"
 
             }
+            ]
         }
     ]
 } 
