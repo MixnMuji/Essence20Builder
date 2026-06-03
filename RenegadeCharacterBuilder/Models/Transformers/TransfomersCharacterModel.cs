@@ -33,6 +33,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public List<InfluencesTF> Influences { get; set; }
         public List<HangUps> Hang_Ups { get; set; }
         public int Health { get; set; }
+
+        public int Evasion { get; set; }
+        public int Toughness { get; set; }
+        public int Cleverness { get; set; }
+        public int Willpower { get; set; }
         public ScoreTF Strenght { get; set; }
         public ScoreTF Speed { get; set; }
         public ScoreTF Smarts { get; set; }

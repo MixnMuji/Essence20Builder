@@ -31,7 +31,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public ICommand GetRoleForAllocations { get; }
 
-
+        
         public List <ScoreTF> Scores { get; }
 
         public ScoreTF Strength { get; }

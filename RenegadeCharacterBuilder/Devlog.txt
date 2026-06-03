@@ -349,3 +349,10 @@ just added the total perks to pick thing, started apply perks logic  need add a 
 
 TODO MAKE LOGIC FOR GENERAL PERKS TO BE APPLIED
 MAKE LOGIC FOR CONTINUE BUTTON
+
+6-3 
+Big start lol have to make a diciotrnary to apply perk logic
+dictonairy complete as well as skeletons of methods, need to write actual functions
+
+go back and edit ranks in skills to show a die value instead of a flat number and cap at 6 for a d12 value
+For chasis perk make it so that every character actually has a list of Chasis'/ alt modes
