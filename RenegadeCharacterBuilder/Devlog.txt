@@ -356,3 +356,12 @@ dictonairy complete as well as skeletons of methods, need to write actual functi
 
 go back and edit ranks in skills to show a die value instead of a flat number and cap at 6 for a d12 value
 For chasis perk make it so that every character actually has a list of Chasis'/ alt modes
+
+TODO MAKE PAGE THAT WILL ACCEPT DATA FROM SERVEAL DIFFENT METHODS AND BUILD THE LIST ACCORDINGLYING
+
+6-4
+
+More mental day apparently have been working on this for 3 months
+Thought about data I'm passing decided to just pass it as an object and check later
+made the vm for checking data with its enums
+started writing actual filter code.
