@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Windows.Navigation;
 using RenegadeCharacterBuilder.Models.Transformers.Roots;
+using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 
 namespace RenegadeCharacterBuilder.Models.Transformers.TFServices
 {
@@ -50,24 +52,17 @@ namespace RenegadeCharacterBuilder.Models.Transformers.TFServices
         }
         private void ApplyAAM(TransfomersCharacterModel model, GeneralPerkTF perk)
         {
-            //find character model.chasis Make everyone have a chasis list
-            var filterout = model.Orign;
-            var path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "Origins.json");
-            string json = File.ReadAllText(path);
-            var allOrigins = JsonSerializer.Deserialize<TFOriginsRoot>(json);
-            var filteredlist = allOrigins.Origins.Where(o => o != filterout);
-            List<Altmode> altmodeChoices = new List<Altmode>();
-
-            foreach(var ori in filteredlist)
-            {
-                altmodeChoices.Add(ori.AltModes[0]);
-            }
-
-            //actually need a page for this
-            //actually needs a list for comparision
-            //deseriilze model with chasis selection but remove existing chasis
-            //have them pick
             
+                 
+                NavigationService.Navigate(new GenericPerkApplyerpage(PerkBeingApplied.ATAM));
+
+             
+
+                //actually need a page for this
+                //actually needs a list for comparision
+                //deseriilze model with chasis selection but remove existing chasis
+                //have them pick
+
         }
         private void ApplyATAM(TransfomersCharacterModel model, GeneralPerkTF perk)
         {
@@ -88,12 +83,14 @@ namespace RenegadeCharacterBuilder.Models.Transformers.TFServices
         }
         private void ApplyMentor(TransfomersCharacterModel model, GeneralPerkTF perk)
         {
+            //need score
+            // needs skill
             //have them pick a score give it a second assioted skill
             //follow the same logic as the other associated skills
         }
         private void ApplyOAM(TransfomersCharacterModel model, GeneralPerkTF perk)
         {
-            //List alt modes, ahve them pick one
+            //List alt modes, have them pick one
             //change its movement to zero
             //Allow them to change the items name
         }

@@ -368,4 +368,11 @@ started writing actual filter code.
 
 6-5
 
-light day made helper method for json deserizlization to save on space.
+light day made helper method for json deserizlization to save on space
+
+6-6
+
+Mental burnout made methods for vm but need a way to actually navigate to them from the perk page its a pain in the ass, made Perk page to take perkapplied for page .
+
+ToDO make enums to figure out which are executable vs need userselections
+build xaml

@@ -46,7 +46,7 @@
                 {
                 "Movement": 45,
                 "Type": "Aquatic",
-                "Size": "Common or long",
+                "Size": "Common or large",
                 "Crew": 2,
                 "FirePoints": 2,
                 "Attack": "Ram (driving), driving skill, range reach,( 1 blunt damage,trip)"
