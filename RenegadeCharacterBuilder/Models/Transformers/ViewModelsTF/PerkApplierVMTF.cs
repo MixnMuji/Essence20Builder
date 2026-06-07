@@ -7,7 +7,7 @@ using System.Windows.Documents;
 using System.Windows.Navigation;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.Roots;
-
+using RenegadeCharacterBuilder.Models.Transformers.Enums;
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
     public class PerkApplierVMTF
@@ -46,7 +46,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                         "Aquatic",
                         "Ground"
                     };
-                    NavigationService.Navigate(new GenericPerkApplyerpage(PerkBeingApplied.ATAM));
+                   
                    
                     break;
 
@@ -100,15 +100,5 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         }
        
     }
-    public enum PerkBeingApplied
-    {
-        AAM,
-        ATAM,
-        CT,
-        HC,
-        Mentor,
-        OAM,
-        SC
-
-    }
+  
 }

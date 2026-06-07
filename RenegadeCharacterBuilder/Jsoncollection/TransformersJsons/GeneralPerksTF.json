@@ -14,7 +14,8 @@
             },
             "Text": "Choose A chasis Tied to an Origin. You gain the alt mode benefits of that chasis as a second choice when you Convert. You cannot choose a Chassis whose Alt Mode Size is two Size Classes larger than the Alt Mode Size of your orignal Chassis unless you take the Size Change General Perk. When you gain a Perk taht applies to an Alt mode, choose which Alt Mode it applies to when you gain the Perk.",
             "timesSelectable": 1,
-            "type":"AddBoth"
+            "type":"AddBoth",
+            "PerkBeingApplied":"AAM"
         },
         {
             "Name":"All Out Attack",
@@ -38,7 +39,8 @@
             "Name":"All Terrain Alt Mode",
             "Text": "One of your alt mode can move in different ways. Choose a movement type you do not have access to in your alt mode. You gain that movement of that type 20ft.",
             "timesSelectable": 1,
-            "type":"AddBoth"
+            "type":"AddBoth",
+            "PerkBeingApplied":"ATAM"
            
         },
          {
@@ -75,7 +77,8 @@
             },
             "Text": "Choose a Role other than your own. You may select one of that Role's Perks that it gains at a level no higher than half your current level. You cannot choose a Role Perk with the same name as one in you own Role, (for example you may not pick extra attack if your Role offers it.) a Focus Perk, or a Level one Perk. You can Slecect this perk mutlitple times each time picking a differnt Role to gain a perk from.",
             "timesSelectable": 8,
-            "type":"AddBoth"
+            "type":"AddBoth",
+            "PerkBeingApplied":"CT"
 
           },
           {
@@ -195,7 +198,8 @@
             "Name":"Human Companion",
             "Text": "During your time on Earth, you've managed to make friends with a human earthling. Choose two Essences for your human companion to Specialize in. Those two Essences are equal to your current level divided by two(round up) +2. Your human companion purchases Skills and Specialities the same way a Standard PC.",
             "timesSelectable": 1,
-            "type":"AddBoth"
+            "type":"AddBoth",
+            "PerkBeingApplied":"HC"
          },
          {
             "Name":"Linguistics",
@@ -213,7 +217,8 @@
             "Name":"Mentor",
             "Text": "Choose a Skill. You can associate that Skill with an additional Essence. For example You choose the Intimidation Skill and Social Essence. Now whenever you gain an Essence Point in Strength or Soical you can invest the Skill Point into Intimidation.",
             "timesSelectable": 1,
-            "type":"AddBoth"
+            "type":"AddBoth",
+            "PerkBeingApplied":"Mentor"
          },
          {
             "Name":"Nose for Trouble",
@@ -240,7 +245,8 @@
             "Name":"Object Alt Mode",
             "Text": "You can change your Alt Mode to resemble a mundane object, decided upon when this Perk is chosen. It can be up to two Size Classes smaller than your Bot Mode. While this Alt mode has a base Movement value of 0, it grants Edge to all skill tests involving hiding blending in, or eavesdropping in applicable surroundings.",
             "timesSelectable": 1,
-            "type":"AddBoth"
+            "type":"AddBoth",
+            "PerkBeingApplied":"OAM"
     },
      {
             "Name":"Pack Mule",
@@ -332,7 +338,8 @@
             "Name":"Size Change",
             "Text": "Your Alt Mode is significiantly bigger or smaller than your Bot Mode. Taking this Perk once means your Alt mode is one Size Class larger or smaller than your Bot Mode. YOu can take this Perk multiple times , once for each Alt Mode you want to change in size. This does mean you can have one Alt Mode tow Size Classes larger than another.",
             "timesSelectable": 1,
-            "type":"AddBoth"
+            "type":"AddBoth",
+            "PerkBeingApplied":"SC"
           },
                                       
           {

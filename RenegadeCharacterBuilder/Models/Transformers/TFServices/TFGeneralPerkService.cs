@@ -54,7 +54,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.TFServices
         {
             
                  
-                NavigationService.Navigate(new GenericPerkApplyerpage(PerkBeingApplied.ATAM));
+                
 
              
 

@@ -39,6 +39,6 @@
         <Button Grid.Row="2" Content="Next" HorizontalAlignment="Right" Height="50" Width="100" Margin="10,0,10,0" Command="{Binding NextPage}"/>
         <Button Grid.Row="2" Content="Previous" HorizontalAlignment="Left" Height="50" Width="100" Margin="10,0,10,0" Command="{Binding PreviousPage}"/>
 
-        <Button Grid.Row="3" HorizontalAlignment="Right" Content="Continue" Width="200" Height="50" Margin="10"/>
+        <Button Grid.Row="3" HorizontalAlignment="Right" Content="Continue" Width="200" Height="50" Margin="10" Click="ContinueAndGetApplyPerk"/>
     </Grid>
 </Page>

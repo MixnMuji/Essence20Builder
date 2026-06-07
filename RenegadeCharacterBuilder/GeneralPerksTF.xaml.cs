@@ -30,6 +30,9 @@ namespace RenegadeCharacterBuilder
             
         }
 
+        private void ContinueAndGetApplyPerk(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }

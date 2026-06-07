@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
+using RenegadeCharacterBuilder.Models.Transformers.Enums;
 
 namespace RenegadeCharacterBuilder
 {

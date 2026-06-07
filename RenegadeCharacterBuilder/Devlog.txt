@@ -376,3 +376,9 @@ Mental burnout made methods for vm but need a way to actually navigate to them f
 
 ToDO make enums to figure out which are executable vs need userselections
 build xaml
+
+6-6 Thought about how to link general perk page to pages
+Came up with an is slected prperty for checkbox
+will have a list to cycle through.
+
+TODO Make list and logic for Isslected and continue
