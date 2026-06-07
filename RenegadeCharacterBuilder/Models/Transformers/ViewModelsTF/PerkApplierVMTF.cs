@@ -17,7 +17,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         
         public object? PerkExectuionData { get; set; } //dangeours or sloppy use carefully lol store collections here
         
-        public void GetDataForPerkExecution(PerkBeingApplied Methodused)
+        public void GetDataForPerkExecution(PerkBeingApplied MethodUsed)
         {
             //save on code (var thing to filterout, object root, objecttypelistReturned)
             switch (MethodUsed)

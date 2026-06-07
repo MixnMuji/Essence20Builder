@@ -377,8 +377,13 @@ Mental burnout made methods for vm but need a way to actually navigate to them f
 ToDO make enums to figure out which are executable vs need userselections
 build xaml
 
-6-6 Thought about how to link general perk page to pages
+6-7 Thought about how to link general perk page to pages
 Came up with an is slected prperty for checkbox
 will have a list to cycle through.
 
 TODO Make list and logic for Isslected and continue
+
+made logic for naviagtion based off of perks selected
+Fixed bug with lsit not showing up
+Can actually navigate to new pages, need a way to set up page with data
+TODO take data from datacontext and build page

@@ -77,8 +77,9 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public List<SkillTF> fullSkillList { get; set; }
         public List<ScoreTF> fullScoreList { get; set; }
 
-        public List<FocusPerk> SubclassTextBlocks { get; set; }
-        public List<string> GeneralPerkTextBlock { get; set; }
+        public List<FocusPerk> SubclassTextBlocks { get; set; } = new();
+        public List<string> GeneralPerkTextBlock { get; set; } = new();
+        public List<GeneralPerkTF> PickedPerks { get; set; } = new();
         public TransfomersCharacterModel()
         
         {
@@ -130,30 +131,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
 
     }
 
-        public void ApplyGeneralPerk(GeneralPerkTF PerkTaken)
-        {
-            if(PerkTaken.type == TfEnums.PerkType.AddText)
-            {
-                GeneralPerkTextBlock.Add(PerkTaken.Text);
-            }
-            if (PerkTaken.type == TfEnums.PerkType.AddObject);
-            {
-
-            }
-            if (PerkTaken.type == TfEnums.PerkType.AddBoth) ;
-            // put logic for each case here
-            // need a GeneralPerk Test list, and focus perk list
-        }
-        public void AddSubclassText()
-        {
-            
-            for(int i = 0;  i<= Level.FocusProgression; i++)
-            {
-                SubclassTextBlocks.Add(sub.ranks[i]);
-
-                //this will add the ranks so we can get the test later
-            }
-        }
+       
+        
         public void GetGeneralPerkPonts()
         {
             string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "Roles.json");

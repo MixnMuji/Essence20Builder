@@ -10,6 +10,7 @@ using System.Windows.Input;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.Roots;
 
+
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
     public class GeneralPerksVMTF : INotifyPropertyChanged
