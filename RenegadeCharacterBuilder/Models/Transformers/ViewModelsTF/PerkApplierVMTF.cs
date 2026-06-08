@@ -92,7 +92,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     break;
             }
         }
-        private T? LoadJson<T>(string jsonLocation)
+        private T? LoadJson<T>(string jsonLocation, string gamejsonfolder)
         {
             var path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", jsonLocation);
             var json = File.ReadAllText(path);

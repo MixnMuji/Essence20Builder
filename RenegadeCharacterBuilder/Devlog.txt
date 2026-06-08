@@ -387,3 +387,10 @@ made logic for naviagtion based off of perks selected
 Fixed bug with lsit not showing up
 Can actually navigate to new pages, need a way to set up page with data
 TODO take data from datacontext and build page
+
+6-8 Bit off more than I can chew
+each special perk really does need its own page at this point didn't want to do it but fuck man, i can't figure out a way to do it any other way
+
+In short keep it simple, stupid 
+
+made naviagtion property and skeleton for perk pages, made Loadjson a globalmethod will work for mutiple games when added.
