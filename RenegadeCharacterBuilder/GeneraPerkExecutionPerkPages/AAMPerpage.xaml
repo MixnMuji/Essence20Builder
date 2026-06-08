@@ -10,6 +10,37 @@
       Background="White">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Text="Choose An additonal Alt mode" FontWeight="Bold" FontSize="33"/>
+        
+        <!--List of almodes -->
+        <ItemsControl ItemsSource="{Binding altmodeChoices}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <RadioButton>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Movment, StringFormat= Movement :{0}}"/>
+                                <TextBlock Text="{Binding Type, StringFormat= Movement type: {0}}"/>
+                                <TextBlock Text="{Binding Size, StringFormat= Size: {0}}"/>
+                                <TextBlock Text="{Binding FirePoints, StringFormat= Firepoints: {0}}"/>
+                                <TextBlock Text="{Binding Type, StringFormat= Movement type: {0}}"/>
+                                <TextBlock Text="{Binding Attack, StringFormat= Attack:{0}}"/>
+
+
+
+                            </StackPanel>
+                        </RadioButton>
+                    </StackPanel>
+                </DataTemplate>
+                
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
         
     </Grid>
 </Page>

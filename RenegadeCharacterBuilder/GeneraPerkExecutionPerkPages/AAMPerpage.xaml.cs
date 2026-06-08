@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -10,7 +11,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using RenegadeCharacterBuilder.Models.Transformers;
+using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
+using RenegadeCharacterBuilder.Models.Transformers.Roots;
+using RenegadeCharacterBuilder.GlobalMethods;
 namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
 {
     /// <summary>
@@ -18,9 +22,22 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
     /// </summary>
     public partial class AAMPerpage : Page
     {
+        
         public AAMPerpage()
         {
+            var calldata = new GlobalCall();
             InitializeComponent();
+            var firstlist =  calldata.LoadJson<TFOriginsRoot>("Origins.json", "TransformersJsons");
+            var filterout = TFCharacterSession.CurrentTransfomer.Altmodes;
+            var filteredlist = firstlist.Origins.Where(o => filterout!.Contains(o.AltMode));
+            List<Altmode> altmodeChoices = new List<Altmode>(); //change it so you can have the name of the origin
+
+            foreach (var ori in filteredlist)
+            {
+                altmodeChoices.Add(ori.AltMode);
+            }
+            DataContext = altmodeChoices; // this should let our datacontext be the altmodes not taken
+            
         }
     }
 }

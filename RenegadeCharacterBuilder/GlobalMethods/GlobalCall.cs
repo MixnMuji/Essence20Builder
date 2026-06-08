@@ -6,7 +6,7 @@ using System.Text.Json;
 
 namespace RenegadeCharacterBuilder.GlobalMethods
 {
-    public class GlobalMethods
+    public class GlobalCall
     {
         public T? LoadJson<T>(string jsonLocation, string gamejsonfolder)
         {

@@ -394,3 +394,6 @@ each special perk really does need its own page at this point didn't want to do 
 In short keep it simple, stupid 
 
 made naviagtion property and skeleton for perk pages, made Loadjson a globalmethod will work for mutiple games when added.
+
+worked on the add aditonal altmode page, need to rething how to display data
+TODO All the genral perk pages
