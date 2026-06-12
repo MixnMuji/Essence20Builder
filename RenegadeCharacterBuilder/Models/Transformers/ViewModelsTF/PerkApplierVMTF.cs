@@ -56,12 +56,13 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                         //make list of roles that aren't there own as well as the ranks under the level
                         //grab the perks
                         //display on page
+                        /*
                         var filter = TFCharacterSession.CurrentTransfomer.Role;
                         int lvfilter = TFCharacterSession.CurrentTransfomer.CurrentLevel;
                         var Roles = LoadJson<TFRolesRoot>("Roles.json");
                         PerkExectuionData = Roles.Roles.Where(r => r.Name != filter.Name)
                         .SelectMany(r => r.Levels.Where(l => l.Level <= lvfilter && l.Perk != null)).SelectMany(l=> l.Perk).ToList();
-                        
+                        */
 
                     }
                     break;

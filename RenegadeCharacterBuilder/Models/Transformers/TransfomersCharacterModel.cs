@@ -21,7 +21,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public string Pronouns { get; set; }
 
         public string Description { get; set; }
-        public TransformersOrign Orign { get; set; }
+        public List<TransformersOrign> Origns { get; set; } = new();
         public List<Altmode> Altmodes { get; set; } = new List<Altmode>();
         public Roles Role { get; set; }
         public FocusTF sub { get; set; }

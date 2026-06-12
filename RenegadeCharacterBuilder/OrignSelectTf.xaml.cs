@@ -42,13 +42,14 @@ namespace RenegadeCharacterBuilder
         {
             RadioButton rb = sender as RadioButton;
             var selectedOrigin = rb.DataContext as TransformersOrign;
-            TFCharacterSession.CurrentTransfomer.Orign = selectedOrigin;
+            TFCharacterSession.CurrentTransfomer.Origns.Add(selectedOrigin);
+            TFCharacterSession.CurrentTransfomer.Altmodes.Add(selectedOrigin.AltMode);
         }
 
         private void ToInfluences(object sender, RoutedEventArgs e)
         {
       
-           if (TFCharacterSession.CurrentTransfomer.Orign == null)
+           if (TFCharacterSession.CurrentTransfomer.Origns == null)
             {
                 MessageBox.Show("You must pick an Origin Before continuing");
 

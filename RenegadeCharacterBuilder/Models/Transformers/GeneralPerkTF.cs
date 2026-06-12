@@ -20,7 +20,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public TfEnums.PerkType type { get; set; }
 
         [JsonConverter(typeof(JsonStringEnumConverter))]
-        public PerkBeingApplied? abreviationForExecute { get; set; }
+        public PerkBeingApplied? PerkBeingApplied { get; set; }
         // public abstract void ApplyEffects(TransfomersCharacterModel characterModel);
 
     }

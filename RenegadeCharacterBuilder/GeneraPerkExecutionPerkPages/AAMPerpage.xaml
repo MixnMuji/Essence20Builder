@@ -19,18 +19,19 @@
         <TextBlock Text="Choose An additonal Alt mode" FontWeight="Bold" FontSize="33"/>
         
         <!--List of almodes -->
-        <ItemsControl ItemsSource="{Binding altmodeChoices}">
+        <ItemsControl ItemsSource="{Binding}" Grid.Row="2">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <RadioButton>
                             <StackPanel>
-                                <TextBlock Text="{Binding Movment, StringFormat= Movement :{0}}"/>
-                                <TextBlock Text="{Binding Type, StringFormat= Movement type: {0}}"/>
-                                <TextBlock Text="{Binding Size, StringFormat= Size: {0}}"/>
-                                <TextBlock Text="{Binding FirePoints, StringFormat= Firepoints: {0}}"/>
-                                <TextBlock Text="{Binding Type, StringFormat= Movement type: {0}}"/>
-                                <TextBlock Text="{Binding Attack, StringFormat= Attack:{0}}"/>
+                                <TextBlock Text="{Binding Name}"/>
+                                <TextBlock Text="{Binding  AltMode.Movement, StringFormat= Movement :{0}}"/>
+                                <TextBlock Text="{Binding  AltMode.Type, StringFormat= Movement type: {0}}"/>
+                                <TextBlock Text="{Binding  AltMode.Size, StringFormat= Size: {0}}"/>
+                                <TextBlock Text="{Binding  AltMode.FirePoints, StringFormat= Firepoints: {0}}"/>
+                                <TextBlock Text="{Binding  AltMode.Type, StringFormat= Movement type: {0}}"/>
+                                <TextBlock Text="{Binding  AltMode.Attack, StringFormat= Attack:{0}}"/>
 
 
 

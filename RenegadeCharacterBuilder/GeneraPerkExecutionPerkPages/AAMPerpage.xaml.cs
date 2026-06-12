@@ -26,17 +26,12 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
         public AAMPerpage()
         {
             var calldata = new GlobalCall();
-            InitializeComponent();
             var firstlist =  calldata.LoadJson<TFOriginsRoot>("Origins.json", "TransformersJsons");
-            var filterout = TFCharacterSession.CurrentTransfomer.Altmodes;
-            var filteredlist = firstlist.Origins.Where(o => filterout!.Contains(o.AltMode));
-            List<Altmode> altmodeChoices = new List<Altmode>(); //change it so you can have the name of the origin
-
-            foreach (var ori in filteredlist)
-            {
-                altmodeChoices.Add(ori.AltMode);
-            }
-            DataContext = altmodeChoices; // this should let our datacontext be the altmodes not taken
+            var filterout = TFCharacterSession.CurrentTransfomer.Origns.Select(o=> o.Name);
+            var filteredlist = firstlist.Origins.Where(o => !filterout.Contains(o.Name)).ToList();
+            MessageBox.Show(filteredlist.Count.ToString());
+            InitializeComponent();
+            DataContext = filteredlist; // this should let our datacontext be the altmodes not taken
             
         }
     }

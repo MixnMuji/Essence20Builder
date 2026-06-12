@@ -17,6 +17,7 @@ using RenegadeCharacterBuilder.Models.Transformers.Roots;
 using RenegadeCharacterBuilder.Models.Transformers.TFServices;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 using  RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages;
+using RenegadeCharacterBuilder.GlobalMethods;
 
 namespace RenegadeCharacterBuilder
 {
@@ -40,16 +41,19 @@ namespace RenegadeCharacterBuilder
         {
 
             gpService = new TFGeneralPerkService();
-            var pickedPerks = viewmodel._qualifyingPerks.Where(p => p.isSelected == true);
+            var pickedPerks = viewmodel._qualifyingPerks.Where(p => p.isSelected == true).ToList();
+            MessageBox.Show(pickedPerks[0].ToString());
+            MessageBox.Show(pickedPerks[0].PerkBeingApplied.ToString());
+            
           
          
             foreach (var perk in pickedPerks)
             {
-                switch (perk.abreviationForExecute) 
+                switch (perk.PerkBeingApplied) 
                 {
                     case PerkBeingApplied.AAM:
 
-                        NavigationService.Navigate( new AAMPerpage());
+                        NavigationService.Navigate(new AAMPerpage());
                     break;
 
                     case PerkBeingApplied.ATAM:
@@ -66,12 +70,13 @@ namespace RenegadeCharacterBuilder
                             //make list of roles that aren't there own as well as the ranks under the level
                             //grab the perks
                             //display on page
+                            /*
                             var filter = TFCharacterSession.CurrentTransfomer.Role;
                             int lvfilter = TFCharacterSession.CurrentTransfomer.CurrentLevel;
                             var Roles = LoadJson<TFRolesRoot>("Roles.json");
                             PerkExectuionData = Roles.Roles.Where(r => r.Name != filter.Name)
                             .SelectMany(r => r.Levels.Where(l => l.Level <= lvfilter && l.Perk != null)).SelectMany(l => l.Perk).ToList();
-
+                            */
                             NavigationService.Navigate(new CTperkpage());
                         }
                         break;
@@ -110,7 +115,7 @@ namespace RenegadeCharacterBuilder
                         }
                     break;
                 }
-                NavigationService.Navigate(new FinalPageAndConfirmation());
+                //NavigationService.Navigate(new FinalPageAndConfirmation());
             }
      
         }

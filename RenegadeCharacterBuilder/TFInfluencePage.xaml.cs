@@ -29,7 +29,7 @@ namespace RenegadeCharacterBuilder
         public TFInfluencePage()
         {
             InitializeComponent();
-            if (TFCharacterSession.CurrentTransfomer.Orign == null)
+            if (TFCharacterSession.CurrentTransfomer.Origns == null)
             {
                 MessageBox.Show("Origin binding failed");
             }

@@ -397,3 +397,14 @@ made naviagtion property and skeleton for perk pages, made Loadjson a globalmeth
 
 worked on the add aditonal altmode page, need to rething how to display data
 TODO All the genral perk pages
+
+6-11 
+
+Almost want to belive I didn't take 3 days off
+
+anyways feel refreshed learned that ! before as in !before is not inculde where after 1 as in before! means trust me I'm not null
+which was messing up my binding and list asortment
+changed origin to a list for the amm perk to work 
+learned that if you have one thign as a data context you vand just use binding
+
+TODO Format aam so that it looks nice and have it assign things as well with a continue button
