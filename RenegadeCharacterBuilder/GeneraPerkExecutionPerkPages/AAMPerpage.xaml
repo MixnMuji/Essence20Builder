@@ -19,11 +19,11 @@
         <TextBlock Text="Choose An additonal Alt mode" FontWeight="Bold" FontSize="33"/>
         
         <!--List of almodes -->
-        <ItemsControl ItemsSource="{Binding}" Grid.Row="2">
+        <ItemsControl ItemsSource="{Binding}" Grid.Row="1">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <RadioButton>
+                        <RadioButton GroupName="selectedAltmode" Click="setnewAltmode">
                             <StackPanel>
                                 <TextBlock Text="{Binding Name}"/>
                                 <TextBlock Text="{Binding  AltMode.Movement, StringFormat= Movement :{0}}"/>
@@ -42,6 +42,7 @@
                 
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        
+
+        <Button Grid.Row="2" Content="Continue" Click="figureOutWhatToDo"/>
     </Grid>
 </Page>

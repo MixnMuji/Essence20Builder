@@ -408,3 +408,9 @@ changed origin to a list for the amm perk to work
 learned that if you have one thign as a data context you vand just use binding
 
 TODO Format aam so that it looks nice and have it assign things as well with a continue button
+
+6-12
+
+made logic to switch pages but it doesn't work with continue button
+
+todo fixnaviagiont in aam, make continue button nicer, and add scroller to type list
