@@ -42,6 +42,7 @@ namespace RenegadeCharacterBuilder
 
             gpService = new TFGeneralPerkService();
             var pickedPerks = viewmodel._qualifyingPerks.Where(p => p.isSelected == true).ToList();
+            TFCharacterSession.CurrentTransfomer.PickedPerks = pickedPerks;
             MessageBox.Show(pickedPerks[0].ToString());
             MessageBox.Show(pickedPerks[0].PerkBeingApplied.ToString());
             

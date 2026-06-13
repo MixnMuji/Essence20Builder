@@ -414,3 +414,5 @@ TODO Format aam so that it looks nice and have it assign things as well with a c
 made logic to switch pages but it doesn't work with continue button
 
 todo fixnaviagiont in aam, make continue button nicer, and add scroller to type list
+
+fixed naviation was not an issue with nav was actually me forgetting to assigned the picked perk list to  the character session
