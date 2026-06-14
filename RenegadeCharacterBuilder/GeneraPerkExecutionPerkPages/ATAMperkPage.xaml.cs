@@ -21,6 +21,7 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
         public ATAMperkPage()
         {
             InitializeComponent();
+
         }
     }
 }

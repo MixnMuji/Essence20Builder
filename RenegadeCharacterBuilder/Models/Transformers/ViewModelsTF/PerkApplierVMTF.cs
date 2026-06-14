@@ -22,33 +22,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             //save on code (var thing to filterout, object root, objecttypelistReturned)
             switch (MethodUsed)
             {
-                case PerkBeingApplied.AAM:
-                    {
-                        var filterout = TFCharacterSession.CurrentTransfomer.Altmodes;
-                        var path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "Origins.json");
-                        string json = File.ReadAllText(path);
-                        var allOrigins = JsonSerializer.Deserialize<TFOriginsRoot>(json);
-                        var filteredlist = allOrigins.Origins.Where(o => filterout!.Contains(o.AltMode));
-                        List<Altmode> altmodeChoices = new List<Altmode>();
-
-                        foreach (var ori in filteredlist)
-                        {
-                            altmodeChoices.Add(ori.AltMode);
-                        }
-                        PerkExectuionData = altmodeChoices;
-                        break;
-                    }
-                case PerkBeingApplied.ATAM:
-                    PerkExectuionData = new List<string>
-                    {
-                        "Land",
-                        "Air",
-                        "Aquatic",
-                        "Ground"
-                    };
+               
                    
                    
-                    break;
+     
 
                 case PerkBeingApplied.CT:
                     {

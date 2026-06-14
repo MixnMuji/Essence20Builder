@@ -416,3 +416,9 @@ made logic to switch pages but it doesn't work with continue button
 todo fixnaviagiont in aam, make continue button nicer, and add scroller to type list
 
 fixed naviation was not an issue with nav was actually me forgetting to assigned the picked perk list to  the character session
+
+6-14
+
+Made ATAM view model to put logic in, finished ATAM page with scroller and continue bar sytle,
+
+TODO, make xaml for ATAMTF figure out bindings and then finish page
