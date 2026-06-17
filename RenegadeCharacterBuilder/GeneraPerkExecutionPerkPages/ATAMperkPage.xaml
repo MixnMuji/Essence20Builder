@@ -24,13 +24,12 @@
         </Grid.ColumnDefinitions>
 
             <!-- Where all the user altmodes go-->
-            <StackPanel Grid.Column="0">
+              <StackPanel Grid.Column="0">
                 <TextBlock Text="Your Altmodes:" FontSize="19"/>
-                <ItemsControl  ItemsSource="{Binding CharacterAltmodes}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <CheckBox IsChecked="{Binding isSelected, Mode=TwoWay}">
-                                <StackPanel>
+                <ListBox  ItemsSource="{Binding OriginsTogetModesFrom }"  SelectedItem="{Binding SelectedAltMode}">
+                <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
                                     <TextBlock Text="{Binding Name}"/>
                                     <TextBlock Text="{Binding  AltMode.Movement, StringFormat= Movement :{0}}"/>
                                     <TextBlock Text="{Binding  AltMode.Type, StringFormat= Movement type: {0}}"/>
@@ -41,27 +40,27 @@
 
 
                                 </StackPanel>
-                        </CheckBox>
+                       
                     </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+                </ListBox.ItemTemplate>
+            </ListBox>
             </StackPanel>
 
             <!-- Where the altmodes go-->
             <StackPanel Grid.Column="1">
             <TextBlock Text="Pick a Movement type to add to your Altmode" FontSize="18"></TextBlock>
-            <ItemsControl   ItemsSource="{Binding aplicableMoveTypes}">
-                <ItemsControl.ItemTemplate>
+                <ListBox   ItemsSource="{Binding aplicableMoveTypes}">
+                <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <CheckBox>
+                         
                                     <TextBlock Text="{Binding}"/>
-                                </CheckBox>
+                                
                         </StackPanel>
 
                     </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+                </ListBox.ItemTemplate>
+            </ListBox>
             </StackPanel>
             
             <Button Grid.Column="1"  Content="Add movment" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="150" Margin="10"/>

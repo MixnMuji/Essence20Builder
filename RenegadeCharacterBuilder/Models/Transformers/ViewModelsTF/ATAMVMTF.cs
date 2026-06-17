@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -8,20 +9,37 @@ using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
-    public class ATAMVMTF
+    public class ATAMVMTF : INotifyPropertyChanged
     {
-       
-        //we need the altmode list
-        //we need the movetypes as a key
-        //we need a display where it is the current move types that aren't in te current altmode
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public List<TransformersOrign> OriginsTogetModesFrom { get; set; } = new();
         // public string[] movetypes = ["Ground", "Aquatic", "Aerial"]; old version arrays are less mutiable no reason to use
-        public List<string> mtypes = ["Ground", "Aquatic", "Aerial"];
+        public ObservableCollection<string> mtypes { get; set; } =
+     new ObservableCollection<string>
+     {
+        "Ground",
+        "Aquatic",
+        "Aerial"
+     };
 
-        private List<string> aplicableMoveTypes { get; set; } = new(); // where we store the movetypes
+        private TransformersOrign _selectedAltMode;
 
-        public ICommand GetListForLegalAltModes { get; set; }
+        public TransformersOrign SelectedAltMode
+        {
+            get => _selectedAltMode;
+            set
+            {
+                _selectedAltMode = value;
+                updateApplicableMoveTypes();
+                OnPropertyChanged(nameof(SelectedAltMode));
+            }
+        }
+
+        public ObservableCollection<string> aplicableMoveTypes { get; set; } = new(); // where we store the movetypes
+
+
 
         
         //add an Ischecked property to origins bool
@@ -32,21 +50,24 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public ATAMVMTF()
         {
             OriginsTogetModesFrom = TFCharacterSession.CurrentTransfomer.Origns;
-            GetListForLegalAltModes = new RelayCommand<List<string>>(GetApplicableNewMovmentModes);
+            aplicableMoveTypes = new ObservableCollection<string>();
+         
 
         }
 
-        public List<string> GetApplicableNewMovmentModes()
+        public void updateApplicableMoveTypes()
         {
-            TransformersOrign CurrentSelection = OriginsTogetModesFrom.Single(o => o.isSelected == true);
-            if(CurrentSelection == null)
+            aplicableMoveTypes.Clear();
+            if (SelectedAltMode == null)
+                return;
+            foreach (var movetype in mtypes.Where(s=> s != _selectedAltMode.AltMode.Type))
             {
-                return mtypes;
+                aplicableMoveTypes.Add(movetype);
             }
-            aplicableMoveTypes = mtypes.Where(m => m != CurrentSelection.AltMode.Type).ToList();
-            return aplicableMoveTypes;
-            
         }
-        
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
     }
 }

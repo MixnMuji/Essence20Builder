@@ -432,3 +432,19 @@ now when I go to the vm I can see what I want to add or pull from it and that wi
 TODO: ADD Isslected property and InotifyChange to Origins
 Find way to bind VM
 Make continue button on atam work.
+
+6-17
+
+Big frustation day had to nutt up and learn 
+
+State= what the system currently knows, ie values (in memory)
+
+needed to swtich Checkbox and itemcontrol to Listbox
+Listbox is built for selctiontions and I can bind the slected property
+what INotifycation actually does: updates ui, basically even if interal data is differnet ie a number value being 5 it could still show as 3 in system
+
+what I did today: changed bindings in xaml to new achetetuce in vm which uses obsberable collections and pulls the slelected origin as a refrence for data
+made a method to update the movment types based off said data.
+
+
+TODO TEST: RElax, remove isslected from the model
