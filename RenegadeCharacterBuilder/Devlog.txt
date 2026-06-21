@@ -448,3 +448,22 @@ made a method to update the movment types based off said data.
 
 
 TODO TEST: RElax, remove isslected from the model make the add movment button work!
+
+6-21
+
+Crazy time has passed life was rough and work tiring
+
+anyways finshed atam page by assigning values to the mode chosen think about making figure out what to do a method that can be called anywhere in the program.
+
+6-22
+
+All the exhaustion was the problem today was coding and felt good and none frustated
+
+Learned to make helper vms to dispaly the data I actually need for the page ie don't do content control and add all these bools
+For instance I needed the role name and the perks, so instead of filtering and filtering I made a CTHelper with the two data fields I needed hell yeah
+
+TODO: MAKE XAML FOR THE CTPAGE AND THEN APPLY PERK
+
+Update realized I forgot to actually make a way to select perk, made it so that I can with selected perk and selected CCTVM to get the list of perks
+
+TODO: Convert navigation to method so I can call and easily update it for perks.

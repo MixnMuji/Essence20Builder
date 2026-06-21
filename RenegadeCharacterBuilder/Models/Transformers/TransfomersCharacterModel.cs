@@ -80,6 +80,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public List<FocusPerk> SubclassTextBlocks { get; set; } = new();
         public List<string> GeneralPerkTextBlock { get; set; } = new();
         public List<GeneralPerkTF> PickedPerks { get; set; } = new();
+
+        public List<Perk> miscellaneousPerks { get; set; } = new();
         public TransfomersCharacterModel()
         
         {
