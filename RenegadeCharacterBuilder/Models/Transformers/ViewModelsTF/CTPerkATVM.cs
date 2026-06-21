@@ -57,9 +57,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             Roles filterout = TFCharacterSession.CurrentTransfomer.Role;
          
             var calldata = new GlobalCall();
-            var firstList = calldata.LoadJson<TFRolesRoot>("TransformersJsons", "Roles.json");
+            var firstList = calldata.LoadJson<TFRolesRoot>("Roles.json","TransformersJsons");
+           
             var RolesToPullFrom = firstList.Roles.Where(x => x.Name != filterout.Name).ToList();
-
+            
             foreach (Roles role in RolesToPullFrom)
             {
                 RolesWithPerks.Add(new CTHelperVM

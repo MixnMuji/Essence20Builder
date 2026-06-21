@@ -36,7 +36,7 @@
             </ListBox>
 
             <!-- other half which displays Perks-->
-            <ListBox Grid.Column="1" ItemsSource="{Binding  PerksBasedoffCurrentRole}" Selected="{Binding SelectedPerk}">
+            <ListBox Grid.Column="1" ItemsSource="{Binding  PerksBasedoffCurrentRole}" SelectedItem="{Binding SelectedPerk}" HorizontalContentAlignment="Stretch">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>

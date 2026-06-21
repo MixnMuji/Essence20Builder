@@ -467,3 +467,7 @@ TODO: MAKE XAML FOR THE CTPAGE AND THEN APPLY PERK
 Update realized I forgot to actually make a way to select perk, made it so that I can with selected perk and selected CCTVM to get the list of perks
 
 TODO: Convert navigation to method so I can call and easily update it for perks.
+
+made a global Method to navigate to clean things up this will make it better to add the general perks from expansions etc. Still need to tweek numbers in the requirments
+for gernal perks, also need to create a dictionary to show the values for dice instead of raw numbers with skills.
+TODO: Next general perk

@@ -10,7 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RenegadeCharacterBuilder.GlobalMethods;
 using RenegadeCharacterBuilder.Models.Transformers;
+using RenegadeCharacterBuilder.Models.Transformers.Enums;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHelpers;
@@ -24,9 +26,8 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
     {
         public CTPerkATVM viewmodel { get; set; }
         public CTperkpage()
-        {
+        {   InitializeComponent();
             viewmodel = new CTPerkATVM();
-            InitializeComponent();
             DataContext = viewmodel;
 
         }
@@ -39,8 +40,8 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
                 return;
             }
             TFCharacterSession.CurrentTransfomer.miscellaneousPerks.Add(viewmodel.SelectedPerk);
-
-
+            
+            GernalPerkNavMethod.GoToNextPerk(NavigationService, PerkBeingApplied.CT);
         }
     }
 }
