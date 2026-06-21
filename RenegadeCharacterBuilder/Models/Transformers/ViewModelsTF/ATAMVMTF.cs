@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Input;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 
+
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
     public class ATAMVMTF : INotifyPropertyChanged

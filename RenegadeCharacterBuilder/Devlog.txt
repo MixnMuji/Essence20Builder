@@ -447,4 +447,4 @@ what I did today: changed bindings in xaml to new achetetuce in vm which uses ob
 made a method to update the movment types based off said data.
 
 
-TODO TEST: RElax, remove isslected from the model
+TODO TEST: RElax, remove isslected from the model make the add movment button work!
