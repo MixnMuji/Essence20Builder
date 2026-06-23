@@ -471,3 +471,18 @@ TODO: Convert navigation to method so I can call and easily update it for perks.
 made a global Method to navigate to clean things up this will make it better to add the general perks from expansions etc. Still need to tweek numbers in the requirments
 for gernal perks, also need to create a dictionary to show the values for dice instead of raw numbers with skills.
 TODO: Next general perk
+
+
+6-22 tried a light day to destresss
+
+ignore the dates this is day last yesterdays was all over from 12am and stuff onwards or who knows
+tried to get my dictionary to work and fucked up. so that blows problems with xaml
+
+TODO fix character methods and display still maybe revert to  old version
+
+6-23 
+
+remade it didn't work did a clean and build and it did
+wtf
+
+anyways can move on to making minicons and human compaions
