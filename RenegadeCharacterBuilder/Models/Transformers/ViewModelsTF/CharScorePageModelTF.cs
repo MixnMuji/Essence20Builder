@@ -17,6 +17,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private int _pointBank = 9;
+        private int _skillsPointBank = 0;
 
         public List<SkillTF> SkillsToBoost { get; }
 
@@ -297,6 +298,14 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             }
         }
 
+        public int SkillsPointBank
+        {
+            get => _skillsPointBank;
+            set { _skillsPointBank = value;
+                NotifyPropertyChanged(nameof(SkillsPointBank));
+                    }
+        }
+
         public void getLinkedSkillForScore()
         {
             //may need new object or boolean called linked skill
@@ -310,6 +319,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public void AddPointsToSkil(SkillTF skill)
         {
             var score = Scores.First(s => s.CorrespondingSkills.Contains(skill));
+            SkillsPointBank -= 1;
             if (!score.TryIncreaseSKill(skill))
             {
                 MessageBox.Show($"points allocated to skills can not exceed value of Essance score current value {score.Name}");
@@ -328,6 +338,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             else
             {
                 score.DecreaseSkill(skill);
+                SkillsPointBank += 1;
             }
         }
 
@@ -337,6 +348,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             {
                 targetScore.AddToScore();
                 PointsBank -= 1;
+                SkillsPointBank += 1;
             }else
             {
                 MessageBox.Show("You have no more points to allocate");
@@ -353,6 +365,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             {
                 targetScore.SubtractFromScore();
                 PointsBank += 1;
+                SkillsPointBank -= 1;
             }
         }
         private void NotifyPropertyChanged(string name)

@@ -486,3 +486,17 @@ remade it didn't work did a clean and build and it did
 wtf
 
 anyways can move on to making minicons and human compaions
+
+6-24
+
+one step forward two steps back
+
+Decided to make a child class called pet for minicons and human companions since they'll have the same stats makin a type checker for the pdf converter to disguise on build
+
+recycled CharSocrepageVm because the process for building compaions is baiscally teh same
+made the xaml page very fast because of this. 
+Added skillscorepoints bank to track points spent, found out you can actually spend more than you're legally aloowed I believe
+
+xaml fucked up on the colum formating somehow may just delete and fuck around with margins within the row instead.
+
+TODO: READ STAT ALOOCATION RULES AND CHECK LOGIC, may need more associated skills like make it a list if two skills share a score will make things easier for mentor perk as well.
