@@ -21,12 +21,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers
             get => _isKeySkill;
             set
             {
-                if (_isKeySkill != value)
-                {
                     _isKeySkill = value;
                      NotifyPropertyChanged(nameof(IsKeySkill));
                     
-                }
+                
             }
         }
      
@@ -51,7 +49,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public int SkillScore{
             get => _skillScore;
             set
-            {
+            {   
                 _skillScore = value;
                 NotifyPropertyChanged(nameof(SkillScore));
 

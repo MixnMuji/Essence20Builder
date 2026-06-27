@@ -507,3 +507,13 @@ Messed with fomatting still not right maybe the problem with grid 1 has nothing 
 cut the points to see if the columns format right
 
 need stoper for skills atm can spend more than you have need a check and balance.
+
+ok its the afternoon now and not 3am coding
+
+so big fix was to put limits on the skill score value in the try method, now it works fine,
+
+still need to add a way to not reduce score below zero
+
+the formating problem was a * in gridrow 0 didn't realize it meant take all the space avaiilbe lol
+
+TOD): add lim it for skill score spend, finish the human companion mehtod

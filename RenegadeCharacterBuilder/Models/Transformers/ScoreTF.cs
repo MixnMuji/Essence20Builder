@@ -51,6 +51,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
             set => correspondingSkills = value;
         }public bool CanIncreaseSkill()
         {
+            
             int total = correspondingSkills.Sum(s => s.SkillScore);
             return total < CurrentRank;
         }
@@ -58,6 +59,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public bool TryIncreaseSKill(SkillTF skill)
         {
             if (!CanIncreaseSkill())
+            {
+                return false;
+            }
+            if(skill.SkillScore > 7)
             {
                 return false;
             }

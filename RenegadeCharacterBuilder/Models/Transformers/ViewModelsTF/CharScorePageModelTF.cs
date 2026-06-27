@@ -319,13 +319,25 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public void AddPointsToSkil(SkillTF skill)
         {
             var score = Scores.First(s => s.CorrespondingSkills.Contains(skill));
-            SkillsPointBank -= 1;
+            if(SkillsPointBank == 0)
+            {
+                MessageBox.Show("No more skill points to allocate");
+                return;
+            }
+           
+            if(skill.SkillScore == 6)
+            {
+                MessageBox.Show("Skill is at max rank");
+                return;
+            }
+           
+
             if (!score.TryIncreaseSKill(skill))
             {
                 MessageBox.Show($"points allocated to skills can not exceed value of Essance score current value {score.Name}");
             }
-            
-            
+
+            SkillsPointBank -= 1;
 
         }
         public void DecreasePointsFromSkill(SkillTF skill)
