@@ -345,7 +345,13 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             var score = Scores.First(s => s.CorrespondingSkills.Contains(skill));
             if (skill.SkillScore <= 0)
             {
-                MessageBox.Show("can not lower score past 0. ");
+                MessageBox.Show("can not lower score past 0.");
+                return;
+            }
+            if(skill.SkillScore == 1 && skill.IsKeySkill == true)
+            {
+                MessageBox.Show("This score is raised as one of your Key skills uncheck to lower");
+                return;
             }
             else
             {

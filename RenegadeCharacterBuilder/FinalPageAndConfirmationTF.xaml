@@ -10,6 +10,6 @@
       Background="White">
 
     <Grid>
-        
+        <TextBlock Text="Finshed!" FontSize="56"></TextBlock>
     </Grid>
 </Page>

@@ -25,8 +25,8 @@
        
         <!-- row 0 -->
         <StackPanel Grid.Row="0" Grid.Column="0">
-            <TextBlock Text="Build Your Human Companion" FontSize="34"/>
-            <TextBox x:Name="CompanionsName" FontSize="22">Enter you Companions name:</TextBox>
+            <TextBlock Text="Build Your Human Companion" FontSize="32"/>
+            <TextBox x:Name="CompanionsName" HorizontalAlignment="Left" FontSize="22" Width="200">Enter you Companions name:</TextBox>
         </StackPanel>
        
         
@@ -78,6 +78,6 @@
         </ItemsControl>
             
         <!-- row 2-->
-        <Button Grid.Row="2" HorizontalAlignment="Right" Margin="10,0,10,10" Height="50" Width="200" Content="Make Companion and move on" Click="Countinue"/>
+        <Button Grid.Row="2" HorizontalAlignment="Right" Margin="10,0,10,10" Height="40" Width="200" Content="Make Companion and move on" Click="Countinue"/>
     </Grid>
 </Page>

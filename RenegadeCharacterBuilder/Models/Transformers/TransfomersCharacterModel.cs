@@ -11,6 +11,7 @@ using System.Text.Json;
 using System.Windows.Media.Animation;
 using RenegadeCharacterBuilder.Models.Transformers.Roots;
 using RenegadeCharacterBuilder.Models.Transformers.Enums;
+using RenegadeCharacterBuilder.CharacterModels.TransfomersCompaions;
 
 namespace RenegadeCharacterBuilder.Models.Transformers
 {
@@ -82,6 +83,9 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public List<GeneralPerkTF> PickedPerks { get; set; } = new();
 
         public List<Perk> miscellaneousPerks { get; set; } = new();
+
+        public List<pet> companions { get; set; } = new();
+
         public TransfomersCharacterModel()
         
         {

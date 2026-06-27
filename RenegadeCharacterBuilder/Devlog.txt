@@ -516,4 +516,9 @@ still need to add a way to not reduce score below zero
 
 the formating problem was a * in gridrow 0 didn't realize it meant take all the space avaiilbe lol
 
-TOD): add lim it for skill score spend, finish the human companion mehtod
+TOD0: add limit for skill score spend, finish the human companion mehtod
+
+
+Did those two things
+
+TODO: mentor skill Make the mentor skill page, Skill Score bank to score page as well

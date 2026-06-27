@@ -64,5 +64,50 @@ namespace RenegadeCharacterBuilder.GlobalMethods
 
         public List<SkillTF> fullSkillList { get; set; }
         public List<ScoreTF> fullScoreList { get; set; }
+
+
+        public void AssignScoresAndSkills(ScoreTF Str, ScoreTF Spd, ScoreTF Smt, ScoreTF Soc, SkillTF Ath, SkillTF Bra, SkillTF Con, SkillTF Int, SkillTF Mig,
+            SkillTF Acro, SkillTF Dri, SkillTF Fin, SkillTF Inf, SkillTF Init, SkillTF Tar,
+            SkillTF Alert, SkillTF Cul, SkillTF Sci, SkillTF Sur, SkillTF Tech,
+            SkillTF Ani, SkillTF Dec, SkillTF Pre, SkillTF Pro, SkillTF Street)
+        {
+            fullScoreList = new List<ScoreTF>([
+                Strenght = Str,
+                Speed = Spd,
+                Smarts = Smt,
+                Social = Soc
+
+            ]);
+
+            fullSkillList = new List<SkillTF>([
+
+                Athletics = Ath,
+                Brawn = Bra,
+                Conditioning = Con,
+                Intimidation = Int,
+                Might = Mig,
+
+                Acrobatics = Acro,
+                Driving = Dri,
+                Finesse = Fin,
+                Inflitration = Inf,
+                Inititave = Init,
+                Targeting = Tar,
+
+                Alertness = Alert,
+                Culture = Cul,
+                Science = Sci,
+                Survival = Sur,
+                Technology = Tech,
+
+                AnimalHandling = Ani,
+                Deception = Dec,
+                Preformance = Pre,
+                Persuasion = Pro,
+                Streetwise = Street
+                ]);
+
+
+        }
     }
 }
