@@ -22,30 +22,22 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="500"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="1"/>
-            </Grid.RowDefinitions>
+       
         <!-- row 0 -->
         <StackPanel Grid.Row="0" Grid.Column="0">
             <TextBlock Text="Build Your Human Companion" FontSize="34"/>
             <TextBox x:Name="CompanionsName" FontSize="22">Enter you Companions name:</TextBox>
         </StackPanel>
-           
-           <TextBlock Grid.Row="0" Grid.Column="1" Text="PointsBank:" VerticalAlignment="Center" FontSize="20"/>
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding PointsBank}" VerticalAlignment="Bottom" FontSize="20"/>
-            
-           <TextBlock Grid.Row="0" Grid.Column="1" Text="Skills PointsBank:" VerticalAlignment="Center" Margin="100,10,10,10" HorizontalAlignment="Center" FontSize="20"/>
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SkillsPointBank}" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20"/>
-        </Grid>
-            
+        <StackPanel Grid.Row="0" HorizontalAlignment="Right">
+            <TextBlock  Text="PointsBank:" Margin="10,0,200,10" FontSize="20"/>
+            <TextBlock  Text="{Binding PointsBank}" Margin="10,5,200,10" VerticalAlignment="Bottom" FontSize="20"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right">
+            <TextBlock Text="Skills PointsBank:" Margin="10,0,20,10"  FontSize="20"/>
+            <TextBlock Grid.Column="1" Text="{Binding SkillsPointBank}" Margin="10,5,20,10" FontSize="20"/>
+        </StackPanel>
+
         <!-- row 1-->
-        
             <ItemsControl ItemsSource="{Binding Scores}" Grid.Row="1">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>

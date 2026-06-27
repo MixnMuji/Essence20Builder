@@ -500,3 +500,10 @@ Added skillscorepoints bank to track points spent, found out you can actually sp
 xaml fucked up on the colum formating somehow may just delete and fuck around with margins within the row instead.
 
 TODO: READ STAT ALOOCATION RULES AND CHECK LOGIC, may need more associated skills like make it a list if two skills share a score will make things easier for mentor perk as well.
+
+6-27 imposter syndrome day
+
+Messed with fomatting still not right maybe the problem with grid 1 has nothing to do with the points bank stuff check refference page and
+cut the points to see if the columns format right
+
+need stoper for skills atm can spend more than you have need a check and balance.
