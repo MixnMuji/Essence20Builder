@@ -15,6 +15,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         private int currentRank {get; set;} = 1;
         public string Name { get; }
 
+        public bool isMentorScore;
+
         public bool IsKeyScore { get; set; } = false;
         private List<SkillTF> correspondingSkills { get; set; }
 

@@ -15,7 +15,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         private bool _isSelected;
         private bool _isKeySkill;
 
-
+        public bool isMentorSkill;
         public bool IsKeySkill
         {
             get => _isKeySkill;

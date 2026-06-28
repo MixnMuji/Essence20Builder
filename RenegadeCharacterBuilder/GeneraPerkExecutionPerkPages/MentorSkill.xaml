@@ -11,6 +11,37 @@
       >
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         
+        <!-- Gridrow 1-->
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Mentor Skill Perk" FontSize="38"/>
+            <TextBlock Text="Choose your skill and corresponding score:" FontSize="28"/>
+        </StackPanel>
+        <!-- Grid.row 1 stuff -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="400"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Skills -->
+            <ListBox Grid.Column="0"
+         ItemsSource="{Binding Skills}"
+         x:Name="selectedSkill"/>
+
+            <!-- scores-->
+            <ListBox Grid.Column="1"
+         ItemsSource="{Binding Scores}"
+         x:Name="selectedScore"/>
+        </Grid>
+        
+        <!-- Grid 2-->
+        <Button Grid.Row="2" Content="Confirm Skill and associated score." Click="Confrim" Width="200" Height="70" Margin="10,10,10,10" HorizontalAlignment="Right" />
+
     </Grid>
 </Page>

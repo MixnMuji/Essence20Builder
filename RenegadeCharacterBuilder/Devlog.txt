@@ -522,3 +522,11 @@ TOD0: add limit for skill score spend, finish the human companion mehtod
 Did those two things
 
 TODO: mentor skill Make the mentor skill page, Skill Score bank to score page as well
+
+6/28
+
+Made mentor page, add bool to score and skill to define if they're mentor or not
+learned listbox doesn't need itemcontrol or stacpannel if the data is defiiend in the page
+Realized I need a second allocation page after level 1.
+
+TODO: MAKE NEXT PERK AND SHELL for over level 1 allocation page. 
