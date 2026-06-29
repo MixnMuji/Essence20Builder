@@ -10,6 +10,17 @@
       Background="White">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Object Alt-Mode Perk" FontSize="45"/>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Choose an alt mode it's speed will be reduced to 0 and you will gain an edge on skill test including, hiding, blending in, or easdropping" FontSize="16" TextWrapping="WrapWithOverflow"/>
+            <ListBox SelectedItem="{Binding selection}" ItemsSource="{Binding choics}"/>
+        </StackPanel>
+        <Button Grid.Row="2" Width="120" Height="40" Margin="10,10,10,30" Content="Continue" Click="Continue" HorizontalAlignment="Right"/>
     </Grid>
 </Page>

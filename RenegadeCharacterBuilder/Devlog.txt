@@ -530,3 +530,8 @@ learned listbox doesn't need itemcontrol or stacpannel if the data is defiiend i
 Realized I need a second allocation page after level 1.
 
 TODO: MAKE NEXT PERK AND SHELL for over level 1 allocation page. 
+
+6/29
+
+worked on OOAm page for some reason listbox isn't loading,
+TODO: need to fix origin benefit orign abilitiyt
