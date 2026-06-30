@@ -34,7 +34,7 @@
 
 
                             <StackPanel DataContext="{Binding Qualifications}">
-                                <TextBlock Text="{Binding ArmorUpgradese, StringFormat= Armor Qualifications: {0}}"/>
+                                <TextBlock Text="{Binding ArmorUpgrades, StringFormat= Armor Qualifications: {0}}"/>
                                 <TextBlock Text="{Binding Weapons, StringFormat=Weapon Qualifications: {0}}"/>
                             </StackPanel>
 

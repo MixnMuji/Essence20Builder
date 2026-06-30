@@ -8,6 +8,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
     {
         public string Name { get; set; }
         public int StartingHealth { get; set; }
+        public string OriginSkill { get; set; }
         public OriginBenefitTf OriginBenefit { get; set; }
         public int? StrengthIncrease { get; set; }
         public int? SmartsIncrease { get; set;}
@@ -18,10 +19,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public Altmode AltMode { get; set; }
 
         public bool isSelected { get; set; }
-        public TransformersOrign()
-        {
-            
-        }
+       
 
     }
 }

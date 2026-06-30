@@ -12,7 +12,7 @@
             "BotMode": {
                 "Movement": 40,
                 "Type": "Land",
-                "Size": "large"
+                "Size": "Large"
             },
             "AltMode":
             {
@@ -39,14 +39,14 @@
             "BotMode": {
                 "Movement": 30,
                 "Type": "Land or Water",
-                "Size": "Common or large"
+                "Size": "Common or Large"
             },
             "AltMode":
             
                 {
                 "Movement": 45,
                 "Type": "Aquatic",
-                "Size": "Common or large",
+                "Size": "Common or Large",
                 "Crew": 2,
                 "FirePoints": 2,
                 "Attack": "Ram (driving), driving skill, range reach,( 1 blunt damage,trip)"

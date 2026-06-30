@@ -23,13 +23,14 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
     /// </summary>
     public partial class OamPerkpage : Page
     {
-        public List<Altmode> choics { get; set; }
+        public List<Altmode> choices { get; set; }
 
         public Altmode selection { get; set; }
         public OamPerkpage()
         {
-            ReturnLeagalAltmodes();
+            
             InitializeComponent();
+            ReturnLeagalAltmodes();
             DataContext = this;
         }
 
@@ -42,7 +43,7 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
             
             foreach(string size in botSizes)
             {
-                if (TFCharacterSession.CurrentTransfomer.Origns[0].BotMode.Size == size)
+                if (TFCharacterSession.CurrentTransfomer.Origns[0].BotMode.Size.Contains(size)) //switch to contains because the strings have or's
                 {
                     break;
                 }
@@ -50,9 +51,10 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
                     limitIndex++;
                 
             }
-            Array.Resize<string>(ref altSizes, limitIndex); // so now that we have our limit number we can just check our new array to see if it contains the altmode size
+            Array.Resize<string>(ref altSizes, limitIndex + 1); // so now that we have our limit number we can just check our new array to see if it contains the altmode size
+            MessageBox.Show(altSizes.Count().ToString());
 
-            choics = TFCharacterSession.CurrentTransfomer.Altmodes.Where(a => altSizes.Contains(a.Size)).ToList();
+            choices = TFCharacterSession.CurrentTransfomer.Altmodes.Where(a => altSizes.Contains(a.Size)).ToList();
             // needs to be within two size classes of your bot mode
             // botmodes and altmodes have different size classes but basically the same tiers
             // get size of altmode, and if it is =< array[botmode.size], include it as our list

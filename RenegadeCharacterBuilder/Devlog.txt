@@ -534,4 +534,9 @@ TODO: MAKE NEXT PERK AND SHELL for over level 1 allocation page.
 6/29
 
 worked on OOAm page for some reason listbox isn't loading,
-TODO: need to fix origin benefit orign abilitiyt
+TODO: need to fix origin benefit orign abilitiy
+
+Update got Object alt mode page to work
+Needed to refactor the orgins page, check spelling, change the Listbox to itemplate, change equals to contain
+
+TODO: MAKE IT SO THAT CHOICES ON Orign launch a choose size method, make next trait page.

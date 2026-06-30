@@ -19,7 +19,17 @@
         <TextBlock Grid.Row="0" Text="Object Alt-Mode Perk" FontSize="45"/>
         <StackPanel Grid.Row="1">
             <TextBlock Text="Choose an alt mode it's speed will be reduced to 0 and you will gain an edge on skill test including, hiding, blending in, or easdropping" FontSize="16" TextWrapping="WrapWithOverflow"/>
-            <ListBox SelectedItem="{Binding selection}" ItemsSource="{Binding choics}"/>
+            <ListBox SelectedItem="{Binding selection}" ItemsSource="{Binding choices}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Movement, StringFormat= Movement: {0}}"/>
+                            <TextBlock Text="{Binding Type, StringFormat= Movement Type: {0}}"/>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
         <Button Grid.Row="2" Width="120" Height="40" Margin="10,10,10,30" Content="Continue" Click="Continue" HorizontalAlignment="Right"/>
     </Grid>
