@@ -336,7 +336,7 @@
           },
           {
             "Name":"Size Change",
-            "Text": "Your Alt Mode is significiantly bigger or smaller than your Bot Mode. Taking this Perk once means your Alt mode is one Size Class larger or smaller than your Bot Mode. YOu can take this Perk multiple times , once for each Alt Mode you want to change in size. This does mean you can have one Alt Mode tow Size Classes larger than another.",
+            "Text": "Your Alt Mode is significiantly bigger or smaller than your Bot Mode. Taking this Perk once means your Alt mode is one Size Class larger or smaller than your Bot Mode. YOu can take this Perk multiple times , once for each Alt Mode you want to change in size. This does mean you can have one Alt Mode two Size Classes larger than another.",
             "timesSelectable": 1,
             "type":"AddBoth",
             "PerkBeingApplied":"SC"

@@ -540,3 +540,7 @@ Update got Object alt mode page to work
 Needed to refactor the orgins page, check spelling, change the Listbox to itemplate, change equals to contain
 
 TODO: MAKE IT SO THAT CHOICES ON Orign launch a choose size method, make next trait page.
+
+7/1
+
+Made size change vm and xaml page finishing up continue button
