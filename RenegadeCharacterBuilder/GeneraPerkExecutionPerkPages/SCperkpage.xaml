@@ -45,19 +45,13 @@
             
             <StackPanel Grid.Column="1">
                 <TextBlock Text=" Choose a new size for your altmode:" FontSize="15"/>
-                <ListBox  ItemsSource="{Binding  afterSizeLogic}" SelectedItem="{Binding ChosenSize}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <TextBlock Text="{Binding}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
+                <ListBox  ItemsSource="{Binding  afterSizeLogic}" SelectedItem="{Binding ChosenSize}"/>
 
-            </ListBox>
+
+
             </StackPanel>
         </Grid>
 
-        <Button Grid.Row="2" Content="Continue" Click="Continue" Width="200" Height="50" HorizontalAlignment="Right" Margin="10,10,10,10"/>
+        <Button Grid.Row="2" Content="Continue" Width="200" Height="50" HorizontalAlignment="Right" Margin="10,10,10,10"/>
     </Grid>
 </Page>

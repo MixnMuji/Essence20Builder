@@ -4,16 +4,17 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Windows;
 using System.Windows.Controls;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
-    public class SCVM
+    public class SCVM : INotifyPropertyChanged
     {
    
             public event PropertyChangedEventHandler PropertyChanged;
-            public ObservableCollection<string> sizes { get; set; } = ["Common", "Large", "Extended"];
+          
             public List<Altmode> choices { get; set; } = TFCharacterSession.CurrentTransfomer.Altmodes;
 
             public ObservableCollection<string> afterSizeLogic { get; set; } = new();
@@ -26,7 +27,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 set
                 {
                     chosenSize = value;
-                    OnPropertyChanged(ChosenSize);
+                    OnPropertyChanged(nameof(ChosenSize));
                 }
             }
 
@@ -44,25 +45,32 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 }
             }
 
-
+      
 
             public void FindlegalSizes()
             {
-                afterSizeLogic = sizes;
-                // set the collections equal because if we keep sizes imutable we're fine
+               afterSizeLogic.Clear();
 
-                // we need the transfoerms botsize index
-                // then we can say to remove inxe of observable collection
+              afterSizeLogic.Add("Common");
+              afterSizeLogic.Add("Long");
+              afterSizeLogic.Add("Extended");
+            // set the collections equal because if we keep sizes imutable we're fine
 
-                string[] botSizes = ["Common", "Long", "Huge"];
+            // we need the transfoerms botsize index
+            // then we can say to remove inxe of observable collection
 
-                var targetOrign = TFCharacterSession.CurrentTransfomer.Origns[0];
+            string[] botSizes = ["Common", "Large", "Huge"];
+
+                var targetOrign = TFCharacterSession.CurrentTransfomer.Origns.FirstOrDefault();
 
                 string sizeToRemove = targetOrign.BotMode.Size;
 
-                int removeIndex = Array.IndexOf(botSizes, sizeToRemove);
+                int removeIndex = Array.IndexOf(botSizes, sizeToRemove); // returns 0
 
-                afterSizeLogic.RemoveAt(removeIndex); // since they share the same progresion this will remove the size of the same index, common and common are at index 0
+            //here it turns to -1 why?
+            
+            MessageBox.Show(removeIndex.ToString()); //here it turns to -1 why?
+            afterSizeLogic.RemoveAt(removeIndex); // since they share the same progresion this will remove the size of the same index, common and common are at index 0
 
 
 

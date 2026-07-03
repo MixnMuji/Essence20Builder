@@ -544,3 +544,21 @@ TODO: MAKE IT SO THAT CHOICES ON Orign launch a choose size method, make next tr
 7/1
 
 Made size change vm and xaml page finishing up continue button
+
+error with selection also if you click mutilple origins in  the origin page they get added to your list SCvm page doen't load sizes probably because it has a binding.
+fix and make coninue method 
+.also sizes aren't showing up for the origns with no or.
+
+check System.ArgumentOutOfRangeException: 'Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')'
+
+7/2
+
+looks like array is never assigned, index returns wrong
+
+7/3 
+
+found out the problem was a mismatched type in my array, fixed it and things work fine, made continue method general perks now done!,
+made new pages for levels after first and working on vm
+also learned the differences between refference and value types lol bit late but better late than never
+
+TODO: work on vm for after level 1 

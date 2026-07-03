@@ -49,8 +49,7 @@
                                     <TextBlock Text="Movement" FontWeight="Bold"/>
                                     <TextBlock Text="{Binding BotMode.Movement}"/>
                                     <TextBlock Text="{Binding BotMode.Type}"/>
-                                    <TextBlock Text="Size:"/>
-                                    <TextBlock Text="{Binding BotMode.Size}"/>
+                                    <TextBlock Text="{Binding BotMode.Size, StringFormat= Size: {0}}"/>
 
 
                                     <TextBlock Text="Altmode Stats:"/>
