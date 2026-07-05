@@ -8,12 +8,12 @@ using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
-    public class LevelUpVM
+    public class LevelUpVM : INotifyPropertyChanged
     {
         
     
             public event PropertyChangedEventHandler PropertyChanged;
-            private int _skillsPointBank = 0;
+        private int _skillsPointBank;
 
             public List<SkillTF> SkillsToBoost { get; }
 
@@ -77,7 +77,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 TFCharacterSession.CurrentTransfomer.ApplylevlesAfter1();
                 AddPointsToSkill = new RelayCommand<SkillTF>(AddPointsToSkil);
                 RemovePointsFromSkill = new RelayCommand<SkillTF>(DecreasePointsFromSkill);
-            SkillsPointBank = TFCharacterSession.CurrentTransfomer.generalPointBank;
+                SkillsPointBank = TFCharacterSession.CurrentTransfomer.generalPointBank;
 
 
                 SkillsToBoost = TFCharacterSession.CurrentTransfomer.fullSkillList;
@@ -172,6 +172,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 if (!score.TryIncreaseSKill(skill))
                 {
                     MessageBox.Show($"points allocated to skills can not exceed value of Essance score current value {score.Name}");
+                return;
                 }
 
                 SkillsPointBank -= 1;

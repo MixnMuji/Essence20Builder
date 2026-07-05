@@ -91,7 +91,7 @@ namespace RenegadeCharacterBuilder
                     case PerkBeingApplied.Mentor:
                         {
                             NavigationService.Navigate(new MentorSkill());
-                            // have it navigate to a page and if it's this populate the list of scores and skills and have them listed to pick them
+                          
                         }
                         break;
 
@@ -104,7 +104,7 @@ namespace RenegadeCharacterBuilder
                     case PerkBeingApplied.SC:
                         {
                             NavigationService.Navigate(new SCperkpage());
-                            List<string> sizes = ["Common", "long", "Huge"];
+                   
                          
 
                         }
@@ -112,11 +112,11 @@ namespace RenegadeCharacterBuilder
                     default:
                         {
                             gpService.ApplyPerk(TFCharacterSession.CurrentTransfomer, perk);// shouldapply perks now
+                            NavigationService.Navigate(new LevelUpAfter1());
                             
                         }
                     break;
                 }
-                //NavigationService.Navigate(new FinalPageAndConfirmation());
             }
      
         }

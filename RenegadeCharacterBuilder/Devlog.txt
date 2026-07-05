@@ -569,3 +569,11 @@ Added Level up after 1 page
 
 TODO: Make general Perks without pages work.
 Level pages layout is all fucked
+
+7/5 morning
+Much better results than the 3am coding
+-Fixed perks they were applying but had no navigation method (sloppy sloppy)
+- set properties in levelup to right rows looks great
+-forgot to add Inotify for levelupvm after adding perks apply as they should
+
+TODO:Make continue method

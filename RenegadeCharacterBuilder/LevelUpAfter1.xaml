@@ -20,12 +20,12 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Apply Skills to your current level:" FontSize="33"/>
+        <TextBlock Grid.Row="0" Text="Apply Skills to your current level:" FontSize="33" />
         <TextBlock Grid.Row="0" HorizontalAlignment="Right" Text="{Binding SkillsPointBank, StringFormat= Remaining Points : {0}}"/>
 
 
 
-        <ItemsControl ItemsSource="{Binding Scores}">
+        <ItemsControl ItemsSource="{Binding Scores}" Grid.Row="1">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="4"/>
