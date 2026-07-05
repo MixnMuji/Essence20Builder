@@ -48,15 +48,15 @@ namespace RenegadeCharacterBuilder
         private void FactionChoice(object sender, RoutedEventArgs e)
         {
             RadioButton choice = sender as RadioButton;
-            if(choice.Name == "Decepticon")
+            if (choice.Name == "Decepticon")
             {
                 TFCharacterSession.CurrentTransfomer.Faction = Alliegence.Descepticon;
             }
-            if(choice.Name == "Autobot")
+            if (choice.Name == "Autobot")
             {
                 TFCharacterSession.CurrentTransfomer.Faction = Alliegence.Autobot;
             }
-            
+
         }
     }
 }

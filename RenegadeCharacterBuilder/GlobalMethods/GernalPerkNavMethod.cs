@@ -18,7 +18,7 @@ namespace RenegadeCharacterBuilder.GlobalMethods
 
             if (TFCharacterSession.CurrentTransfomer.PickedPerks.Count() == 1) // base case if we only have one general perk move on.
             {
-                navigationService.Navigate(new FinalPageAndConfirmation());
+                navigationService.Navigate(new LevelUpAfter1());
                 return;
             }
 
@@ -35,7 +35,7 @@ namespace RenegadeCharacterBuilder.GlobalMethods
             if (i == TFCharacterSession.CurrentTransfomer.PickedPerks.Count() - 1)
             {
                 //if the current index is equal to count minus one were at the end of the list
-                navigationService.Navigate(new FinalPageAndConfirmation());
+                navigationService.Navigate(new LevelUpAfter1());
             }
             if (i < TFCharacterSession.CurrentTransfomer.PickedPerks.Count() - 1)
             {

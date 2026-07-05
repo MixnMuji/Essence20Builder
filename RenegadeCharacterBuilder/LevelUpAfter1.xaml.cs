@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 
 namespace RenegadeCharacterBuilder
 {
@@ -18,6 +19,7 @@ namespace RenegadeCharacterBuilder
     /// </summary>
     public partial class LevelUpAfter1 : Page
     {
+        public LevelUpVM vm { get; set; }
         //we need the transformers current stats
         //we need a method to apply stat boost as well as add to a general perk score
         // can copy and past a lot of data from the skillscoreallocation VM
@@ -25,7 +27,9 @@ namespace RenegadeCharacterBuilder
         //xaml page will use 
         public LevelUpAfter1()
         {
+            vm = new LevelUpVM();
             InitializeComponent();
+            DataContext = vm;
         }
     }
 }

@@ -10,16 +10,14 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
     public class LevelUpVM
     {
-        {
-    public class CharScorePageModelTF : INotifyPropertyChanged
-        {
+        
+    
             public event PropertyChangedEventHandler PropertyChanged;
             private int _skillsPointBank = 0;
 
             public List<SkillTF> SkillsToBoost { get; }
 
-            private List<SkillTF> SelectedKeySkills { get; }
-            public string RoleForStatBoost { get; } // will find the class
+           
 
             public int CurrentLevel { get; } // will be the limit for our current level
             public ICommand AddpointsToScore { get; }
@@ -74,16 +72,12 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
 
 
-            public CharScorePageModelTF()
+            public LevelUpVM()
             {
-                SelectedKeySkills = new List<SkillTF>();
+                TFCharacterSession.CurrentTransfomer.ApplylevlesAfter1();
                 AddPointsToSkill = new RelayCommand<SkillTF>(AddPointsToSkil);
                 RemovePointsFromSkill = new RelayCommand<SkillTF>(DecreasePointsFromSkill);
-                CharacterRoleForKeyScores = TFCharacterSession.CurrentTransfomer.Role.Name;
-                if (string.IsNullOrWhiteSpace(CharacterRoleForKeyScores))
-                {
-                    CharacterRoleForKeyScores = "Analyst";
-                }
+            SkillsPointBank = TFCharacterSession.CurrentTransfomer.generalPointBank;
 
 
                 SkillsToBoost = TFCharacterSession.CurrentTransfomer.fullSkillList;
@@ -133,61 +127,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
             }
 
-            public void findRoleForStats()
-            {
-                switch (CharacterRoleForKeyScores)
-                {
-                    case "Analyst":
-                        defineScoresAndSkillChoice(Speed, Smarts, new List<SkillTF> { Alertness, Finesse, Inflitration, Inititave, Science, Technology });
-                        break;
-
-                    case "FieldCommander":
-                        defineScoresAndSkillChoice(Strength, Soical, new List<SkillTF> { Brawn, Deception, Intimidation, Might, Preformance, Persuasion });
-                        break;
-
-                    case "Gunner":
-                        defineScoresAndSkillChoice(Speed, Smarts, new List<SkillTF> { Alertness, Inititave, Survival, Targeting });
-                        break;
-
-                    case "ModeMaster": //this needs its own method unfortunately
-                        defineScoresAndSkillChoice(Speed, Smarts, new List<SkillTF> { Alertness, Finesse, Inflitration, Inititave, Science, Technology });
-                        break;
-
-                    case "Scientist":
-                        defineScoresAndSkillChoice(Strength, Smarts, new List<SkillTF> { Brawn, Conditioning, Science, Technology });
-                        break;
-
-                    case "Scout":
-                        defineScoresAndSkillChoice(Speed, Soical, new List<SkillTF> { Alertness, Deception, Inflitration, Inititave, Streetwise });
-                        break;
-
-                    case "Warrior":
-                        defineScoresAndSkillChoice(Strength, Smarts, new List<SkillTF> { Alertness, Brawn, Conditioning, Culture, Might, Survival });
-                        break;
-
-
-                }
-
-
-
-            
-
-          
-            }
-
           
             
          
 
-            public int PointsBank
-            {
-                get => _pointBank;
-                set
-                {
-                    _pointBank = value;
-                    NotifyPropertyChanged(nameof(PointsBank));
-                }
-            }
+         
 
             public int SkillsPointBank
             {
@@ -253,7 +197,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 }
             }
 
-        
+            
        
             private void NotifyPropertyChanged(string name)
             {
@@ -262,5 +206,5 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         }
     }
 
-}
+
 

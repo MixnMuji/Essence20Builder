@@ -4,12 +4,64 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RenegadeCharacterBuilder"
+      xmlns:gm="clr-namespace:RenegadeCharacterBuilder.GlobalMethods"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LevelUpAfter1"
       Background="White">
-
+    
+    <Page.Resources>
+        <gm:DieConverter x:Key="intToDie"/>
+    </Page.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="360"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Apply Skills to your current level:" FontSize="33"/>
+        <TextBlock Grid.Row="0" HorizontalAlignment="Right" Text="{Binding SkillsPointBank, StringFormat= Remaining Points : {0}}"/>
+
+
+
+        <ItemsControl ItemsSource="{Binding Scores}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="4"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding CurrentRank}" HorizontalAlignment= "Center" Margin= "0,0,0,2" VerticalAlignment= "Bottom" />
+                            </StackPanel>
+                                <!-- Skills-->
+                        <ItemsControl ItemsSource="{Binding CorrespondingSkills}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Name}"/>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button  Content= "-" Command="{Binding DataContext.RemovePointsFromSkill, RelativeSource={RelativeSource AncestorType=Page}}" CommandParameter="{Binding}" Height= "15" Width= "10"  Margin= "0,0,50,0" VerticalAlignment= "Bottom"/>
+                                            <TextBlock Text="{Binding SkillScore, Converter={StaticResource intToDie}}" HorizontalAlignment= "Center" Margin= "0,0,0,2" VerticalAlignment= "Bottom" />
+                                            <Button  Content= "+" Command="{Binding DataContext.AddPointsToSkill, RelativeSource={RelativeSource AncestorType=Page}}" CommandParameter="{Binding}" Height= "15" Width= "10"  Margin= "5,0,-50,0" VerticalAlignment= "Bottom" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+
+                        </ItemsControl>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+
+        </ItemsControl>
+      
+
     </Grid>
+
+ 
 </Page>

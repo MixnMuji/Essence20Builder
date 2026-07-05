@@ -36,6 +36,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public List<HangUps> Hang_Ups { get; set; }
         public int Health { get; set; }
 
+        public int generalPointBank { get; set; }
+
         public int Evasion { get; set; }
         public int Toughness { get; set; }
         public int Cleverness { get; set; }
@@ -87,27 +89,27 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public List<pet> companions { get; set; } = new();
 
         public TransfomersCharacterModel()
-        
+
         {
-            
-            
+
+
         }
-        
-        public void AssignScoresAndSkills(ScoreTF Str, ScoreTF Spd, ScoreTF Smt, ScoreTF Soc, SkillTF Ath,SkillTF Bra, SkillTF Con, SkillTF Int, SkillTF Mig,
-            SkillTF Acro, SkillTF Dri, SkillTF Fin, SkillTF Inf, SkillTF Init, SkillTF Tar, 
-            SkillTF Alert, SkillTF Cul , SkillTF Sci, SkillTF Sur, SkillTF Tech,
+
+        public void AssignScoresAndSkills(ScoreTF Str, ScoreTF Spd, ScoreTF Smt, ScoreTF Soc, SkillTF Ath, SkillTF Bra, SkillTF Con, SkillTF Int, SkillTF Mig,
+            SkillTF Acro, SkillTF Dri, SkillTF Fin, SkillTF Inf, SkillTF Init, SkillTF Tar,
+            SkillTF Alert, SkillTF Cul, SkillTF Sci, SkillTF Sur, SkillTF Tech,
             SkillTF Ani, SkillTF Dec, SkillTF Pre, SkillTF Pro, SkillTF Street)
         {
-            fullScoreList = new List<ScoreTF>([ 
+            fullScoreList = new List<ScoreTF>([
                 Strenght = Str,
                 Speed = Spd,
                 Smarts = Smt,
                 Social = Soc
-                
+
             ]);
-            
+
             fullSkillList = new List<SkillTF>([
-                
+
                 Athletics = Ath,
                 Brawn = Bra,
                 Conditioning = Con,
@@ -135,10 +137,30 @@ namespace RenegadeCharacterBuilder.Models.Transformers
                 ]);
 
 
-    }
+        }
 
-       
-        
+        public void ApplylevlesAfter1()
+        {
+            int i = 0;
+            foreach (LevelTF level in Role.Levels)
+            {
+                if (level.Level > 1 && level.Level <= CurrentLevel)
+                {
+
+                    Strenght.CurrentRank += level.StrengthBoost;
+                    Speed.CurrentRank += level.SpeedBoost;
+                    Smarts.CurrentRank += level.SmartsBoost;
+                    Social.CurrentRank += level.SocialBoost;
+                    //ActualPerksToSpend += level.GeneralPerkCount; Check these later
+                    i++;
+                    // FocusProgression
+                }
+
+            }
+            generalPointBank += i;
+
+        }
+
         public void GetGeneralPerkPonts()
         {
             string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "Roles.json");
@@ -146,27 +168,28 @@ namespace RenegadeCharacterBuilder.Models.Transformers
             var RoleRoot = JsonSerializer.Deserialize<TFRolesRoot>(json);
             var role = RoleRoot.Roles.First(r => r.Name == Role.Name);
             int i = 0;
-            while(i< CurrentLevel)
+            while (i < CurrentLevel)
             {
-                if (role.Levels[i].GeneralPerkCount!= null)
+                if (role.Levels[i].GeneralPerkCount != null)
                 {
                     ActualPerksToSpend++;
                 }
                 i++;
             }
-            
+
             // find current level
             // go to the json and look through it until we hit our level ie while Json.index >= level
             // then we say if the level contains general perk, general perk count ++; which means we need a forloop
         }
     }
 
-   
-   public enum Alliegence
-    {
-        Autobot = 0,
-        Descepticon = 1
 
-    }
+        public enum Alliegence
+        {
+            Autobot = 0,
+            Descepticon = 1
+
+        }
+    
    
 }
