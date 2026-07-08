@@ -601,3 +601,6 @@ TODO: move you ui logic to page get rid of bools for show value etc. is better i
 did the thing and ran the rest works like a [redacted] charm :)
 noticed issue with availible perks to pick
 Still need generalperkpoints in first level up
+
+Normal idiocity forgot to set datacontex also return in my if statments so just did all the logic ie it would hit 2 then set itself back to zero. smh
+changed it to a if else stamement.

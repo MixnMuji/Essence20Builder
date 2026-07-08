@@ -10,7 +10,7 @@ using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHelpers
 {
-    public class FinalpageViewHelper
+    public class FinalpageViewHelper: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private int currentIndex;
@@ -168,43 +168,17 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
         }
         public void Nextpage()
         {
-            if (CurrentIndex == 0)
-            {
-                CurrentIndex += 1;
-
-            }
-            if (CurrentIndex == 1)
-            {
-                CurrentIndex += 1;
-
-
-            }
             if (CurrentIndex == 2)
-            {
-                currentIndex = 1;
-
-            }
+                CurrentIndex = 0;
+            else
+                CurrentIndex+=1;
         }
+        
         public void PreviousPage()
         {
             if (CurrentIndex == 0)
-            {
-                CurrentIndex = 2;
-
-
-            }
-            if (currentIndex == 1)
-            {
-                CurrentIndex -= 1;
-
-
-
-            }
-            if (currentIndex == 2)
-            {
-                CurrentIndex -= 1;
-
-            }
+                currentIndex = 2;
+            else CurrentIndex-=1;
         }
         private void NotifyPropertyChanged(string name)
         {
