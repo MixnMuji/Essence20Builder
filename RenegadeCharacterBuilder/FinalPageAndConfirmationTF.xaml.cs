@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
+using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHelpers;
 
 namespace RenegadeCharacterBuilder
 {
@@ -19,24 +20,47 @@ namespace RenegadeCharacterBuilder
     /// </summary>
     public partial class FinalPageAndConfirmation : Page
     {
-        public FinalPageVM vm { get; set; }
+        public FinalpageViewHelper vm { get; set; }
         public FinalPageAndConfirmation()
         {
+            vm = new FinalpageViewHelper();
             InitializeComponent();
-            vm = new FinalPageVM();
+            RunvisbilityCheck();
+
         }
         public void RunvisbilityCheck() // fire this on button pushes
         {
             switch (vm.CurrentIndex) // copy data but instead make it so that it sets the visibilty to collapsiable
             {
                 case 0:
+                    view1.Visibility = Visibility.Visible;
+                    view2.Visibility = Visibility.Collapsed;
+                    view3.Visibility = Visibility.Collapsed;
                 return;
                 case 1:
+                    view1.Visibility = Visibility.Collapsed;
+                    view2.Visibility = Visibility.Visible;
+                    view3.Visibility = Visibility.Collapsed;
                     return;
                 case 2:
+                    view1.Visibility = Visibility.Collapsed;
+                    view2.Visibility = Visibility.Collapsed;
+                    view3.Visibility = Visibility.Visible;
                     return;
 
             }
+        }
+
+        private void Moveup(object sender, RoutedEventArgs e)
+        {
+            vm.Nextpage();
+            RunvisbilityCheck();
+        }
+
+        private void MoveBack(object sender, RoutedEventArgs e)
+        {
+            vm.PreviousPage();
+            RunvisbilityCheck();
         }
     }
 }

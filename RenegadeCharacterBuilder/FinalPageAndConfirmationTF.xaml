@@ -11,17 +11,25 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="300"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="280"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
 
         </Grid.RowDefinitions>
         
-        <StackPanel x:Name="view1" Visibility="{Binding showDataSet1}">
+        <StackPanel x:Name="view1" Grid.Row="1" DataContext="{Binding}">
             
-                <TextBlock Text="{Binding character.Name}"/>
+                <TextBlock Text="{Binding Name,StringFormat= Character Name: {0}}"/>
 
         </StackPanel>
-       <StackPanel Visibility=""
+        <StackPanel x:Name="view2" Grid.Row="1">
+            <TextBlock Text="2 Working"/>
+        </StackPanel>
+        <StackPanel x:Name="view3" Grid.Row="1">
+            <TextBlock Text="3 working"/>
+        </StackPanel>
+        <Button Content="next" Grid.Row="2" Width="70" Click="Moveup" HorizontalAlignment="Right" Margin="0,0,30,0"/>
+        <Button Content="Pervious" Grid.Row="2" Width="70" Click="MoveBack" HorizontalAlignment="Left" Margin="30,0,0,0"/>
     </Grid>
 </Page>

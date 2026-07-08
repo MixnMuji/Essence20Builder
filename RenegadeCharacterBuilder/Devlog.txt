@@ -597,3 +597,7 @@ Tweeked logic for display realized I only need one verson of the character data,
 however realized that the collapible stuff in the ui is set to the page so I shouldve put it there.
 
 TODO: move you ui logic to page get rid of bools for show value etc. is better in the long run because it truely only exist as one thing
+
+did the thing and ran the rest works like a [redacted] charm :)
+noticed issue with availible perks to pick
+Still need generalperkpoints in first level up

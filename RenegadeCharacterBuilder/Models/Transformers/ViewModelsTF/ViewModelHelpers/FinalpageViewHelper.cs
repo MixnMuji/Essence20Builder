@@ -12,6 +12,18 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
 {
     public class FinalpageViewHelper
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        private int currentIndex;
+        public int CurrentIndex
+        {
+            get => currentIndex;
+            set
+            {
+                currentIndex = value;
+                NotifyPropertyChanged(nameof(CurrentIndex));
+            }
+        }
+
         public string Name { get; set; }
         public string Pronouns { get; set; }
 
@@ -84,6 +96,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
 
         public FinalpageViewHelper()
         {
+            CurrentIndex = 0;
             Name = TFCharacterSession.CurrentTransfomer.Name;
             Pronouns = TFCharacterSession.CurrentTransfomer.Pronouns;
             Description = TFCharacterSession.CurrentTransfomer.Pronouns;
@@ -153,8 +166,53 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
 
             companions = TFCharacterSession.CurrentTransfomer.companions;
         }
-   
+        public void Nextpage()
+        {
+            if (CurrentIndex == 0)
+            {
+                CurrentIndex += 1;
+
+            }
+            if (CurrentIndex == 1)
+            {
+                CurrentIndex += 1;
+
+
+            }
+            if (CurrentIndex == 2)
+            {
+                currentIndex = 1;
+
+            }
+        }
+        public void PreviousPage()
+        {
+            if (CurrentIndex == 0)
+            {
+                CurrentIndex = 2;
+
+
+            }
+            if (currentIndex == 1)
+            {
+                CurrentIndex -= 1;
+
+
+
+            }
+            if (currentIndex == 2)
+            {
+                CurrentIndex -= 1;
+
+            }
+        }
+        private void NotifyPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
     }
+
 
 
 
