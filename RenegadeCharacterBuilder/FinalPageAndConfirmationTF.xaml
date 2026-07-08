@@ -10,6 +10,18 @@
       Background="White">
 
     <Grid>
-        <TextBlock Text="Finshed!" FontSize="56"></TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        
+        <StackPanel x:Name="view1" Visibility="{Binding showDataSet1}">
+            
+                <TextBlock Text="{Binding character.Name}"/>
+
+        </StackPanel>
+       <StackPanel Visibility=""
     </Grid>
 </Page>

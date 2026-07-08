@@ -15,8 +15,8 @@
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="360"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="300"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -37,8 +37,8 @@
                         <TextBlock Text="{Binding Name}"/>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding CurrentRank}" HorizontalAlignment= "Center" Margin= "0,0,0,2" VerticalAlignment= "Bottom" />
-                            </StackPanel>
-                                <!-- Skills-->
+                        </StackPanel>
+                        <!-- Skills-->
                         <ItemsControl ItemsSource="{Binding CorrespondingSkills}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
@@ -57,10 +57,9 @@
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
-
         </ItemsControl>
-      
 
+        <Button Grid.Row="2" Content="Finish and Export" Height="40" Width="100" HorizontalAlignment="Right" Margin="10,10,10,10" Click="MoveOn"/>
     </Grid>
 
  

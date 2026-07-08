@@ -105,7 +105,7 @@
         <TextBlock Grid.Row="0" Text="Scores and Skills:" FontSize="33"/>
         <TextBlock Grid.Row="0" HorizontalAlignment="Right" Text="{Binding PointsBank, StringFormat= Remaining Points : {0}}"/>
 
-        <Button Grid.Row="2" HorizontalAlignment="Right" Width="200" Content="Proceed" Click="SaveScoresAndSkillsAndProcced"/>
+        <Button Grid.Row="2" HorizontalAlignment="Right" Width="200" Content="Proceed" Click="SaveScoresAndSkillsAndProcced" />
 
     </Grid>
 </Page>

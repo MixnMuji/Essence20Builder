@@ -31,5 +31,10 @@ namespace RenegadeCharacterBuilder
             InitializeComponent();
             DataContext = vm;
         }
+
+        private void MoveOn(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new FinalPageAndConfirmation());
+        }
     }
 }

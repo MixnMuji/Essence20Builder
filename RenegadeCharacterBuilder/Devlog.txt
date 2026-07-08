@@ -577,3 +577,23 @@ Much better results than the 3am coding
 -forgot to add Inotify for levelupvm after adding perks apply as they should
 
 TODO:Make continue method
+
+started final page vm
+
+7-6 
+
+Finsihed the skelton of the finalpage vm
+
+TODO: Change Spcecializations to a list on the skills.
+Figure out how to export the data to a pdf. also build a page
+
+Made a helper vm or really the chucky vm finalpageview gets all the stats, FinalPageVM just holds 3 instances of FinalpageViewHelper.
+
+TODO: write xaml for viewing the pages
+
+7-8 Took a breather because I knew this would be a doosey
+
+Tweeked logic for display realized I only need one verson of the character data, however I needed to have a index to track what data is avalible, made a method for switching the booleans and the like
+however realized that the collapible stuff in the ui is set to the page so I shouldve put it there.
+
+TODO: move you ui logic to page get rid of bools for show value etc. is better in the long run because it truely only exist as one thing

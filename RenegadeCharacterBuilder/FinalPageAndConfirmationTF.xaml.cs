@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 
 namespace RenegadeCharacterBuilder
 {
@@ -18,9 +19,24 @@ namespace RenegadeCharacterBuilder
     /// </summary>
     public partial class FinalPageAndConfirmation : Page
     {
+        public FinalPageVM vm { get; set; }
         public FinalPageAndConfirmation()
         {
             InitializeComponent();
+            vm = new FinalPageVM();
+        }
+        public void RunvisbilityCheck() // fire this on button pushes
+        {
+            switch (vm.CurrentIndex) // copy data but instead make it so that it sets the visibilty to collapsiable
+            {
+                case 0:
+                return;
+                case 1:
+                    return;
+                case 2:
+                    return;
+
+            }
         }
     }
 }
