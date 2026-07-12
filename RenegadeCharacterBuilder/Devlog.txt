@@ -604,3 +604,9 @@ Still need generalperkpoints in first level up
 
 Normal idiocity forgot to set datacontex also return in my if statments so just did all the logic ie it would hit 2 then set itself back to zero. smh
 changed it to a if else stamement.
+
+7-12
+
+Long Hiatus got gf also was called into work nonstop. 
+
+Added more data to finalpage such as roles orgins and all mode, continue with information and am formating as I write

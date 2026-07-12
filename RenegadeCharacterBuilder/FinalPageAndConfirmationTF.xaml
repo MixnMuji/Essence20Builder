@@ -20,7 +20,47 @@
         
         <StackPanel x:Name="view1" Grid.Row="1" DataContext="{Binding}">
             
-                <TextBlock Text="{Binding Name,StringFormat= Character Name: {0}}"/>
+            <TextBlock Text="{Binding Name,StringFormat= Character Name: {0}}"/>
+            <TextBlock Text="{Binding  Pronouns, StringFormat= Pronouns: {0}}"/>
+            <TextBlock Text="{Binding Description, StringFormat= Description: {0}}" />
+          
+            <TextBlock Text="{Binding  CurrentLevel, StringFormat= Level: {0}}"/>
+            <TextBlock Text="Role Information:" FontStyle="Normal" FontFamily="Bahnschrift" FontWeight="Bold"/>
+            <TextBlock Text="{Binding Role.Name, StringFormat= Role: {0}}"/>
+            <TextBlock Text="{Binding  sub.subclassName, StringFormat= Subclass: {0}}"/>
+            <!-- nested nonsense for origin-->
+            <TextBlock Text="Orign Information" FontStyle="Normal" FontFamily="Bahnschrift" FontWeight="Bold"/>
+            <ItemsControl ItemsSource="{Binding Origns}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name,StringFormat= Origin Name: {0}}"/>
+                            <StackPanel DataContext="{Binding OriginBenefit}">
+                                <TextBlock Text="{Binding Name, StringFormat= Origin:{0}}"/>
+                                <TextBlock Text="{Binding Effect, StringFormat= Origin Effect: {0}}" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <!-- add altmode as item control and role stuff-->
+            <TextBlock Text="Alt Modes:" FontStyle="Normal" FontFamily="Bahnschrift" FontWeight="Bold"/>
+            <ItemsControl ItemsSource="{Binding Altmodes}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Movement, StringFormat = Movement: {0}}"/>
+                            <TextBlock Text="{Binding Type, StringFormat= Movement Type: {0}}"/>
+                            <TextBlock Text="{Binding Crew, StringFormat= Crew Size: {0}}"/>
+                            <TextBlock Text="{Binding FirePoints, StringFormat= Firepoints: {0}}"/>
+                            <TextBlock Text="{Binding Attack, StringFormat= Mode Attack:{0}}" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            
+           
+             <!-- Origin dive finish-->
 
         </StackPanel>
         <StackPanel x:Name="view2" Grid.Row="1">
