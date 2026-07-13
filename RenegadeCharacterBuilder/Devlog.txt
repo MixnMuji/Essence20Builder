@@ -610,3 +610,9 @@ changed it to a if else stamement.
 Long Hiatus got gf also was called into work nonstop. 
 
 Added more data to finalpage such as roles orgins and all mode, continue with information and am formating as I write
+
+7-13
+
+Added the skill score page. Nothing fancy, realized I can do the grid sytles to within the stackpannels so they will turn visible invisbe etc.
+
+TODO ADD HANG UPS AND INFLUENCES, LIST GENERAL PERKS, LIST SUBCLASS, Reformate Role and subclass
