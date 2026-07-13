@@ -44,10 +44,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
 
         public int generalPointBank { get; set; }
 
-        public int Evasion { get; set; }
-        public int Toughness { get; set; }
-        public int Cleverness { get; set; }
-        public int Willpower { get; set; }
+        public DirivedStat Evasion { get; set; }
+        public DirivedStat Toughness { get; set; }
+        public DirivedStat Cleverness { get; set; }
+        public DirivedStat Willpower { get; set; }
         public ScoreTF Strenght { get; set; }
         public ScoreTF Speed { get; set; }
         public ScoreTF Smarts { get; set; }
@@ -93,6 +93,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
         public List<Perk> miscellaneousPerks { get; set; } = new();
 
         public List<pet> companions { get; set; } = new();
+        public List<DirivedStat> dirivedStatsForXaml { get; set; } = new();
 
         public FinalpageViewHelper()
         {
@@ -119,12 +120,34 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
             Speed = TFCharacterSession.CurrentTransfomer.Speed;
             Smarts = TFCharacterSession.CurrentTransfomer.Smarts;
             Social = TFCharacterSession.CurrentTransfomer.Social;
-            Toughness = TFCharacterSession.CurrentTransfomer.Toughness + 10 + Strenght.CurrentRank;
-            Cleverness = TFCharacterSession.CurrentTransfomer.Cleverness + 10 + Smarts.CurrentRank;
 
-            Willpower = TFCharacterSession.CurrentTransfomer.Willpower + 10 + Social.CurrentRank;
-            Evasion = TFCharacterSession.CurrentTransfomer.Evasion + 10 + Speed.CurrentRank;
 
+         
+            Toughness = new DirivedStat {
+                Name = "Toughness",
+                Value = TFCharacterSession.CurrentTransfomer.Toughness.Value + 10 + Strenght.CurrentRank};
+            Cleverness = new DirivedStat
+            {
+                Name = "Cleverness",
+                Value = TFCharacterSession.CurrentTransfomer.Cleverness.Value + 10 + Smarts.CurrentRank
+            };
+
+            Willpower = new DirivedStat {
+                Name = "Willpower",
+                Value = TFCharacterSession.CurrentTransfomer.Willpower.Value + 10 + Social.CurrentRank };
+
+            Evasion = new DirivedStat{
+                Name = "Evasion",
+                Value = TFCharacterSession.CurrentTransfomer.Evasion.Value + 10 + Speed.CurrentRank
+            };
+
+            dirivedStatsForXaml = new List<DirivedStat>
+            {
+                Toughness,
+                Cleverness,
+                Willpower,
+                Evasion
+            };
 
 
 

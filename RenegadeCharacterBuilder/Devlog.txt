@@ -616,3 +616,8 @@ Added more data to finalpage such as roles orgins and all mode, continue with in
 Added the skill score page. Nothing fancy, realized I can do the grid sytles to within the stackpannels so they will turn visible invisbe etc.
 
 TODO ADD HANG UPS AND INFLUENCES, LIST GENERAL PERKS, LIST SUBCLASS, Reformate Role and subclass
+
+Changed derived stats into a model for xaml binding. Learned to give them a deaufault value otherwise they'll be null and cause a crash
+Added Dervied statas voer the skillss and scores in final page , view 2
+
+TODO Check spec ops subclass breaks because of space in name. Add page 3 with general perks, hang ups and influences add

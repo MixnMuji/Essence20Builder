@@ -69,6 +69,25 @@
 
         </StackPanel>
         <StackPanel x:Name="view2" Grid.Row="1">
+            <ItemsControl ItemsSource="{Binding dirivedStatsForXaml}" Grid.Row="1">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="4"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}"/>
+                            <TextBlock Text="{Binding Value}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+
+
+            <!-- Scores-->
             <ItemsControl ItemsSource="{Binding fullScoreList}" Grid.Row="1">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>

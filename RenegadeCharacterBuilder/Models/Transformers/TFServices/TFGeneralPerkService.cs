@@ -41,16 +41,16 @@ namespace RenegadeCharacterBuilder.Models.Transformers.TFServices
 
         private void ApplyDodgy(TransfomersCharacterModel model, GeneralPerkTF perk)
         {
-            model.Evasion += 2;
+            model.Evasion.Value += 2;
         }
         private void ApplyDSA(TransfomersCharacterModel model, GeneralPerkTF perk)
         {
-            model.Toughness += 2;
+            model.Toughness.Value += 2;
         }
        
         private void ApplyRT(TransfomersCharacterModel model, GeneralPerkTF perk)
         {
-            model.Cleverness += 2;
+            model.Cleverness.Value += 2;
         }
       
 
