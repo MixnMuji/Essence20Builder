@@ -34,19 +34,19 @@ namespace RenegadeCharacterBuilder
             switch (vm.CurrentIndex) // copy data but instead make it so that it sets the visibilty to collapsiable
             {
                 case 0:
-                    MessageBox.Show(vm.CurrentIndex.ToString());
+                  
                     view1.Visibility = Visibility.Visible;
                     view2.Visibility = Visibility.Collapsed;
                     view3.Visibility = Visibility.Collapsed;
                 return;
                 case 1:
-                    MessageBox.Show(vm.CurrentIndex.ToString());
+                    
                     view1.Visibility = Visibility.Collapsed;
                     view2.Visibility = Visibility.Visible;
                     view3.Visibility = Visibility.Collapsed;
                     return;
                 case 2:
-                    MessageBox.Show(vm.CurrentIndex.ToString());
+                   
                     view1.Visibility = Visibility.Collapsed;
                     view2.Visibility = Visibility.Collapsed;
                     view3.Visibility = Visibility.Visible;

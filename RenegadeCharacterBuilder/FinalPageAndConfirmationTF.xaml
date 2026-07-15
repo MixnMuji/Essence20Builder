@@ -22,13 +22,19 @@
             <RowDefinition Height="*"/>
 
         </Grid.RowDefinitions>
-        
+
         <StackPanel x:Name="view1" Grid.Row="1" DataContext="{Binding}">
-            
+
+            <Grid Grid.Row="1" Height="305">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                    <ColumnDefinition Width="400"/>
+                </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
             <TextBlock Text="{Binding Name,StringFormat= Character Name: {0}}"/>
             <TextBlock Text="{Binding  Pronouns, StringFormat= Pronouns: {0}}"/>
             <TextBlock Text="{Binding Description, StringFormat= Description: {0}}" />
-          
+
             <TextBlock Text="{Binding  CurrentLevel, StringFormat= Level: {0}}"/>
             <TextBlock Text="Role Information:" FontStyle="Normal" FontFamily="Bahnschrift" FontWeight="Bold"/>
             <TextBlock Text="{Binding Role.Name, StringFormat= Role: {0}}"/>
@@ -63,11 +69,41 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-            
-           
-             <!-- Origin dive finish-->
-
+           </StackPanel>
+  
+                
+           <!-- Hangups and Influes start-->
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="Influences" FontWeight="Bold"/>
+                    <ItemsControl ItemsSource="{Binding Influences}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Perk}" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <TextBlock Text="Hang Ups" FontWeight="Bold"/>
+                    <ItemsControl ItemsSource="{Binding Hang_Ups}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Effect}" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+                
+              
+        </Grid>
         </StackPanel>
+        
+        
+        <!-- 2nd Collection-->
         <StackPanel x:Name="view2" Grid.Row="1">
             <ItemsControl ItemsSource="{Binding dirivedStatsForXaml}" Grid.Row="1">
                 <ItemsControl.ItemsPanel>

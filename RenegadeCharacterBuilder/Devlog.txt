@@ -621,3 +621,10 @@ Changed derived stats into a model for xaml binding. Learned to give them a deau
 Added Dervied statas voer the skillss and scores in final page , view 2
 
 TODO Check spec ops subclass breaks because of space in name. Add page 3 with general perks, hang ups and influences add
+
+7-14
+
+Added hang ups and influences need to add some kind of resizing thing so it fills the entire space instad of getting hit by the next and previous buttons
+Leraned to not pout textblocks in itemcontrol
+
+Todo add general perk perks to a page and minicons etc.
