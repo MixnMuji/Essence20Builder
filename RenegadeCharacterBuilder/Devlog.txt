@@ -628,3 +628,7 @@ Added hang ups and influences need to add some kind of resizing thing so it fill
 Leraned to not pout textblocks in itemcontrol
 
 Todo add general perk perks to a page and minicons etc.
+
+7-17
+
+Added General Perk stuff, fixed  Layout bye swtitching most data intense element to  auto instead of a fix size
