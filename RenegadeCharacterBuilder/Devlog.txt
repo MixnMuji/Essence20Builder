@@ -632,3 +632,5 @@ Todo add general perk perks to a page and minicons etc.
 7-17
 
 Added General Perk stuff, fixed  Layout bye swtitching most data intense element to  auto instead of a fix size
+
+added companion page and messed with logic big ups today

@@ -38,18 +38,27 @@ namespace RenegadeCharacterBuilder
                     view1.Visibility = Visibility.Visible;
                     view2.Visibility = Visibility.Collapsed;
                     view3.Visibility = Visibility.Collapsed;
+                    View4.Visibility = Visibility.Collapsed;
                 return;
                 case 1:
                     
                     view1.Visibility = Visibility.Collapsed;
                     view2.Visibility = Visibility.Visible;
                     view3.Visibility = Visibility.Collapsed;
+                    View4.Visibility = Visibility.Collapsed;
                     return;
                 case 2:
                    
                     view1.Visibility = Visibility.Collapsed;
                     view2.Visibility = Visibility.Collapsed;
                     view3.Visibility = Visibility.Visible;
+                    View4.Visibility = Visibility.Collapsed;
+                    return;
+                case 3:
+                    view1.Visibility = Visibility.Collapsed;
+                    view2.Visibility = Visibility.Collapsed;
+                    view3.Visibility = Visibility.Collapsed;
+                    View4.Visibility = Visibility.Visible;
                     return;
 
             }

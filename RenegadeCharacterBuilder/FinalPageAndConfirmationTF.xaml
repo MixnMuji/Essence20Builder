@@ -172,6 +172,57 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </StackPanel>
+        
+        <!-- Extra stuff -->
+        <StackPanel Grid.Row="1" x:Name="View4">
+            <TextBlock Text="Companion Stuff" FontSize="22" FontWeight="Black"/>
+            <StackPanel>
+                <ItemsControl ItemsSource="{Binding companions}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Name,StringFormat= Character Name: {0}}"/>
+                                <TextBlock Text="{Binding  Pronouns, StringFormat= Pronouns: {0}}"/>
+                                <TextBlock Text="{Binding Description, StringFormat= Description: {0}}" />
+                                <ItemsControl ItemsSource="{Binding fullScoreList}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <UniformGrid Columns="4"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding Name}"/>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding CurrentRank}" HorizontalAlignment= "Center" Margin= "0,0,0,2" VerticalAlignment= "Bottom" />
+                                                </StackPanel>
+                                                <!-- Skills-->
+                                                <ItemsControl ItemsSource="{Binding CorrespondingSkills}">
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <StackPanel>
+                                                                <TextBlock Text="{Binding Name}"/>
+                                                                <StackPanel Orientation="Horizontal">
+                                                                    <TextBlock Text="{Binding SkillScore, Converter={StaticResource intToDie}}" HorizontalAlignment= "Center" Margin= "0,0,0,2" VerticalAlignment= "Bottom" />
+                                                                </StackPanel>
+                                                            </StackPanel>
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+
+                                                </ItemsControl>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+
+
+        </StackPanel>
         <Button Content="next" Grid.Row="2" Width="70" Click="Moveup" HorizontalAlignment="Right" Margin="0,0,30,0"/>
         <Button Content="Pervious" Grid.Row="2" Width="70" Click="MoveBack" HorizontalAlignment="Left" Margin="30,0,0,0"/>
     </Grid>

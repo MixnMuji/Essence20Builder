@@ -191,17 +191,32 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
         }
         public void Nextpage()
         {
-            if (CurrentIndex == 2)
+            if (CurrentIndex == 3 && companions[0].Name != "")
+            {
                 CurrentIndex = 0;
+            }
             else
-                CurrentIndex+=1;
+            {
+                if (CurrentIndex == 2 && companions[0].Name == "")
+                    CurrentIndex = 0;
+
+                else
+                    CurrentIndex += 1;
+            }
         }
         
         public void PreviousPage()
         {
-            if (CurrentIndex == 0)
-                currentIndex = 2;
-            else CurrentIndex-=1;
+            if (CurrentIndex == 0 && companions[0].Name != "")
+            {
+                CurrentIndex = 3;
+            }
+            else
+            {
+                if (CurrentIndex == 0 && companions[0].Name == "")
+                    currentIndex = 2;
+                else CurrentIndex -= 1;
+            }
         }
         private void NotifyPropertyChanged(string name)
         {
