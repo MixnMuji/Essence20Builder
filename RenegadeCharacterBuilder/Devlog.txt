@@ -634,3 +634,8 @@ Todo add general perk perks to a page and minicons etc.
 Added General Perk stuff, fixed  Layout bye swtitching most data intense element to  auto instead of a fix size
 
 added companion page and messed with logic big ups today
+
+
+7-18
+
+no actual coding today need to figure out how to get data from model and put it into a dpf

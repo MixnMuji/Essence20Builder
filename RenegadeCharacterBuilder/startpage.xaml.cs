@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RenegadeCharacterBuilder.Models.Transformers;
 
+
 namespace RenegadeCharacterBuilder
 {
     /// <summary>
@@ -19,8 +21,10 @@ namespace RenegadeCharacterBuilder
     /// </summary>
     public partial class startpage : Page
     {
+       
         public startpage()
         {
+            
             InitializeComponent();
             ComboBox1.ItemsSource = Enum.GetValues(typeof(GameSelected));
            
@@ -72,6 +76,9 @@ namespace RenegadeCharacterBuilder
                     break;
                 case "Focus":
                     NavigationService.Navigate(new FocusPerks());
+                    break;
+                case "PDFTest":
+                   
                     break;
             }
 
