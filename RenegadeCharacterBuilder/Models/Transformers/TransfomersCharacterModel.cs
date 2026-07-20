@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
 using System.Windows.Media.Animation;
-using RenegadeCharacterBuilder.Models.Transformers.Roots;
-using RenegadeCharacterBuilder.Models.Transformers.Enums;
 using RenegadeCharacterBuilder.CharacterModels.TransfomersCompaions;
+using RenegadeCharacterBuilder.Models.Transformers.Enums;
+using RenegadeCharacterBuilder.Models.Transformers.Roots;
 
 namespace RenegadeCharacterBuilder.Models.Transformers
 {
@@ -160,7 +161,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
             generalPointBank += i;
 
         }
-
+        
         public void GetGeneralPerkPonts()
         {
             string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "Roles.json");

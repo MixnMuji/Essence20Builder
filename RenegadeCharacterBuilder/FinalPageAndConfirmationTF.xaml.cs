@@ -12,6 +12,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHelpers;
+using QuestPDF.Fluent;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
 
 namespace RenegadeCharacterBuilder
 {
