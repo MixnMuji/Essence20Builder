@@ -38,4 +38,13 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="SavedCharacters\Transformers\Pdf\" />
+    <Folder Include="SavedCharacters\Transformers\Text\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="QuestPDF" Version="2026.7.1" />
+  </ItemGroup>
+
 </Project>

@@ -639,3 +639,12 @@ added companion page and messed with logic big ups today
 7-18
 
 no actual coding today need to figure out how to get data from model and put it into a dpf
+
+7-19
+
+very chill day learned about open source vs closed source had to do readings about lisences.
+
+Did digging into How NuGet works learned about typoSquatting. Instaled quest Pdf as to keep project free, for myself
+Ran questPDF test case
+
+TODO study aliases
