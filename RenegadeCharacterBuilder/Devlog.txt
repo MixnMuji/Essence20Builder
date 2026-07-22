@@ -654,3 +654,7 @@ TODO study aliases
 We're intering a brave new world here for pdf design so I mostly spent the day reading documentation
 
 put outline of thought process on pdf layout and made generic things to fill later and modify, ie pages and containers
+
+7-22 
+
+Broke the slump of having to learn no stuff, made the skeleton of what I wanted to build in pdf builder and made the first cell for the title.

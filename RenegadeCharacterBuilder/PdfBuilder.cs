@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using System.Windows.Documents;
 using System.Xml.Linq;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
+using RenegadeCharacterBuilder.Models.Transformers;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 
 namespace RenegadeCharacterBuilder
@@ -15,10 +18,14 @@ namespace RenegadeCharacterBuilder
     {
       // use containers to fill different sections
         public string path { get; set; } // since it's here I can assign it and refference it no problem
+        public int decider { get; set; }
+
+        
         public void GenerateCharacterPDf(int decider)
         {
             // Int decider will be a number code that will determine what character object is ie transformers,mlp, powerrangers, etc
             /*
+             * 0 Title
              * 1) Define each sections as blocks  So really we need a blocks
              *  Visual representaiton of blocks  editors note || represents column devision
                 [
@@ -60,7 +67,7 @@ namespace RenegadeCharacterBuilder
              
              
              */
-            
+
             switch (decider)
             {
                 case 1:
@@ -68,86 +75,97 @@ namespace RenegadeCharacterBuilder
                                   "Transformers",
                                   "Pdf",
                                   $"{TFCharacterSession.CurrentTransfomer.Name}.pdf"
-                                 
+
                      );
-                    break;
+                    return;
+                    // put other game characters here
             }
-            
+            Processpdf(path); // this will generate the pdf
+
+        }
+
+        private void Processpdf(string path)
+        {
             Directory.CreateDirectory(System.IO.Path.GetDirectoryName(path));
 
-            Document.Create(Container =>
-            {
-                Container.Page(page =>
+            //add content that needs to be found in deciders
+            /*
+                1)game Name
+             
+             */
+            // thing about return here
+            Document
+                .Create(document =>
                 {
-                    page.Size(PageSizes.A4);
-                    page.Margin(2, Unit.Centimetre);
-                    page.PageColor(QuestPDF.Helpers.Colors.White);
-                    page.DefaultTextStyle(x => x.FontSize(20));
+                    document.Page(page =>
+                    {
+                        page.Size(PageSizes.A4);
+                        page.DefaultTextStyle(x => x.FontSize(20));
+                        page.Margin(25);
 
-                    page.Header()
-    .Text("Hello PDF!")
-    .SemiBold().FontSize(36).FontColor(QuestPDF.Helpers.Colors.Blue.Medium);
-
-                    page.Content()
-                        .PaddingVertical(1, Unit.Centimetre)
-                        .Column(x =>
+                        page.Content()
+                        .PaddingBottom(15).Column(c =>
                         {
-                            x.Spacing(20);
+                            c.Item().Element(GameTitle(decider); // mind you this will need amd the otherw will need row defitions in the actuall containers
+                            c.Item().Element(CharracterFull);
+                            c.Item().Element(CharracterFluff);
+                            c.Item().Element(HAngups & Equipment);
+                            c.Item().Element(CharracterFull);
+                            c.Item().Element(Statblock);
+                            c.Item().PageBreak();
+                            c.Item().Element(PerksGearsAndBackGroundBonds);
+                            c.Item().Element(WeaponsORHardPoints); // have another run at the switch case to determine which block is built gijoe and transformers are slightly diff
+                            c.Item().Element(Altmodes); // run in an if statement as this is unique to transformers so don't need it in gijoe etc
+                            c.Item().Element(Statblock);
+                            c.Item().Element(Origin); // Other things seem to have different things at the end here
+                            c.Item().PageBreak();
+                            c.Item().Element(RoleAndSubclassInfo); // sheets lack this and I think they need the in depth reminder of skills and abilites with levels
+                            c.Item().Element(Companion); // another if statment which would bascially be a mini sheet attached if the character
+                                                         // has a companion of some sort, this is also missing from the offical release, so add pagebreakbefore
 
-                            x.Item().Text(Placeholders.LoremIpsum());
-                            x.Item().Image(Placeholders.Image(200, 100));
+
                         });
+                    });
 
-                    page.Footer()
-                        .AlignCenter()
-                        .Text(x =>
-                        {
-                            x.Span("Page ");
-                            x.CurrentPageNumber();
-                        });
-                });
-            }).GeneratePdf(path);
-
+                }).GeneratePdf(path);
             Process.Start(new ProcessStartInfo
             {
                 FileName = path,
                 UseShellExecute = true
             });
+
         }
 
-    
-    private void GreenSection(IContainer container)
+
+        private void GameTitle(int decider, IContainer container)
         {
-            container.Grid(grid =>
+            switch (decider)
             {
-                grid.Columns(3);
-                grid.Spacing(15);
+                case 1:
+                    container.Table(t =>
+                    {
+                        t.ColumnsDefinition(c =>
+                        {
+                            c.RelativeColumn();
+                        });
 
-                grid.Item(3).Text("Green section")
-                    .FontColor(Colors.Green.Darken2).FontSize(32).Bold();
+                        var color = TFCharacterSession.CurrentTransfomer.Faction == Alliegence.Descepticon ? Colors.Purple.Lighten1 : Colors.Red.Lighten1;
 
-                grid.Item(3).Text(Placeholders.Paragraph()).Light();
+                        t.Cell()
+                        .Background(color)
+                        .Padding(10)
+                        .Text("Transformers")
+                        .FontColor(Colors.White).
+                        FontSize(33).
+                        Bold();
 
-                foreach (var i in Enumerable.Range(0, 12))
-                    grid.Item().AspectRatio(4 / 3f).Background(Colors.Green.Lighten4);
-            });
+                    } );
+                    return;
+                
+            }
+
         }
-
-        private void BlueSection(IContainer container)
-        {
-            container.Grid(grid =>
-            {
-                grid.Columns(3);
-                grid.Spacing(15);
-
-                grid.Item(3).Text("Blue section")
-                    .FontColor(Colors.Blue.Darken2).FontSize(32).Bold();
-
-                grid.Item(3).Text(Placeholders.Paragraph()).Light();
-
-                foreach (var i in Enumerable.Range(0, 18))
-                    grid.Item().AspectRatio(4 / 3f).Background(Colors.Blue.Lighten4);
-            });
-        }
+       
+        
     }
 }
