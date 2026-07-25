@@ -658,3 +658,10 @@ put outline of thought process on pdf layout and made generic things to fill lat
 7-22 
 
 Broke the slump of having to learn no stuff, made the skeleton of what I wanted to build in pdf builder and made the first cell for the title.
+
+7-25
+
+Rough week at work anyways made character full container
+
+Learned that you basically never define rows in quest pdf just make the cells one by one and bash em together,
+so I made the cells for the 2nd container character fluff

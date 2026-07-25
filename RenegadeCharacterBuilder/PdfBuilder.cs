@@ -4,7 +4,9 @@ using System.Data.Common;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Windows.Input;
 using System.Xml.Linq;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
@@ -77,7 +79,7 @@ namespace RenegadeCharacterBuilder
                                   $"{TFCharacterSession.CurrentTransfomer.Name}.pdf"
 
                      );
-                    return;
+                    break;
                     // put other game characters here
             }
             Processpdf(path); // this will generate the pdf
@@ -106,10 +108,9 @@ namespace RenegadeCharacterBuilder
                         page.Content()
                         .PaddingBottom(15).Column(c =>
                         {
-                            c.Item().Element(GameTitle(decider); // mind you this will need amd the otherw will need row defitions in the actuall containers
-                            c.Item().Element(CharracterFull);
+                            c.Item().Element(GameTitle); // mind you this will need amd the otherw will need row defitions in the actuall containers
                             c.Item().Element(CharracterFluff);
-                            c.Item().Element(HAngups & Equipment);
+                            c.Item().Element(HAngups&Equipment);
                             c.Item().Element(CharracterFull);
                             c.Item().Element(Statblock);
                             c.Item().PageBreak();
@@ -137,7 +138,7 @@ namespace RenegadeCharacterBuilder
         }
 
 
-        private void GameTitle(int decider, IContainer container)
+        private void GameTitle( IContainer container)
         {
             switch (decider)
             {
@@ -165,7 +166,65 @@ namespace RenegadeCharacterBuilder
             }
 
         }
-       
-        
+        private void CharracterFluff(IContainer container)
+        {
+            switch (decider)
+            {
+                case 1:
+                    container.Table(t =>
+                    {
+                        t.ColumnsDefinition(c =>
+                        {
+                            c.RelativeColumn(2); //left
+                            c.RelativeColumn(3); // middle
+                            c.RelativeColumn(1); // right
+                        });
+
+                        //row 1
+                        t.Cell().Border(1)
+                        .Padding(5)
+                        .Column(c =>
+                        {
+                            c.Item().Text($" Name: {TFCharacterSession.CurrentTransfomer.Name}");
+                            c.Item().Text($"Pronouns: {TFCharacterSession.CurrentTransfomer.Pronouns}");
+                        });
+
+                        //section two
+
+                        t.Cell()
+                        .RowSpan(2)
+                        .Border(1)
+                        .Padding(5)
+                        .Text($"{TFCharacterSession.CurrentTransfomer.Description}");
+
+                       t.Cell()
+                       .Border(1)
+                       .Padding(5)
+                       .Text("Languages");
+
+
+                        // row 2
+                        t.Cell()
+                        .Border(1)
+                        .Padding(5)
+                        .Column(c =>
+                        {
+                            c.Item().Text($" Origin: {TFCharacterSession.CurrentTransfomer.Origns[0].Name}");
+                            c.Item().Text($" Role: {TFCharacterSession.CurrentTransfomer.Role.Name}");
+                            c.Item().Text($" Level: {TFCharacterSession.CurrentTransfomer.CurrentLevel}");
+                        });
+
+                        t.Cell()
+                        .Border(1)
+                        .Padding(5)
+                        .Text($"Faction: {TFCharacterSession.CurrentTransfomer.Faction}");
+
+                    });
+                    return;
+            }
+        }
+
+
+
     }
 }
