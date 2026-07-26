@@ -35,6 +35,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public List<string> Languages { get; set; }
         public List<InfluencesTF> Influences { get; set; }
         public List<HangUps> Hang_Ups { get; set; }
+
+        public List<GearTF> Gear { get; set; } = new();
         public int Health { get; set; }
 
         public int generalPointBank { get; set; }

@@ -18,11 +18,11 @@ namespace RenegadeCharacterBuilder
 {
     public class PdfBuilder
     {
-      // use containers to fill different sections
+        // use containers to fill different sections
         public string path { get; set; } // since it's here I can assign it and refference it no problem
         public int decider { get; set; }
 
-        
+
         public void GenerateCharacterPDf(int decider)
         {
             // Int decider will be a number code that will determine what character object is ie transformers,mlp, powerrangers, etc
@@ -110,7 +110,7 @@ namespace RenegadeCharacterBuilder
                         {
                             c.Item().Element(GameTitle); // mind you this will need amd the otherw will need row defitions in the actuall containers
                             c.Item().Element(CharracterFluff);
-                            c.Item().Element(HAngups&Equipment);
+                            c.Item().Element(HangUpsAndEquipment);
                             c.Item().Element(CharracterFull);
                             c.Item().Element(Statblock);
                             c.Item().PageBreak();
@@ -138,7 +138,7 @@ namespace RenegadeCharacterBuilder
         }
 
 
-        private void GameTitle( IContainer container)
+        private void GameTitle(IContainer container)
         {
             switch (decider)
             {
@@ -160,9 +160,9 @@ namespace RenegadeCharacterBuilder
                         FontSize(33).
                         Bold();
 
-                    } );
+                    });
                     return;
-                
+
             }
 
         }
@@ -197,10 +197,10 @@ namespace RenegadeCharacterBuilder
                         .Padding(5)
                         .Text($"{TFCharacterSession.CurrentTransfomer.Description}");
 
-                       t.Cell()
-                       .Border(1)
-                       .Padding(5)
-                       .Text("Languages");
+                        t.Cell()
+                        .Border(1)
+                        .Padding(5)
+                        .Text("Languages");
 
 
                         // row 2
@@ -224,6 +224,72 @@ namespace RenegadeCharacterBuilder
             }
         }
 
+        private void HangUpsAndEquipment(IContainer container)
+       {
+            switch (decider)
+            {
+                case 1:
+                    container.Table(t =>
+                    {
+                        t.ColumnsDefinition(c =>
+                        {
+                            c.RelativeColumn(2);
+                            c.RelativeColumn(3); // middle
+                            c.RelativeColumn(1);
+
+                        });
+                        t.Cell().Border(1).Padding(5).Column(c =>
+                        {
+                            c.Item().Text("Influences: ").Bold();
+                            foreach (var influence in TFCharacterSession.CurrentTransfomer.Influences)
+                            {
+                                c.Item().Text($"{influence.Name}: {influence.Perk}");
+                            }
+                        });
+
+                        t.Cell().Border(1).Padding(5).Text($"Health: {TFCharacterSession.CurrentTransfomer.Health}");
+
+                        //gear and column 3
+
+                        t.Cell().RowSpan(3).Border(1).Padding(5).Column(c =>
+                        {
+                            c.Item().Text("Gear");
+                            c.Item().Text("Name Range Attack  Effect Notes");
+
+                            if (TFCharacterSession.CurrentTransfomer.Gear[0].Name.Equals(""))
+                            {
+                                c.Item().Text("");
+                            }
+                            else
+                            {
+                                foreach (var gear in TFCharacterSession.CurrentTransfomer.Gear)
+                                {
+
+                                    c.Item().Text($"{gear.Name}  {gear.Range}  {gear.Attack}  {gear.Effect}  {gear.Notes}");
+                                }
+                            }
+                        });
+
+                        //row two
+                        t.Cell().Border(1).Padding(5).Column(c =>
+                        {
+                            c.Item().Text("Hang Ups:");
+                            foreach(var hang in TFCharacterSession.CurrentTransfomer.Hang_Ups)
+                            {
+                                c.Item().Text($"{hang.Name}: {hang.Effect}");
+                            }
+                        });
+
+                        t.Cell().Border(1).Border(5).Text($"Movment:{TFCharacterSession.CurrentTransfomer.Origns[0].BotMode.Movement}");
+                        
+                        
+                      
+                    });
+                return;
+            }
+       }
+
+    
 
 
     }

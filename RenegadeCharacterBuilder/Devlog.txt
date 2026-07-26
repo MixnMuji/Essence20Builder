@@ -665,3 +665,8 @@ Rough week at work anyways made character full container
 
 Learned that you basically never define rows in quest pdf just make the cells one by one and bash em together,
 so I made the cells for the 2nd container character fluff
+
+7-26
+
+Made container for hang ups and influence leared that to add mutliple lines of text your need to have a comulmn lambda
+Made geartf class for later use
