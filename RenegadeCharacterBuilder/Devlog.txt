@@ -670,3 +670,8 @@ so I made the cells for the 2nd container character fluff
 
 Made container for hang ups and influence leared that to add mutliple lines of text your need to have a comulmn lambda
 Made geartf class for later use
+
+7-27
+
+Made container for statblock need to add the background colors for fun but other than than pretty straight forward may need to add a span to it so it takes up the rows I want
+anyways was fun

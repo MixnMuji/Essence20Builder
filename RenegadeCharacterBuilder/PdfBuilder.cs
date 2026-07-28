@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Windows.Controls;
@@ -11,6 +12,7 @@ using System.Xml.Linq;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
+using RenegadeCharacterBuilder.GlobalMethods;
 using RenegadeCharacterBuilder.Models.Transformers;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 
@@ -25,6 +27,7 @@ namespace RenegadeCharacterBuilder
 
         public void GenerateCharacterPDf(int decider)
         {
+            
             // Int decider will be a number code that will determine what character object is ie transformers,mlp, powerrangers, etc
             /*
              * 0 Title
@@ -111,13 +114,12 @@ namespace RenegadeCharacterBuilder
                             c.Item().Element(GameTitle); // mind you this will need amd the otherw will need row defitions in the actuall containers
                             c.Item().Element(CharracterFluff);
                             c.Item().Element(HangUpsAndEquipment);
-                            c.Item().Element(CharracterFull);
                             c.Item().Element(Statblock);
                             c.Item().PageBreak();
                             c.Item().Element(PerksGearsAndBackGroundBonds);
                             c.Item().Element(WeaponsORHardPoints); // have another run at the switch case to determine which block is built gijoe and transformers are slightly diff
                             c.Item().Element(Altmodes); // run in an if statement as this is unique to transformers so don't need it in gijoe etc
-                            c.Item().Element(Statblock);
+                            c.Item().Element(Statblock2);
                             c.Item().Element(Origin); // Other things seem to have different things at the end here
                             c.Item().PageBreak();
                             c.Item().Element(RoleAndSubclassInfo); // sheets lack this and I think they need the in depth reminder of skills and abilites with levels
@@ -289,7 +291,84 @@ namespace RenegadeCharacterBuilder
             }
        }
 
-    
+        private void Statblock(IContainer container)
+        {
+            var convert = new DieConverter();
+            
+
+            container.Table(t =>
+            {
+                t.ColumnsDefinition(c =>
+                {
+                    c.RelativeColumn(2);
+                    c.RelativeColumn(3);
+                    c.RelativeColumn(4);
+                    c.ConstantColumn(1);
+
+                });
+
+                //column 1
+                t.Cell().Border(1).Padding(5).Column(c =>
+                {
+                    c.Item().Text($"STRENGTH {TFCharacterSession.CurrentTransfomer.Strenght.CurrentRank}");
+                    c.Item().Text($"TOUGHNESS: {TFCharacterSession.CurrentTransfomer.Toughness.Value}");
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.Strenght.CurrentRank} +  + "); // add armor and way to track perks taken
+                    foreach(SkillTF skill in TFCharacterSession.CurrentTransfomer.Strenght.CorrespondingSkills)
+                    {
+                        string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}"); 
+                    }
+               
+                });
+
+                //column 2
+                t.Cell().Border(1).Padding(5).Column(c =>
+                {
+                    c.Item().Text($"SPEED {TFCharacterSession.CurrentTransfomer.Speed.CurrentRank}");
+                    c.Item().Text($"Evasion: {TFCharacterSession.CurrentTransfomer.Evasion.Value}");
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.Speed.CurrentRank} +  + "); // add armor and way to track perks taken
+                    foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.Speed.CorrespondingSkills)
+                    {
+                        string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}");
+                    }
+
+                });
+
+                //column 3
+                t.Cell().Border(1).Padding(5).Column(c =>
+                {
+                    c.Item().Text($"SMARTS {TFCharacterSession.CurrentTransfomer.Smarts.CurrentRank}");
+                    c.Item().Text($"WILLPOWER: {TFCharacterSession.CurrentTransfomer.Willpower.Value}");
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.Smarts.CurrentRank} +  + "); // add armor and way to track perks taken
+                    foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.Smarts.CorrespondingSkills)
+                    {
+                        string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}");
+                    }
+
+
+                });
+
+                //column 4
+                t.Cell().Border(1).Padding(5).Column(c =>
+                {
+                    c.Item().Text($"SOCIAL {TFCharacterSession.CurrentTransfomer.Social.CurrentRank}");
+                    c.Item().Text($"Cleverness: {TFCharacterSession.CurrentTransfomer.Cleverness.Value}");
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.Social.CurrentRank} +  + "); // add armor and way to track perks taken
+                    foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.Social.CorrespondingSkills)
+                    {
+                        string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}");
+                    }
+
+
+                });
+            });
+           
+        }
+
+
 
 
     }
