@@ -6,6 +6,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
 {
     public class Altmode
     {
+        public string OrignName { get; set; }
         public int Movement { get; set; }
         public  string Type { get; set; }
         public int? Movement2 { get; set; }

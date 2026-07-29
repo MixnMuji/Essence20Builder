@@ -119,12 +119,11 @@ namespace RenegadeCharacterBuilder
                             c.Item().Element(PerksGearsAndBackGroundBonds);
                             c.Item().Element(WeaponsORHardPoints); // have another run at the switch case to determine which block is built gijoe and transformers are slightly diff
                             c.Item().Element(Altmodes); // run in an if statement as this is unique to transformers so don't need it in gijoe etc
-                            c.Item().Element(Statblock2);
                             c.Item().Element(Origin); // Other things seem to have different things at the end here
                             c.Item().PageBreak();
                             c.Item().Element(RoleAndSubclassInfo); // sheets lack this and I think they need the in depth reminder of skills and abilites with levels
                             c.Item().Element(Companion); // another if statment which would bascially be a mini sheet attached if the character
-                                                         // has a companion of some sort, this is also missing from the offical release, so add pagebreakbefore
+                            c.Item().Element(Statblock2);                             // has a companion of some sort, this is also missing from the offical release, so add pagebreakbefore
 
 
                         });
@@ -369,7 +368,103 @@ namespace RenegadeCharacterBuilder
         }
 
 
+        private void PerksGearsAndBackGroundBonds(IContainer container)
+        {
+            container.Table(t =>
+            {
+                t.ColumnsDefinition(c =>
+                {
+                    c.RelativeColumn(2);
+                    c.RelativeColumn(3);
+                    c.RelativeColumn(10);
+                });
 
+                t.Cell().Border(1).Padding(5).Column(c =>
+                {
+                    c.Item().Text("Perks").Bold();
+                    foreach(GeneralPerkTF g in TFCharacterSession.CurrentTransfomer.PickedPerks)
+                    {
+                        c.Item().Text($"{g.Name}").Bold();
+                        c.Item().Text($"{g.Text}");
+                    }
+                });
+                
+                t.Cell().Border(1).Padding(5).Column(c =>
+                {
+                    c.Item().Text("Gear").Bold();
+                    foreach (GearTF g in TFCharacterSession.CurrentTransfomer.Gear)
+                    {
+                        c.Item().Text($"{g.Name}").Bold();
+                        c.Item().Text($"{g.Notes}");
+                    }
+                });
+                t.Cell().Border(1).Padding(5).Column(c =>
+                {
+                    c.Item().Text("Background Bonds").Bold();
+                    
+                });
+            });
+        }
+
+        private void WeaponsORHardPoints(IContainer container)
+        {
+            container.Table(t =>
+            {
+                t.ColumnsDefinition(c =>
+                {
+                    c.RelativeColumn();
+                });
+
+                t.Cell().Border(1).Padding(5).Column(c =>
+                {
+                    int count = 0;
+                    c.Item().Text("Hardpoints").Bold();
+                    c.Item().Text("NAME   RANGE   HARDPOINT   TRAITS   EFFECTS  ALTENRATE EFFECTS");
+                    foreach(HardPoint H in TFCharacterSession.CurrentTransfomer.HardPointsList)
+                    {
+                        c.Item().Text($"{H.name}  {H.range}   {count}  {H.traits}  {H.effects}  {H.alternateEffects}");
+                        count++;
+                    }
+                });
+            });
+        }
+        
+        private void Altmodes(IContainer container)
+        {
+            
+            container.Table(t =>
+            {
+            t.ColumnsDefinition(c =>
+            {
+                foreach (Altmode a in TFCharacterSession.CurrentTransfomer.Altmodes) 
+                {
+                    c.RelativeColumn();
+                   
+                }
+            });
+
+            t.Cell().Border(1).Padding(5).Text("ALTMODES");
+
+            foreach (Altmode a in TFCharacterSession.CurrentTransfomer.Altmodes) // theorectically we can make a column for every altmode this way 
+            {
+                    t.Cell().Border(1).Padding(5).Column(c =>
+                    {
+                        c.Item().Text($" Origin Name: {a.OrignName}"); //add name to altmode
+                        c.Item().Text($" Crew: {a.Crew}");
+                        c.Item().Text($" Size: {a.Size}");
+                        c.Item().Text($" Movement {a.Movement}");
+                        c.Item().Text($" Movement Type {a.Type}");
+                        if(a.Movement2 != null) 
+                        {
+                            c.Item().Text($"Movement 2{a.Movement2}");
+                            c.Item().Text($"Movement Type{a.Type2}");
+                        }
+                    });
+            };
+
+                
+            });
+        }
 
     }
 }

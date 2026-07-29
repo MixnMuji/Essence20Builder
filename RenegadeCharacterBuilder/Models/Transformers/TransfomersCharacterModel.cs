@@ -37,6 +37,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public List<HangUps> Hang_Ups { get; set; }
 
         public List<GearTF> Gear { get; set; } = new();
+
+        public List<HardPoint> HardPointsList { get; set; } = new List<HardPoint>();
         public int Health { get; set; }
 
         public int generalPointBank { get; set; }

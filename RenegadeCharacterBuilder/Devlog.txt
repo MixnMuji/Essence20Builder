@@ -675,3 +675,7 @@ Made geartf class for later use
 
 Made container for statblock need to add the background colors for fun but other than than pretty straight forward may need to add a span to it so it takes up the rows I want
 anyways was fun
+
+7-28
+
+Made containter for perks and gear, Harpoints, made hardpoint model which I'll have to fill out later, made container for altmodes
