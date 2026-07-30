@@ -534,18 +534,23 @@ namespace RenegadeCharacterBuilder
                 {
                     c.Item().Text($"Subclasss: {TFCharacterSession.CurrentTransfomer.sub.subclassName}");
                     int counter = 0;
-                    while(counter <= TFCharacterSession.CurrentTransfomer.Role.Levels[]
-                    
-                    foreach(FocusPerk r in TFCharacterSession.CurrentTransfomer.sub.ranks)
-                    {
-
+                    int limit = 0;// needs to be equal to focuss progression
+                    foreach(LevelTF l in TFCharacterSession.CurrentTransfomer.Role.Levels.Where(x => x.Level <= TFCharacterSession.CurrentTransfomer.CurrentLevel)) 
+                    { if(l.FocusProgression != 0)
+                        {
+                            limit++;
+                        }
                     }
-                    c.Item().Text($"{TFCharacterSession.CurrentTransfomer.sub}");
-                    c.Item().Text($"{TFCharacterSession.CurrentTransfomer.Role.}");
-                    c.Item().Text($"{TFCharacterSession.CurrentTransfomer.Role.}");
-                    c.Item().Text($"{TFCharacterSession.CurrentTransfomer.Role.}");
-                    c.Item().Text($"{TFCharacterSession.CurrentTransfomer.Role.}");
-                    c.Item().Text($"{TFCharacterSession.CurrentTransfomer.Role.}");
+                    while (counter <= limit) 
+                    {
+                        foreach (FocusPerk r in TFCharacterSession.CurrentTransfomer.sub.ranks)
+                        {
+                            c.Item().Text($"{r.AbilityName}");
+                            c.Item().Text($"{r.AbilityEffect}");
+                            counter++;
+
+                        }
+                    }
                 });
 
             });

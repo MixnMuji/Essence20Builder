@@ -683,3 +683,4 @@ Made containter for perks and gear, Harpoints, made hardpoint model which I'll h
 7-29 
 
 Made Roles role container need to finish the other half of it with the subclasses.
+edit finished counter
