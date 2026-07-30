@@ -119,7 +119,7 @@ namespace RenegadeCharacterBuilder
                             c.Item().Element(PerksGearsAndBackGroundBonds);
                             c.Item().Element(WeaponsORHardPoints); // have another run at the switch case to determine which block is built gijoe and transformers are slightly diff
                             c.Item().Element(Altmodes); // run in an if statement as this is unique to transformers so don't need it in gijoe etc
-                            c.Item().Element(Origin); // Other things seem to have different things at the end here
+                            c.Item().Element(OriginNotes); // Other things seem to have different things at the end here
                             c.Item().PageBreak();
                             c.Item().Element(RoleAndSubclassInfo); // sheets lack this and I think they need the in depth reminder of skills and abilites with levels
                             c.Item().Element(Companion); // another if statment which would bascially be a mini sheet attached if the character
@@ -465,6 +465,90 @@ namespace RenegadeCharacterBuilder
                 
             });
         }
+        private void OriginNotes(IContainer container)
+        {
+            container.Table(t =>
+            {
+                t.ColumnsDefinition(c =>
+                {
+                    c.RelativeColumn();
+                });
+                t.Cell().Border(1).Padding(5).Column(c => {
+                    c.Item().Text("Origin Notes");
+                    c.Item().Text(""); // need to have notes written before hand questpdf doesn't allow fillables
 
+                });
+            });
+        }
+
+        private void RoleAndSubclassInfo(IContainer container)
+        {
+            container.Table(t =>
+            {
+                t.ColumnsDefinition(c =>
+                {
+                    c.RelativeColumn(2);
+                    c.RelativeColumn(1);
+                });
+
+                t.Cell().Border(1).Padding(5).Column(c =>
+                {
+                    c.Item().Text($"Role: {TFCharacterSession.CurrentTransfomer.Role.Name}").Bold();
+                    c.Item().Text($"CyberTronian Perk: {TFCharacterSession.CurrentTransfomer.Role.CyberTronianPerk}");
+                    c.Item().Text("Qualifications").Bold(); ;
+                    c.Item().Text($"Armor: {TFCharacterSession.CurrentTransfomer.Role.Qualifications.ArmorUpgrades}");
+                    c.Item().Text($"Weapon: {TFCharacterSession.CurrentTransfomer.Role.Qualifications.Weapons}");
+                    foreach (LevelTF l in TFCharacterSession.CurrentTransfomer.Role.Levels.Where(x => x.Level <= TFCharacterSession.CurrentTransfomer.CurrentLevel))
+                    {
+                        c.Item().Text($"Level {l.Level}").Bold();
+                        if (l.Perk[0].Name != null)
+                        {
+                            foreach (Perk p in l.Perk)
+                            {
+                                c.Item().Text($"{p.Name}");
+                                c.Item().Text($"{p.Effect}");
+
+                        }
+                            }
+                        if(l.SpeedBoost != 0)
+                        {
+                            c.Item().Text($"Essance Score Increase: Speed +{l.SpeedBoost}");
+                        }
+                        if (l.SmartsBoost != 0)
+                        {
+                            c.Item().Text($"Essance Score Increase: Smarts +{l.SmartsBoost}");
+                        }
+                        if (l.StrengthBoost != 0)
+                        {
+                            c.Item().Text($"Essance Score Increase: Strength +{l.StrengthBoost}");
+                        }
+                        if (l.SocialBoost != 0)
+                        {
+                            c.Item().Text($"Essance Score Increase: Social +{l.SocialBoost}");
+                        }
+                    };
+             
+    });
+
+                t.Cell().Border(1).Padding(5).Column(c =>
+                {
+                    c.Item().Text($"Subclasss: {TFCharacterSession.CurrentTransfomer.sub.subclassName}");
+                    int counter = 0;
+                    while(counter <= TFCharacterSession.CurrentTransfomer.Role.Levels[]
+                    
+                    foreach(FocusPerk r in TFCharacterSession.CurrentTransfomer.sub.ranks)
+                    {
+
+                    }
+                    c.Item().Text($"{TFCharacterSession.CurrentTransfomer.sub}");
+                    c.Item().Text($"{TFCharacterSession.CurrentTransfomer.Role.}");
+                    c.Item().Text($"{TFCharacterSession.CurrentTransfomer.Role.}");
+                    c.Item().Text($"{TFCharacterSession.CurrentTransfomer.Role.}");
+                    c.Item().Text($"{TFCharacterSession.CurrentTransfomer.Role.}");
+                    c.Item().Text($"{TFCharacterSession.CurrentTransfomer.Role.}");
+                });
+
+            });
+        }
     }
 }
