@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using RenegadeCharacterBuilder.Models;
 using RenegadeCharacterBuilder.Models.Transformers;
 
 namespace RenegadeCharacterBuilder.GlobalMethods
@@ -23,10 +24,10 @@ namespace RenegadeCharacterBuilder.GlobalMethods
         public List<HangUps> Hang_Ups { get; set; }
         public int Health { get; set; }
 
-        public int Evasion { get; set; }
-        public int Toughness { get; set; }
-        public int Cleverness { get; set; }
-        public int Willpower { get; set; }
+        public DirivedStat Evasion { get; set; }
+        public DirivedStat Toughness { get; set; }
+        public DirivedStat Cleverness { get; set; }
+        public DirivedStat Willpower { get; set; }
         public ScoreTF Strenght { get; set; }
         public ScoreTF Speed { get; set; }
         public ScoreTF Smarts { get; set; }

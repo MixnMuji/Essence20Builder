@@ -12,6 +12,7 @@ using System.Xml.Linq;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
+using RenegadeCharacterBuilder.CharacterModels.TransfomersCompaions;
 using RenegadeCharacterBuilder.GlobalMethods;
 using RenegadeCharacterBuilder.Models.Transformers;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
@@ -122,8 +123,16 @@ namespace RenegadeCharacterBuilder
                             c.Item().Element(OriginNotes); // Other things seem to have different things at the end here
                             c.Item().PageBreak();
                             c.Item().Element(RoleAndSubclassInfo); // sheets lack this and I think they need the in depth reminder of skills and abilites with levels
-                            c.Item().Element(Companion); // another if statment which would bascially be a mini sheet attached if the character
-                            c.Item().Element(Statblock2);                             // has a companion of some sort, this is also missing from the offical release, so add pagebreakbefore
+                            if(TFCharacterSession.CurrentTransfomer.companions.Count != 0) 
+                            {
+                                for(int i = 0; i< TFCharacterSession.CurrentTransfomer.companions.Count; i++)
+                                {
+                                    c.Item().Element(container => Companion( container, i));
+                                    c.Item().Element(container=> Statblock2(container, i));
+
+                                } 
+                            }
+                                                    
 
 
                         });
@@ -536,7 +545,9 @@ namespace RenegadeCharacterBuilder
                     int counter = 0;
                     int limit = 0;// needs to be equal to focuss progression
                     foreach(LevelTF l in TFCharacterSession.CurrentTransfomer.Role.Levels.Where(x => x.Level <= TFCharacterSession.CurrentTransfomer.CurrentLevel)) 
-                    { if(l.FocusProgression != 0)
+                    { 
+                        //basically go through all the levels until you get to the current level if they increase the subclass rank add to the limit, if not limit stays the same
+                        if(l.FocusProgression != 0)
                         {
                             limit++;
                         }
@@ -547,12 +558,119 @@ namespace RenegadeCharacterBuilder
                         {
                             c.Item().Text($"{r.AbilityName}");
                             c.Item().Text($"{r.AbilityEffect}");
-                            counter++;
+                            counter++; // once we hit the limit we'll stop listing the subclasses ability name and effects
 
                         }
                     }
                 });
 
+            });
+        }
+        private void Companion(IContainer container, int index)
+        {
+            container.Table(t =>
+            {
+                t.ColumnsDefinition(c =>
+                {
+                    c.RelativeColumn(2); //left
+                    c.RelativeColumn(1); // right
+                });
+
+               
+                t.Cell().Border(1)
+                .Padding(5)
+                .Column(c =>
+                 {
+                  c.Item().Text($" Name: {TFCharacterSession.CurrentTransfomer.companions[index].Name}");
+                  c.Item().Text($"Pronouns: {TFCharacterSession.CurrentTransfomer.companions[index].Pronouns}");
+                  });
+
+                    //section two
+
+                    t.Cell()
+                    .RowSpan(2)
+                    .Border(1)
+                    .Padding(5)
+                    .Text($"{TFCharacterSession.CurrentTransfomer.companions[index].Description}");
+                
+            });
+        
+        }
+               
+          
+        private void Statblock2(IContainer container, int index)
+        {
+            var convert = new DieConverter();
+
+
+            container.Table(t =>
+            {
+                t.ColumnsDefinition(c =>
+                {
+                    c.RelativeColumn(2);
+                    c.RelativeColumn(3);
+                    c.RelativeColumn(4);
+                    c.ConstantColumn(1);
+
+                });
+
+                //column 1
+                t.Cell().Border(1).Padding(5).Column(c =>
+                {
+                    c.Item().Text($"STRENGTH {TFCharacterSession.CurrentTransfomer.companions[index].Strenght.CurrentRank}");
+                    c.Item().Text($"TOUGHNESS: {TFCharacterSession.CurrentTransfomer.companions[index].Toughness.Value}");
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.companions[index].Strenght.CurrentRank} +  + "); // add armor and way to track perks taken
+                    foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.companions[index].Strenght.CorrespondingSkills)
+                    {
+                        string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}");
+                    }
+
+                });
+
+                //column 2
+                t.Cell().Border(1).Padding(5).Column(c =>
+                {
+                    c.Item().Text($"SPEED {TFCharacterSession.CurrentTransfomer.companions[index].Speed.CurrentRank}");
+                    c.Item().Text($"Evasion: {TFCharacterSession.CurrentTransfomer.companions[index].Evasion.Value}");
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.companions[index].Speed.CurrentRank} +  + "); // add armor and way to track perks taken
+                    foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.companions[index].Speed.CorrespondingSkills)
+                    {
+                        string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}");
+                    }
+
+                });
+
+                //column 3
+                t.Cell().Border(1).Padding(5).Column(c =>
+                {
+                    c.Item().Text($"SMARTS {TFCharacterSession.CurrentTransfomer.companions[index].Smarts.CurrentRank}");
+                    c.Item().Text($"WILLPOWER: {TFCharacterSession.CurrentTransfomer.companions[index].Willpower.Value}");
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.companions[index].Smarts.CurrentRank} +  + "); // add armor and way to track perks taken
+                    foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.companions[index].Smarts.CorrespondingSkills)
+                    {
+                        string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}");
+                    }
+
+
+                });
+
+                //column 4
+                t.Cell().Border(1).Padding(5).Column(c =>
+                {
+                    c.Item().Text($"SOCIAL {TFCharacterSession.CurrentTransfomer.companions[index].Social.CurrentRank}");
+                    c.Item().Text($"Cleverness: {TFCharacterSession.CurrentTransfomer.companions[index].Cleverness.Value}");
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.companions[index].Social.CurrentRank} +  + "); // add armor and way to track perks taken
+                    foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.companions[index].Social.CorrespondingSkills)
+                    {
+                        string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}");
+                    }
+
+
+                });
             });
         }
     }
