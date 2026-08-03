@@ -24,6 +24,7 @@ namespace RenegadeCharacterBuilder
     public partial class FinalPageAndConfirmation : Page
     {
         public FinalpageViewHelper vm { get; set; }
+        public PdfBuilder pdfbuild { get; set; }
         public FinalPageAndConfirmation()
         {
             vm = new FinalpageViewHelper();
@@ -77,6 +78,13 @@ namespace RenegadeCharacterBuilder
         {
             vm.PreviousPage();
             RunvisbilityCheck();
+        }
+
+        private void export(object sender, RoutedEventArgs e)
+        {
+            pdfbuild = new PdfBuilder();
+            MessageBox.Show("fired");
+            pdfbuild.GenerateCharacterPDf(1);
         }
     }
 }

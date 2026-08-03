@@ -225,5 +225,7 @@
         </StackPanel>
         <Button Content="next" Grid.Row="2" Width="70" Click="Moveup" HorizontalAlignment="Right" Margin="0,0,30,0"/>
         <Button Content="Pervious" Grid.Row="2" Width="70" Click="MoveBack" HorizontalAlignment="Left" Margin="30,0,0,0"/>
+
+        <Button Content="Export" Grid.Row="2" VerticalAlignment="Bottom" Click="export"/>
     </Grid>
 </Page>

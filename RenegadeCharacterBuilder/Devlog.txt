@@ -688,3 +688,17 @@ edit finished counter
 8-1 
 
 Another month good lord, made the last two containers for the companions
+
+8-2
+3am
+and I got an error that there;s not enough room for the pdf check each thing to see if it populates
+
+learned that I need to set the parameter being passed equal to something in the method/ model so it knows what it's doing
+found the problem its the statblocks also columns are all attaached so that may be the problem as well
+
+
+8-3 problem was having data set as constant column and not relative
+
+TODO: resize data and also switch data to colum.row for easier readbility
+
+added new fontsize and fixed constantcolumn typo

@@ -21,14 +21,15 @@ namespace RenegadeCharacterBuilder
 {
     public class PdfBuilder
     {
+        public int designLogic { get; set; }
         // use containers to fill different sections
         public string path { get; set; } // since it's here I can assign it and refference it no problem
-        public int decider { get; set; }
+
 
 
         public void GenerateCharacterPDf(int decider)
         {
-            
+            designLogic = decider;
             // Int decider will be a number code that will determine what character object is ie transformers,mlp, powerrangers, etc
             /*
              * 0 Title
@@ -112,10 +113,10 @@ namespace RenegadeCharacterBuilder
                         page.Content()
                         .PaddingBottom(15).Column(c =>
                         {
-                            c.Item().Element(GameTitle); // mind you this will need amd the otherw will need row defitions in the actuall containers
-                            c.Item().Element(CharracterFluff);
-                            c.Item().Element(HangUpsAndEquipment);
-                            c.Item().Element(Statblock);
+                            c.Item().Element(container => GameTitle(container, designLogic)); // mind you this will need amd the otherw will need row defitions in the actuall containers
+                            c.Item().Element(CharracterFluff); // make text smaller
+                            c.Item().Element(HangUpsAndEquipment); // figure out how to unalign/ detach colums
+                            c.Item().Element(Statblock); // this is the problem I guess there's too much data
                             c.Item().PageBreak();
                             c.Item().Element(PerksGearsAndBackGroundBonds);
                             c.Item().Element(WeaponsORHardPoints); // have another run at the switch case to determine which block is built gijoe and transformers are slightly diff
@@ -148,9 +149,10 @@ namespace RenegadeCharacterBuilder
         }
 
 
-        private void GameTitle(IContainer container)
+        private void GameTitle(IContainer container, int designLogic)
         {
-            switch (decider)
+           
+            switch (designLogic)
             {
                 case 1:
                     container.Table(t =>
@@ -178,7 +180,7 @@ namespace RenegadeCharacterBuilder
         }
         private void CharracterFluff(IContainer container)
         {
-            switch (decider)
+            switch (designLogic)
             {
                 case 1:
                     container.Table(t =>
@@ -195,8 +197,8 @@ namespace RenegadeCharacterBuilder
                         .Padding(5)
                         .Column(c =>
                         {
-                            c.Item().Text($" Name: {TFCharacterSession.CurrentTransfomer.Name}");
-                            c.Item().Text($"Pronouns: {TFCharacterSession.CurrentTransfomer.Pronouns}");
+                            c.Item().Text($" Name: {TFCharacterSession.CurrentTransfomer.Name}").FontSize(14);
+                            c.Item().Text($"Pronouns: {TFCharacterSession.CurrentTransfomer.Pronouns}").FontSize(12);
                         });
 
                         //section two
@@ -219,9 +221,9 @@ namespace RenegadeCharacterBuilder
                         .Padding(5)
                         .Column(c =>
                         {
-                            c.Item().Text($" Origin: {TFCharacterSession.CurrentTransfomer.Origns[0].Name}");
-                            c.Item().Text($" Role: {TFCharacterSession.CurrentTransfomer.Role.Name}");
-                            c.Item().Text($" Level: {TFCharacterSession.CurrentTransfomer.CurrentLevel}");
+                            c.Item().Text($" Origin: {TFCharacterSession.CurrentTransfomer.Origns[0].Name}").FontSize(14);
+                            c.Item().Text($" Role: {TFCharacterSession.CurrentTransfomer.Role.Name}").FontSize(12);
+                            c.Item().Text($" Level: {TFCharacterSession.CurrentTransfomer.CurrentLevel}").FontSize(12);
                         });
 
                         t.Cell()
@@ -236,7 +238,7 @@ namespace RenegadeCharacterBuilder
 
         private void HangUpsAndEquipment(IContainer container)
        {
-            switch (decider)
+            switch (designLogic)
             {
                 case 1:
                     container.Table(t =>
@@ -266,7 +268,7 @@ namespace RenegadeCharacterBuilder
                             c.Item().Text("Gear");
                             c.Item().Text("Name Range Attack  Effect Notes");
 
-                            if (TFCharacterSession.CurrentTransfomer.Gear[0].Name.Equals(""))
+                           /* if (TFCharacterSession.CurrentTransfomer.Gear[0].Name.Equals(""))
                             {
                                 c.Item().Text("");
                             }
@@ -277,7 +279,7 @@ namespace RenegadeCharacterBuilder
 
                                     c.Item().Text($"{gear.Name}  {gear.Range}  {gear.Attack}  {gear.Effect}  {gear.Notes}");
                                 }
-                            }
+                            } */
                         });
 
                         //row two
@@ -299,7 +301,7 @@ namespace RenegadeCharacterBuilder
             }
        }
 
-        private void Statblock(IContainer container)
+        private void Statblock(IContainer container) // problem container has too much info?
         {
             var convert = new DieConverter();
             
@@ -311,20 +313,20 @@ namespace RenegadeCharacterBuilder
                     c.RelativeColumn(2);
                     c.RelativeColumn(3);
                     c.RelativeColumn(4);
-                    c.ConstantColumn(1);
+                    c.RelativeColumn(1);
 
                 });
 
                 //column 1
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
-                    c.Item().Text($"STRENGTH {TFCharacterSession.CurrentTransfomer.Strenght.CurrentRank}");
-                    c.Item().Text($"TOUGHNESS: {TFCharacterSession.CurrentTransfomer.Toughness.Value}");
-                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.Strenght.CurrentRank} +  + "); // add armor and way to track perks taken
+                    c.Item().Text($"STRENGTH {TFCharacterSession.CurrentTransfomer.Strenght.CurrentRank}").FontSize(12);
+                    c.Item().Text($"TOUGHNESS: {TFCharacterSession.CurrentTransfomer.Toughness.Value}").FontSize(12);
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.Strenght.CurrentRank} +  + ").FontSize(12); // add armor and way to track perks taken
                     foreach(SkillTF skill in TFCharacterSession.CurrentTransfomer.Strenght.CorrespondingSkills)
                     {
                         string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
-                        c.Item().Text($"{skill.Name.ToUpper()}: {die}"); 
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}").FontSize(12); 
                     }
                
                 });
@@ -332,13 +334,13 @@ namespace RenegadeCharacterBuilder
                 //column 2
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
-                    c.Item().Text($"SPEED {TFCharacterSession.CurrentTransfomer.Speed.CurrentRank}");
-                    c.Item().Text($"Evasion: {TFCharacterSession.CurrentTransfomer.Evasion.Value}");
-                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.Speed.CurrentRank} +  + "); // add armor and way to track perks taken
+                    c.Item().Text($"SPEED {TFCharacterSession.CurrentTransfomer.Speed.CurrentRank}").FontSize(12);
+                    c.Item().Text($"Evasion: {TFCharacterSession.CurrentTransfomer.Evasion.Value}").FontSize(12);
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.Speed.CurrentRank} +  + ").FontSize(12); // add armor and way to track perks taken
                     foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.Speed.CorrespondingSkills)
                     {
                         string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
-                        c.Item().Text($"{skill.Name.ToUpper()}: {die}");
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}").FontSize(12);
                     }
 
                 });
@@ -346,13 +348,13 @@ namespace RenegadeCharacterBuilder
                 //column 3
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
-                    c.Item().Text($"SMARTS {TFCharacterSession.CurrentTransfomer.Smarts.CurrentRank}");
-                    c.Item().Text($"WILLPOWER: {TFCharacterSession.CurrentTransfomer.Willpower.Value}");
-                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.Smarts.CurrentRank} +  + "); // add armor and way to track perks taken
+                    c.Item().Text($"SMARTS {TFCharacterSession.CurrentTransfomer.Smarts.CurrentRank}").FontSize(12);
+                    c.Item().Text($"WILLPOWER: {TFCharacterSession.CurrentTransfomer.Willpower.Value}").FontSize(12);
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.Smarts.CurrentRank} +  + ").FontSize(12); // add armor and way to track perks taken
                     foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.Smarts.CorrespondingSkills)
                     {
                         string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
-                        c.Item().Text($"{skill.Name.ToUpper()}: {die}");
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}").FontSize(12);
                     }
 
 
@@ -361,13 +363,13 @@ namespace RenegadeCharacterBuilder
                 //column 4
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
-                    c.Item().Text($"SOCIAL {TFCharacterSession.CurrentTransfomer.Social.CurrentRank}");
-                    c.Item().Text($"Cleverness: {TFCharacterSession.CurrentTransfomer.Cleverness.Value}");
-                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.Social.CurrentRank} +  + "); // add armor and way to track perks taken
+                    c.Item().Text($"SOCIAL {TFCharacterSession.CurrentTransfomer.Social.CurrentRank}").FontSize(12);
+                    c.Item().Text($"Cleverness: {TFCharacterSession.CurrentTransfomer.Cleverness.Value}").FontSize(12);
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.Social.CurrentRank} +  + ").FontSize(12); // add armor and way to track perks taken
                     foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.Social.CorrespondingSkills)
                     {
                         string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
-                        c.Item().Text($"{skill.Name.ToUpper()}: {die}");
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}").FontSize(12);
                     }
 
 
@@ -393,8 +395,8 @@ namespace RenegadeCharacterBuilder
                     c.Item().Text("Perks").Bold();
                     foreach(GeneralPerkTF g in TFCharacterSession.CurrentTransfomer.PickedPerks)
                     {
-                        c.Item().Text($"{g.Name}").Bold();
-                        c.Item().Text($"{g.Text}");
+                        c.Item().Text($"{g.Name}").Bold().FontSize(14);
+                        c.Item().Text($"{g.Text}").FontSize(12);
                     }
                 });
                 
@@ -403,13 +405,13 @@ namespace RenegadeCharacterBuilder
                     c.Item().Text("Gear").Bold();
                     foreach (GearTF g in TFCharacterSession.CurrentTransfomer.Gear)
                     {
-                        c.Item().Text($"{g.Name}").Bold();
-                        c.Item().Text($"{g.Notes}");
+                        c.Item().Text($"{g.Name}").Bold().FontSize(14);
+                        c.Item().Text($"{g.Notes}").FontSize(12);
                     }
                 });
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
-                    c.Item().Text("Background Bonds").Bold();
+                    c.Item().Text("Background Bonds").Bold().FontSize(14);
                     
                 });
             });
@@ -427,11 +429,11 @@ namespace RenegadeCharacterBuilder
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
                     int count = 0;
-                    c.Item().Text("Hardpoints").Bold();
-                    c.Item().Text("NAME   RANGE   HARDPOINT   TRAITS   EFFECTS  ALTENRATE EFFECTS");
+                    c.Item().Text("Hardpoints").Bold().FontSize(14);
+                    c.Item().Text("NAME   RANGE   HARDPOINT   TRAITS   EFFECTS  ALTENRATE EFFECTS").FontSize(13);
                     foreach(HardPoint H in TFCharacterSession.CurrentTransfomer.HardPointsList)
                     {
-                        c.Item().Text($"{H.name}  {H.range}   {count}  {H.traits}  {H.effects}  {H.alternateEffects}");
+                        c.Item().Text($"{H.name}  {H.range}   {count}  {H.traits}  {H.effects}  {H.alternateEffects}").FontSize(12);
                         count++;
                     }
                 });
@@ -458,15 +460,15 @@ namespace RenegadeCharacterBuilder
             {
                     t.Cell().Border(1).Padding(5).Column(c =>
                     {
-                        c.Item().Text($" Origin Name: {a.OrignName}"); //add name to altmode
-                        c.Item().Text($" Crew: {a.Crew}");
-                        c.Item().Text($" Size: {a.Size}");
-                        c.Item().Text($" Movement {a.Movement}");
-                        c.Item().Text($" Movement Type {a.Type}");
+                        c.Item().Text($" Origin Name: {a.OrignName}").FontSize(14); //add name to altmode
+                        c.Item().Text($" Crew: {a.Crew}").FontSize(12);
+                        c.Item().Text($" Size: {a.Size}").FontSize(12);
+                        c.Item().Text($" Movement {a.Movement}").FontSize(12);
+                        c.Item().Text($" Movement Type: {a.Type}").FontSize(12);
                         if(a.Movement2 != null) 
                         {
-                            c.Item().Text($"Movement 2{a.Movement2}");
-                            c.Item().Text($"Movement Type{a.Type2}");
+                            c.Item().Text($"Movement 2: {a.Movement2}").FontSize(12);
+                            c.Item().Text($"Movement Type: {a.Type2}").FontSize(12);
                         }
                     });
             };
@@ -502,38 +504,38 @@ namespace RenegadeCharacterBuilder
 
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
-                    c.Item().Text($"Role: {TFCharacterSession.CurrentTransfomer.Role.Name}").Bold();
-                    c.Item().Text($"CyberTronian Perk: {TFCharacterSession.CurrentTransfomer.Role.CyberTronianPerk}");
-                    c.Item().Text("Qualifications").Bold(); ;
-                    c.Item().Text($"Armor: {TFCharacterSession.CurrentTransfomer.Role.Qualifications.ArmorUpgrades}");
-                    c.Item().Text($"Weapon: {TFCharacterSession.CurrentTransfomer.Role.Qualifications.Weapons}");
+                    c.Item().Text($"Role: {TFCharacterSession.CurrentTransfomer.Role.Name}").Bold().FontSize(14);
+                    c.Item().Text($"CyberTronian Perk: {TFCharacterSession.CurrentTransfomer.Role.CyberTronianPerk}").FontSize(12);
+                    c.Item().Text("Qualifications").Bold().FontSize(12); ;
+                    c.Item().Text($"Armor: {TFCharacterSession.CurrentTransfomer.Role.Qualifications.ArmorUpgrades}").FontSize(12);
+                    c.Item().Text($"Weapon: {TFCharacterSession.CurrentTransfomer.Role.Qualifications.Weapons}").FontSize(12);
                     foreach (LevelTF l in TFCharacterSession.CurrentTransfomer.Role.Levels.Where(x => x.Level <= TFCharacterSession.CurrentTransfomer.CurrentLevel))
                     {
-                        c.Item().Text($"Level {l.Level}").Bold();
-                        if (l.Perk[0].Name != null)
+                        c.Item().Text($"Level {l.Level}").Bold().FontSize(14);
+                        if (l.Perk != null) // this line breaks things
                         {
                             foreach (Perk p in l.Perk)
                             {
-                                c.Item().Text($"{p.Name}");
-                                c.Item().Text($"{p.Effect}");
+                                c.Item().Text($"{p.Name}").FontSize(12);
+                                c.Item().Text($"{p.Effect}").FontSize(12);
 
                         }
                             }
                         if(l.SpeedBoost != 0)
                         {
-                            c.Item().Text($"Essance Score Increase: Speed +{l.SpeedBoost}");
+                            c.Item().Text($"Essance Score Increase: Speed +{l.SpeedBoost}").FontSize(12);
                         }
                         if (l.SmartsBoost != 0)
                         {
-                            c.Item().Text($"Essance Score Increase: Smarts +{l.SmartsBoost}");
+                            c.Item().Text($"Essance Score Increase: Smarts +{l.SmartsBoost}").FontSize(12);
                         }
                         if (l.StrengthBoost != 0)
                         {
-                            c.Item().Text($"Essance Score Increase: Strength +{l.StrengthBoost}");
+                            c.Item().Text($"Essance Score Increase: Strength +{l.StrengthBoost}").FontSize(12);
                         }
                         if (l.SocialBoost != 0)
                         {
-                            c.Item().Text($"Essance Score Increase: Social +{l.SocialBoost}");
+                            c.Item().Text($"Essance Score Increase: Social +{l.SocialBoost}").FontSize(12);
                         }
                     };
              
@@ -541,7 +543,7 @@ namespace RenegadeCharacterBuilder
 
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
-                    c.Item().Text($"Subclasss: {TFCharacterSession.CurrentTransfomer.sub.subclassName}");
+                    c.Item().Text($"Subclasss: {TFCharacterSession.CurrentTransfomer.sub.subclassName}").Bold().FontSize(14);
                     int counter = 0;
                     int limit = 0;// needs to be equal to focuss progression
                     foreach(LevelTF l in TFCharacterSession.CurrentTransfomer.Role.Levels.Where(x => x.Level <= TFCharacterSession.CurrentTransfomer.CurrentLevel)) 
@@ -556,8 +558,8 @@ namespace RenegadeCharacterBuilder
                     {
                         foreach (FocusPerk r in TFCharacterSession.CurrentTransfomer.sub.ranks)
                         {
-                            c.Item().Text($"{r.AbilityName}");
-                            c.Item().Text($"{r.AbilityEffect}");
+                            c.Item().Text($"{r.AbilityName}").FontSize(13);
+                            c.Item().Text($"{r.AbilityEffect}").FontSize(12);
                             counter++; // once we hit the limit we'll stop listing the subclasses ability name and effects
 
                         }
@@ -581,8 +583,8 @@ namespace RenegadeCharacterBuilder
                 .Padding(5)
                 .Column(c =>
                  {
-                  c.Item().Text($" Name: {TFCharacterSession.CurrentTransfomer.companions[index].Name}");
-                  c.Item().Text($"Pronouns: {TFCharacterSession.CurrentTransfomer.companions[index].Pronouns}");
+                  c.Item().Text($" Name: {TFCharacterSession.CurrentTransfomer.companions[index].Name}").FontSize(12);
+                  c.Item().Text($"Pronouns: {TFCharacterSession.CurrentTransfomer.companions[index].Pronouns}").FontSize(12);
                   });
 
                     //section two
@@ -617,9 +619,9 @@ namespace RenegadeCharacterBuilder
                 //column 1
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
-                    c.Item().Text($"STRENGTH {TFCharacterSession.CurrentTransfomer.companions[index].Strenght.CurrentRank}");
-                    c.Item().Text($"TOUGHNESS: {TFCharacterSession.CurrentTransfomer.companions[index].Toughness.Value}");
-                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.companions[index].Strenght.CurrentRank} +  + "); // add armor and way to track perks taken
+                    c.Item().Text($"STRENGTH {TFCharacterSession.CurrentTransfomer.companions[index].Strenght.CurrentRank}").FontSize(14);
+                    c.Item().Text($"TOUGHNESS: {TFCharacterSession.CurrentTransfomer.companions[index].Toughness.Value}").FontSize(12);
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.companions[index].Strenght.CurrentRank} +  + ").FontSize(12); // add armor and way to track perks taken
                     foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.companions[index].Strenght.CorrespondingSkills)
                     {
                         string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
@@ -631,9 +633,9 @@ namespace RenegadeCharacterBuilder
                 //column 2
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
-                    c.Item().Text($"SPEED {TFCharacterSession.CurrentTransfomer.companions[index].Speed.CurrentRank}");
-                    c.Item().Text($"Evasion: {TFCharacterSession.CurrentTransfomer.companions[index].Evasion.Value}");
-                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.companions[index].Speed.CurrentRank} +  + "); // add armor and way to track perks taken
+                    c.Item().Text($"SPEED {TFCharacterSession.CurrentTransfomer.companions[index].Speed.CurrentRank}").FontSize(14);
+                    c.Item().Text($"Evasion: {TFCharacterSession.CurrentTransfomer.companions[index].Evasion.Value}").FontSize(12);
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.companions[index].Speed.CurrentRank} +  + ").FontSize(12); // add armor and way to track perks taken
                     foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.companions[index].Speed.CorrespondingSkills)
                     {
                         string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
@@ -645,9 +647,9 @@ namespace RenegadeCharacterBuilder
                 //column 3
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
-                    c.Item().Text($"SMARTS {TFCharacterSession.CurrentTransfomer.companions[index].Smarts.CurrentRank}");
-                    c.Item().Text($"WILLPOWER: {TFCharacterSession.CurrentTransfomer.companions[index].Willpower.Value}");
-                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.companions[index].Smarts.CurrentRank} +  + "); // add armor and way to track perks taken
+                    c.Item().Text($"SMARTS {TFCharacterSession.CurrentTransfomer.companions[index].Smarts.CurrentRank}").FontSize(14);
+                    c.Item().Text($"WILLPOWER: {TFCharacterSession.CurrentTransfomer.companions[index].Willpower.Value}").FontSize(12);
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.companions[index].Smarts.CurrentRank} +  + ").FontSize(12); // add armor and way to track perks taken
                     foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.companions[index].Smarts.CorrespondingSkills)
                     {
                         string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
@@ -660,9 +662,9 @@ namespace RenegadeCharacterBuilder
                 //column 4
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
-                    c.Item().Text($"SOCIAL {TFCharacterSession.CurrentTransfomer.companions[index].Social.CurrentRank}");
-                    c.Item().Text($"Cleverness: {TFCharacterSession.CurrentTransfomer.companions[index].Cleverness.Value}");
-                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.companions[index].Social.CurrentRank} +  + "); // add armor and way to track perks taken
+                    c.Item().Text($"SOCIAL {TFCharacterSession.CurrentTransfomer.companions[index].Social.CurrentRank}").FontSize(14);
+                    c.Item().Text($"Cleverness: {TFCharacterSession.CurrentTransfomer.companions[index].Cleverness.Value}").FontSize(12);
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.companions[index].Social.CurrentRank} +  + ").FontSize(12); // add armor and way to track perks taken
                     foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.companions[index].Social.CorrespondingSkills)
                     {
                         string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
