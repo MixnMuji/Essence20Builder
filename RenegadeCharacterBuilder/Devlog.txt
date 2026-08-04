@@ -702,3 +702,11 @@ found the problem its the statblocks also columns are all attaached so that may 
 TODO: resize data and also switch data to colum.row for easier readbility
 
 added new fontsize and fixed constantcolumn typo
+
+8-4
+
+PDf Builder Complete need to go and make a gear page, fixed dispaly buy changing to rows and not using table
+
+, gear json, and then iron out mising things like health, general perks etc
+
+

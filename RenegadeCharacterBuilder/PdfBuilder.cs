@@ -207,12 +207,12 @@ namespace RenegadeCharacterBuilder
                         .RowSpan(2)
                         .Border(1)
                         .Padding(5)
-                        .Text($"{TFCharacterSession.CurrentTransfomer.Description}");
+                        .Text($"{TFCharacterSession.CurrentTransfomer.Description}").FontSize(12);
 
                         t.Cell()
                         .Border(1)
                         .Padding(5)
-                        .Text("Languages");
+                        .Text("Languages").FontSize(14);
 
 
                         // row 2
@@ -241,34 +241,24 @@ namespace RenegadeCharacterBuilder
             switch (designLogic)
             {
                 case 1:
-                    container.Table(t =>
+                    container.Row(r =>
                     {
-                        t.ColumnsDefinition(c =>
+                        r.RelativeItem(2).Border(1).Padding(5).Column(c =>
                         {
-                            c.RelativeColumn(2);
-                            c.RelativeColumn(3); // middle
-                            c.RelativeColumn(1);
-
-                        });
-                        t.Cell().Border(1).Padding(5).Column(c =>
-                        {
-                            c.Item().Text("Influences: ").Bold();
+                            c.Item().Text("Influences: ").Bold().FontSize(14);
                             foreach (var influence in TFCharacterSession.CurrentTransfomer.Influences)
                             {
-                                c.Item().Text($"{influence.Name}: {influence.Perk}");
+                                c.Item().Text($"{influence.Name}:").FontSize(13);
+                                c.Item().Text($"{influence.Name}: {influence.Perk}").FontSize(12);
                             }
                         });
 
-                        t.Cell().Border(1).Padding(5).Text($"Health: {TFCharacterSession.CurrentTransfomer.Health}");
-
-                        //gear and column 3
-
-                        t.Cell().RowSpan(3).Border(1).Padding(5).Column(c =>
+                        r.RelativeItem(3).Border(1).Padding(5).Column(c =>
                         {
-                            c.Item().Text("Gear");
-                            c.Item().Text("Name Range Attack  Effect Notes");
-
-                           /* if (TFCharacterSession.CurrentTransfomer.Gear[0].Name.Equals(""))
+                            c.Item().Text("Gear").FontSize(14);
+                            c.Item().Text("Name Range Attack  Effect Notes").FontSize(13); //ADD GEAR
+                            /*
+                            if (TFCharacterSession.CurrentTransfomer.Gear[0].Name.Equals(""))
                             {
                                 c.Item().Text("");
                             }
@@ -280,24 +270,69 @@ namespace RenegadeCharacterBuilder
                                     c.Item().Text($"{gear.Name}  {gear.Range}  {gear.Attack}  {gear.Effect}  {gear.Notes}");
                                 }
                             } */
-                        });
 
-                        //row two
-                        t.Cell().Border(1).Padding(5).Column(c =>
+                        });
+                        r.RelativeItem(2).Border(1).Padding(5).Column(c =>
                         {
-                            c.Item().Text("Hang Ups:");
-                            foreach(var hang in TFCharacterSession.CurrentTransfomer.Hang_Ups)
+                            c.Item().Text("Hang Ups:").FontSize(14);
+                            foreach (var hang in TFCharacterSession.CurrentTransfomer.Hang_Ups)
                             {
-                                c.Item().Text($"{hang.Name}: {hang.Effect}");
+                                c.Item().Text($"{hang.Name}:").FontSize(13);
+                                c.Item().Text($"{hang.Effect}").FontSize(12);
                             }
                         });
+                       
+                        /* 
+                         {
+                             c.RelativeColumn(2);
+                             c.RelativeColumn(3); // middle
+                             c.RelativeColumn(1);
 
-                        t.Cell().Border(1).Border(5).Text($"Movment:{TFCharacterSession.CurrentTransfomer.Origns[0].BotMode.Movement}");
-                        
-                        
-                      
+                         });
+
+
+                         t.Cell().Border(1).Padding(5).Text($"Health: {TFCharacterSession.CurrentTransfomer.Health}");
+
+                         //gear and column 3
+
+                         t.Cell().RowSpan(3).Border(1).Padding(5).Column(c =>
+                         {
+                             c.Item().Text("Gear");
+                             c.Item().Text("Name Range Attack  Effect Notes");
+
+                            /* if (TFCharacterSession.CurrentTransfomer.Gear[0].Name.Equals(""))
+                             {
+                                 c.Item().Text("");
+                             }
+                             else
+                             {
+                                 foreach (var gear in TFCharacterSession.CurrentTransfomer.Gear)
+                                 {
+
+                                     c.Item().Text($"{gear.Name}  {gear.Range}  {gear.Attack}  {gear.Effect}  {gear.Notes}");
+                                 }
+                             } 
+                         });
+
+                         //row two
+                         t.Cell().Border(1).Padding(5).Column(c =>
+                         {
+                             c.Item().Text("Hang Ups:");
+                             foreach(var hang in TFCharacterSession.CurrentTransfomer.Hang_Ups)
+                             {
+                                 c.Item().Text($"{hang.Name}: {hang.Effect}");
+                             }
+                         });
+
+                         t.Cell().Border(1).Border(5).Text($"Movment:{TFCharacterSession.CurrentTransfomer.Origns[0].BotMode.Movement}");
+
+
+
+                     });
+             */
+
                     });
-                return;
+                    return;
             }
        }
 
@@ -443,18 +478,30 @@ namespace RenegadeCharacterBuilder
         private void Altmodes(IContainer container)
         {
             
-            container.Table(t =>
+            container.Row(r =>
             {
-            t.ColumnsDefinition(c =>
-            {
+                r.RelativeItem().Border(1).Padding(5).Text("ALTMODES");
                 foreach (Altmode a in TFCharacterSession.CurrentTransfomer.Altmodes) 
                 {
-                    c.RelativeColumn();
+                    r.RelativeItem(2).Border(1).Padding(5).Column(c =>
+                    {
+                        c.Item().Text($" Origin Name: {a.OrignName}").FontSize(14); //add name to altmode
+                        c.Item().Text($" Crew: {a.Crew}").FontSize(12);
+                        c.Item().Text($" Size: {a.Size}").FontSize(12);
+                        c.Item().Text($" Movement {a.Movement}").FontSize(12);
+                        c.Item().Text($" Movement Type: {a.Type}").FontSize(12);
+                        if (a.Movement2 != null)
+                        {
+                            c.Item().Text($"Movement 2: {a.Movement2}").FontSize(12);
+                            c.Item().Text($"Movement Type: {a.Type2}").FontSize(12);
+                        }
+                    });
+                    
                    
                 }
             });
 
-            t.Cell().Border(1).Padding(5).Text("ALTMODES");
+            /*t.Cell().Border(1).Padding(5).Text("ALTMODES");
 
             foreach (Altmode a in TFCharacterSession.CurrentTransfomer.Altmodes) // theorectically we can make a column for every altmode this way 
             {
@@ -474,36 +521,33 @@ namespace RenegadeCharacterBuilder
             };
 
                 
-            });
+            }); */
         }
         private void OriginNotes(IContainer container)
         {
-            container.Table(t =>
+            container.Row(t =>
             {
-                t.ColumnsDefinition(c =>
+                t.RelativeItem().Border(1).Padding(5).Column(c =>
                 {
-                    c.RelativeColumn();
+                    c.Item().Text("Origin Notes").FontSize(14); ;
                 });
-                t.Cell().Border(1).Padding(5).Column(c => {
-                    c.Item().Text("Origin Notes");
-                    c.Item().Text(""); // need to have notes written before hand questpdf doesn't allow fillables
+                t.RelativeItem().Border(1).Padding(5).Column(c =>
+                {
+                    c.Item().Text("").FontSize(14);
+                });
 
-                });
             });
         }
 
         private void RoleAndSubclassInfo(IContainer container)
         {
-            container.Table(t =>
-            {
-                t.ColumnsDefinition(c =>
-                {
-                    c.RelativeColumn(2);
-                    c.RelativeColumn(1);
-                });
 
-                t.Cell().Border(1).Padding(5).Column(c =>
+            container.Row(r =>
+            {
+                r.RelativeItem(2).Border(1).Padding(5).Column(c =>
                 {
+
+
                     c.Item().Text($"Role: {TFCharacterSession.CurrentTransfomer.Role.Name}").Bold().FontSize(14);
                     c.Item().Text($"CyberTronian Perk: {TFCharacterSession.CurrentTransfomer.Role.CyberTronianPerk}").FontSize(12);
                     c.Item().Text("Qualifications").Bold().FontSize(12); ;
@@ -519,9 +563,9 @@ namespace RenegadeCharacterBuilder
                                 c.Item().Text($"{p.Name}").FontSize(12);
                                 c.Item().Text($"{p.Effect}").FontSize(12);
 
-                        }
                             }
-                        if(l.SpeedBoost != 0)
+                        }
+                        if (l.SpeedBoost != 0)
                         {
                             c.Item().Text($"Essance Score Increase: Speed +{l.SpeedBoost}").FontSize(12);
                         }
@@ -537,36 +581,38 @@ namespace RenegadeCharacterBuilder
                         {
                             c.Item().Text($"Essance Score Increase: Social +{l.SocialBoost}").FontSize(12);
                         }
-                    };
-             
-    });
+                    }
+                });
 
-                t.Cell().Border(1).Padding(5).Column(c =>
+                r.RelativeItem(1).Border(1).Padding(5).Column(c =>
                 {
                     c.Item().Text($"Subclasss: {TFCharacterSession.CurrentTransfomer.sub.subclassName}").Bold().FontSize(14);
-                    int counter = 0;
-                    int limit = 0;// needs to be equal to focuss progression
-                    foreach(LevelTF l in TFCharacterSession.CurrentTransfomer.Role.Levels.Where(x => x.Level <= TFCharacterSession.CurrentTransfomer.CurrentLevel)) 
-                    { 
+                    int limit = 1;// needs to be equal to focuss progression
+                    foreach (LevelTF l in TFCharacterSession.CurrentTransfomer.Role.Levels.Where(x => x.Level <= TFCharacterSession.CurrentTransfomer.CurrentLevel))
+                    {
                         //basically go through all the levels until you get to the current level if they increase the subclass rank add to the limit, if not limit stays the same
-                        if(l.FocusProgression != 0)
+                        if (l.FocusProgression != 0)
                         {
                             limit++;
                         }
                     }
-                    while (counter <= limit) 
-                    {
-                        foreach (FocusPerk r in TFCharacterSession.CurrentTransfomer.sub.ranks)
+
+                        foreach (FocusPerk r in TFCharacterSession.CurrentTransfomer.sub.ranks.Take(limit))
                         {
                             c.Item().Text($"{r.AbilityName}").FontSize(13);
                             c.Item().Text($"{r.AbilityEffect}").FontSize(12);
-                            counter++; // once we hit the limit we'll stop listing the subclasses ability name and effects
+
 
                         }
-                    }
+                    
+
                 });
 
+
             });
+            
+
+           
         }
         private void Companion(IContainer container, int index)
         {
@@ -583,6 +629,7 @@ namespace RenegadeCharacterBuilder
                 .Padding(5)
                 .Column(c =>
                  {
+                  
                   c.Item().Text($" Name: {TFCharacterSession.CurrentTransfomer.companions[index].Name}").FontSize(12);
                   c.Item().Text($"Pronouns: {TFCharacterSession.CurrentTransfomer.companions[index].Pronouns}").FontSize(12);
                   });
