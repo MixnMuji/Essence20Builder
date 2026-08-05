@@ -710,3 +710,9 @@ PDf Builder Complete need to go and make a gear page, fixed dispaly buy changing
 , gear json, and then iron out mising things like health, general perks etc
 
 
+8-5
+
+today I began the process of making the gear section so first we was making a parent class and then defining the parameters of each unique gear types
+ultimately even though some gear types are differnent only in name I decided to make them differnet items for deserizlation purposeds when factoring for
+future expansions needing to be parshered through doing idividual list saves me on a foreach even though both are O(n) timing I save time by not passing over each data to check in
+a switch case for an enum type.

@@ -15,6 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Jsoncollection\TransformersJsons\GearJsonTF.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Jsoncollection\TransformersJsons\HangUpsTF.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

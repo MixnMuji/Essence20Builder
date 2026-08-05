@@ -11,5 +11,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public List<string>? ApplicableStats { get; set; }
         public int? levelRequirement { get; set; }
 
+        public string sizeRequirement { get; set; }
+
     }
 }
