@@ -716,3 +716,11 @@ today I began the process of making the gear section so first we was making a pa
 ultimately even though some gear types are differnent only in name I decided to make them differnet items for deserizlation purposeds when factoring for
 future expansions needing to be parshered through doing idividual list saves me on a foreach even though both are O(n) timing I save time by not passing over each data to check in
 a switch case for an enum type.
+
+8-6
+
+Took a refresh day to research topics I enjoy for my next project
+
+8-7
+
+made a enum for weapon types, started the Json for Weapons

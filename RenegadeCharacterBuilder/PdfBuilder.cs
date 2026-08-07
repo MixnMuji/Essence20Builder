@@ -441,7 +441,7 @@ namespace RenegadeCharacterBuilder
                     foreach (GearTF g in TFCharacterSession.CurrentTransfomer.Gear)
                     {
                         c.Item().Text($"{g.Name}").Bold().FontSize(14);
-                        c.Item().Text($"{g.Notes}").FontSize(12);
+                        //c.Item().Text($"{g.Notes}").FontSize(12);
                     }
                 });
                 t.Cell().Border(1).Padding(5).Column(c =>

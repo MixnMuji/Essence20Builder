@@ -1,0 +1,86 @@
+{
+  "weapons":[
+    {
+      "Name": "Close Combat Blade",
+      "availibility": "Standard", 
+      "Classification": "Finesse or Might Sidearm Melee",
+       "Range":"Reach",
+        "Hands":1,
+        "Effect":"1 Sharp Damage",
+        "Traits":["Sharp", "Silent"]
+    },
+    {
+      "Name":"Close Combat Bludgeon",
+      "availibility": "Standard", 
+      "Classification": "Finesse or Might Sidearm Melee",
+       "Range":"Reach",
+        "Hands":1,
+        "Effect":"1 Stun",
+        "AlternateEffect":"1 Blunt Damge (downshift 1), maneuver",
+        "Traits":["Blunt","Silent"]
+    },
+    {
+      "Name": "Blaster",
+      "availibility": "Standard", //turn to an enum
+      "Classification": "Targeting sidearm projectile",
+       "Range":"25ft / 80ft",
+        "Hands":1,
+        "Effect":" 1 Sharp Damage",
+        "Traits":["Ballistic"]
+    },
+    {
+      "Name":"Rifle",
+      "availibility": "Standard", //turn to an enum
+      "Classification": "Targeting medium projectile",
+       "Range":"100ft/400ft",
+        "Hands":2,
+        "Effect":"1 Sharp Damage",
+        "Traits":["Ballistic, sniper"]
+    },
+    {
+      "Name": "Shotgun",
+      "availibility":"Standard", //turn to an enum
+      "Classification":"Tageting medium projectile",
+       "Range":"20ft/60ft",
+        "Hands":2,
+        "Effect":"1 sharp damage- Mutiple Targets (2, 15ft cone)",
+        "Traits":["Ballistic, Reload"]
+    },
+    {
+      "Name": "Frag Grenade",
+      "availibility": "Standard", //turn to an enum
+      "Classification": "Athletics sidearm explosive",
+       "Range":"20ft/5oft",
+        "Hands":2,
+        "Effect":"1 Sharp Damage (10ft radius)",
+        "Traits":["Consumable", "Sharp", "Wrecker"]
+    },
+    {
+      "Name": "Concussion Grenade",
+      "availibility": "Standard", 
+      "Classification": "Athletics Sidearm explosive",
+       "Range":"20ft/50ft",
+        "Hands":1,
+        "Effect":"1 Stun, Blast:10ft radius",
+        "Traits":["Consumable"]
+    },
+    {
+      "Name": "",
+      "availibility": "", //turn to an enum
+      "Classification": "",
+       "Requirements":
+       {
+         "statRequirement": 0,
+        "ApplicableStats":[""],
+        "levelRequirement": 0,
+        "sizeRequirement": ""
+       },
+       "Range":"",
+        "Hands":2,
+        "Effect":"",
+        "AlternateEffect":"",
+        "Traits":[""]
+    },
+
+  ]
+}
