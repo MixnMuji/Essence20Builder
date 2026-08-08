@@ -65,6 +65,78 @@
         "Traits":["Consumable"]
     },
     {
+      "Name": "Close Combat Heavy Blade",
+      "availibility": "Limited", 
+      "Classification": "Finess or Might medium melee",
+       "Range":"Reach",
+        "Hands":1,
+        "Effect":"1 Sharp Damage",
+        "AlternateEffect":"2 Sharp Damage (2 hands)",
+        "Traits":["Sharp", "Silent"]
+    },
+     {
+      "Name": "Close Combat Heavy Blugeon",
+      "availibility": "Limited", 
+      "Classification": "Finesse or Might medium melee",
+       "Range":"Reach",
+        "Hands":1,
+        "Effect":"1 Blunt Damage and 1 Stun",
+        "AlternateEffect":"2 Blunt Damage(2 hands)",
+        "Traits":["Blunt", "Silent"]
+    }, {
+      "Name": "Short Blade",
+      "availibility": "Limited", //turn to an enum
+      "Classification": "Finesse or Might sidearm melee",
+       "Range":"Reach",
+        "Hands":1,
+        "Effect":"1 Sharp damage",
+        "AlternateEffect":"1 Sharp Damage - Mutiple Targets (2, Reach, downshift 1)",
+        "Traits":["Martial Arts", "Sharp", "Silent"]
+    }, 
+       {
+      "Name": "Medium Blade",
+      "availibility": "Limited", 
+      "Classification": "Finesse or Might medium melee",
+       "Requirements":
+       {
+         "statRequirement": 1,
+        "ApplicableStats":["Finesse"]
+       },
+       "Range":"Reach",
+        "Hands":1,
+        "Effect":"1 Sharp Damage",
+        "AlternateEffect":"1 Sharp Damage - Multiple Targets (2, Reach, downshift 1), 1 Sharp Damage - Multiple Targets(3, reach, downshift 3)",
+        "Traits":["Martial Arts", "Sharp", "Silent"]
+    }, 
+       {
+      "Name":"Long Blade",
+      "availibility": "Limited", 
+      "Classification": "Finesse or Might long melee",
+       "Requirements":
+       {
+         "statRequirement": 2,
+        "ApplicableStats":["Finesse"]
+       },
+       "Range":"Reach",
+        "Hands":2,
+        "Effect":"1 Shapr Damage",
+        "AlternateEffect":"1 Sharp Damage - Multiple Targets (2, Reach, downshift 1), 1 Sharp Damage - Multiple Targets(3, reach, downshift 2)",
+        "Traits":["Martial Arts", "Sharp", "Silent"]
+    }, {
+      "Name": "Short Blugeon",
+      "availibility": "Limited", 
+      "Classification": "Finesse or Might sidearm melee",
+       "Requirements":
+       {
+         "statRequirement": 1,
+        "ApplicableStats":["Finesse"]
+       },
+       "Range":"Reach",
+        "Hands":1,
+        "Effect":"1 Stun",
+        "AlternateEffect":"1 Blunt Damage (downshift 1), Maneuver",
+        "Traits":["Blunt", "Martial Arts", "Silent"]
+    }, {
       "Name": "",
       "availibility": "", //turn to an enum
       "Classification": "",
@@ -81,6 +153,5 @@
         "AlternateEffect":"",
         "Traits":[""]
     },
-
   ]
 }
