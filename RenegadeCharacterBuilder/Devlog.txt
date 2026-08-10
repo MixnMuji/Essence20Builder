@@ -728,3 +728,7 @@ made a enum for weapon types, started the Json for Weapons
 8-9
 
 finished limited weapons system json discovered the unicode key for down arrow \u2193 it will now forever be in my memory but I also have to rewrite a million jsons
+
+8-10
+
+finsihed restriced weapons and weapons json

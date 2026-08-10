@@ -283,38 +283,100 @@
         "Traits":["Consumable", "Silent"]
     },
             {
-      "Name": "",
-      "availibility": "", 
-      "Classification": "",
-       "Requirements":
-       {
-         "statRequirement": 0,
-        "ApplicableStats":[""],
-        "levelRequirement": 0,
-        "sizeRequirement": ""
-       },
-       "Range":"",
-        "Hands":2,
-        "Effect":"",
-        "AlternateEffect":"",
-        "Traits":[""]
+      "Name": "Energized Close Combat Weapon",
+      "availibility": "Restricted", 
+      "Classification": "Finesse or Might sidearm element",
+       "Range":"Reach",
+        "Hands":1,
+        "Effect":"1 Element Damage",
+        "AlternateEffect":"Intimidating, Maneuver",
+        "Traits":["Computerized", "Element", "Reload"]
     },
              {
-      "Name": "",
-      "availibility": "", 
-      "Classification": "",
+      "Name": "Heavy Machine Gun",
+      "availibility": "Restricted", 
+      "Classification": "Targeting Long Projectile",
        "Requirements":
        {
-         "statRequirement": 0,
-        "ApplicableStats":[""],
-        "levelRequirement": 0,
-        "sizeRequirement": ""
+         "statRequirement": 2,
+        "ApplicableStats":["Brawn"]
        },
-       "Range":"",
+       "Range":"100ft/400ft (min 10ft)",
         "Hands":2,
-        "Effect":"",
-        "AlternateEffect":"",
-        "Traits":[""]
+        "Effect":"2 Sharp Damage",
+        "AlternateEffect":"3 Sharp Damage (\u21933), 1 Sharp Damage - Mutiple Targets(5, 15ft cone, \u21391)",
+        "Traits":["Ballistic", "Reload"]
     },
+    {
+      "Name": "Rocket Launcher",
+      "availibility": "Restricted", 
+      "Classification": "Targeting Heavy explosive",
+       "Requirements":
+       {
+         "statRequirement": 2,
+        "ApplicableStats":["Brawn"],
+        "sizeRequirement": "Huge"
+       },
+       "Range":"100ft. 200ft (min 30ft)",
+        "Hands":2,
+        "Effect":"1 Sharp Damage Blast (20ft radius)",
+        "Traits":["Anti-Tank", "Mounted", "Reload","Sharp","Wrecker"]
+    },
+    {
+      "Name": "Grappler",
+      "availibility": "Restricted", 
+      "Classification": "Athletics or Finesse long melee",
+       "Requirements":
+       {
+         "statRequirement": 1,
+        "ApplicableStats":["Athletics", "Finesse"],        
+       },
+       "Range":"Reach x3",
+        "Hands":2,
+        "Effect":"Maneuver",
+        "AlternateEffect":"Intimidating",
+        "Traits":["Martial Arts", "Silent"]
+    },
+    {
+      "Name": "Smart Grenade",
+      "availibility": "Restricted", 
+      "Classification": "Athletics sidearm explosive",
+       "Range":"20ft/50ft",
+        "Hands":1,
+        "Effect":"1 Element Damage (\u21913)",
+        "Traits":["Consumable", "Computerized", "Element"]
+    },
+    {
+      "Name": "Artillery Cannon",
+      "availibility": "Restricted", 
+      "Classification": "Tareting Long Rifle",
+       "Requirements":
+       {
+         "statRequirement": 3,
+        "ApplicableStats":["Brawn"],
+        "sizeRequirement": "Gigantic"
+       },
+       "Range":"300ft/600ft(min 30)",
+        "Hands":2,
+        "Effect":"2 Sharp Damage",
+        "AlternateEffect":"1 Sharp Damage Blast (20ft radius) (\u21931)",
+        "Traits":["Anti-Tank", "Ballistic", "Mounted","Reload", "Wrecker"]
+    },
+    {
+      "Name": "Missle",
+      "availibility": "Restricted", 
+      "Classification": "Targeting long explosive",
+       "Requirements":
+       {
+         "statRequirement": 3,
+        "ApplicableStats":["Brawn"],
+        "sizeRequirement": "Gigantic"
+       },
+       "Range":"500ft/1000ft",
+        "Hands":2,
+        "Effect":"1 Element Damage Blast (50ft radius)",
+        "AlternateEffect":"1 Element Damage (\u21911), 2 Element Damage, 2 Element Damage Blast (20ft radius) (\u21931)",
+        "Traits":["Anti-Tank", "Computerized", "Consumable", "Mounted", "Element", "Wrecker"]
+    }
   ]
 }
