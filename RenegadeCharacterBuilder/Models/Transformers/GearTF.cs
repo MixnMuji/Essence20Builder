@@ -10,19 +10,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers
     {
         public string Name { get; set; }
 
-        // public string Range { get; set; }
-
-        // public string Attack { get; set; }
-
-        // public string Effect { get; set; }
-
-        // public string Notes { get; set; }
-        
+       
         
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public EquimentType availibility { get; set; }
-
-      //  public string benefit { get; set; }
         public PrequisiteTF Requirements { get; set;}
 
 

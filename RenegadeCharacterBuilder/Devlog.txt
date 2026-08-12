@@ -732,3 +732,5 @@ finished limited weapons system json discovered the unicode key for down arrow \
 8-10
 
 finsihed restriced weapons and weapons json
+
+8-12 added Upgrades json, made a upgrade filter to help with applying the upgrades once they exist, need to make a tree for apply the methods in the future, or rather dictionary

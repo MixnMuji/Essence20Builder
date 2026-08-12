@@ -1,0 +1,103 @@
+{
+  "Upgrades":
+  [
+    {
+      "Name":"Ammo Belt",
+      "abbrivation":"AB",
+      "availibility":"Standard",
+      "Filter":
+       {
+        "NecessaryTraits":["Reload"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"Once Per scene, reload this weapon as a Free Action instead of a move action" 
+        
+    },
+    {
+      "Name":"Aerodynamic",
+      "abbrivation":"Aero",
+      "availibility":"Standard",
+      "Filter":
+       {
+        "NecessaryTraits":["Grenade", "thrown"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"Double the range of the weapon" 
+        
+    },
+    {
+      "Name":"Extended",
+      "abbrivation":"Ex",
+      "availibility":"Standard",
+      "Filter":
+       {
+        "NecessaryTraits":["Reach"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"Add 1 to the weapons reach modifier" 
+        
+    },
+    {
+      "Name":"Flashlight",
+      "abbrivation":"Flash",
+      "availibility":"Standard",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Small"]
+       },
+      "Benefit":"Weapon includes a built in flashlight" 
+        
+    },
+    {
+      "Name":"Laser Sight",
+      "abbrivation":"LS",
+      "availibility":"Standard",
+      "Filter":
+       {
+        "NecessaryTraits":["Ballistic"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"Aiming with this weapon provivdes an additonal \u21911" 
+        
+    },
+    {
+      "Name":"",
+      "abbrivation":"",
+      "availibility":"",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"" 
+        
+    },
+    {
+      "Name":"",
+      "abbrivation":"",
+      "availibility":"",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"" 
+        
+    },
+    {
+      "Name":"",
+      "abbrivation":"",
+      "availibility":"",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"" 
+        
+    },
+    
+   
+  ]
+}
