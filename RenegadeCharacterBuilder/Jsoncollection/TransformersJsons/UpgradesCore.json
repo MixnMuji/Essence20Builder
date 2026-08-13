@@ -62,30 +62,234 @@
         
     },
     {
-      "Name":"",
-      "abbrivation":"",
-      "availibility":"",
+      "Name":"Lead Lined",
+      "abbrivation":"LL",
+      "availibility":"Standard",
       "Filter":
        {
-        "NecessaryTraits":[],
+        "NecessaryTraits":["Compterized"],
         "ExcludedTraits":[]
        },
-      "Benefit":"" 
+      "Benefit":"Weapon Ignores the Computerized trait" 
         
     },
     {
-      "Name":"",
-      "abbrivation":"",
-      "availibility":"",
+      "Name":"Modular Standard Weapon",
+      "abbrivation":"MSW",
+      "availibility":"Standard",
       "Filter":
        {
         "NecessaryTraits":[],
-        "ExcludedTraits":[]
+        "ExcludedTraits":["Small"]
        },
-      "Benefit":"" 
+      "Benefit":"Choose a standard Weapon. When wielding a weapon with a modular standard upgrade, the weapon counts as both the upgraded weapon and the chosen weapon." 
         
     },
     {
+      "Name":"Nonlethal",
+      "abbrivation":"Nonlethal",
+      "availibility":"Standard",
+      "Filter":
+       {
+        "NecessaryTraits":["Damage"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"The Weapon's regular Damage effect can deal an equivalent amount of Stun as an alternate effect. " 
+        
+    },
+    {
+      "Name":"Scary",
+      "abbrivation":"Scary",
+      "availibility":"Standard",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Intimidating"]
+       },
+      "Benefit":"The Weapon gains the Intimidating trait" 
+        
+    },
+    {
+      "Name":"Scope",
+      "abbrivation":"Scope",
+      "availibility":"Standard",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Reach"]
+       },
+      "Benefit":"Double the ranges of the weapon" 
+        
+    },
+    {
+      "Name":"Absoulte Silencer",
+      "abbrivation":"AS",
+      "availibility":"Standard",
+      "Filter":
+       {
+        "NecessaryTraits":["Ballistic"],
+        "ExcludedTraits":["Silent"]
+       },
+      "Benefit":"This weapon gains the Silent trait" 
+        
+    },
+    {
+      "Name":"Time Bomb",
+      "abbrivation":"TB",
+      "availibility":"Standard",
+      "Filter":
+       {
+        "NecessaryTraits":["Grenade"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"The grenades's range becomes Reach. Setting a bomb is a Standard action. When a time bomb is set, designate a number of turns and an Initiative count. ON the Initative count in that many turns, the time bomb detonates. Whoever planted it makes a Technology (Explosives) skill Test against anyone in the bomb's blast radius.'" 
+        
+    },
+    {
+      "Name":"Waterproof",
+      "abbrivation":"WP",
+      "availibility":"Standard",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Aquatic"]
+       },
+      "Benefit":"The Weapon gains the Aquatic trait" 
+        
+    },
+    {
+      "Name":"Amphibious",
+      "abbrivation":"Amp",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Amphibious"]
+       },
+      "Benefit":"The Weapon gains the Amphibious trait" 
+        
+    },
+    {
+      "Name":"Balanced Grip",
+      "abbrivation":"BG",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Might", "Finesse"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"Use Athletics instead of the weapons normal Skill" 
+        
+    },
+    {
+      "Name":"Blazing",
+      "abbrivation":"Blazing",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Melee"],
+        "ExcludedTraits":["Energy"]
+       },
+      "Benefit":"The weapon gains the Fire trait" 
+        
+    },
+   {
+      "Name":"Corrosive Tip",
+      "abbrivation":"CroT",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Melee"],
+        "ExcludedTraits":["Energy"]
+       },
+      "Benefit":"The Weapon gains the Acid trait" 
+        
+    },
+   {
+      "Name":"Explosive",
+      "abbrivation":"Explo",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Explosive"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"The blast radius of the explosive's effect doubles" 
+        
+    },
+   {
+      "Name":"Deadly",
+      "abbrivation":"Deadly",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Damage"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"This weapon deals and additonal 1 Damage on a succesful hit" 
+        
+    },
+   {
+      "Name":"Explosive Rounds",
+      "abbrivation":"ER",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Ballistic"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"The Weapon gains a Shapr 1 Blast (10ft) alternate effect." 
+        
+    },
+   {
+      "Name":"Frigid",
+      "abbrivation":"Frig",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Melee"],
+        "ExcludedTraits":["Energy"]
+       },
+      "Benefit":"The Weapon gains the Cold trait" 
+        
+    },
+   {
+      "Name":"Galvanized",
+      "abbrivation":"Gal",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Melee"],
+        "ExcludedTraits":["Energy"]
+       },
+      "Benefit":"The Weapon gains the Electromagnetic trait" 
+        
+    },
+   {
+      "Name":"Lingering",
+      "abbrivation":"Lin ",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Stun", "Cover"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"Increase the duration of the effect by 1 turn" 
+        
+    },
+   {
+      "Name":"Locked",
+      "abbrivation":"Lock",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"A chosen requirment is added to the weapon, it can be anything, such as a skill minimum, quatum resonace scan, touching the autobot symbol etc." 
+        
+    },
+   {
       "Name":"",
       "abbrivation":"",
       "availibility":"",
@@ -97,7 +301,5 @@
       "Benefit":"" 
         
     },
-    
-   
   ]
 }
