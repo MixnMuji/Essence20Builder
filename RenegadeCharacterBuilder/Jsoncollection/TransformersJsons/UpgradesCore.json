@@ -602,15 +602,159 @@
         
     },
    {
-      "Name":"",
-      "abbrivation":"",
+      "Name":"Modular Restricted Weapon",
+      "abbrivation":"MRW",
       "availibility":"Restricted",
       "Filter":
        {
         "NecessaryTraits":[],
+        "ExcludedTraits":["Small" ]
+       },
+      "Benefit":"Choose a Restricted Weapon, When wielding a weapon with a  a modular Restricted weapon updgrade, the weapon counts as both the upgraded weapon and the chosen weapon." 
+        
+    },
+   {
+      "Name":"Quake Maker",
+      "abbrivation":"QM",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Reach", "Sonic"]
+       },
+      "Benefit":"The Weapon gains the Sonic trait this is in addition to any other Energy trait" 
+        
+    },
+   {
+      "Name":"Ray Generator",
+      "abbrivation":"RG",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Reach", "Laser"]
+       },
+      "Benefit":"The Weapon gains the Laser trait this is in addition to any other Energy trait" 
+        
+    },
+   {
+      "Name":"Seeking",
+      "abbrivation":"See",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Range"]
+       },
+      "Benefit":"The weapon gains the Indirect trait" 
+        
+    },
+   {
+      "Name":"Sonic Resonator",
+      "abbrivation":"SonR",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Reach","Energy"]
+       },
+      "Benefit":"The weapon gains the Sonic trait" 
+        
+    },
+   {
+      "Name":"Surgical",
+      "abbrivation":"Surg",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":["Sharp"],
         "ExcludedTraits":[]
        },
-      "Benefit":"" 
+      "Benefit":"On a critcal hit, the weapon deals 1 damage to the target's Toughness" 
+        
+    },
+   {
+      "Name":"Swift",
+      "abbrivation":"Swift",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Reach"]
+       },
+      "Benefit":"One of the weapon's non-blast Effects gains Mutiple Targets(2, 10ft radius), or one of the weapon's Mutiple Targets effects increases by 1." 
+        
+    },
+   {
+      "Name":"Thermal Scope",
+      "abbrivation":"TS",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":["Targeting"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"Weapon ignores concealment and other penalities for firing through smoke or darkness" 
+        
+    },
+   {
+      "Name":"Traumatic",
+      "abbrivation":"Trau",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":["Blunt"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"On a Critical hit, the weapon deals 1 damage to the targets Willpower." 
+        
+    },
+   {
+      "Name":"Vitriolage Tank",
+      "abbrivation":"VT",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Reach", "Acid"]
+       },
+      "Benefit":"The weapon gains the Acid trait. This is in addition to any other Energy trait" 
+        
+    },
+   {
+      "Name":"Voltage Tank",
+      "abbrivation":"VolT",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Reach", "Electric"]
+       },
+      "Benefit":"The Weapon gains the Electric trait. This is in addition to any other Energy trait" 
+        
+    },
+   {
+      "Name":"Disruptor",
+      "abbrivation":"Diss",
+      "availibility":"Protoypical",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Reach", "Energy"]
+       },
+      "Benefit":"This weapon gains the Electromagnetic trait" 
+        
+    },
+   {
+      "Name":"Smart Scope",
+      "abbrivation":"SmartS",
+      "availibility":"Protypical",
+      "Filter":
+       {
+        "NecessaryTraits":["Targeting"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"The weapon gains teh Comptuterized trait if it does not already have it. Increase effective range to x1.5 and long range to x2. The weapon sufferes no penalities firing in darkness." 
         
     },
 
