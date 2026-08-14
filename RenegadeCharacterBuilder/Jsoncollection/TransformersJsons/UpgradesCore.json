@@ -434,57 +434,177 @@
         
     },
    {
-      "Name":"",
-      "abbrivation":"",
-      "availibility":"",
+      "Name":"Acid Bolts",
+      "abbrivation":"AcB",
+      "availibility":"Restricted",
       "Filter":
        {
         "NecessaryTraits":[],
+        "ExcludedTraits":["Reach", "Energy"]
+       },
+      "Benefit":"The weapon gains the Acid trait" 
+        
+    },
+   {
+      "Name":"Ammo Feeder",
+      "abbrivation":"AF",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":["Reload"],
         "ExcludedTraits":[]
        },
-      "Benefit":"" 
+      "Benefit":"This weapon looses the Reload trait" 
+        
+    },
+   {
+      "Name":"Automated",
+      "abbrivation":"autoM",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Technology"]
+       },
+      "Benefit":"Use Technology instead of the weapon's nomral Skill. The weapon gains the Computerized trait" 
+        
+    },
+   {
+      "Name":"Automount",
+      "abbrivation":"Automnt",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":["Monunted"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"This weapon loses the Mounted trait" 
+        
+    },
+   {
+      "Name":"Bewildering",
+      "abbrivation":"BeW",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":["Blunt"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"On a critical hit, the weapon deals 1 damage to the target's Cleverness." 
+        
+    },
+   {
+      "Name":"Cold Ray",
+      "abbrivation":"CR",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Reach","Energy"]
+       },
+      "Benefit":"This weapon gains the Cold trait" 
+        
+    },
+   {
+      "Name":"Cryo Tank",
+      "abbrivation":"CryT",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Reach", "Cold"]
+       },
+      "Benefit":"This weapon gains the Cold trait. This is in addition to any other Energy trait." 
+        
+    },
+   {
+      "Name":"Detonator Bomb",
+      "abbrivation":"DB",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":["Grenade"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"The grenades range becomes Reach. Settting a bomb is a Standard Action, the bomb triggers when someone, presses a detonator button. Multiple bombs can be triggered by the same detonator. Usin a detonator is a Free Action. When A bomb detonates, whoever planted it makes a Technology Skill Test against anyone in the bomb's blast radius.'" 
+        
+    },
+   {
+      "Name":"ElectroBolter",
+      "abbrivation":"ElecB",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Reach", "Energy"]
+       },
+      "Benefit":"The Weapon Gains the Electric trait" 
+        
+    },
+   {
+      "Name":"Electromagnetic Pulse Generator",
+      "abbrivation":"EPG",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Reach", "Electromagnetic"]
+       },
+      "Benefit":"The weapon gains the Electromagnetic trait. This is in additon to any other Energy trait." 
+        
+    },
+   {
+      "Name":"Firestorm",
+      "abbrivation":"FS",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Reach","Energy"]
+       },
+      "Benefit":"THe weapon gains the Fire trait" 
+        
+    },
+   {
+      "Name":"Ignition Tank",
+      "abbrivation":"IgT",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Reach", "Fire"]
+       },
+      "Benefit":"This weapon gains the Fire trait. This is in addition to any  other Energy trait" 
+        
+    },
+   {
+      "Name":"Laser Beam",
+      "abbrivation":"LasB",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Reach", "Energy"]
+       },
+      "Benefit":"The weapon gains the Laser trait" 
+        
+    },
+   {
+      "Name":"Maiming",
+      "abbrivation":"Maim",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":["Sharp"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"On a Critical hit the wapon deals 1 damage to the target's evasion" 
         
     },
    {
       "Name":"",
       "abbrivation":"",
-      "availibility":"",
-      "Filter":
-       {
-        "NecessaryTraits":[],
-        "ExcludedTraits":[]
-       },
-      "Benefit":"" 
-        
-    },
-   {
-      "Name":"",
-      "abbrivation":"",
-      "availibility":"",
-      "Filter":
-       {
-        "NecessaryTraits":[],
-        "ExcludedTraits":[]
-       },
-      "Benefit":"" 
-        
-    },
-   {
-      "Name":"",
-      "abbrivation":"",
-      "availibility":"",
-      "Filter":
-       {
-        "NecessaryTraits":[],
-        "ExcludedTraits":[]
-       },
-      "Benefit":"" 
-        
-    },
-   {
-      "Name":"",
-      "abbrivation":"",
-      "availibility":"",
+      "availibility":"Restricted",
       "Filter":
        {
         "NecessaryTraits":[],
