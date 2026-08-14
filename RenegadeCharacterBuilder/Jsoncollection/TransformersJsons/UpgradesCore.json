@@ -290,6 +290,150 @@
         
     },
    {
+      "Name":"Manipulative",
+      "abbrivation":"Mani",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Manuever"]
+       },
+      "Benefit":"This weapon gains Manuever as an alternate effect" 
+        
+    },
+   {
+      "Name":"Microtech Weapon",
+      "abbrivation":"MW",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"Reduce the weapon's size by one step" 
+        
+    },
+   {
+      "Name":"Modular Limited Weapon",
+      "abbrivation":"MLW",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":["Small"]
+       },
+      "Benefit":"Choose A limited weapon. When wielding a weapon with a Modular Limited Weapon upgrade, the weapon counts as both the upgraded wapon and the chosen weapon" 
+        
+    },
+   {
+      "Name":"Piercing",
+      "abbrivation":"Piercing",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Ballistic"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"The weapon gains the Armor Piercing trait" 
+        
+    },
+   {
+      "Name":"Plate Piercing",
+      "abbrivation":"PP",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Ballistic"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"The weapon gains the Anti-Tank trait" 
+        
+    },
+   {
+      "Name":"Proximity Bomb",
+      "abbrivation":"PB",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Grenade"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"The Grenade's reach becomes Reach. Setting the bomb is a Standard Action. Starting after the end of the turn the proximity bomb is set, If a character enters the bom's area of effect the promiximity bomb detonates. When a bomb explodes, whoever planted it makes a Technology Skill Test against anyone in the bomb's blast radius" 
+        
+    },
+   {
+      "Name":"Radiant",
+      "abbrivation":"Radi",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Melee"],
+        "ExcludedTraits":["Energy"]
+       },
+      "Benefit":"This weapon gains the Laser trait" 
+        
+    },
+   {
+      "Name":"Refined Grip",
+      "abbrivation":"RG",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Athletics", "Finesse", "Melee"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"Use Might instead of the weapon's normal Skill" 
+        
+    },
+   {
+      "Name":"Reinforced Hardpoint",
+      "abbrivation":"RH",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Integrated Hardpoint"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"When fired from its Integrated Hardpoint, this weapon only suffers \u21931 if moving above normal Movement in the same turn it's fired'" 
+        
+    },
+   {
+      "Name":"Tasing",
+      "abbrivation":"Tasing",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Melee"],
+        "ExcludedTraits":["Energy"]
+       },
+      "Benefit":"The Weapon gains the Electric trait" 
+        
+    },
+   {
+      "Name":"Rumbling",
+      "abbrivation":"Rum",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Melee"],
+        "ExcludedTraits":["Energy"]
+       },
+      "Benefit":"The weapon gains the Sonic trait" 
+        
+    },
+   {
+      "Name":"Smasher",
+      "abbrivation":"Smash",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Blast", "Area"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"This weapon gains the Wrecker trait" 
+        
+    },
+   {
       "Name":"",
       "abbrivation":"",
       "availibility":"",
@@ -301,5 +445,54 @@
       "Benefit":"" 
         
     },
+   {
+      "Name":"",
+      "abbrivation":"",
+      "availibility":"",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"" 
+        
+    },
+   {
+      "Name":"",
+      "abbrivation":"",
+      "availibility":"",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"" 
+        
+    },
+   {
+      "Name":"",
+      "abbrivation":"",
+      "availibility":"",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"" 
+        
+    },
+   {
+      "Name":"",
+      "abbrivation":"",
+      "availibility":"",
+      "Filter":
+       {
+        "NecessaryTraits":[],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"" 
+        
+    },
+
   ]
 }
