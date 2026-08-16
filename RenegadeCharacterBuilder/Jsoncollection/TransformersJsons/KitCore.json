@@ -1,0 +1,53 @@
+{
+  "Kits":
+  [
+    {
+    
+     "Name":"Techology",
+      "Filter":
+       {
+        "NecessaryTraits":["d4", "Technology"]
+       },
+      "Benefit":"You can attempt Skill Tests that call for a Standard Repair Kit without a snag. You can attempt Skill Tests that call for a Limited Repair Kit with \u21931 instead of a Snag and Skill Tests that call for a Restricted Repair kit with \u21933 instead of a Snag. You can take 10 minutes and spend this kit to gain temporary Specialization in Repair for 1 minute, or gain \u21911 for 1 minute on Skill Tests if you're already specialized in Reapair" 
+    },
+    {
+    
+     "Name":"Limited Burglary Kit",
+      "Filter":
+       {
+        "NecessaryTraits":["d6", "Infiltration"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"You can attempt Skill Tests that call for a Limited Infiltration Kit without a snag. You can attempt Skill Tests that call for a Restricted Burglary Kit with \u21932 instead of a Snag. You can take 10 minutes and spend this kit to gain temporary Specialization in Burglary for 1 hour, or gain an edge for 1 hour on Burglary Skill Test if you're already specialized in Burglary" 
+    },
+  
+    {
+    
+     "Name":"Restricted Climbing kit",
+      "Filter":
+       {
+        "NecessaryTraits":["d8", "Athletics"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"You can attempt Skill Tests that call for a Restricted Climbing kit without a Snag. You gain Temporary Specialization in Climbing for the duration of this mission, or an edge on Climbing Skill Tests if you're already specialized in this kit's Specalization." 
+    }
+
+
+  ]
+}
+/*
+
+ kit builder(string specilization name, type EquimentType)
+
+  Case(Equipmentype)
+      case Equipmentype.Standard:
+          string desc = $"You can attempt a Skill Test that call for this {name} Standard kit without a snag, you can attempt Skill Tests taht call for this Specilization's Limited kit with \u21931 instead of a Snag, and Skill Tests that call for it's Restricted kit with \u21933 isntead."
+      break;
+      case Equipmentype.Limited:
+          string descr=$"You can attempt a Skill Test that calls for this {name} Limited Kit without a Snag. You can attempt Skill Tests that call for it's Restricted kit with \u21932 instead of a Snag. You can take 10 minutes and spend this kit to gain temporary Specialization in this kit's Specialization for 1 hour on this kit's Specialization Tests if you're already specialized in this kit's Specialization."
+      break;
+      case Equipmentype.Restricted:
+          string desc =$"You can attempt Skill Tests that call for this Specializations='s Restricted kit Withou a snag" You gain temporary Specialization in this kit's Specalization for the duration of this Mission, or an Edge on this kit's Specialzation Skill Tests if you're already specialized  in this kit's Specialization";
+      break;
+
+*/
