@@ -750,3 +750,5 @@ finished wapon upgrades
 Made amor, json need to get rid or armor model as it's just a form of upgrade.
 
 made kit json and put in method for when I need to make the generics
+
+added support equiment model and json

@@ -1,0 +1,49 @@
+{
+ 
+
+  "SupportEquipment":[
+    {
+      "name":"BullBar",
+      "altmodeEffect":"You always have an Edge on Ram attacks.",
+      "botmodeEffect":"You're immune to effects that would shove you."
+    },
+    {
+      "name":"Cage",
+      "prereq":"Extra crew capcity",
+      "altmodeEffect":"You can impriosn any number of Common or smaller passengers up to your Crew rating. To escape a prisoner must take an Inflitration Skill Test against your Cleverness or a Brawn Skill Test against your Toughness. Thye have \u21932 on those skill test. Additonally if you use a Free action to foucs on them they suffer a snag",
+      "botmodeEffect":"The same bonus as your alt mode, However you can only hold one prioner in botmode"
+    },
+    {
+      "name":"Catepillar Tread",
+      "altmodeEffect":"You gain an Edge on Drivng Skill Tests made while navigating Rough Terrain",
+        "botmodeEffect":"When shoving a creature or object, you count as one Size Class larger than youare and are treated as having moved 20ft immediately before the action."
+    },
+    {
+      "name":"Dozer Blade",
+      "altmodeEffect":"You can clear one square of Rough Terrain you mOve through as a Free Action",
+        "botmodeEffect":"Your dozer blade acts as a shield, providing  +2 Deflection bonus to Toughness"
+    },
+    {
+      "name":"Emergency Care Equipment",
+      "prereq":"Extra Crew capacity",
+      "altmodeEffect":"Your passengers gain an Edge on Science(Medicine) Skill Tests to treat other passenger's Damage",
+        "botmodeEffect":"Your Science(Medicine) Skill Tests cannot suffer more than \u21931."
+    },
+    {
+      "name":"Extra Crew Capacity",
+      "altmodeEffect":"Your Crew rating increases by 4",
+        "botmodeEffect":"Your bot Mode has a Crew rating of 1"
+    },
+    {
+      "name":"",
+      "prereq":"",
+      "altmodeEffect":"",
+        "botmodeEffect":""
+    },{
+      "name":"",
+      "prereq":"",
+      "altmodeEffect":"",
+        "botmodeEffect":""
+    },
+  ]
+}
