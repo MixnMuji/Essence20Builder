@@ -1,0 +1,70 @@
+{
+  "Armor":[
+    {
+      "Name":"Energy Resistor",
+      "abbrivation":"Enr",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":[""],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"Choos an Energy tupe. Weapons of that deal damage of that energy type do not effect you" 
+        
+    },
+    {
+      "Name":"Increased Armor",
+      "availibility":"Limited",
+      "Filter":
+       {
+        "NecessaryTraits":["Might","d4"
+        ],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"Grants +1 Armor" 
+        
+    },
+    {
+      "Name":"Terrifying",
+      "availibility":"Limited",
+      "Benefit":"As a free action, the wearer gives themself a \21911 on Intimidation Skill Tests until the end of their turn" 
+        
+    },
+    {
+      "Name":"Energy Field",
+      "availibility":"Restricted",
+      "Benefit":"Choose an energy type. Your amor gnerates an aura of that type of energy. When an enemy targets you with an attack with a range measured in Reach(not Reach x2), they must make the attack \u2193 or let you make an immediate attack with your energy aura." 
+        
+    },
+    {
+      "Name":"Force Field",
+      "availibility":"Restricted",
+      "Benefit":"As a Free action once per scene, increase your Toughness and Evasion by 2 each until the beginning of your next turn. This upgrade can be taken mutiple times, increasing the number of times it can be used." 
+        
+    },
+    {
+      "Name":"Heavy Armor",
+      "availibility":"Restricted",
+      "Filter":
+       {
+        "NecessaryTraits":["Might","d6"],
+        "ExcludedTraits":[]
+       },
+      "Benefit":"Grants +2 Toughness. This also adds  the defective trait to the armor. Amor Piercing weapons ingore this armor's bonus to Toughness" 
+        
+    },
+    {
+      "Name":"Reinforced Plates",
+      "availibility":"Restricted",
+      "Benefit":"Grants +2 Toughness. This also adds the Plating trait to the armor. Anti-tank weapons ignore the bonus to toughness" 
+        
+    },
+    {
+      "Name":"Stealth Projector",
+      "availibility":"Restricted",
+      "Benefit":"You can make Infiltration Skill Tests to Hide and Sneak even when  they don't have cover to hide behind" 
+        
+    }
+
+  ]
+}

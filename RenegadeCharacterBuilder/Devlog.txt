@@ -745,3 +745,6 @@ added more upgrades made it halfway through limited
 added more upgrades under restricted class
 
 finished wapon upgrades
+8-16
+
+Made amor, json need to get rid or armor model as it's just a form of upgrade.
