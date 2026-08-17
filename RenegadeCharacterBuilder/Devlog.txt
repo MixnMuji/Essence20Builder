@@ -758,3 +758,7 @@ made support equipment,
 json done now to make xamls and the like 
 
 TODO: DON'T FORGET TO MAKE MODEMASTER PAGE FOR CLASS AS IT NEEDS SPECIAL STAT ALLOCATIONS
+
+8-17
+Very busy day irl
+made backbone for Equiment vm, need many observable collections, opted for when I make xaml to have tabs to show the characters taken items. Need methods for each of those and need to deserialize info

@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Text;
+using RenegadeCharacterBuilder.Models.Transformers.GearTFChildrenClasses;
+
+namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
+{
+    public class EquimpmentPageVMTF
+    {
+        public string[] EquipmentTypeView = ["Armor", "Kits", "Weapons", "Support Equipment"]; // so basically if these are chosen we show a different obserable collection
+
+        public ObservableCollection<Upgrades> ArmorUpgrades { get; set; }
+        public ObservableCollection<Upgrades> Kits { get; set; }
+        public ObservableCollection<WeaponTF> Weapons { get; set; }
+
+        public ObservableCollection<SupportEqupmentTF> SupportEquipment { get; set; } = new();
+
+        public ObservableCollection<Upgrades> TakenArmorUpgrades { get; set; }
+        public ObservableCollection<Upgrades> TakenKits { get; set; }
+        public ObservableCollection<WeaponTF> TakenWeapons { get; set; }
+
+        public ObservableCollection<SupportEqupmentTF> TakenSupportEquipment { get; set; }
+
+        public int _harpointsLimit { get; set; } // this is going to change so add on property changed
+
+        public EquimpmentPageVMTF()
+        {
+            //give page a tab to show taken equipment
+            //need method to remove equipment and add them back to list
+            // need method to add equipment to taken list and vice versa for all items
+
+            //need to deserialize all 4 lists
+        }
+
+
+
+    }
+}
