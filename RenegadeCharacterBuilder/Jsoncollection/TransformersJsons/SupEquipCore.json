@@ -21,29 +21,66 @@
     {
       "name":"Dozer Blade",
       "altmodeEffect":"You can clear one square of Rough Terrain you mOve through as a Free Action",
-        "botmodeEffect":"Your dozer blade acts as a shield, providing  +2 Deflection bonus to Toughness"
+      "botmodeEffect":"Your dozer blade acts as a shield, providing  +2 Deflection bonus to Toughness"
     },
     {
       "name":"Emergency Care Equipment",
       "prereq":"Extra Crew capacity",
       "altmodeEffect":"Your passengers gain an Edge on Science(Medicine) Skill Tests to treat other passenger's Damage",
-        "botmodeEffect":"Your Science(Medicine) Skill Tests cannot suffer more than \u21931."
+      "botmodeEffect":"Your Science(Medicine) Skill Tests cannot suffer more than \u21931."
     },
     {
       "name":"Extra Crew Capacity",
       "altmodeEffect":"Your Crew rating increases by 4",
-        "botmodeEffect":"Your bot Mode has a Crew rating of 1"
+      "botmodeEffect":"Your bot Mode has a Crew rating of 1"
     },
     {
-      "name":"",
-      "prereq":"",
-      "altmodeEffect":"",
-        "botmodeEffect":""
-    },{
-      "name":"",
-      "prereq":"",
-      "altmodeEffect":"",
-        "botmodeEffect":""
+      "name":"Ladder",
+      "altmodeEffect":"You can extend your ladder as a Free action. Allies of your Size Class or smaller using your ladder gain \u21912 on Atheltics and Acrobatics Skill Test",
+      "botmodeEffect":"The Reach of your Unamred Combat increases to Reach x2"
     },
+    {
+      "name":"Loader",
+      "altmodeEffect":"Your Brawn counts as \u21912 when calculating your Carrying Capacity, and you gain \u21912 on Might Skill Tests to shove objects and creatures",
+      "botmodeEffect":"When you convert, you can choose to benefit from the same bounus you have in Alt Mode, or you can choose to use the loader as a shield which adds +1 Deflection to Toughness"
+    },
+
+    {
+      "name":"Piledriver",
+      "altmodeEffect":"As a Free Action, you can change one space within Reach of normal terrain into rough Terrain",
+      "botmodeEffect":"Your Piledriver counts as a Close Combat Heavy Bludgeon, You can use it even if you are not Trained to use a Close Combat Heavy Bludgeon. if you are Trained, you gain \u2191 on Finesse or Might Skill Tests to attack with your Piledriver. Additionally, agianst objects you deal +1 Damage."
+    },
+  
+    {
+      "name":"Rotor Blades",
+      "altmodeEffect":"You gain Aerial Movement equal to half yoru Ground Movement. You take off and land verically, and can hover.",
+      "botmodeEffect":"Your Rotor Blades count as a Close Combat Blade. You can use it even if you are not Trained to use a Close Combat Blade. if you are Trained to use a Close Combat Blade, you gain \u21911 on Finesse or Might Skill Tests to attack with your Rotor Blades.Additonally, against organic targets, you deal +1 Damage."
+    },
+  
+    {
+      "name":"Siren",
+      "altmodeEffect":"By making a Perususaion Skill Test, you can move any currentyl operated vehicle(Cybertronians in Alt Mode do not count) up to 10ft away from their current position within a 30ft radius. You cannot move them into positions that would casue them harm.",
+      "botmodeEffect":"you gain \u2193 on Intimidation Skill Tests."
+    },
+  
+    {
+      "name":"Tow Cable & Hook",
+      "altmodeEffect":"You gain an Edge on Brawn Skill Tests to pull anything attached to your Tow Cable. The difficulties of dragging additional weight increase by 5 instead of 10.",
+      "botmodeEffect":"Your Tow Cable counts as a Grappler. You can use it even if you are not Trained to use a Grappler.If you are Trained to use a Grapper you gain \u21911 on Skill Tests to attack with your TowCable. You ignore, The Atheletics or Finesse requierments of using a Grappler."
+    },
+  
+    {
+      "name":"Water Cannon",
+      "altmodeEffect":"You can use Targeting to put out fires, and gain an Edge on Skill Tests involving Fire.",
+      "botmodeEffect":"The Water Cannon counts as a Directed Element Rilfe (Cold), but only requires one hardpoint to operate instead of 2, and waives the Technology Requirement."
+    },
+  
+    {
+      "name":"Vehicle Repair Equipment",
+      "prereq":"Extra Crew capacity",
+      "altmodeEffect":"If any of your Cybertronian passengers are wounded, other passengers make Technology(repair) Skill Tests on them with an Edge",
+      "botmodeEffect":"Your Technology (Repair) Skill Tests cannot suffer more than \u21931."
+    }
+
   ]
 }
