@@ -762,3 +762,7 @@ TODO: DON'T FORGET TO MAKE MODEMASTER PAGE FOR CLASS AS IT NEEDS SPECIAL STAT AL
 8-17
 Very busy day irl
 made backbone for Equiment vm, need many observable collections, opted for when I make xaml to have tabs to show the characters taken items. Need methods for each of those and need to deserialize info
+
+8-18
+
+Slept most the day woke up and banged out a few new roots for deserilzation wrote the methods but still need to finish assigning the obserable collections after they're filtered by the apporpriatoe properties
