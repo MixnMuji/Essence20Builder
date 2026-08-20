@@ -765,4 +765,11 @@ made backbone for Equiment vm, need many observable collections, opted for when 
 
 8-18
 
-Slept most the day woke up and banged out a few new roots for deserilzation wrote the methods but still need to finish assigning the obserable collections after they're filtered by the apporpriatoe properties
+Slept most the day woke up and banged out a few new roots for deserilzation wrote 
+the methods but still need to finish assigning the obserable collections after they're filtered by the apporpriatoe properties
+
+
+8-19 
+
+Made a method to try and assign the obserable collections learned about where to put type t, realized that it would be easier to find the generics properites if I had a return/yield in the
+parent class. so that is tommorows goal. forgive me this is also my diary and I had crawl back to my old job so. Time and energy are limited. Fun though need abstract method to overritde

@@ -33,6 +33,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public EquimpmentPageVMTF()
         {
             getdata = new GlobalCall();
+            Weapons = new ObservableCollection<WeaponTF>;
             //give page a tab to show taken equipment
             //need method to remove equipment and add them back to list
             // need method to add equipment to taken list and vice versa for all items
@@ -42,6 +43,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public void GetWeapons()
         {
             var weaponsfull = getdata.LoadJson<WeaponRoot>("WeaponsCore.json", "TransformersJsons");
+            Weapons = GetItemsForObserablecollection<WeaponTF>(["limited", "melee"], weaponsfull.weapons);
             //check by class to get specificts
         }
         public void Getsup()
@@ -60,7 +62,20 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         {
             var Kits = getdata.LoadJson<KitRootTF>("KitCore.json", "TransformersJsons");
         }
-
+        
+        public ObservableCollection<T> GetItemsForObserablecollection<T>(string[] Include, List<T> root, Func<T,string> GetClassifcation)
+        {
+            var result = new ObservableCollection<T>();
+            foreach ( var item in root)
+            {
+                string classification = GetClassifcation(item);
+                if(Include.Any(keyword => classification.Contains(keyword, StringComparison.OrdinalIgnoreCase)))
+                {
+                    result.Add(item);
+                }
+            }
+            return result;
+        }
         /*
         namespace RenegadeCharacterBuilder.GlobalMethods
     {
