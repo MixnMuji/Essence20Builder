@@ -773,3 +773,11 @@ the methods but still need to finish assigning the obserable collections after t
 
 Made a method to try and assign the obserable collections learned about where to put type t, realized that it would be easier to find the generics properites if I had a return/yield in the
 parent class. so that is tommorows goal. forgive me this is also my diary and I had crawl back to my old job so. Time and energy are limited. Fun though need abstract method to overritde
+
+8-21
+
+alright so with virtual methods, when you override that interation is unique to the child nothing is passed on via inheritence if you overide.
+Made method for narring down equipment, and made the cases for them in weapons
+Need to reread rules on equimpment I may have created a problem I didn't even have lol
+
+finished base methods for making lists(obserable collections)

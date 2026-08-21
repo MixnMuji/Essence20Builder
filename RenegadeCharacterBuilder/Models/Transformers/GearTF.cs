@@ -16,7 +16,12 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public EquimentType availibility { get; set; }
         public PrequisiteTF Requirements { get; set;}
 
-
+        public virtual IEnumerable<string> GetProperiesForComparison()
+        {
+            yield return Name;
+            yield return availibility.ToString();
+           
+        }
 
     }
 }
