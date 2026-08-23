@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Data;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
+using System.Windows.Controls.Primitives;
 using Microsoft.VisualBasic;
 using RenegadeCharacterBuilder.GlobalMethods;
 using RenegadeCharacterBuilder.Models.Transformers.GearTFChildrenClasses;
@@ -13,10 +17,13 @@ using RenegadeCharacterBuilder.Models.Transformers.Roots;
 
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
-    public class EquimpmentPageVMTF
+    public class EquimpmentPageVMTF :INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         public string[] EquipmentTypeView = ["Armor", "Kits", "Weapons", "Support Equipment"]; // so basically if these are chosen we show a different obserable collection
 
+        public ObservableCollection<Upgrades> TrainedArmorUpgrades { get; set; }
+        public ObservableCollection<WeaponTF> TrainedWeapons { get; set; }
         public ObservableCollection<Upgrades> ArmorUpgrades { get; set; }
         public ObservableCollection<Upgrades> Kits { get; set; }
         public ObservableCollection<WeaponTF> Weapons { get; set; }
@@ -34,10 +41,23 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public string RoleName { get; set; }
 
         public int _harpointsLimit { get; set; } // this is going to change so add on property changed
+        public int HardpointLimit
+        {
+            get => _harpointsLimit;
+            set 
+            {
+                _harpointsLimit = value;
+                NotifyPropertyChanged(nameof(HardpointLimit));
+            }
+        }
+        
 
         public EquimpmentPageVMTF()
         {
             getdata = new GlobalCall();
+
+            TrainedWeapons = new ObservableCollection<WeaponTF>();
+            TrainedArmorUpgrades = new ObservableCollection<Upgrades>();
 
             Weapons = new ObservableCollection<WeaponTF>();
             ArmorUpgrades = new ObservableCollection<Upgrades>();
@@ -55,34 +75,99 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
             //need to deserialize all 4 lists
         }
+       
+        public void AddEquuipment(object selection)
+        {
+            switch (selection)
+            {
+                case WeaponTF weapon:
+                    TakenWeapons.Add(weapon);
+                    if (TrainedWeapons.Contains(weapon))
+                    {
+                        TrainedWeapons.Remove(weapon);
+                    }
+                    else
+                    {
+                        Weapons.Remove(weapon);
+                    }
+                    break;
+
+                case Upgrades upgrade:
+                    if (Kits.Contains(upgrade))
+                    {
+                        TakenKits.Add(upgrade);
+                        Kits.Remove(upgrade);
+                    }
+                    if (ArmorUpgrades.Contains(upgrade))
+                    {
+                        TakenArmorUpgrades.Add(upgrade);
+                        ArmorUpgrades.Remove(upgrade);
+                    }
+                    if (TrainedArmorUpgrades.Contains(upgrade))
+                    {
+                        TakenArmorUpgrades.Add(upgrade);
+                        TrainedArmorUpgrades.Remove(upgrade);
+                    }
+                    break;
+
+                case SupportEqupmentTF Se:
+                    if (SupportEquipment.Contains(Se))
+                    {
+                        if(Se.name == "Extra Crew Capacity")
+                        {
+                            var addothetraits = getdata.LoadJson<SupportEquipRootTF>("SupEquipCore.json", "TransformersJsons");
+                            foreach (var item in addothetraits.SupportEquipment)
+                            {
+                                if (item.prereq == "Extra Crew capacity") {
+                                    SupportEquipment.Add(item);
+                                     }
+                            }
+                            
+                        }
+                        TakenSupportEquipment.Add(Se);
+                        SupportEquipment.Remove(Se);
+                    }
+                    break;
+            }
+            
+          
+            
+        }
         public void GetWeapons()
         {
             var weaponsfull = getdata.LoadJson<WeaponRoot>("WeaponsCore.json", "TransformersJsons");
             switch (RoleName)
             {
                 case "Analyst":
-                    Weapons = GetItemsForObserablecollection<WeaponTF>(["1", "2", "Standard"], weaponsfull.weapons);
+                    TrainedWeapons = GetItemsForObserablecollection<WeaponTF>(["1", "2", "Standard"], weaponsfull.weapons);
+                    Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons);
                     break;
                 case "Field Commander":
-                    Weapons = GetItemsForObserablecollection<WeaponTF>(["ballistic", "melee", "standard"], weaponsfull.weapons);
+                    TrainedWeapons = GetItemsForObserablecollection<WeaponTF>(["ballistic", "melee", "standard"], weaponsfull.weapons);
+                    Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons);
                     break;
                 case "Gunner":
-                    Weapons = GetItemsForObserablecollection<WeaponTF>(["limited", "standard", "ballistic", "projectile"], weaponsfull.weapons);
+                    TrainedWeapons = GetItemsForObserablecollection<WeaponTF>(["limited", "standard", "ballistic", "projectile"], weaponsfull.weapons);
+                    Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons); 
                     break;
                 case "Modemaster":
-                    Weapons = GetItemsForObserablecollection<WeaponTF>(["standard"], weaponsfull.weapons);
+                    TrainedWeapons = GetItemsForObserablecollection<WeaponTF>(["standard"], weaponsfull.weapons);
+                    Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons);
                     break;
                 case "Scientist":
-                    Weapons = GetItemsForObserablecollection<WeaponTF>(["electic", "explosivies"], weaponsfull.weapons);
+                    TrainedWeapons = GetItemsForObserablecollection<WeaponTF>(["electic", "explosivies"], weaponsfull.weapons);
+                    Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons);
                     break;
                 case "Scout":
-                    Weapons = GetItemsForObserablecollection<WeaponTF>(["silent"], weaponsfull.weapons);
+                    TrainedWeapons = GetItemsForObserablecollection<WeaponTF>(["silent"], weaponsfull.weapons);
+                    Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons);
                     break;
                 case "Warrior":
-                    Weapons = GetItemsForObserablecollection<WeaponTF>(["limited", "melee"], weaponsfull.weapons);
+                    TrainedWeapons = GetItemsForObserablecollection<WeaponTF>(["limited", "melee"], weaponsfull.weapons);
+                    Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons);
                     break;
             }
-            Weapons = GetItemsForObserablecollection<WeaponTF>(["limited", "melee"], weaponsfull.weapons);
+            
             
         }
         public void Getsup()
@@ -90,7 +175,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             var se = getdata.LoadJson<SupportEquipRootTF>("SupEquipCore.json", "TransformersJsons"); // figure out how to shift list into observable collection maybe just shift the type in root
             foreach( var item in se.SupportEquipment)
             {
-                if (item.prereq!.Contains("Extra")){
+                if (!item.prereq.Contains("Extra")){
                     SupportEquipment.Add(item);
                 }
             }
@@ -101,25 +186,32 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             switch (RoleName)
             {
                 case "Analyst":
-                    ArmorUpgrades= GetItemsForObserablecollection<Upgrades>(["Standard"], ArmorEquipment.Armors);
+                    TrainedArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard"], ArmorEquipment.Armors);
+                    ArmorUpgrades = GetNonTrainedList<Upgrades>(TrainedArmorUpgrades, ArmorEquipment.Armors);
                     break;
                 case "Field Commander":
-                    ArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard", "limited"], ArmorEquipment.Armors);
+                    TrainedArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard", "limited"], ArmorEquipment.Armors);
+                    ArmorUpgrades = GetNonTrainedList<Upgrades>(TrainedArmorUpgrades, ArmorEquipment.Armors);
                     break;
                 case "Gunner":
-                    ArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard", "limited"], ArmorEquipment.Armors);
+                    TrainedArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard", "limited"], ArmorEquipment.Armors);
+                    ArmorUpgrades = GetNonTrainedList<Upgrades>(TrainedArmorUpgrades, ArmorEquipment.Armors);
                     break;
                 case "Modemaster":
-                    ArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard"], ArmorEquipment.Armors);
+                    TrainedArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard"], ArmorEquipment.Armors);
+                    ArmorUpgrades = GetNonTrainedList<Upgrades>(TrainedArmorUpgrades, ArmorEquipment.Armors);
                     break;
                 case "Scientist":
-                    ArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard", "limited"], ArmorEquipment.Armors);
+                    TrainedArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard", "limited"], ArmorEquipment.Armors);
+                    ArmorUpgrades = GetNonTrainedList<Upgrades>(TrainedArmorUpgrades, ArmorEquipment.Armors);
                     break;
                 case "Scout":
-                    ArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard", "limited"], ArmorEquipment.Armors);
+                    TrainedArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard", "limited"], ArmorEquipment.Armors);
+                    ArmorUpgrades = GetNonTrainedList<Upgrades>(TrainedArmorUpgrades, ArmorEquipment.Armors);
                     break;
                 case "Warrior":
-                    ArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard","limited", " Restricted"], ArmorEquipment.Armors);
+                    TrainedArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard","limited", " Restricted"], ArmorEquipment.Armors);
+                    ArmorUpgrades = GetNonTrainedList<Upgrades>(TrainedArmorUpgrades, ArmorEquipment.Armors);
                     break;
             }
         }
@@ -128,7 +220,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public void GetKits()
         {
             var Kts = getdata.LoadJson<KitRootTF>("KitCore.json", "TransformersJsons");
-            foreach (var k in Kits.Kts)
+            foreach (var k in Kits)
             {
                 Kits.Add(k);
             }
@@ -149,20 +241,25 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             }
             return result;
         }
-       
 
-        /*
-        namespace RenegadeCharacterBuilder.GlobalMethods
-    {
-        public class GlobalCall
+        public ObservableCollection<T> GetNonTrainedList<T>(ObservableCollection<T> trainedItems, List<T> root) where T : GearTF
         {
-            public T? LoadJson<T>(string jsonLocation, string gamejsonfolder)
+            var result = new ObservableCollection<T>();
+            foreach(T item in root)
             {
-                var path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", gamejsonfolder, jsonLocation);
-                var json = File.ReadAllText(path);
-                return JsonSerializer.Deserialize<T>(json);
+                if (!trainedItems.Contains(item))
+                {
+                    result.Add(item);
+                }
             }
+            return result;
         }
-    } */
-}
+
+
+
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
 }

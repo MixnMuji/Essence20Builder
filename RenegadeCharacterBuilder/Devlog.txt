@@ -781,3 +781,9 @@ Made method for narring down equipment, and made the cases for them in weapons
 Need to reread rules on equimpment I may have created a problem I didn't even have lol
 
 finished base methods for making lists(obserable collections)
+
+8-23
+
+Made a second list type to show things they are trained in and not via class.
+Made method for selecting items that filters by item type found out you can just make a generic item and check if it is set "as" object type
+added InotifyPropchanged, and hardpoints
