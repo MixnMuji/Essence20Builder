@@ -9,6 +9,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
 using System.Windows.Controls.Primitives;
+using System.Windows.Documents;
 using Microsoft.VisualBasic;
 using RenegadeCharacterBuilder.GlobalMethods;
 using RenegadeCharacterBuilder.Models.Transformers.GearTFChildrenClasses;
@@ -28,9 +29,22 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public ObservableCollection<Upgrades> Kits { get; set; }
         public ObservableCollection<WeaponTF> Weapons { get; set; }
 
+        public ObservableCollection<WeaponTF> RefferenceForTrianedWeapons { get; set; }
+        public ObservableCollection<Upgrades> RefferencedForTrainedAmmor { get; set; }
+
         public ObservableCollection<SupportEqupmentTF> SupportEquipment { get; set; } = new();
 
-        public ObservableCollection<Upgrades> TakenArmorUpgrades { get; set; }
+        private int _requistionPoints { get; set; } // have method on page that gets user imput and sets requistion points
+        public int requistionPoints
+        {
+            get => _requistionPoints;
+            set
+            {
+                _requistionPoints = value;
+                NotifyPropertyChanged(nameof(requistionPoints));
+            }
+        }
+        public Upgrades TakenArmorUpgrade { get; set; }
         public ObservableCollection<Upgrades> TakenKits { get; set; }
         public ObservableCollection<WeaponTF> TakenWeapons { get; set; }
 
@@ -59,6 +73,9 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             TrainedWeapons = new ObservableCollection<WeaponTF>();
             TrainedArmorUpgrades = new ObservableCollection<Upgrades>();
 
+            RefferencedForTrainedAmmor = new ObservableCollection<Upgrades>();
+            RefferenceForTrianedWeapons = new ObservableCollection<WeaponTF>();
+
             Weapons = new ObservableCollection<WeaponTF>();
             ArmorUpgrades = new ObservableCollection<Upgrades>();
             SupportEquipment = new ObservableCollection<SupportEqupmentTF>();
@@ -75,63 +92,174 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
             //need to deserialize all 4 lists
         }
-       
+       public bool checkIfAdditonISpossible(object slection)// plug into pages call
+        {
+            switch (slection)
+            {
+                case WeaponTF weapon:
+                    if (TrainedWeapons.Contains(weapon))
+                    {
+                        if (HardpointLimit - 1 < 0) // if they're trained requistion points don't matter
+                        {
+                            return false;
+                        }
+                        else return true;
+
+                    }
+                    else { 
+                    if (HardpointLimit - 1 < 0 || requistionPoints - 1 < 0)
+                    {
+                        return false;
+                    }
+                    else return true;
+                    }
+                    break;
+                case Upgrades upgrade:  
+                    if (TrainedArmorUpgrades.Contains(upgrade)) // roles can't be trained in kits so we just need to see if they qualify for the armor otherwise requsition maters
+                    {
+                        return true;
+                    }
+                    if(requistionPoints -1 < 0)
+                    {
+                        return false;
+                    }
+                    break;
+                case SupportEqupmentTF se:
+                    if (HardpointLimit - 1 < 0 || requistionPoints - 1 < 0)
+                    {
+                        return false;
+                    }
+                    else return true;
+                    break;
+                    
+            }
+            return true;
+            
+        }
         public void AddEquuipment(object selection)
+        {
+            {
+                switch (selection)
+                {
+                    case WeaponTF weapon:
+                        TakenWeapons.Add(weapon);
+                        if (TrainedWeapons.Contains(weapon))
+                        {
+                            TrainedWeapons.Remove(weapon);
+                            HardpointLimit -=1;
+                        }
+                        else
+                        {
+                            Weapons.Remove(weapon);
+                            requistionPoints -= 1;
+                            HardpointLimit -= 1;
+                        }
+                        break;
+
+                    case Upgrades upgrade:
+                        if (Kits.Contains(upgrade))
+                        {
+                            TakenKits.Add(upgrade);
+                            Kits.Remove(upgrade);
+                            requistionPoints -= 1;
+                        }
+                        if (ArmorUpgrades.Contains(upgrade))
+                        {
+                            TakenArmorUpgrade = upgrade;
+                            ArmorUpgrades.Remove(upgrade);
+                            requistionPoints -= 1;
+                        }
+                        if (TrainedArmorUpgrades.Contains(upgrade))
+                        {
+                            TakenArmorUpgrade = upgrade;
+                            TrainedArmorUpgrades.Remove(upgrade);
+                            
+                        }
+                        break;
+
+                    case SupportEqupmentTF Se:
+                        if (SupportEquipment.Contains(Se))
+                        {
+                            if (Se.name == "Extra Crew Capacity")
+                            {
+                                var addothetraits = getdata.LoadJson<SupportEquipRootTF>("SupEquipCore.json", "TransformersJsons");
+                                foreach (var item in addothetraits.SupportEquipment)
+                                {
+                                    if (item.prereq == "Extra Crew capacity")
+                                    {
+                                        SupportEquipment.Add(item);
+                                    }
+                                }
+
+                            }
+                            TakenSupportEquipment.Add(Se);
+                            SupportEquipment.Remove(Se);
+                            HardpointLimit -= 1;
+                        }
+                        break;
+                }
+            }
+        }
+        public void removeitem(object selection)
         {
             switch (selection)
             {
                 case WeaponTF weapon:
-                    TakenWeapons.Add(weapon);
-                    if (TrainedWeapons.Contains(weapon))
+                    if (TakenWeapons.Contains(weapon) && RefferenceForTrianedWeapons.Contains(weapon))
                     {
-                        TrainedWeapons.Remove(weapon);
+                        TakenWeapons.Remove(weapon);
+                        HardpointLimit += 1;
+                        // need method to see if item was trained or not.
                     }
-                    else
+                    if (TakenWeapons.Contains(weapon))
                     {
-                        Weapons.Remove(weapon);
+                        TakenWeapons.Remove(weapon);
+                        HardpointLimit += 1;
+                        requistionPoints += 1;
                     }
                     break;
-
                 case Upgrades upgrade:
                     if (Kits.Contains(upgrade))
                     {
                         TakenKits.Add(upgrade);
                         Kits.Remove(upgrade);
+                        requistionPoints -= 1;
                     }
                     if (ArmorUpgrades.Contains(upgrade))
                     {
-                        TakenArmorUpgrades.Add(upgrade);
+                        TakenArmorUpgrade = upgrade;
                         ArmorUpgrades.Remove(upgrade);
+                        requistionPoints -= 1;
                     }
                     if (TrainedArmorUpgrades.Contains(upgrade))
                     {
-                        TakenArmorUpgrades.Add(upgrade);
+                        TakenArmorUpgrade = upgrade;
                         TrainedArmorUpgrades.Remove(upgrade);
+
                     }
                     break;
 
                 case SupportEqupmentTF Se:
                     if (SupportEquipment.Contains(Se))
                     {
-                        if(Se.name == "Extra Crew Capacity")
+                        if (Se.name == "Extra Crew Capacity")
                         {
                             var addothetraits = getdata.LoadJson<SupportEquipRootTF>("SupEquipCore.json", "TransformersJsons");
                             foreach (var item in addothetraits.SupportEquipment)
                             {
-                                if (item.prereq == "Extra Crew capacity") {
+                                if (item.prereq == "Extra Crew capacity")
+                                {
                                     SupportEquipment.Add(item);
-                                     }
+                                }
                             }
-                            
+
                         }
                         TakenSupportEquipment.Add(Se);
                         SupportEquipment.Remove(Se);
+                        HardpointLimit -= 1;
                     }
                     break;
             }
-            
-          
-            
         }
         public void GetWeapons()
         {
@@ -140,30 +268,37 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             {
                 case "Analyst":
                     TrainedWeapons = GetItemsForObserablecollection<WeaponTF>(["1", "2", "Standard"], weaponsfull.weapons);
+                    RefferenceForTrianedWeapons = new ObservableCollection<WeaponTF>(TrainedWeapons);
                     Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons);
                     break;
                 case "Field Commander":
                     TrainedWeapons = GetItemsForObserablecollection<WeaponTF>(["ballistic", "melee", "standard"], weaponsfull.weapons);
+                    RefferenceForTrianedWeapons = new ObservableCollection<WeaponTF>(TrainedWeapons);
                     Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons);
                     break;
                 case "Gunner":
                     TrainedWeapons = GetItemsForObserablecollection<WeaponTF>(["limited", "standard", "ballistic", "projectile"], weaponsfull.weapons);
+                    RefferenceForTrianedWeapons = new ObservableCollection<WeaponTF>(TrainedWeapons);
                     Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons); 
                     break;
                 case "Modemaster":
                     TrainedWeapons = GetItemsForObserablecollection<WeaponTF>(["standard"], weaponsfull.weapons);
+                    RefferenceForTrianedWeapons = new ObservableCollection<WeaponTF>(TrainedWeapons);
                     Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons);
                     break;
                 case "Scientist":
                     TrainedWeapons = GetItemsForObserablecollection<WeaponTF>(["electic", "explosivies"], weaponsfull.weapons);
+                    RefferenceForTrianedWeapons = new ObservableCollection<WeaponTF>(TrainedWeapons);
                     Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons);
                     break;
                 case "Scout":
                     TrainedWeapons = GetItemsForObserablecollection<WeaponTF>(["silent"], weaponsfull.weapons);
+                    RefferenceForTrianedWeapons = new ObservableCollection<WeaponTF>(TrainedWeapons);
                     Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons);
                     break;
                 case "Warrior":
                     TrainedWeapons = GetItemsForObserablecollection<WeaponTF>(["limited", "melee"], weaponsfull.weapons);
+                    RefferenceForTrianedWeapons = new ObservableCollection<WeaponTF>(TrainedWeapons);
                     Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons);
                     break;
             }

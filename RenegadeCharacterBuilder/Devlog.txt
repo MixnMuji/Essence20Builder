@@ -787,3 +787,9 @@ finished base methods for making lists(obserable collections)
 Made a second list type to show things they are trained in and not via class.
 Made method for selecting items that filters by item type found out you can just make a generic item and check if it is set "as" object type
 added InotifyPropchanged, and hardpoints
+
+8-24 
+
+Added method to check the possiblity of adding any given weapon
+also added method to track requistion points need way to get value assigned from user
+Added two refference observable collections to track where to return items and if they need requestion points back or just hardpoints
