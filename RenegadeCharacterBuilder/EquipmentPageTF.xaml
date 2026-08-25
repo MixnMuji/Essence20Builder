@@ -1,0 +1,83 @@
+﻿<Page x:Class="RenegadeCharacterBuilder.EquipmentPageTF"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RenegadeCharacterBuilder"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EquipmentPageTF"
+      Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row ="0">
+            <TextBlock Text="Equipment Page" FontSize="24"/>
+            <TextBlock Text="Choose your equipment"/>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBox Text="Set your Reqesution point per gm" x:Name="UsersRecVal"/>
+                <Button Content="Sumbit" Width="30" Click="SetReqValue"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock Text="{Binding  requistionPoints, StringFormat= Requistion Points: {0}}"/>
+                <TextBlock Text="{Binding HardpointLimit, StringFormat= Free Hardpoints: {0}}"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <!-- TAB STUFF BEGINS-->
+        <TabControl Grid.Row="1">
+            <!-- TAB ONE  -->
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Width="10" Height="10" Fill="DimGray"/>
+                        <TextBlock Text="Gear you are trained in." FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="400"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox Grid.Column="0" ItemsSource="{Binding EquipmentTypeView}">
+                        
+                    </ListBox>
+                </Grid>
+                
+            </TabItem>
+
+            
+            <!-- TAB TWO -->
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Width="10" Height="10" Fill="DimGray"/>
+                        <TextBlock Text="Gear that you must Requistion" FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+            
+            <!-- TAB THREE-->
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Width="10" Height="10" Fill="DimGray"/>
+                        <TextBlock Text="Gear Taken" FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+        
+        </TabControl>
+        
+        
+        
+
+       
+    </Grid>
+    
+</Page>

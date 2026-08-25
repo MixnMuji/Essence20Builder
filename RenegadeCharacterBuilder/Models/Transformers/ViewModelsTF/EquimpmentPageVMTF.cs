@@ -23,6 +23,17 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public event PropertyChangedEventHandler PropertyChanged;
         public string[] EquipmentTypeView = ["Armor", "Kits", "Weapons", "Support Equipment"]; // so basically if these are chosen we show a different obserable collection
 
+        public ObservableCollection<GearTF> CurrentViewedList { get; set;} // generic for deciding current view
+        private string chosenListTovView { get; set;}
+        public string ChosenListToView
+        {
+            get => chosenListTovView;
+            set
+            {
+                chosenListTovView = value;
+                NotifyPropertyChanged(nameof(ChosenListToView));
+            }
+        }
         public ObservableCollection<Upgrades> TrainedArmorUpgrades { get; set; }
         public ObservableCollection<WeaponTF> TrainedWeapons { get; set; }
         public ObservableCollection<Upgrades> ArmorUpgrades { get; set; }
@@ -34,6 +45,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public ObservableCollection<SupportEqupmentTF> SupportEquipment { get; set; } = new();
 
+        Dictionary<string, ObservableCollection<GearTF>> GearpairsTrained { get; set; } 
+        Dictionary<string, ObservableCollection<GearTF>> GearpairsUnTrained { get; set; }
         private int _requistionPoints { get; set; } // have method on page that gets user imput and sets requistion points
         public int requistionPoints
         {
@@ -80,10 +93,16 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             ArmorUpgrades = new ObservableCollection<Upgrades>();
             SupportEquipment = new ObservableCollection<SupportEqupmentTF>();
             Kits = new ObservableCollection<Upgrades>();
-
+            Dictionary<string, ObservableCollection<GearTF>> GearpairsTrained = new Dictionary<string, ObservableCollection<GearTF>>();
+            Dictionary<string, ObservableCollection<GearTF>> GearpairsUnTrained = new Dictionary<string, ObservableCollection<GearTF>>();
 
             RoleName = TFCharacterSession.CurrentTransfomer.Role.Name;
-           
+
+
+          GetArmor();
+          GetWeapons();
+          GetKits();
+          Getsup();
 
 
             //give page a tab to show taken equipment
@@ -91,6 +110,31 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             // need method to add equipment to taken list and vice versa for all items
 
             //need to deserialize all 4 lists
+        }
+        public void makedictory(string feeditem)
+        {
+            //if(string == Armor)
+        }
+        public void DislplayCorespondingList(int filter, object thingsent)
+        {
+            switch(filter)
+            {
+                case 1:
+
+                break;
+                case 2:
+                break;
+            }
+            // we need to get our string,
+            // each string has a case where it is either trainred or untrained
+            //we can not pull data from the page so we either make a work around here or we write it on the page
+            //so we can make the method take a number for a case and that will display the two types
+
+            //every string has a dictionary of an obserable collection
+            /*
+             * Dict<string, obsersable collection> pairs doesn't work on full vm try inside model
+             */
+            // and we can take the key value and set current indext to it if the string matches`
         }
        public bool checkIfAdditonISpossible(object slection)// plug into pages call
         {
@@ -323,6 +367,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 case "Analyst":
                     TrainedArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard"], ArmorEquipment.Armors);
                     ArmorUpgrades = GetNonTrainedList<Upgrades>(TrainedArmorUpgrades, ArmorEquipment.Armors);
+                  
+
                     break;
                 case "Field Commander":
                     TrainedArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard", "limited"], ArmorEquipment.Armors);
@@ -359,6 +405,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             {
                 Kits.Add(k);
             }
+
+        }
+        public void SetDictionarys()
+        {
 
         }
 

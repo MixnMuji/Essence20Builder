@@ -793,3 +793,9 @@ added InotifyPropchanged, and hardpoints
 Added method to check the possiblity of adding any given weapon
 also added method to track requistion points need way to get value assigned from user
 Added two refference observable collections to track where to return items and if they need requestion points back or just hardpoints
+
+8-25 
+
+Started xaml page, made outline with tabs made text "box" to lock in value of requsition points
+need way to differeintiaite on when to show each given observable collection thought I could have a generic observable collection as a pointer, and have dictiorarys to set each
+item to, didn't really work so I need to think and reivent the wheel looking into tubples, dictoaries and helper methods.
