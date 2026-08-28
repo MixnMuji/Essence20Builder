@@ -23,17 +23,9 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public event PropertyChangedEventHandler PropertyChanged;
         public string[] EquipmentTypeView = ["Armor", "Kits", "Weapons", "Support Equipment"]; // so basically if these are chosen we show a different obserable collection
 
-        public ObservableCollection<GearTF> CurrentViewedList { get; set;} // generic for deciding current view
-        private string chosenListTovView { get; set;}
-        public string ChosenListToView
-        {
-            get => chosenListTovView;
-            set
-            {
-                chosenListTovView = value;
-                NotifyPropertyChanged(nameof(ChosenListToView));
-            }
-        }
+        
+        public IEnumerable<Object> CurrentViewedList { get; set;} // generic for deciding current view
+       
         public ObservableCollection<Upgrades> TrainedArmorUpgrades { get; set; }
         public ObservableCollection<WeaponTF> TrainedWeapons { get; set; }
         public ObservableCollection<Upgrades> ArmorUpgrades { get; set; }
@@ -45,8 +37,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public ObservableCollection<SupportEqupmentTF> SupportEquipment { get; set; } = new();
 
-        Dictionary<string, ObservableCollection<GearTF>> GearpairsTrained { get; set; } 
-        Dictionary<string, ObservableCollection<GearTF>> GearpairsUnTrained { get; set; }
+      
         private int _requistionPoints { get; set; } // have method on page that gets user imput and sets requistion points
         public int requistionPoints
         {
@@ -78,7 +69,28 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             }
         }
         
-
+        private EquipmentTab _currentTab { get; set; }
+        public EquipmentTab CurrentTab
+        {
+            get => _currentTab;
+            set
+            {
+                _currentTab = value;
+                NotifyPropertyChanged();
+                UpdateCurrentList();
+            }
+        }
+        private string chosenListTovView { get; set; }
+        public string ChosenListToView
+        {
+            get => chosenListTovView;
+            set
+            {
+                chosenListTovView = value;
+                NotifyPropertyChanged(nameof(ChosenListToView));
+                UpdateCurrentList();
+            }
+        }
         public EquimpmentPageVMTF()
         {
             getdata = new GlobalCall();
@@ -407,11 +419,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             }
 
         }
-        public void SetDictionarys()
-        {
-
-        }
-
+        
         public ObservableCollection<T> GetItemsForObserablecollection<T>(string[] Include, List<T> root) where T : GearTF
         {
             var result = new ObservableCollection<T>();
@@ -440,11 +448,45 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             return result;
         }
 
+        public void UpdateCurrentList()
+        {
+            if (string.IsNullOrEmpty(chosenListTovView))
+                return;
+            if (CurrentTab == EquipmentTab.Trained)
+            {
+                CurrentViewedList = chosenListTovView switch
+                {
+                    "Armor" => TrainedArmorUpgrades,
+                    "Weapons" => TrainedWeapons,
+                    "Kit" => [],
+                    "Support Equipment" => [],
+                    _ => []
+                };
+            }
+            else if (CurrentTab == EquipmentTab.Untrained)
+            {
+                CurrentViewedList = ChosenListToView switch
+                {
+                    "Armor" => ArmorUpgrades,
+                    "Weapons" => Weapons,
+                    "Kits" => Kits,
+                    "Support Equipment" => SupportEquipment,
+                    _ => []
+                };
 
+            }
+        }
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public enum EquipmentTab
+        {
+            Trained,
+            Untrained,
+            Taken
         }
     }
 }
