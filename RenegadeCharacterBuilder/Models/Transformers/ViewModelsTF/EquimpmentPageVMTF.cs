@@ -68,8 +68,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 NotifyPropertyChanged(nameof(HardpointLimit));
             }
         }
-        
-        private EquipmentTab _currentTab { get; set; }
+
+        private EquipmentTab _currentTab;
         public EquipmentTab CurrentTab
         {
             get => _currentTab;

@@ -30,9 +30,9 @@
         </StackPanel>
         
         <!-- TAB STUFF BEGINS-->
-        <TabControl Grid.Row="1">
+        <TabControl Grid.Row="1" SelectionChanged="EquipmentTabChanged">
             <!-- TAB ONE  -->
-            <TabItem>
+            <TabItem Tag="Trained">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Width="10" Height="10" Fill="DimGray"/>
@@ -44,7 +44,7 @@
                         <ColumnDefinition Width="300"/>
                         <ColumnDefinition Width="400"/>
                     </Grid.ColumnDefinitions>
-                    <ListBox Grid.Column="0" ItemsSource="{Binding EquipmentTypeView}">
+                    <ListBox Grid.Column="0" ItemsSource="{Binding EquipmentTypeView}" SelectedItem="{Binding chosenListTovView}">
                         
                     </ListBox>
                 </Grid>
@@ -53,7 +53,7 @@
 
             
             <!-- TAB TWO -->
-            <TabItem>
+            <TabItem Tag="Untrained">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Width="10" Height="10" Fill="DimGray"/>
@@ -63,7 +63,7 @@
             </TabItem>
             
             <!-- TAB THREE-->
-            <TabItem>
+            <TabItem Tag="Taken">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Width="10" Height="10" Fill="DimGray"/>

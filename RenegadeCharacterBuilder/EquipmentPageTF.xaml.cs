@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
+using static RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.EquimpmentPageVMTF;
 
 namespace RenegadeCharacterBuilder
 {
@@ -25,7 +26,24 @@ namespace RenegadeCharacterBuilder
             InitializeComponent();
             vm = new EquimpmentPageVMTF();
             DataContext = vm;
-           
+
+        }
+
+        private void EquipmentTabChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.Source is not TabControl tabControl)
+                return;
+
+            if (tabControl.SelectedItem is TabItem selectedTab)
+            {
+                vm.CurrentTab = selectedTab.Tag switch
+                {
+                    "Trained" => EquipmentTab.Trained,
+                    "Untrained" => EquipmentTab.Untrained,
+                    "Taken" => EquipmentTab.Taken,
+                    _ => vm.CurrentTab
+                };
+            }
         }
     }
 }

@@ -805,3 +805,7 @@ item to, didn't really work so I need to think and reivent the wheel looking int
 Had to step back and swallow my pride plus real life stuff happened, dictiornary Idea was a bust, basically obserable collections don't let you do a mix of children classes, so had to switch to an IEnumerable
 to set equal to everything. said screw giving a command to the page and just let an Enumeral keep track of the tabs, now on switch it should be able to make set the generic current view 
 to the given list
+
+Also binded tags with tags to check for assignment
+
+TODO: FIll out other tabs and find way to navigate to them
