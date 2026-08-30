@@ -1,4 +1,6 @@
 ﻿<Page x:Class="RenegadeCharacterBuilder.EquipmentPageTF"
+      xmlns:weapons="clr-namespace:RenegadeCharacterBuilder.Models.Transformers.GearTFChildrenClasses"
+      
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -46,6 +48,40 @@
                     </Grid.ColumnDefinitions>
                     <ListBox Grid.Column="0" ItemsSource="{Binding EquipmentTypeView}" SelectedItem="{Binding chosenListTovView}">
                         
+                    </ListBox>
+                    <ListBox Grid.Column="1" ItemsSource="{Binding CurrentViewedList}">
+                        <ListBox.Resources>
+                            <DataTemplate DataType="{x:Type models:WeaponTF}" >
+                              
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding availibility}"/>
+                                    <Button Content="Add Item" Click="AddItem"></Button>
+                                </StackPanel>
+                                
+                            </DataTemplate>
+
+                            <DataTemplate DataType="{x:Type local:Upgrades}" >
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding availibility}"/>
+                                    <Button Content="Add Item" Click="AddItem"></Button>
+                                </StackPanel>
+
+                            </DataTemplate>
+
+                            <DataTemplate DataType="{x:Type local:SupportEqupmentTF}" >
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding availibility}"/>
+                                    <Button Content="Add Item" Click="AddItem"></Button>
+                                </StackPanel>
+
+                            </DataTemplate>
+
+                        </ListBox.Resources>
+                      
+
                     </ListBox>
                 </Grid>
                 

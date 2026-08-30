@@ -10,8 +10,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 using static RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.EquimpmentPageVMTF;
+using RenegadeCharacterBuilder.Models.Transformers.GearTFChildrenClasses;
 
 namespace RenegadeCharacterBuilder
 {
@@ -21,12 +23,13 @@ namespace RenegadeCharacterBuilder
     public partial class EquipmentPageTF : Page
     {
         public EquimpmentPageVMTF vm { get; set; }
+        private WeaponTF testWeapon;
         public EquipmentPageTF()
         {
             InitializeComponent();
             vm = new EquimpmentPageVMTF();
             DataContext = vm;
-
+            
         }
 
         private void EquipmentTabChanged(object sender, SelectionChangedEventArgs e)
@@ -44,6 +47,11 @@ namespace RenegadeCharacterBuilder
                     _ => vm.CurrentTab
                 };
             }
+        }
+
+        private void AddItem(object sender, RoutedEventArgs e)
+        {
+            vm.AddEquuipment(sender); // this will take the object that's sent?
         }
     }
 }

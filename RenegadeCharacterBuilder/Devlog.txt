@@ -809,3 +809,7 @@ to the given list
 Also binded tags with tags to check for assignment
 
 TODO: FIll out other tabs and find way to navigate to them
+
+8-30
+
+Tried to build listbox but can't get the xaml to find the model type. is driving me crazy will try and come back to it later

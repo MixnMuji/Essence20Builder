@@ -23,9 +23,17 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public event PropertyChangedEventHandler PropertyChanged;
         public string[] EquipmentTypeView = ["Armor", "Kits", "Weapons", "Support Equipment"]; // so basically if these are chosen we show a different obserable collection
 
+        private IEnumerable<object> currentViewdList;
+        public IEnumerable<Object> CurrentViewedList
+        {
+            get => currentViewdList;
+            set
+            {
+                currentViewdList = value;
+                NotifyPropertyChanged();
+            }
+        }   // generic for deciding current view
         
-        public IEnumerable<Object> CurrentViewedList { get; set;} // generic for deciding current view
-       
         public ObservableCollection<Upgrades> TrainedArmorUpgrades { get; set; }
         public ObservableCollection<WeaponTF> TrainedWeapons { get; set; }
         public ObservableCollection<Upgrades> ArmorUpgrades { get; set; }
@@ -413,7 +421,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public void GetKits()
         {
             var Kts = getdata.LoadJson<KitRootTF>("KitCore.json", "TransformersJsons");
-            foreach (var k in Kits)
+            foreach (var k in Kts.Kits)
             {
                 Kits.Add(k);
             }
