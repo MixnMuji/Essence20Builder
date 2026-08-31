@@ -21,7 +21,7 @@
     },
     {
       "Name": "Blaster",
-      "availibility": "Standard", //turn to an enum
+      "availibility": "Standard", 
       "Classification": "Targeting sidearm projectile",
        "Range":"25ft / 80ft",
         "Hands":1,
@@ -30,7 +30,7 @@
     },
     {
       "Name":"Rifle",
-      "availibility": "Standard", //turn to an enum
+      "availibility": "Standard", 
       "Classification": "Targeting medium projectile",
        "Range":"100ft/400ft",
         "Hands":2,
@@ -39,7 +39,7 @@
     },
     {
       "Name": "Shotgun",
-      "availibility":"Standard", //turn to an enum
+      "availibility":"Standard", 
       "Classification":"Tageting medium projectile",
        "Range":"20ft/60ft",
         "Hands":2,
@@ -48,7 +48,7 @@
     },
     {
       "Name": "Frag Grenade",
-      "availibility": "Standard", //turn to an enum
+      "availibility": "Standard", 
       "Classification": "Athletics sidearm explosive",
        "Range":"20ft/5oft",
         "Hands":2,
@@ -85,7 +85,7 @@
         "Traits":["Blunt", "Silent"]
     }, {
       "Name": "Short Blade",
-      "availibility": "Limited", //turn to an enum
+      "availibility": "Limited", 
       "Classification": "Finesse or Might sidearm melee",
        "Range":"Reach",
         "Hands":1,
@@ -175,7 +175,7 @@
        "Requirements":
        {
          "statRequirement": 1,
-        "ApplicableStats":["Finesse"],
+        "ApplicableStats":["Finesse"]
         
        },
        "Range":"50ft/100ft",
@@ -329,7 +329,7 @@
        "Requirements":
        {
          "statRequirement": 1,
-        "ApplicableStats":["Athletics", "Finesse"],        
+        "ApplicableStats":["Athletics", "Finesse"]        
        },
        "Range":"Reach x3",
         "Hands":2,

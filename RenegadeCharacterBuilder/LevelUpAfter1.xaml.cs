@@ -34,7 +34,7 @@ namespace RenegadeCharacterBuilder
 
         private void MoveOn(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new FinalPageAndConfirmation());
+            NavigationService.Navigate(new EquipmentPageTF());
         }
     }
 }

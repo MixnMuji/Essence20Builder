@@ -9,19 +9,39 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Jsoncollection\TransformersJsons\ArmorCore.json" />
     <None Remove="Jsoncollection\TransformersJsons\HangUpsTF.json" />
     <None Remove="Jsoncollection\TransformersJsons\InfluencesTF.json" />
+    <None Remove="Jsoncollection\TransformersJsons\KitCore.json" />
     <None Remove="Jsoncollection\TransformersJsons\Origins.json" />
+    <None Remove="Jsoncollection\TransformersJsons\SupEquipCore.json" />
+    <None Remove="Jsoncollection\TransformersJsons\UpgradesCore.json" />
+    <None Remove="Jsoncollection\TransformersJsons\WeaponsCore.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Jsoncollection\TransformersJsons\ArmorCore.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Jsoncollection\TransformersJsons\HangUpsTF.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Jsoncollection\TransformersJsons\InfluencesTF.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Jsoncollection\TransformersJsons\KitCore.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Jsoncollection\TransformersJsons\Origins.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Jsoncollection\TransformersJsons\SupEquipCore.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Jsoncollection\TransformersJsons\UpgradesCore.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Jsoncollection\TransformersJsons\WeaponsCore.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

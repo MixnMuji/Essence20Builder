@@ -35,19 +35,3 @@
 
   ]
 }
-/*
-
- kit builder(string specilization name, type EquimentType)
-
-  Case(Equipmentype)
-      case Equipmentype.Standard:
-          string desc = $"You can attempt a Skill Test that call for this {name} Standard kit without a snag, you can attempt Skill Tests taht call for this Specilization's Limited kit with \u21931 instead of a Snag, and Skill Tests that call for it's Restricted kit with \u21933 isntead."
-      break;
-      case Equipmentype.Limited:
-          string descr=$"You can attempt a Skill Test that calls for this {name} Limited Kit without a Snag. You can attempt Skill Tests that call for it's Restricted kit with \u21932 instead of a Snag. You can take 10 minutes and spend this kit to gain temporary Specialization in this kit's Specialization for 1 hour on this kit's Specialization Tests if you're already specialized in this kit's Specialization."
-      break;
-      case Equipmentype.Restricted:
-          string desc =$"You can attempt Skill Tests that call for this Specializations='s Restricted kit Withou a snag" You gain temporary Specialization in this kit's Specalization for the duration of this Mission, or an Edge on this kit's Specialzation Skill Tests if you're already specialized  in this kit's Specialization";
-      break;
-
-*/

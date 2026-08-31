@@ -124,6 +124,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
             RoleName = TFCharacterSession.CurrentTransfomer.Role.Name;
 
+            HardpointLimit = TFCharacterSession.CurrentTransfomer.Origns[0].AltMode.FirePoints;
 
           GetArmor();
           GetWeapons();
@@ -380,7 +381,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             var se = getdata.LoadJson<SupportEquipRootTF>("SupEquipCore.json", "TransformersJsons"); // figure out how to shift list into observable collection maybe just shift the type in root
             foreach( var item in se.SupportEquipment)
             {
-                if (!item.prereq.Contains("Extra")){
+                if (item.prereq==null ||!item.prereq.Contains("Extra")){
                     SupportEquipment.Add(item);
                 }
             }

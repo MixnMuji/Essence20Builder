@@ -819,3 +819,10 @@ rebuild until it worked!
 Added the listboxes and list to each tab
 
 Todo: make method for moving on, add gear to Tfcharactermodel
+
+8-31
+Made minor list of bugfixes in a dock to reffernce will move it to here later
+
+Made it so each json deserilizes,
+
+Need to double check the trained tabs so I can get equipment right, taken tab still shows data
