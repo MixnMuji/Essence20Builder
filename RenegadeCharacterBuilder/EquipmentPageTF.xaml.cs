@@ -23,7 +23,7 @@ namespace RenegadeCharacterBuilder
     public partial class EquipmentPageTF : Page
     {
         public EquimpmentPageVMTF vm { get; set; }
-        private WeaponTF testWeapon;
+     
         public EquipmentPageTF()
         {
             InitializeComponent();

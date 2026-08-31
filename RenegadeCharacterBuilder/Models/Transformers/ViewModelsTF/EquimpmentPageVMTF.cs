@@ -21,7 +21,13 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
     public class EquimpmentPageVMTF :INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public string[] EquipmentTypeView = ["Armor", "Kits", "Weapons", "Support Equipment"]; // so basically if these are chosen we show a different obserable collection
+        public string[] EquipmentTypeView { get; } =
+[
+    "Armor",
+    "Kits",
+    "Weapons",
+    "Support Equipment"
+];
 
         private IEnumerable<object> currentViewdList;
         public IEnumerable<Object> CurrentViewedList

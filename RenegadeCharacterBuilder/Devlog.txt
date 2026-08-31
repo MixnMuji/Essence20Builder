@@ -813,3 +813,7 @@ TODO: FIll out other tabs and find way to navigate to them
 8-30
 
 Tried to build listbox but can't get the xaml to find the model type. is driving me crazy will try and come back to it later
+other parts of program that had bindings for the xlms also broke the solution was,,, not to doubt myself and instead delete the bin and obj folders and spam
+rebuild until it worked!
+
+whew whoo. feels like a waste of a day.
