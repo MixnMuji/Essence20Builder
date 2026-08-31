@@ -53,5 +53,10 @@ namespace RenegadeCharacterBuilder
         {
             vm.AddEquuipment(sender); // this will take the object that's sent?
         }
+
+        private void RemoveItem(object sender, RoutedEventArgs e)
+        {
+            vm.removeitem(sender);
+        }
     }
 }

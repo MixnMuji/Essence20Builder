@@ -59,87 +59,45 @@
          ItemsSource="{Binding CurrentViewedList}">
 
                         <ListBox.Resources>
-
                             <!-- WEAPON -->
-
                             <DataTemplate DataType="{x:Type gear:WeaponTF}">
-
                                 <StackPanel Margin="5">
-
-                                    <TextBlock Text="{Binding Name}"
-                           FontWeight="Bold"
-                           FontSize="16"/>
-
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold"  FontSize="16"/>
                                     <TextBlock Text="{Binding availibility}"/>
-
                                     <TextBlock Text="{Binding Classification}"/>
-
-                                    <TextBlock Text="{Binding Hands,
-                                          StringFormat=Hands: {0}}"/>
-
-                                    <TextBlock Text="{Binding Range,
-                                          StringFormat=Range: {0}}"/>
-
+                                    <TextBlock Text="{Binding Hands,StringFormat=Hands: {0}}"/>
+                                    <TextBlock Text="{Binding Range,StringFormat=Range: {0}}"/>
                                     <TextBlock Text="{Binding Effect}"/>
-
-                                    <Button Content="Add Item"
-                        Click="AddItem"/>
-
+                                    <Button Content="Add Item" Click="AddItem"/>
                                 </StackPanel>
-
                             </DataTemplate>
 
 
                             <!-- ARMOR / KIT -->
-
                             <DataTemplate DataType="{x:Type gear:Upgrades}">
-
                                 <StackPanel Margin="5">
-
-                                    <TextBlock Text="{Binding Name}"
-                           FontWeight="Bold"
-                           FontSize="16"/>
-
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="16"/>
                                     <TextBlock Text="{Binding availibility}"/>
-
                                     <TextBlock Text="{Binding Benefit}"/>
-
-                                    <Button Content="Add Item"
-                        Click="AddItem"/>
-
+                                    <Button Content="Add Item" Click="AddItem"/>
                                 </StackPanel>
-
                             </DataTemplate>
 
 
                             <!-- SUPPORT EQUIPMENT -->
-
                             <DataTemplate DataType="{x:Type support:SupportEqupmentTF}">
-
                                 <StackPanel Margin="5">
 
-                                    <TextBlock Text="{Binding name}"
-                           FontWeight="Bold"
-                           FontSize="16"/>
-
+                                    <TextBlock Text="{Binding name}" FontWeight="Bold" FontSize="16"/>
                                     <TextBlock Text="{Binding prereq}"/>
-
                                     <TextBlock Text="{Binding altmodeEffect}"/>
-
                                     <TextBlock Text="{Binding botmodeEffect}"/>
-
-                                    <Button Content="Add Item"
-                        Click="AddItem"/>
-
+                                    <Button Content="Add Item" Click="AddItem"/>
                                 </StackPanel>
-
                             </DataTemplate>
-
                         </ListBox.Resources>
-
                     </ListBox>
                 </Grid>
-                
             </TabItem>
 
             
@@ -151,6 +109,60 @@
                         <TextBlock Text="Gear that you must Requistion" FontSize="14"/>
                     </StackPanel>
                 </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="400"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox Grid.Column="0"
+ItemsSource="{Binding EquipmentTypeView}"
+SelectedItem="{Binding ChosenListToView}">
+                    </ListBox>
+
+
+                    <ListBox Grid.Column="1"
+ItemsSource="{Binding CurrentViewedList}">
+
+                        <ListBox.Resources>
+                            <!-- WEAPON -->
+                            <DataTemplate DataType="{x:Type gear:WeaponTF}">
+                                <StackPanel Margin="5">
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold"  FontSize="16"/>
+                                    <TextBlock Text="{Binding availibility}"/>
+                                    <TextBlock Text="{Binding Classification}"/>
+                                    <TextBlock Text="{Binding Hands,StringFormat=Hands: {0}}"/>
+                                    <TextBlock Text="{Binding Range,StringFormat=Range: {0}}"/>
+                                    <TextBlock Text="{Binding Effect}"/>
+                                    <Button Content="Add Item" Click="AddItem"/>
+                                </StackPanel>
+                            </DataTemplate>
+
+
+                            <!-- ARMOR / KIT -->
+                            <DataTemplate DataType="{x:Type gear:Upgrades}">
+                                <StackPanel Margin="5">
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="16"/>
+                                    <TextBlock Text="{Binding availibility}"/>
+                                    <TextBlock Text="{Binding Benefit}"/>
+                                    <Button Content="Add Item" Click="AddItem"/>
+                                </StackPanel>
+                            </DataTemplate>
+
+
+                            <!-- SUPPORT EQUIPMENT -->
+                            <DataTemplate DataType="{x:Type support:SupportEqupmentTF}">
+                                <StackPanel Margin="5">
+
+                                    <TextBlock Text="{Binding name}" FontWeight="Bold" FontSize="16"/>
+                                    <TextBlock Text="{Binding prereq}"/>
+                                    <TextBlock Text="{Binding altmodeEffect}"/>
+                                    <TextBlock Text="{Binding botmodeEffect}"/>
+                                    <Button Content="Add Item" Click="AddItem"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.Resources>
+                    </ListBox>
+                </Grid>
             </TabItem>
             
             <!-- TAB THREE-->
@@ -161,6 +173,61 @@
                         <TextBlock Text="Gear Taken" FontSize="14"/>
                     </StackPanel>
                 </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="400"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox Grid.Column="0"
+ItemsSource="{Binding EquipmentTypeView}"
+SelectedItem="{Binding ChosenListToView}">
+                    </ListBox>
+
+
+                    <ListBox Grid.Column="1"
+ItemsSource="{Binding CurrentViewedList}">
+
+                        <ListBox.Resources>
+                            <!-- WEAPON -->
+                            <DataTemplate DataType="{x:Type gear:WeaponTF}">
+                                <StackPanel Margin="5">
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold"  FontSize="16"/>
+                                    <TextBlock Text="{Binding availibility}"/>
+                                    <TextBlock Text="{Binding Classification}"/>
+                                    <TextBlock Text="{Binding Hands,StringFormat=Hands: {0}}"/>
+                                    <TextBlock Text="{Binding Range,StringFormat=Range: {0}}"/>
+                                    <TextBlock Text="{Binding Effect}"/>
+                                    <Button Content="Add Item" Click="AddItem"/>
+                                </StackPanel>
+                            </DataTemplate>
+
+
+                            <!-- ARMOR / KIT -->
+                            <DataTemplate DataType="{x:Type gear:Upgrades}">
+                                <StackPanel Margin="5">
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="16"/>
+                                    <TextBlock Text="{Binding availibility}"/>
+                                    <TextBlock Text="{Binding Benefit}"/>
+                                    <Button Content="Add Item" Click="AddItem"/>
+                                </StackPanel>
+                            </DataTemplate>
+
+
+                            <!-- SUPPORT EQUIPMENT -->
+                            <DataTemplate DataType="{x:Type support:SupportEqupmentTF}">
+                                <StackPanel Margin="5">
+
+                                    <TextBlock Text="{Binding name}" FontWeight="Bold" FontSize="16"/>
+                                    <TextBlock Text="{Binding prereq}"/>
+                                    <TextBlock Text="{Binding altmodeEffect}"/>
+                                    <TextBlock Text="{Binding botmodeEffect}"/>
+                                    <Button Content="Add Item" Click="RemoveItem"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.Resources>
+                    </ListBox>
+                </Grid>
+
             </TabItem>
         
         </TabControl>

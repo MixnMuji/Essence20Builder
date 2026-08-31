@@ -816,4 +816,6 @@ Tried to build listbox but can't get the xaml to find the model type. is driving
 other parts of program that had bindings for the xlms also broke the solution was,,, not to doubt myself and instead delete the bin and obj folders and spam
 rebuild until it worked!
 
-whew whoo. feels like a waste of a day.
+Added the listboxes and list to each tab
+
+Todo: make method for moving on, add gear to Tfcharactermodel
