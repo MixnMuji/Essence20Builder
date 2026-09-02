@@ -51,12 +51,20 @@ namespace RenegadeCharacterBuilder
 
         private void AddItem(object sender, RoutedEventArgs e)
         {
-            vm.AddEquuipment(sender); // this will take the object that's sent?
+            if(sender is FrameworkElement element)
+            {
+                vm.AddEquuipment(element.DataContext);
+            }
+           
+            
         }
 
         private void RemoveItem(object sender, RoutedEventArgs e)
         {
-            vm.removeitem(sender);
+            if (sender is FrameworkElement element)
+            {
+                vm.removeitem(element.DataContext);
+            }
         }
     }
 }

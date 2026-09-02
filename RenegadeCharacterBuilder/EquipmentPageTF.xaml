@@ -197,7 +197,7 @@ ItemsSource="{Binding CurrentViewedList}">
                                     <TextBlock Text="{Binding Hands,StringFormat=Hands: {0}}"/>
                                     <TextBlock Text="{Binding Range,StringFormat=Range: {0}}"/>
                                     <TextBlock Text="{Binding Effect}"/>
-                                    <Button Content="Add Item" Click="AddItem"/>
+                                    <Button Content="Remove item" Click="RemoveItem"/>
                                 </StackPanel>
                             </DataTemplate>
 
@@ -208,7 +208,7 @@ ItemsSource="{Binding CurrentViewedList}">
                                     <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="16"/>
                                     <TextBlock Text="{Binding availibility}"/>
                                     <TextBlock Text="{Binding Benefit}"/>
-                                    <Button Content="Add Item" Click="AddItem"/>
+                                    <Button Content="Add Item" Click="RemoveItem"/>
                                 </StackPanel>
                             </DataTemplate>
 

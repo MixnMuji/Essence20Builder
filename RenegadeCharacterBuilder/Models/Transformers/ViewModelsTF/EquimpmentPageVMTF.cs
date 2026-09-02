@@ -62,7 +62,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 NotifyPropertyChanged(nameof(requistionPoints));
             }
         }
-        public Upgrades TakenArmorUpgrade { get; set; }
+        public ObservableCollection<Upgrades> TakenArmorUpgrade { get; set; }
         public ObservableCollection<Upgrades> TakenKits { get; set; }
         public ObservableCollection<WeaponTF> TakenWeapons { get; set; }
 
@@ -122,6 +122,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             Dictionary<string, ObservableCollection<GearTF>> GearpairsTrained = new Dictionary<string, ObservableCollection<GearTF>>();
             Dictionary<string, ObservableCollection<GearTF>> GearpairsUnTrained = new Dictionary<string, ObservableCollection<GearTF>>();
 
+            TakenWeapons = new ObservableCollection<WeaponTF>();
+            TakenArmorUpgrade = new ObservableCollection<Upgrades>();
+            TakenKits = new ObservableCollection<Upgrades>();
+            TakenSupportEquipment = new ObservableCollection<SupportEqupmentTF>();
+
             RoleName = TFCharacterSession.CurrentTransfomer.Role.Name;
 
             HardpointLimit = TFCharacterSession.CurrentTransfomer.Origns[0].AltMode.FirePoints;
@@ -142,27 +147,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         {
             //if(string == Armor)
         }
-        public void DislplayCorespondingList(int filter, object thingsent)
-        {
-            switch(filter)
-            {
-                case 1:
-
-                break;
-                case 2:
-                break;
-            }
-            // we need to get our string,
-            // each string has a case where it is either trainred or untrained
-            //we can not pull data from the page so we either make a work around here or we write it on the page
-            //so we can make the method take a number for a case and that will display the two types
-
-            //every string has a dictionary of an obserable collection
-            /*
-             * Dict<string, obsersable collection> pairs doesn't work on full vm try inside model
-             */
-            // and we can take the key value and set current indext to it if the string matches`
-        }
+       
        public bool checkIfAdditonISpossible(object slection)// plug into pages call
         {
             switch (slection)
@@ -236,13 +221,21 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                         }
                         if (ArmorUpgrades.Contains(upgrade))
                         {
-                            TakenArmorUpgrade = upgrade;
+                            if (TakenArmorUpgrade[0] != null)
+                            {
+                                return;
+                            }
+                            TakenArmorUpgrade.Add(upgrade);
                             ArmorUpgrades.Remove(upgrade);
                             requistionPoints -= 1;
                         }
                         if (TrainedArmorUpgrades.Contains(upgrade))
                         {
-                            TakenArmorUpgrade = upgrade;
+                            if (TakenArmorUpgrade[0] != null)
+                            {
+                                return;
+                            }
+                            TakenArmorUpgrade.Add(upgrade);
                             TrainedArmorUpgrades.Remove(upgrade);
                             
                         }
@@ -292,20 +285,22 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 case Upgrades upgrade:
                     if (Kits.Contains(upgrade))
                     {
-                        TakenKits.Add(upgrade);
-                        Kits.Remove(upgrade);
+                        TakenKits.Remove(upgrade);
+                        Kits.Add(upgrade);
                         requistionPoints -= 1;
                     }
                     if (ArmorUpgrades.Contains(upgrade))
                     {
-                        TakenArmorUpgrade = upgrade;
-                        ArmorUpgrades.Remove(upgrade);
+                        
+                        TakenArmorUpgrade.Remove(upgrade);
+                        ArmorUpgrades.Add(upgrade);
                         requistionPoints -= 1;
                     }
                     if (TrainedArmorUpgrades.Contains(upgrade))
                     {
-                        TakenArmorUpgrade = upgrade;
-                        TrainedArmorUpgrades.Remove(upgrade);
+                     
+                        TakenArmorUpgrade.Remove(upgrade);
+                        TrainedArmorUpgrades.Add(upgrade);
 
                     }
                     break;
@@ -478,7 +473,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     _ => []
                 };
             }
-            else if (CurrentTab == EquipmentTab.Untrained)
+            if (CurrentTab == EquipmentTab.Untrained)
             {
                 CurrentViewedList = ChosenListToView switch
                 {
@@ -490,9 +485,21 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 };
 
             }
+            else if(CurrentTab == EquipmentTab.Taken)
+            {
+                CurrentViewedList = ChosenListToView switch
+                {
+                    "Armor" => TakenArmorUpgrade,
+                    "Weapons" => TakenWeapons,
+                    "Kits" => TakenKits,
+                    "Support Equipment" => TakenSupportEquipment,
+                    _ => []
+
+                };
+            }
         }
 
-        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")     
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
