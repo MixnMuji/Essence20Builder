@@ -462,42 +462,45 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         {
             if (string.IsNullOrEmpty(chosenListTovView))
                 return;
-            if (CurrentTab == EquipmentTab.Trained)
+
+
+            if (string.IsNullOrEmpty(ChosenListToView))
+                return;
+
+            CurrentViewedList = CurrentTab switch
             {
-                CurrentViewedList = chosenListTovView switch
+                EquipmentTab.Trained => ChosenListToView switch
                 {
                     "Armor" => TrainedArmorUpgrades,
                     "Weapons" => TrainedWeapons,
-                    "Kit" => [],
+                    "Kits" => [],
                     "Support Equipment" => [],
                     _ => []
-                };
-            }
-            if (CurrentTab == EquipmentTab.Untrained)
-            {
-                CurrentViewedList = ChosenListToView switch
+                },
+
+                EquipmentTab.Untrained => ChosenListToView switch
                 {
                     "Armor" => ArmorUpgrades,
                     "Weapons" => Weapons,
                     "Kits" => Kits,
                     "Support Equipment" => SupportEquipment,
                     _ => []
-                };
+                },
 
-            }
-            else if(CurrentTab == EquipmentTab.Taken)
-            {
-                CurrentViewedList = ChosenListToView switch
+                EquipmentTab.Taken => ChosenListToView switch
                 {
                     "Armor" => TakenArmorUpgrade,
                     "Weapons" => TakenWeapons,
                     "Kits" => TakenKits,
                     "Support Equipment" => TakenSupportEquipment,
                     _ => []
+                },
 
-                };
-            }
+                _ => []
+            };
+
         }
+            
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")     
         {

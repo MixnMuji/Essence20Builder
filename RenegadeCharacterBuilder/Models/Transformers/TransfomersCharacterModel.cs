@@ -12,6 +12,7 @@ using System.Text.Json;
 using System.Windows.Media.Animation;
 using RenegadeCharacterBuilder.CharacterModels.TransfomersCompaions;
 using RenegadeCharacterBuilder.Models.Transformers.Enums;
+using RenegadeCharacterBuilder.Models.Transformers.GearTFChildrenClasses;
 using RenegadeCharacterBuilder.Models.Transformers.Roots;
 
 namespace RenegadeCharacterBuilder.Models.Transformers
@@ -93,6 +94,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers
 
         public List<pet> companions { get; set; } = new();
 
+        public List<WeaponTF> WeaponsLoadOut { get; set; } = new();
+        public List<Upgrades> ArmorLoadout { get; set; } = new();
+        public List<Upgrades> KitsLoadout { get; set; } = new();
+        public List<SupportEqupmentTF> SupportEquipmentLoadOut { get; set; } = new();
         public TransfomersCharacterModel()
 
         {

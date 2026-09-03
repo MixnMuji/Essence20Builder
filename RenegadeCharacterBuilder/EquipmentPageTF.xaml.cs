@@ -14,6 +14,9 @@ using System.Windows.Shapes;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 using static RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.EquimpmentPageVMTF;
 using RenegadeCharacterBuilder.Models.Transformers.GearTFChildrenClasses;
+using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
+using RenegadeCharacterBuilder.Models.Transformers;
+using System.Collections.ObjectModel;
 
 namespace RenegadeCharacterBuilder
 {
@@ -66,5 +69,15 @@ namespace RenegadeCharacterBuilder
                 vm.removeitem(element.DataContext);
             }
         }
+
+        private void MoveOn(object sender, RoutedEventArgs e)
+        {
+           TFCharacterSession.CurrentTransfomer.ArmorLoadout = vm.TakenArmorUpgrade.ToList();
+           TFCharacterSession.CurrentTransfomer.KitsLoadout = vm.TakenKits.ToList();
+           TFCharacterSession.CurrentTransfomer.WeaponsLoadOut = vm.TakenWeapons.ToList();
+           TFCharacterSession.CurrentTransfomer.SupportEquipmentLoadOut= vm.TakenSupportEquipment.ToList();
+            NavigationService.Navigate(new FinalPageAndConfirmation());
+        }
+
     }
 }

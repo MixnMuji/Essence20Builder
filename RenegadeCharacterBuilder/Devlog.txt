@@ -832,3 +832,8 @@ Need to double check the trained tabs so I can get equipment right, taken tab st
 Fixed the methods for current view it lacked the taken tab so I set that to the appropriate list and also initilzied all the list.
 found out the problem with add and remove methods was that they didn't pull from the datacontext
 Also changed xaml oversight where I didn't have any buttons set to remove so they were all adding.
+
+9-3
+
+Just made the assignments for passing along gear to their list, in EquipmentpageTF
+Now we move on to all the polishing  things  final leg here we go!
