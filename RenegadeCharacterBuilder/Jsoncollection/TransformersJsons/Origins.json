@@ -16,6 +16,7 @@
             },
             "AltMode":
             {
+                "OrignName":"Champion",
                 "Movement": 60,
                 "Type": "Ground",
                 "Size": "Long",
@@ -44,6 +45,7 @@
             "AltMode":
             
                 {
+              "OrignName":"Cutter",
                 "Movement": 45,
                 "Type": "Aquatic",
                 "Size": "Common or Large",
@@ -73,6 +75,7 @@
             "AltMode":
             
                 {
+              "OrignName":"Lookout",
                 "Movement": 45,
                 "Type": "Aquatic",
                 "Movement2": 20,
@@ -92,7 +95,7 @@
             "StartingHealth": 4,
             "OriginBenefit": {
                 "Name": "Large and in charge",
-                "Effect": "Choose a social skill, you gain an upshift on skill test with that skill if the target is smaller than you,"
+                "Effect": "Choose a social skill, you gain \u21911 on skill test with that skill if the target is smaller than you,"
             },
 
             "BotMode": {
@@ -103,6 +106,7 @@
             "AltMode":
             
                 {
+              "OrignName":"Monolith",
                 "Movement": 45,
                 "Type": "Ground",
                 "Size": "Extended",
@@ -120,7 +124,7 @@
             "StartingHealth": 3,
             "OriginBenefit": {
                 "Name": "Take Point",
-                "Effect": "YOu never suffer the effects of rough terrain, and in any turn in which in you end your move in rough terrain, you are considered to be in conver until the start of your next turn"
+                "Effect": "You never suffer the effects of rough terrain, and in any turn in which in you end your move in rough terrain, you are considered to be in conver until the start of your next turn"
             },
 
             "BotMode": {
@@ -131,6 +135,7 @@
             "AltMode": 
             
                 {
+                "OrignName":"Outrider",
                 "Movement": 45,
                 "Type": "Ground",
                 "Size": "Common or Long",
@@ -159,6 +164,7 @@
             "AltMode":
             
                 {
+              "OrignName":"Rainmaker",
                 "Movement": 45,
                 "Type": "Ground",
                 "Size": "Long",
@@ -189,6 +195,7 @@
             "AltMode":
             
                 {
+               "OrignName":"Seeker",
                 "Movement": 60,
                 "Type": "Aerial",
                 "Size": "Long",
@@ -217,6 +224,7 @@
             "AltMode":
             
                 {
+               "OrignName":"Support",
                 "Movement": 35,
                 "Type": "Aerial",
                 "Movement2": 45,

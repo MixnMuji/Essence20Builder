@@ -837,3 +837,9 @@ Also changed xaml oversight where I didn't have any buttons set to remove so the
 
 Just made the assignments for passing along gear to their list, in EquipmentpageTF
 Now we move on to all the polishing  things  final leg here we go!
+
+9-5
+
+Startpage clean up: removed devskip
+Influence Page: removed scrollbar added text wrapping, added correct formate for up and downshift
+Origins json added mode names will help for later in aplication,added textwrapping got ride of scroller, removed old alliegence selector

@@ -29,9 +29,7 @@
                     <StackPanel Margin="10,10,10,10">
                         <CheckBox Content="{Binding Name}" IsChecked="{Binding isChecked, Mode=TwoWay}"/>
                         <Expander HorizontalAlignment="Stretch">
-                            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-                                <TextBlock Text="{Binding Perk}"/>
-                            </ScrollViewer>
+                            <TextBlock Text="{Binding Perk}" TextWrapping="Wrap"/>
                         </Expander>
 
                     </StackPanel>
@@ -48,9 +46,7 @@
                     <StackPanel Margin="10,10,10,10">
                         <CheckBox Content="{Binding Name}" IsChecked="{Binding isChecked, Mode=TwoWay}"/>
                         <Expander HorizontalAlignment="Stretch">
-                            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-                                <TextBlock Text="{Binding Effect}"/>
-                            </ScrollViewer>
+                            <TextBlock Text="{Binding Effect}"  TextWrapping="Wrap"/>
                         </Expander>
 
                     </StackPanel>

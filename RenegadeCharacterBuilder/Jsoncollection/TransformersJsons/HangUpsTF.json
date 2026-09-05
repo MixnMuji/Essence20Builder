@@ -2,15 +2,15 @@
   "Hang_ups": [
     {
       "Name": "Distressed",
-      "Effect": "You are often distracted by worries and concerns that may or may not be relevant to the current situation. When making an alertness test to gain a better understanding of potential dangers to others, take a downshift."
+      "Effect": "You are often distracted by worries and concerns that may or may not be relevant to the current situation. When making an alertness test to gain a better understanding of potential dangers to others \u21931."
     },
     {
       "Name": "Earthspoiled",
-      "Effect": "You are excited by and attached to the cornucopia of beautiful treasures Earth and human culture have to offer you. When exposed to a gorgeous piece of Earth art or culture, your skill tests suffer 1 downshift."
+      "Effect": "You are excited by and attached to the cornucopia of beautiful treasures Earth and human culture have to offer you. When exposed to a gorgeous piece of Earth art or culture, your skill tests suffer \u21931."
     },
     {
       "Name": "Glacial",
-      "Effect": "Your personality is cold and uncharismatic, and you struggle to connect with others. Many consider you rude or hostile even when you're not. Take a downshift on all persuasion skill tests unless you're using the Truth specialty."
+      "Effect": "Your personality is cold and uncharismatic, and you struggle to connect with others. Many consider you rude or hostile even when you're not. Take a \u21931 on all persuasion skill tests unless you're using the Truth specialty."
     },
     {
       "Name": "Idolizer",
@@ -18,7 +18,7 @@
     },
     {
       "Name": "Impulsive",
-      "Effect": "You are reckless and rash. Taking that shot at a Decepticon when your mission is only reconnaissance. No matter the circumstances you never gain the bonus of surprise. Additionally you gain a downshift on your first skill test after you roll initiative."
+      "Effect": "You are reckless and rash. Taking that shot at a Decepticon when your mission is only reconnaissance. No matter the circumstances you never gain the bonus of surprise. Additionally you gain \u21931 on your first skill test after you roll initiative."
     },
     {
       "Name": "Mode attachment",
@@ -30,7 +30,7 @@
     },
     {
       "Name": "Subordinate",
-      "Effect": "You are most comfortable knowing your specific place in the chain of command, even if it is at the bottom. You often struggle to make your own decisions without receiving orders from a superior. Take a downshift to any skill test not directly related to your mission as stated."
+      "Effect": "You are most comfortable knowing your specific place in the chain of command, even if it is at the bottom. You often struggle to make your own decisions without receiving orders from a superior. Take \u21931 to any skill test not directly related to your mission as stated."
     },
     {
       "Name": "Treacherous",
@@ -45,12 +45,12 @@
     {
       "Name": "Violent",
       "FlavorText": "You are eager for war and seek to be the center of conflict.",
-      "Effect": "Any skill check you make in combat that is not explicitly related to said combat takes a downshift."
+      "Effect": "Any skill check you make in combat that is not explicitly related to said combat takes \u21931."
     },
     {
       "Name": "Whimsical",
       "FlavorText": "You do not take anything seriously and like to focus on light-hearted fun and playing tricks on your friends.",
-      "Effect": "Whenever you make an infiltration skill test that is not just for fun, take a downshift."
+      "Effect": "Whenever you make an infiltration skill test that is not just for fun, take \u21931."
     }
   ]
 }
