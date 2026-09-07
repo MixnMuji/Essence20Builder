@@ -849,3 +849,5 @@ Overhaulled Origin Page to display To be listbox that shows all will be better f
 with this new design all origins are selected on left side of page and right displays all the details in the future when expansion are added space is saved.
 
 TODO: Make influence and hang ups there own tab, with built in checks
+
+Made setters and getters and Inotify property change next build tabs and test data

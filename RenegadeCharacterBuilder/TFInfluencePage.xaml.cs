@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Text;
 using System.Text.Json;
@@ -22,10 +23,47 @@ namespace RenegadeCharacterBuilder
     /// Interaction logic for TFInfluencePage.xaml
     /// </summary>
    
-    public partial class TFInfluencePage : Page
+    public partial class TFInfluencePage : Page, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         public List<InfluencesTF> tfInfluences{get; set;}
+        public List<string> InfluenceNames { get; set; } = new();
         public List<HangUps> tfHangups { get; set; }
+        public List<string> HangUpNames { get; set; } = new();
+
+        private string _viewSetter;
+        public string ViewSetter
+        {
+            get => _viewSetter;
+            set
+            {
+                _viewSetter = value;
+                NotifyPropertyChanged(nameof(ViewSetter));
+                FindNewDisplay();
+            }
+        }
+
+        private HangUps _displayedHangup;
+        public HangUps DisplayedHangup
+        {
+            get => _displayedHangup;
+            set
+            {
+                _displayedHangup = value;
+                NotifyPropertyChanged(nameof(DisplayedHangup));
+            }
+        }
+
+        private InfluencesTF _displayedInfluence;
+        private InfluencesTF DisplayedInfluence
+        {
+            get => _displayedInfluence;
+            set
+            {
+                _displayedInfluence = value;
+                NotifyPropertyChanged(nameof(DisplayedInfluence));
+            }
+        }
         public TFInfluencePage()
         {
             InitializeComponent();
@@ -35,6 +73,7 @@ namespace RenegadeCharacterBuilder
             }
             LoadTFInfluneces();
             LoadTFHangUps();
+            setnameData();
             DataContext = this;
         }
         public void LoadTFInfluneces()
@@ -58,7 +97,31 @@ namespace RenegadeCharacterBuilder
 
             tfHangups = hangupsRoot.Hang_ups;
         }
-
+        public void setnameData()
+        {
+            foreach(var x in tfInfluences)
+            {
+                InfluenceNames.Add(x.Name);
+            }
+            foreach(var y in tfHangups)
+            {
+                HangUpNames.Add(y.Name);
+            }
+           
+        }
+        public void FindNewDisplay()
+        {
+            if (InfluenceNames.Contains(ViewSetter))
+            {
+                DisplayedInfluence = tfInfluences.FirstOrDefault(x => x.Name == ViewSetter);
+            }
+            else if (HangUpNames.Contains(ViewSetter))
+            {
+                DisplayedHangup = tfHangups.FirstOrDefault(x => x.Name == ViewSetter);
+            }
+            else
+                MessageBox.Show("Invalid data, contact dev with error");
+        }
         private void ProceedToRoles(object sender, RoutedEventArgs e)
         {
             var slectedInfluences = tfInfluences.Where(i => i.isChecked).ToList();
@@ -88,6 +151,10 @@ namespace RenegadeCharacterBuilder
             }
 
             NavigationService.Navigate(new RolesTF());
+        }
+        private void NotifyPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }
