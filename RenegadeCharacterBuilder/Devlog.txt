@@ -843,3 +843,9 @@ Now we move on to all the polishing  things  final leg here we go!
 Startpage clean up: removed devskip
 Influence Page: removed scrollbar added text wrapping, added correct formate for up and downshift
 Origins json added mode names will help for later in aplication,added textwrapping got ride of scroller, removed old alliegence selector
+
+9-7 
+Overhaulled Origin Page to display To be listbox that shows all will be better for future displays next need to overhall influences to be the same
+with this new design all origins are selected on left side of page and right displays all the details in the future when expansion are added space is saved.
+
+TODO: Make influence and hang ups there own tab, with built in checks
