@@ -857,3 +857,7 @@ Made setters and getters and Inotify property change next build tabs and test da
 got lost in the sauce tried to make vm scrapped it over basically reinvinging the wheel
 -made a tab system and kept checkboxes as it because a hastle to do listbox with mutiple selections,
 - opted to have tabs with scrollbar.
+
+Added textwrapping and scroll viewer but its probably better to do a view split via listbox for roles.
+
+started the proecess by making the new property changed attributes and makin a method to set the display in roles

@@ -28,6 +28,30 @@ namespace RenegadeCharacterBuilder
     public partial class RolesTF : Page, INotifyPropertyChanged
     {
         public ObservableCollection<Roles> tfRoles { get; set; }
+
+        private int _currentSelectedlevel;
+
+        public int CurrentSelectedLevel
+        {
+            get => _currentSelectedlevel;
+            set
+            {
+                _currentSelectedlevel = value;
+                OnPropertyChanged(nameof(CurrentSelectedLevel));
+                GetCurrentLevelDisplay();
+            }
+        }
+        private LevelTF _currentDisplayedLevel;
+        public LevelTF CurrentDisplayedLevel
+        {
+            get => _currentDisplayedLevel;
+            set
+            {
+                _currentDisplayedLevel = value;
+                OnPropertyChanged();
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private int _currentIndex;
@@ -51,7 +75,10 @@ namespace RenegadeCharacterBuilder
 
             
         }
-
+        public void GetCurrentLevelDisplay()
+        {
+            CurrentDisplayedLevel = tfRoles.FirstOrDefault(t => t.Name == CurrentRole.Name)?.Levels.FirstOrDefault(l => l.Level == CurrentSelectedLevel);
+        }
         public int CurrentIndex
         {
             get => _currentIndex;

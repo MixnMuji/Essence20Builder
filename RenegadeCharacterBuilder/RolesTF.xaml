@@ -39,14 +39,14 @@
                             </StackPanel>
 
 
-
-                            <ItemsControl ItemsSource="{Binding Levels}">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <ItemsControl ItemsSource="{Binding Levels}">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
                                         <UniformGrid Columns="3"/>
                                     </ItemsPanelTemplate>
                                 </ItemsControl.ItemsPanel>
-
+                                
 
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
@@ -54,16 +54,14 @@
                                             <Expander.Header>
                                                 <TextBlock Text="{Binding Level, StringFormat= Level : {0}}"/>
                                             </Expander.Header>
-                                            <ScrollViewer VerticalScrollBarVisibility="Auto"
-                                                         HorizontalScrollBarVisibility="Auto"
-                                                        MaxHeight="400">
+                                            <ScrollViewer VerticalScrollBarVisibility="Auto">
                                                 <StackPanel>
-                                                    <TextBlock Text="{Binding GeneralPerkCount, StringFormat= Gernal Perk Count: +{0}}"/>
-                                                    <TextBlock Text="{Binding FocusProgression, StringFormat= Focus Progression: +{0}}"/>
-                                                    <TextBlock Text="{Binding SpeedBoost, StringFormat= Speed Essence: +{0}}"/>
-                                                    <TextBlock Text="{Binding SmartsBoost, StringFormat= Smarts Essence: +{0}}"/>
-                                                    <TextBlock Text="{Binding StrengthBoost, StringFormat= Strength Essence: +{0}}"/>
-                                                    <TextBlock Text="{Binding SocialBoost, StringFormat= Social Essence: +{0}}"/>
+                                                    <TextBlock Text="{Binding GeneralPerkCount, StringFormat= Gernal Perk Count: +{0}}" TextWrapping="Wrap"/>
+                                                    <TextBlock Text="{Binding FocusProgression, StringFormat= Focus Progression: +{0}}" TextWrapping="Wrap"/>
+                                                    <TextBlock Text="{Binding SpeedBoost, StringFormat= Speed Essence: +{0}}" TextWrapping="Wrap"/>
+                                                    <TextBlock Text="{Binding SmartsBoost, StringFormat= Smarts Essence: +{0}}" TextWrapping="Wrap"/>
+                                                    <TextBlock Text="{Binding StrengthBoost, StringFormat= Strength Essence: +{0}}" TextWrapping="Wrap"/>
+                                                    <TextBlock Text="{Binding SocialBoost, StringFormat= Social Essence: +{0}}" TextWrapping="Wrap"/>
 
                                                     <ItemsControl ItemsSource="{Binding Perk}">
                                                         <ItemsControl.ItemTemplate>
@@ -83,7 +81,7 @@
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
-
+                            </ScrollViewer>
 
                         </StackPanel>
                     </DataTemplate>
