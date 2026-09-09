@@ -29,6 +29,8 @@ namespace RenegadeCharacterBuilder
     {
         public ObservableCollection<Roles> tfRoles { get; set; }
 
+        public int[] levelTable { get; set; } =  Enumerable.Range(1, 20).ToArray();
+
         private int _currentSelectedlevel;
 
         public int CurrentSelectedLevel
@@ -77,7 +79,7 @@ namespace RenegadeCharacterBuilder
         }
         public void GetCurrentLevelDisplay()
         {
-            CurrentDisplayedLevel = tfRoles.FirstOrDefault(t => t.Name == CurrentRole.Name)?.Levels.FirstOrDefault(l => l.Level == CurrentSelectedLevel);
+            CurrentDisplayedLevel = CurrentRole?.Levels?.FirstOrDefault(l => l.Level == CurrentSelectedLevel);
         }
         public int CurrentIndex
         {
@@ -122,11 +124,13 @@ namespace RenegadeCharacterBuilder
         private void NextRoleDisplay(object sender, RoutedEventArgs e)
         {
             CurrentIndex++;
+            GetCurrentLevelDisplay();
         }
 
         private void PerviousRoleDisplay(object sender, RoutedEventArgs e)
         {
             CurrentIndex--;
+            GetCurrentLevelDisplay();
         }
 
         private void ContinueToGeneralPerks(object sender, RoutedEventArgs e)

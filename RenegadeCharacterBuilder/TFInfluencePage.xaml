@@ -30,11 +30,9 @@
                         <DataTemplate>
                        
                             <StackPanel Margin="10,10,10,10">
-                                <CheckBox Content="{Binding Name}" IsChecked="{Binding isChecked, Mode=TwoWay}"/>
-                                <Expander HorizontalAlignment="Stretch">
+                                    <CheckBox Content="{Binding Name}" IsChecked="{Binding isChecked, Mode=TwoWay}"/>
                                     <TextBlock Text="{Binding Perk}" TextWrapping="Wrap"/>
-                                </Expander>
-                            </StackPanel>
+                                </StackPanel>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
@@ -52,9 +50,8 @@
                             <DataTemplate>
                                 <StackPanel Margin="10,10,10,10">
                                     <CheckBox Content="{Binding Name}" IsChecked="{Binding isChecked, Mode=TwoWay}"/>
-                                    <Expander HorizontalAlignment="Stretch">
-                                        <TextBlock Text="{Binding Effect}"  TextWrapping="Wrap"/>
-                                    </Expander>
+
+                                    <TextBlock Text="{Binding Effect}"  TextWrapping="Wrap"/>
 
                                 </StackPanel>
                             </DataTemplate>

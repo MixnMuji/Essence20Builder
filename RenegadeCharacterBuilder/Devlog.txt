@@ -861,3 +861,8 @@ got lost in the sauce tried to make vm scrapped it over basically reinvinging th
 Added textwrapping and scroll viewer but its probably better to do a view split via listbox for roles.
 
 started the proecess by making the new property changed attributes and makin a method to set the display in roles
+
+
+9-9
+
+Rewrote xaml to display without expanders by diving into tables fun stuff
