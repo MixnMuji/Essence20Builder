@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Security.Cryptography.X509Certificates;
@@ -15,6 +16,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
     public class CharScorePageModelTF:INotifyPropertyChanged
     {
+
+        public string[] ModeMasterEssenceChoices { get; set; } = ["Strenght", "Smarts", "Speed", "Social"];
         public event PropertyChangedEventHandler PropertyChanged;
         private int _pointBank = 9;
         private int _skillsPointBank = 0;
@@ -213,6 +216,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 case "Warrior":
                     defineScoresAndSkillChoice(Strength, Smarts, new List<SkillTF> { Alertness, Brawn, Conditioning, Culture, Might, Survival });
                     break;
+                // the case from modemaster needs to take a skill and it needs to take return any list
+                //esscens must have coresponding skills
 
 
             }
@@ -221,6 +226,29 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             
         }
 
+        public ObservableCollection<SkillTF> ModemasterSelections(string choiceone, string choicetwo)
+        {
+            ObservableCollection<SkillTF> merged = new ObservableCollection<SkillTF>();
+            var targetOne = TFCharacterSession.CurrentTransfomer.fullScoreList.FirstOrDefault(s => s.Name == choiceone);
+            var targetTwo = TFCharacterSession.CurrentTransfomer.fullScoreList.FirstOrDefault(s => s.Name == choicetwo);
+            foreach( var s in targetOne.CorrespondingSkills)
+            {
+                merged.Add(s);
+            }
+            foreach(var s in targetTwo.CorrespondingSkills)
+            {
+                merged.Add(s);
+            }
+            foreach(var i in merged) // when list is updated by new selection has to be observable collection because components change 
+            {
+                if(!targetOne.CorrespondingSkills.Contains(i) || !targetTwo.CorrespondingSkills.Contains(i))
+                {
+                    merged.Remove(i);
+                }
+            }
+            return merged;
+            
+        }
         public List<SkillTF> defineScoresAndSkillChoice( ScoreTF IncreaseOne, ScoreTF IncreaseTwo, List<SkillTF> Choices )
         {
             IncreaseOne.CurrentRank += 1;
@@ -309,7 +337,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public void getLinkedSkillForScore()
         {
             //may need new object or boolean called linked skill
-            ScoreTF target = Scores.First(s=> s.Name== TFCharacterSession.CurrentTransfomer.sub.statToBoost); // this searches array for score
+            if(TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master")
+            {
+                return;
+            }
+                ScoreTF target = Scores.First(s=> s.Name== TFCharacterSession.CurrentTransfomer.sub.statToBoost); // this searches array for score
             string skilltolink = TFCharacterSession.CurrentTransfomer.ChosenLinkedSkill;
             target.LinkedbyFocus = target.CorrespondingSkills.First(c => c.Name == skilltolink);
             // we got the linked skill sweet

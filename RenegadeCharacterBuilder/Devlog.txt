@@ -866,3 +866,9 @@ started the proecess by making the new property changed attributes and makin a m
 9-9
 
 Rewrote xaml to display without expanders by diving into tables fun stuff
+
+9-12
+
+Wrote some methods for mode master to get scores will return a observable colection based off two first scores. 
+
+TODO: Learn to do a drag and drop will make page more interacibve and is easier than having user rank them in a textbox

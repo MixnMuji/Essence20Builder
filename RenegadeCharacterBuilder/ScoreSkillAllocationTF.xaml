@@ -32,6 +32,19 @@
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
                             <Ellipse Width="10" Height="10" Fill="DimGray"/>
+                            <TextBlock Text="1) Key Esscencse"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <StackPanel>
+                        <TextBlock Text="Rank Scores, based off rules for Mode master"/>
+                        <TextBlock/>
+                    </StackPanel>
+                </TabItem>
+                
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Width="10" Height="10" Fill="DimGray"/>
                             <TextBlock Text="1) Key Score and Skill Selection"/>
                         </StackPanel>
                     </TabItem.Header>

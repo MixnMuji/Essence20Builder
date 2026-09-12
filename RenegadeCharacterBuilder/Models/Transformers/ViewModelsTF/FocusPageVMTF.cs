@@ -102,7 +102,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     GetSubclassesFromJson("Gunslinger", "SharpShooter");
                     break;
 
-                case "ModeMaster": //this needs its own method unfortunately
+                case "Mode Master": //this needs its own method unfortunately
                     GetSubclassesFromJson("Microlnked", "Triple Changer");
                     break;
 
