@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data.Common;
 using System.Drawing.Printing;
 using System.Reflection.Metadata;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -27,6 +29,8 @@ namespace RenegadeCharacterBuilder
     /// <summary>
     public partial class ScoreSkillAllocationTF : Page
     {
+        private Popup? dragPopup;
+        private TextBlock dragText;
         public CharScorePageModelTF Viewmodel { get; }
         public ScoreSkillAllocationTF()
         {
@@ -76,48 +80,67 @@ namespace RenegadeCharacterBuilder
 
             FrameworkElement element = (FrameworkElement)sender;
             ScoreTF score = (ScoreTF)element.DataContext;
-            DragDrop.DoDragDrop(element, score, DragDropEffects.Move);
+
+            dragText = new TextBlock
+            {
+                Text = score.Name,
+                FontSize = 20,
+                FontWeight = FontWeights.Bold,
+                Background = Brushes.White,
+                Foreground = Brushes.Black,
+                Padding = new Thickness(8),
+                Opacity = 0.8
+            };
+
+            dragPopup = new Popup
+            {
+                Child = dragText,
+                IsOpen = true,
+                IsHitTestVisible = false,
+                Placement = PlacementMode.Mouse,
+                AllowsTransparency = true
+            };
+
+            GiveFeedbackEventHandler feedbackhandler = (s, args) =>
+            {
+                Point mousePosition = Mouse.GetPosition(this);
+                dragPopup.HorizontalOffset = mousePosition.X + 10;
+                dragPopup.VerticalOffset = mousePosition.Y + 10;
+                args.UseDefaultCursors = true;
+            };
+
+            GiveFeedback += feedbackhandler;
+           DragDrop.DoDragDrop(element, score, DragDropEffects.Move);
+
+
+            GiveFeedback -= feedbackhandler;
+
+
+            dragPopup.IsOpen = false;
+            dragPopup = null;
+            dragText = null;
         }
 
+   
         private void SetScore(object sender, DragEventArgs e)
         {
             ScoreTF score = (ScoreTF)e.Data.GetData(typeof(ScoreTF));
-            Border target = (Border)sender;
+            TextBlock target = (TextBlock)sender;
             if(target == Stat1)
             {
-                Stat1.Child = new TextBlock
-                {
-                    Text = score.Name,
-                    FontSize = 18,
-                    FontWeight = FontWeights.Bold
-                };
+                Stat1.Text = score.Name;
             }
             else if(target == Stat2)
             {
-                Stat2.Child = new TextBlock
-                {
-                    Text = score.Name,
-                    FontSize = 18,
-                    FontWeight = FontWeights.Bold
-                };
+                Stat2.Text = score.Name;
             }
             else if(target == Stat3)
             {
-                Stat3.Child = new TextBlock
-                {
-                    Text = score.Name,
-                    FontSize = 18,
-                    FontWeight = FontWeights.Bold
-                };
+                Stat3.Text = score.Name;
             }
             else if(target == Stat4)
             {
-                Stat4.Child = new TextBlock
-                {
-                    Text = score.Name,
-                    FontSize = 18,
-                    FontWeight = FontWeights.Bold
-                };
+                Stat4.Text = score.Name;
             }
         }
 

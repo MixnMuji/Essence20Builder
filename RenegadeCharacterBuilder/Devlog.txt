@@ -872,3 +872,11 @@ Rewrote xaml to display without expanders by diving into tables fun stuff
 Wrote some methods for mode master to get scores will return a observable colection based off two first scores. 
 
 TODO: Learn to do a drag and drop will make page more interacibve and is easier than having user rank them in a textbox
+
+9-13
+
+messed around with drag and drop
+
+Made the colums for the tabe item found out how to use drag and drop methods. made it so that they can be moved and text is displayed.
+
+TODO; Find out how to move a image of item along with cursor, set the stats equal to their supposed rank in tf character. set visiblity if it's mode master

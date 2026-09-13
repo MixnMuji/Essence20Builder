@@ -45,8 +45,8 @@
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                    
-                                        <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5" MouseMove="DragStat">
-                                            <TextBlock Text="{Binding Name}" FontSize="20" FontWeight="Bold"/>
+                                        <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5">
+                                        <TextBlock Text="{Binding Name}" FontSize="20" FontWeight="Bold" MouseMove="DragStat"/>
                                         </Border>
                                     
                                 </DataTemplate>
@@ -55,18 +55,24 @@
                       
                         <StackPanel Grid.Column="1" Margin="10,10,10,10">
                         <TextBlock Text="Rank Your score Choices"/>
-                            <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore">
+                            <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5">
                             <TextBlock x:Name="Stat1" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore"></TextBlock>    
                             </Border>
                             <TextBlock Text="Increases on levels 2,5,9,14,18,20" Margin="0,-2,10,10"/>
 
-                            <Border x:Name="Stat2" BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore" Height="22"/>
+                            <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5">
+                            <TextBlock x:Name="Stat2" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore"></TextBlock>
+                            </Border>
                             <TextBlock Text="Increases on levels 3,7,11,15,19" Margin="0,-2,10,10"/>
 
-                            <Border x:Name="Stat3" BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore" Height="22"/>
+                            <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5">
+                            <TextBlock x:Name="Stat3" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore"></TextBlock>
+                            </Border>
                             <TextBlock Text="Increases on levels 4,8,13,16" Margin="0,-2,10,10"/>
 
-                            <Border x:Name="Stat4" BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore" Height="22"/>
+                            <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5">
+                            <TextBlock x:Name="Stat4" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore"></TextBlock>
+                            </Border>
                             <TextBlock Text="Increases on levels 6,12,17" Margin="0,-2,10,10"/>
 
 
