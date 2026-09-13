@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RenegadeCharacterBuilder.Models.Transformers;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 using static System.Net.Mime.MediaTypeNames;
@@ -65,6 +66,72 @@ namespace RenegadeCharacterBuilder
                 //otherwise take to finalization page. Make finalization page!
             }
 
+        }
+
+      
+        private void DragStat(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton != MouseButtonState.Pressed)
+                return;
+
+            FrameworkElement element = (FrameworkElement)sender;
+            ScoreTF score = (ScoreTF)element.DataContext;
+            DragDrop.DoDragDrop(element, score, DragDropEffects.Move);
+        }
+
+        private void SetScore(object sender, DragEventArgs e)
+        {
+            ScoreTF score = (ScoreTF)e.Data.GetData(typeof(ScoreTF));
+            Border target = (Border)sender;
+            if(target == Stat1)
+            {
+                Stat1.Child = new TextBlock
+                {
+                    Text = score.Name,
+                    FontSize = 18,
+                    FontWeight = FontWeights.Bold
+                };
+            }
+            else if(target == Stat2)
+            {
+                Stat2.Child = new TextBlock
+                {
+                    Text = score.Name,
+                    FontSize = 18,
+                    FontWeight = FontWeights.Bold
+                };
+            }
+            else if(target == Stat3)
+            {
+                Stat3.Child = new TextBlock
+                {
+                    Text = score.Name,
+                    FontSize = 18,
+                    FontWeight = FontWeights.Bold
+                };
+            }
+            else if(target == Stat4)
+            {
+                Stat4.Child = new TextBlock
+                {
+                    Text = score.Name,
+                    FontSize = 18,
+                    FontWeight = FontWeights.Bold
+                };
+            }
+        }
+
+        private void stat_dragOver(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(ScoreTF)))
+            {
+                e.Effects = DragDropEffects.Move;
+            }
+            else
+            {
+                e.Effects = DragDropEffects.None;
+            }
+            e.Handled = true;
         }
     }
 }
