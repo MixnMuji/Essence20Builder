@@ -880,3 +880,7 @@ messed around with drag and drop
 Made the colums for the tabe item found out how to use drag and drop methods. made it so that they can be moved and text is displayed.
 
 TODO; Find out how to move a image of item along with cursor, set the stats equal to their supposed rank in tf character. set visiblity if it's mode master
+
+9-14
+
+Tried to add adorner still also doesn't work more and more bugs awesome

@@ -15,7 +15,9 @@
         <gm:DieConverter x:Key="intToDie"/>
     </Page.Resources>
 
-    <Grid>
+    <AdornerDecorator>
+
+        <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="360"/>
@@ -40,19 +42,20 @@
                             <ColumnDefinition Width="330"/>
                             <ColumnDefinition Width="300"/>
                         </Grid.ColumnDefinitions>
-
-                        <ItemsControl ItemsSource="{Binding Scores}" Grid.Column="0">
+                        <StackPanel>
+                            <TextBlock Text="Drag and drop your stats" FontSize="24"/>
+                            <ItemsControl ItemsSource="{Binding Scores}" Grid.Column="0">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                   
-                                        <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5">
-                                        <TextBlock Text="{Binding Name}" FontSize="20" FontWeight="Bold" MouseMove="DragStat"/>
+
+                                        <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5" MouseMove="DragStat">
+                                        <TextBlock Text="{Binding Name}" FontSize="20" FontWeight="Bold" />
                                         </Border>
                                     
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                      
+                        </StackPanel>
                         <StackPanel Grid.Column="1" Margin="10,10,10,10">
                         <TextBlock Text="Rank Your score Choices"/>
                             <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5">
@@ -160,4 +163,7 @@
         <Button Grid.Row="2" HorizontalAlignment="Right" Width="200" Content="Proceed" Click="SaveScoresAndSkillsAndProcced" />
 
     </Grid>
+        
+        </AdornerDecorator>
+
 </Page>

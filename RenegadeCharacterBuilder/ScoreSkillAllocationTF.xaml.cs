@@ -22,6 +22,7 @@ using System.Windows.Shapes;
 using RenegadeCharacterBuilder.Models.Transformers;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
+using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHelpers;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace RenegadeCharacterBuilder
@@ -29,8 +30,8 @@ namespace RenegadeCharacterBuilder
     /// <summary>
     public partial class ScoreSkillAllocationTF : Page
     {
-        private Popup? dragPopup;
-        private TextBlock dragText;
+        private DragAdorner? dragAdorner;
+        private AdornerLayer? adornerLayer;
         public CharScorePageModelTF Viewmodel { get; }
         public ScoreSkillAllocationTF()
         {
@@ -81,31 +82,22 @@ namespace RenegadeCharacterBuilder
             FrameworkElement element = (FrameworkElement)sender;
             ScoreTF score = (ScoreTF)element.DataContext;
 
-            dragText = new TextBlock
-            {
-                Text = score.Name,
-                FontSize = 20,
-                FontWeight = FontWeights.Bold,
-                Background = Brushes.White,
-                Foreground = Brushes.Black,
-                Padding = new Thickness(8),
-                Opacity = 0.8
-            };
+            adornerLayer = AdornerLayer.GetAdornerLayer(this);
+            if (adornerLayer == null)
+                return;
 
-            dragPopup = new Popup
-            {
-                Child = dragText,
-                IsOpen = true,
-                IsHitTestVisible = false,
-                Placement = PlacementMode.Mouse,
-                AllowsTransparency = true
-            };
+            dragAdorner = new DragAdorner(this, score.Name);
+
+            adornerLayer.Add(dragAdorner);
+
 
             GiveFeedbackEventHandler feedbackhandler = (s, args) =>
             {
+                if (dragAdorner == null)
+                    return;
+
                 Point mousePosition = Mouse.GetPosition(this);
-                dragPopup.HorizontalOffset = mousePosition.X + 10;
-                dragPopup.VerticalOffset = mousePosition.Y + 10;
+                dragAdorner.SetPosition(mousePosition.X + 10, mousePosition.Y + 10);
                 args.UseDefaultCursors = true;
             };
 
@@ -115,10 +107,13 @@ namespace RenegadeCharacterBuilder
 
             GiveFeedback -= feedbackhandler;
 
+            if (dragAdorner != null)
+            {
+                adornerLayer.Remove(dragAdorner);
+                dragAdorner = null;
+            }
 
-            dragPopup.IsOpen = false;
-            dragPopup = null;
-            dragText = null;
+            adornerLayer = null;
         }
 
    
