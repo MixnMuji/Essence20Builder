@@ -30,6 +30,8 @@ namespace RenegadeCharacterBuilder
     /// <summary>
     public partial class ScoreSkillAllocationTF : Page
     {
+        private bool feedbackMessageShown = false;
+
         private DragAdorner? dragAdorner;
         private AdornerLayer? adornerLayer;
         public CharScorePageModelTF Viewmodel { get; }
@@ -82,23 +84,32 @@ namespace RenegadeCharacterBuilder
             FrameworkElement element = (FrameworkElement)sender;
             ScoreTF score = (ScoreTF)element.DataContext;
 
-            adornerLayer = AdornerLayer.GetAdornerLayer(this);
+            adornerLayer = AdornerLayer.GetAdornerLayer(StatsToDisplay);
+
             if (adornerLayer == null)
                 return;
 
-            dragAdorner = new DragAdorner(this, score.Name);
+            dragAdorner = new DragAdorner(StatsToDisplay, score.Name);
 
             adornerLayer.Add(dragAdorner);
 
 
+
             GiveFeedbackEventHandler feedbackhandler = (s, args) =>
             {
+                
+
                 if (dragAdorner == null)
                     return;
 
-                Point mousePosition = Mouse.GetPosition(this);
+                Point mousePosition = Mouse.GetPosition(adornerLayer);
                 dragAdorner.SetPosition(mousePosition.X + 10, mousePosition.Y + 10);
-                args.UseDefaultCursors = true;
+
+                adornerLayer.Update(StatsToDisplay);
+
+                args.UseDefaultCursors = false;
+                
+
             };
 
             GiveFeedback += feedbackhandler;

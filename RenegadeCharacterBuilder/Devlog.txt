@@ -884,3 +884,6 @@ TODO; Find out how to move a image of item along with cursor, set the stats equa
 9-14
 
 Tried to add adorner still also doesn't work more and more bugs awesome
+
+messedaround by testing if it fired, if it was tracking the corordinates yes and yes, has something to do with drag drop I guess, who knows
+feels like a waste of a few days at this point

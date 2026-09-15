@@ -15,9 +15,9 @@
         <gm:DieConverter x:Key="intToDie"/>
     </Page.Resources>
 
-    <AdornerDecorator>
 
-        <Grid>
+
+        <Grid x:Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="360"/>
@@ -28,8 +28,8 @@
             
       
         <Grid Grid.Row="1">
-
-            <TabControl>
+            <AdornerDecorator Grid.Row="1">
+                <TabControl>
                 <TabItem>
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
@@ -37,7 +37,7 @@
                             <TextBlock Text="1) Key Esscencse"/>
                         </StackPanel>
                     </TabItem.Header>
-                  <Grid>
+                  <Grid x:Name="StatsToDisplay">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="330"/>
                             <ColumnDefinition Width="300"/>
@@ -152,8 +152,9 @@
                 
             </ItemsControl>
                 </TabItem>
+                    
             </TabControl>
-
+            </AdornerDecorator>
         </Grid>
       
         <!-- Header Stuff-->
@@ -164,6 +165,6 @@
 
     </Grid>
         
-        </AdornerDecorator>
+        
 
 </Page>

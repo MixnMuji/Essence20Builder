@@ -18,11 +18,12 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
 
         public DragAdorner(UIElement adronedElement,string text) : base(adronedElement)
         {
+            IsHitTestVisible = false;
 
             _textBlock = new TextBlock
             {
-                IsHitTestVisible = false,
-                Text = text,
+                Text = "DRAGGING: " + text,
+               
                 FontSize = 20,
                 FontWeight = FontWeights.Bold,
                 Background = Brushes.White,
@@ -39,7 +40,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
         {
             _left = left;
             _top = top;
-            AdornerLayer.GetAdornerLayer(this)?.Update(this);
+            InvalidateArrange();
+            InvalidateVisual();
         }
 
         protected override int VisualChildrenCount => 1;
