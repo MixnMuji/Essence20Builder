@@ -887,3 +887,8 @@ Tried to add adorner still also doesn't work more and more bugs awesome
 
 messedaround by testing if it fired, if it was tracking the corordinates yes and yes, has something to do with drag drop I guess, who knows
 feels like a waste of a few days at this point
+
+9-25
+
+Took break to refresh memory unfornately I can't document all the videos and forms I went to to try to figure out the drag drop situation. but instead worked on
+making a collection for the origns stats for the character page

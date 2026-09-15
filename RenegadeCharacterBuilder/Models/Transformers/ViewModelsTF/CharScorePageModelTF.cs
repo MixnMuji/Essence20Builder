@@ -17,8 +17,26 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
     public class CharScorePageModelTF:INotifyPropertyChanged
     {
 
-        public string[] ModeMasterEssenceChoices { get; set; } = ["Strenght", "Smarts", "Speed", "Social"];
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public List<SkillTF> originBoostOptions { get; set; } = new();
+
+        private SkillTF _skillBoostFromOrigin;
+        public SkillTF SkillBoostFromOrigin
+        {
+            get => _skillBoostFromOrigin;
+            set
+            {
+                _skillBoostFromOrigin = value;
+                if(_skillBoostFromOrigin != null)
+                {
+                    SkillBoostFromOrigin.SkillScore -= 1; // if it already has a skill associated it's value is removed
+                }
+                NotifyPropertyChanged(nameof(SkillBoostFromOrigin));
+                SkillBoostFromOrigin.SkillScore += 1; // after new value is made add to the score, if it is the same score it still evens to a plus one : 1-1+1 = 1
+            }
+        }
+
         private int _pointBank = 9;
         private int _skillsPointBank = 0;
 
@@ -184,7 +202,22 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
            
 
         }
-
+        
+        public void GetOptionsForOriginStats()
+        {
+            Dictionary<string, SkillTF[]> OrignSkillPairs = new Dictionary<string, SkillTF[]>
+            {
+                ["Support"] = [Technology, Science],
+                ["Seeker"] = [Driving, Acrobatics],
+                ["Rainmaker"] = [Targeting, Inititave],
+                ["Outrider"] = [Alertness,Survival],
+                ["Monolith"] = [Might, Brawn],
+                ["Lookout"] = [Finesse, Deception, Streetwise, Inflitration],
+                ["Cutter"] = [Athletics, Might],
+                ["Champion"] = [Streetwise, Persuasion]
+              
+            };
+        }
         public void findRoleForStats()
         {
             switch (CharacterRoleForKeyScores)

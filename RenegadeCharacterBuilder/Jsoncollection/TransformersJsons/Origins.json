@@ -57,7 +57,7 @@
             
         },
         {
-            "Name": "LookOut",
+            "Name": "Lookout",
             "Speedincrease": 1,
             "Socialincrease": 1,
             "OriginSkill": "increase finese, inflitration, decpetion, or streetwise skill. the skill must make the score of your essance increase",
@@ -89,7 +89,7 @@
             
         },
         {
-            "Name": "MonoLith",
+            "Name": "Monolith",
             "StrengthIncrease": 1,
             "OriginSkill": "increase either your brawn or might skill",
             "StartingHealth": 4,
@@ -118,7 +118,7 @@
             
         },
         {
-            "Name": "OutRider",
+            "Name": "Outrider",
             "SmartsIncrease": 1,
             "OriginSkill": "increase either your alertness or survival",
             "StartingHealth": 3,
@@ -147,7 +147,7 @@
             
         },
         {
-            "Name": "RainMaker",
+            "Name": "Rainmaker",
             "SpeedIncrease": 1,
             "OriginSkill": "increase either your intitative or targeting skill",
             "StartingHealth": 4,
