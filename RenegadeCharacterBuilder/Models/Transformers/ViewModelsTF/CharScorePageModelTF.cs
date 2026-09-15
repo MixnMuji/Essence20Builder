@@ -19,6 +19,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public string oringName { get; set; }
+
         public List<SkillTF> originBoostOptions { get; set; } = new();
 
         private SkillTF _skillBoostFromOrigin;
@@ -27,13 +29,15 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             get => _skillBoostFromOrigin;
             set
             {
-                _skillBoostFromOrigin = value;
+
                 if(_skillBoostFromOrigin != null)
                 {
                     SkillBoostFromOrigin.SkillScore -= 1; // if it already has a skill associated it's value is removed
                 }
+                _skillBoostFromOrigin = value;
+                _skillBoostFromOrigin.SkillScore += 1;
                 NotifyPropertyChanged(nameof(SkillBoostFromOrigin));
-                SkillBoostFromOrigin.SkillScore += 1; // after new value is made add to the score, if it is the same score it still evens to a plus one : 1-1+1 = 1
+               
             }
         }
 
@@ -98,6 +102,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public CharScorePageModelTF()
         {
+            oringName = TFCharacterSession.CurrentTransfomer.Origns[0].Name;
             SelectedKeySkills = new List<SkillTF>();
             AddpointsToScore = new RelayCommand<ScoreTF>(AddPointsToScore);
             RemovePointsFromScore = new RelayCommand<ScoreTF>(DecreasePontsFromScore);
@@ -199,13 +204,15 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             };
 
             getLinkedSkillForScore();
-           
+            GetOptionsForOriginStats();
+
+
 
         }
         
         public void GetOptionsForOriginStats()
         {
-            Dictionary<string, SkillTF[]> OrignSkillPairs = new Dictionary<string, SkillTF[]>
+            Dictionary<string, List<SkillTF>> OrignSkillPairs = new Dictionary<string, List<SkillTF>>
             {
                 ["Support"] = [Technology, Science],
                 ["Seeker"] = [Driving, Acrobatics],
@@ -217,6 +224,17 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 ["Champion"] = [Streetwise, Persuasion]
               
             };
+
+            
+
+            if(OrignSkillPairs.TryGetValue(oringName, out List<SkillTF> skills))
+            {
+                originBoostOptions = skills;
+            }
+            
+
+
+
         }
         public void findRoleForStats()
         {

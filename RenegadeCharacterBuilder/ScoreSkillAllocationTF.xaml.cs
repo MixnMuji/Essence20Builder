@@ -162,5 +162,13 @@ namespace RenegadeCharacterBuilder
             }
             e.Handled = true;
         }
+
+        private void Doupdate(object sender, RoutedEventArgs e)
+        {
+            RadioButton choice = (RadioButton)sender;
+            //SkillTF toupdate = choice.Content;
+
+            Viewmodel.SkillBoostFromOrigin = (SkillTF)choice.DataContext;
+        }
     }
 }

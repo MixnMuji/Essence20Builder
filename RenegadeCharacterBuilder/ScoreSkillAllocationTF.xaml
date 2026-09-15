@@ -82,7 +82,31 @@
                         </StackPanel>
                     </Grid>
                 </TabItem>
-                
+
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Ellipse Width="10" Height="10" Fill="DimGray"/>
+                                <TextBlock Text="1) Skill Boost from Orign"/>
+                            </StackPanel>
+                        </TabItem.Header>
+                        <StackPanel>
+                            <TextBlock Text="{Binding oringName}" FontWeight="Bold" FontSize="28"/>
+                            <TextBlock Text="Pick a Skill to Boost"/>
+                            <ItemsControl ItemsSource="{Binding originBoostOptions}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <RadioButton GroupName="OriginSkillSelected" Content="{Binding Name}" Checked="Doupdate"/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                        
+                    </TabItem>
+                    
+                    
+                 <!-- tab 3 -->   
+                    
                 <TabItem>
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
