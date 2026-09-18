@@ -899,3 +899,11 @@ fixed issue was assigning values backwards, also set before doing subtraction, i
 stat boost working
 
 TODO: Return to drag and drop drama.
+
+9-18 
+
+I literally looked and looked and struggled and struggled, cut you fucking loses there is no way to make a drag and drop work, not with popup, not with adorner
+I think it's something to do with the page size or the window, or the tabs idk I literally can't get it to work so I'm scrapping the animation.
+its done
+what a waste of a fucking day, and week etc
+

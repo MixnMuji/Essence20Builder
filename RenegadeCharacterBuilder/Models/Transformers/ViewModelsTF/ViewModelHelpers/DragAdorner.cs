@@ -11,6 +11,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
     public class DragAdorner : Adorner
     {
         private readonly TextBlock _textBlock;
+        private readonly TranslateTransform _translateTransform;
 
         private double _left;
         private double _top;
@@ -34,6 +35,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
 
             AddVisualChild(_textBlock);
 
+            _translateTransform = new TranslateTransform();
+
+            RenderTransform = _translateTransform;
+
         }
 
         public void SetPosition(double left, double top)
@@ -41,7 +46,6 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
             _left = left;
             _top = top;
             InvalidateArrange();
-            InvalidateVisual();
         }
 
         protected override int VisualChildrenCount => 1;

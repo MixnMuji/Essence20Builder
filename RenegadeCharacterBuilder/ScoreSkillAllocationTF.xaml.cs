@@ -23,6 +23,8 @@ using RenegadeCharacterBuilder.Models.Transformers;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHelpers;
+using System.Windows.Interop;
+using System.Runtime.InteropServices;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace RenegadeCharacterBuilder
@@ -30,10 +32,10 @@ namespace RenegadeCharacterBuilder
     /// <summary>
     public partial class ScoreSkillAllocationTF : Page
     {
+
+        private Popup? dragPopup;
         private bool feedbackMessageShown = false;
 
-        private DragAdorner? dragAdorner;
-        private AdornerLayer? adornerLayer;
         public CharScorePageModelTF Viewmodel { get; }
         public ScoreSkillAllocationTF()
         {
@@ -83,48 +85,14 @@ namespace RenegadeCharacterBuilder
 
             FrameworkElement element = (FrameworkElement)sender;
             ScoreTF score = (ScoreTF)element.DataContext;
+            
+                DragDrop.DoDragDrop(
+                    element,
+                    score,
+                    DragDropEffects.Move
+                );
+           
 
-            adornerLayer = AdornerLayer.GetAdornerLayer(StatsToDisplay);
-
-            if (adornerLayer == null)
-                return;
-
-            dragAdorner = new DragAdorner(StatsToDisplay, score.Name);
-
-            adornerLayer.Add(dragAdorner);
-
-
-
-            GiveFeedbackEventHandler feedbackhandler = (s, args) =>
-            {
-                
-
-                if (dragAdorner == null)
-                    return;
-
-                Point mousePosition = Mouse.GetPosition(adornerLayer);
-                dragAdorner.SetPosition(mousePosition.X + 10, mousePosition.Y + 10);
-
-                adornerLayer.Update(StatsToDisplay);
-
-                args.UseDefaultCursors = false;
-                
-
-            };
-
-            GiveFeedback += feedbackhandler;
-           DragDrop.DoDragDrop(element, score, DragDropEffects.Move);
-
-
-            GiveFeedback -= feedbackhandler;
-
-            if (dragAdorner != null)
-            {
-                adornerLayer.Remove(dragAdorner);
-                dragAdorner = null;
-            }
-
-            adornerLayer = null;
         }
 
    
