@@ -43,7 +43,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public int Health { get; set; }
 
         public int generalPointBank { get; set; }
-
+        public ScoreTF stat1 { get; set; }
+        public ScoreTF stat2 { get; set; }
+        public ScoreTF stat3 { get; set; }
+        public ScoreTF stat4 { get; set; }
         public DirivedStat Evasion { get; set; } = new DirivedStat { Value = 0 };
         public DirivedStat Toughness { get; set; } = new DirivedStat { Value = 0 };
         public DirivedStat Cleverness { get; set; } = new DirivedStat { Value = 0 };

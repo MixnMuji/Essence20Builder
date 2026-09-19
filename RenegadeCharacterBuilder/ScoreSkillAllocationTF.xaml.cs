@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data.Common;
 using System.Drawing.Printing;
 using System.Reflection.Metadata;
+using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics.X86;
+using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -13,6 +15,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
@@ -23,8 +26,6 @@ using RenegadeCharacterBuilder.Models.Transformers;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHelpers;
-using System.Windows.Interop;
-using System.Runtime.InteropServices;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace RenegadeCharacterBuilder
@@ -37,6 +38,8 @@ namespace RenegadeCharacterBuilder
         private bool feedbackMessageShown = false;
 
         public CharScorePageModelTF Viewmodel { get; }
+
+        
         public ScoreSkillAllocationTF()
         {
             InitializeComponent();
@@ -103,18 +106,22 @@ namespace RenegadeCharacterBuilder
             if(target == Stat1)
             {
                 Stat1.Text = score.Name;
+                CheckforDubplicateStats(target, Stat2, Stat3, Stat4);
             }
             else if(target == Stat2)
             {
                 Stat2.Text = score.Name;
+                CheckforDubplicateStats(target, Stat1, Stat3, Stat4);
             }
             else if(target == Stat3)
             {
                 Stat3.Text = score.Name;
+                CheckforDubplicateStats(target, Stat1, Stat2, Stat4);
             }
             else if(target == Stat4)
             {
                 Stat4.Text = score.Name;
+                CheckforDubplicateStats(target, Stat1, Stat2, Stat3);
             }
         }
 
@@ -131,6 +138,21 @@ namespace RenegadeCharacterBuilder
             e.Handled = true;
         }
 
+        public void CheckforDubplicateStats(TextBlock Current, TextBlock one, TextBlock two, TextBlock three)
+        {
+            if(Current.Text == one.Text)
+            {
+                one.Text = string.Empty;
+            }
+            if(Current.Text == two.Text)
+            {
+                two.Text = string.Empty;
+            }
+            if (Current.Text == three.Text)
+            {
+                three.Text = string.Empty;
+            }
+        }
         private void Doupdate(object sender, RoutedEventArgs e)
         {
             RadioButton choice = (RadioButton)sender;

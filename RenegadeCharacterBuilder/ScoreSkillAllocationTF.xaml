@@ -57,6 +57,17 @@
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
+
+                            <ItemsControl ItemsSource="{Binding Scores}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <CheckBox Content="{Binding Name}" IsChecked="{Binding }">
+                                            
+                                        </CheckBox>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                                   
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Margin="10,10,10,10">
                                     <TextBlock Text="Rank Your score Choices"/>

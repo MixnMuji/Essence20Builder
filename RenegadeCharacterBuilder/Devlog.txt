@@ -907,3 +907,8 @@ I think it's something to do with the page size or the window, or the tabs idk I
 its done
 what a waste of a fucking day, and week etc
 
+need box for essance scores, or checkbox rather and then it will show a skill list as well or modify the skill list
+
+got over pity party made list for tracking mode master score, obseravbe collection for skills, as well as methods
+
+TODO:make xaml to link modemaster choices with  list

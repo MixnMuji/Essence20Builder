@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,7 +22,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public string oringName { get; set; }
 
+        public List<ScoreTF> modeMasterEssences { get; set; } = new();
+
         public List<SkillTF> originBoostOptions { get; set; } = new();
+
+        public ObservableCollection<SkillTF> modeMasterSkillOptions { get; set; } = new();
 
         private SkillTF _skillBoostFromOrigin;
         public SkillTF SkillBoostFromOrigin
@@ -468,6 +473,36 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 PointsBank += 1;
                 SkillsPointBank -= 1;
             }
+        }
+
+        public void setLevelOneBoostForModeMaster(ScoreTF chosenScore)
+        {
+            if(originBoostOptions.Count() >= 2) // if we've picked 2 remvoe selection 1 and put in the new one
+            {
+                modeMasterEssences.Remove(modeMasterEssences[0]); 
+                modeMasterEssences.Add(chosenScore);
+            }
+            else
+            {
+                modeMasterEssences.Add(chosenScore);
+            }
+        }
+
+        public void UpdateModeMasterSelection()
+        {
+            int mostRecentData = originBoostOptions.Count() - 1;
+            foreach(SkillTF x in modeMasterEssences[mostRecentData].CorrespondingSkills)
+            {
+                modeMasterSkillOptions.Add(x);
+            }
+            foreach(SkillTF x in modeMasterSkillOptions)
+            {
+                if (!modeMasterEssences[0].CorrespondingSkills.Contains(x) && !modeMasterEssences[1].CorrespondingSkills.Contains(x))
+                {
+                    modeMasterSkillOptions.Remove(x); //basically if neither list has them we no they're from an early pass.
+                }
+            }
+            
         }
         private void NotifyPropertyChanged(string name)
         {
