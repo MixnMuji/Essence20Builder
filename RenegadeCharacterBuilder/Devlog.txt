@@ -912,3 +912,9 @@ need box for essance scores, or checkbox rather and then it will show a skill li
 got over pity party made list for tracking mode master score, obseravbe collection for skills, as well as methods
 
 TODO:make xaml to link modemaster choices with  list
+
+9-20 
+
+f'ed around and found out thought it would be dumb to add a ischecked value to my scoretf it is actually the easiest option
+
+more hours wasted but lesson learned

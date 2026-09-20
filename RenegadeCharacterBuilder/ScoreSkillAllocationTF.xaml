@@ -57,7 +57,9 @@
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
-
+                                    
+                                    
+                            <TextBlock Margin="10,10,10,10" Text="Pick two scores to raise at level 1"/>
                             <ItemsControl ItemsSource="{Binding Scores}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>

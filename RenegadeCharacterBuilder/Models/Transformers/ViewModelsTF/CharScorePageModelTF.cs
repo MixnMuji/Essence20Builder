@@ -26,8 +26,6 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public List<SkillTF> originBoostOptions { get; set; } = new();
 
-        public ObservableCollection<SkillTF> modeMasterSkillOptions { get; set; } = new();
-
         private SkillTF _skillBoostFromOrigin;
         public SkillTF SkillBoostFromOrigin
         {
@@ -49,10 +47,12 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         private int _pointBank = 9;
         private int _skillsPointBank = 0;
 
-        public List<SkillTF> SkillsToBoost { get; }
+        public ObservableCollection<SkillTF> SkillsToBoost { get; set; }
 
         private List<SkillTF> SelectedKeySkills { get;}
         public string CharacterRoleForKeyScores { get; set; }
+
+        public ICommand runModeMasterScoreAdd { get; set; }
         public ICommand AddpointsToScore { get; }
         public ICommand RemovePointsFromScore { get; }
         
@@ -107,12 +107,14 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public CharScorePageModelTF()
         {
+           
             oringName = TFCharacterSession.CurrentTransfomer.Origns[0].Name;
             SelectedKeySkills = new List<SkillTF>();
             AddpointsToScore = new RelayCommand<ScoreTF>(AddPointsToScore);
             RemovePointsFromScore = new RelayCommand<ScoreTF>(DecreasePontsFromScore);
             AddPointsToSkill = new RelayCommand<SkillTF>(AddPointsToSkil);
             RemovePointsFromSkill = new RelayCommand<SkillTF>(DecreasePointsFromSkill);
+            runModeMasterScoreAdd = new RelayCommand<ScoreTF>(setLevelOneBoostForModeMaster);
             CharacterRoleForKeyScores = TFCharacterSession.CurrentTransfomer.Role.Name;
             if (string.IsNullOrWhiteSpace(CharacterRoleForKeyScores))
             {
@@ -120,7 +122,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             }
 
 
-            SkillsToBoost = new List<SkillTF>();
+            SkillsToBoost = new ObservableCollection<SkillTF>();
             
            
        
@@ -257,8 +259,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     defineScoresAndSkillChoice(Speed, Smarts, new List<SkillTF> { Alertness, Inititave, Survival, Targeting });
                     break;
 
-                case "ModeMaster": //this needs its own method unfortunately
-                    defineScoresAndSkillChoice(Speed, Smarts, new List<SkillTF> { Alertness, Finesse, Inflitration, Inititave, Science, Technology });
+                case "ModeMaster": 
+      
                     break;
 
                 case "Scientist":
@@ -305,7 +307,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             return merged;
             
         }
-        public List<SkillTF> defineScoresAndSkillChoice( ScoreTF IncreaseOne, ScoreTF IncreaseTwo, List<SkillTF> Choices )
+        public ObservableCollection<SkillTF> defineScoresAndSkillChoice( ScoreTF IncreaseOne, ScoreTF IncreaseTwo, List<SkillTF> Choices )
         {
             IncreaseOne.CurrentRank += 1;
             IncreaseOne.IsKeyScore = true;
@@ -477,10 +479,12 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public void setLevelOneBoostForModeMaster(ScoreTF chosenScore)
         {
-            if(originBoostOptions.Count() >= 2) // if we've picked 2 remvoe selection 1 and put in the new one
+            if(originBoostOptions.Count >= 2) // if we've picked 2 remvoe selection 1 and put in the new one
             {
-                modeMasterEssences.Remove(modeMasterEssences[0]); 
+                modeMasterEssences.RemoveAt(0);
                 modeMasterEssences.Add(chosenScore);
+                UpdateModeMasterSelection();
+             
             }
             else
             {
@@ -493,13 +497,13 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             int mostRecentData = originBoostOptions.Count() - 1;
             foreach(SkillTF x in modeMasterEssences[mostRecentData].CorrespondingSkills)
             {
-                modeMasterSkillOptions.Add(x);
+                SkillsToBoost.Add(x);
             }
-            foreach(SkillTF x in modeMasterSkillOptions)
+            foreach(SkillTF x in SkillsToBoost)
             {
                 if (!modeMasterEssences[0].CorrespondingSkills.Contains(x) && !modeMasterEssences[1].CorrespondingSkills.Contains(x))
                 {
-                    modeMasterSkillOptions.Remove(x); //basically if neither list has them we no they're from an early pass.
+                    SkillsToBoost.Remove(x); //basically if neither list has them we no they're from an early pass.
                 }
             }
             
