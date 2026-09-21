@@ -918,3 +918,11 @@ TODO:make xaml to link modemaster choices with  list
 f'ed around and found out thought it would be dumb to add a ischecked value to my scoretf it is actually the easiest option
 
 more hours wasted but lesson learned
+
+9-21 
+
+1 step forward set the mode to two added the bool for scores made them subscibe to it with an event call in the vm, put it under mode master class as it would
+effect others
+
+TODO: MAKE THE score increase add +1 to all selected scores.
+find out why it's skill list isn't bound like the others

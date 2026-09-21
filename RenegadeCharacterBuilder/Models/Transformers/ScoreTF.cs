@@ -17,7 +17,17 @@ namespace RenegadeCharacterBuilder.Models.Transformers
 
         public bool isMentorScore;
 
-        public bool IsKeyScore { get; set; } = false;
+        private bool _isKeyScore { get; set; } = false;
+
+        public bool IsKeyScore
+        {
+            get => _isKeyScore;
+            set
+            {
+                _isKeyScore = value;
+                NotifyPropertyChanged(nameof(IsKeyScore));
+            }
+        }
         private List<SkillTF> correspondingSkills { get; set; }
 
         public SkillTF LinkedbyFocus { get; set; }

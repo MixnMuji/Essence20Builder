@@ -63,7 +63,7 @@
                             <ItemsControl ItemsSource="{Binding Scores}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
-                                        <CheckBox Content="{Binding Name}" IsChecked="{Binding }">
+                                        <CheckBox Content="{Binding Name}" IsChecked="{Binding IsKeyScore, Mode=TwoWay}">
                                             
                                         </CheckBox>
                                     </DataTemplate>
@@ -138,7 +138,7 @@
                         <ItemsControl ItemsSource="{Binding SkillsToBoost}">
                         <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <CheckBox Content="{Binding Name}" IsChecked="{Binding IsSelected, Mode=TwoWay}"></CheckBox>
+                                    <CheckBox Content="{Binding Name}" IsChecked="{Binding IsSelected, Mode=TwoWay}" ></CheckBox>
                                 </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>

@@ -22,8 +22,6 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public string oringName { get; set; }
 
-        public List<ScoreTF> modeMasterEssences { get; set; } = new();
-
         public List<SkillTF> originBoostOptions { get; set; } = new();
 
         private SkillTF _skillBoostFromOrigin;
@@ -114,7 +112,6 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             RemovePointsFromScore = new RelayCommand<ScoreTF>(DecreasePontsFromScore);
             AddPointsToSkill = new RelayCommand<SkillTF>(AddPointsToSkil);
             RemovePointsFromSkill = new RelayCommand<SkillTF>(DecreasePointsFromSkill);
-            runModeMasterScoreAdd = new RelayCommand<ScoreTF>(setLevelOneBoostForModeMaster);
             CharacterRoleForKeyScores = TFCharacterSession.CurrentTransfomer.Role.Name;
             if (string.IsNullOrWhiteSpace(CharacterRoleForKeyScores))
             {
@@ -210,6 +207,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             Soical
             };
 
+           
             getLinkedSkillForScore();
             GetOptionsForOriginStats();
 
@@ -259,8 +257,12 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     defineScoresAndSkillChoice(Speed, Smarts, new List<SkillTF> { Alertness, Inititave, Survival, Targeting });
                     break;
 
-                case "ModeMaster": 
-      
+                case "Mode Master":
+                    foreach (var score in Scores)
+                    {
+                        score.PropertyChanged += ScoreSetAsKey;
+                    }
+
                     break;
 
                 case "Scientist":
@@ -331,6 +333,29 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         }
 
+        private void ScoreSetAsKey(object sender, PropertyChangedEventArgs e)
+        {
+            if(e.PropertyName != nameof(ScoreTF.IsKeyScore) || TFCharacterSession.CurrentTransfomer.Role.Name == "Mode master")
+            {
+                return;
+            }
+       
+            SkillsToBoost.Clear();
+            int count = 0;
+            foreach (ScoreTF s in Scores)
+            {
+                
+                if (s.IsKeyScore == true && count < 2)
+                {
+                    foreach (SkillTF x in s.CorrespondingSkills)
+                    {
+                        SkillsToBoost.Add(x);
+                    }
+                    count++;
+                }
+            }
+
+        }
         private void SkillChanged(object sender, PropertyChangedEventArgs e)
         {
             if(e.PropertyName != nameof(SkillTF.IsSelected))
@@ -477,37 +502,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             }
         }
 
-        public void setLevelOneBoostForModeMaster(ScoreTF chosenScore)
-        {
-            if(originBoostOptions.Count >= 2) // if we've picked 2 remvoe selection 1 and put in the new one
-            {
-                modeMasterEssences.RemoveAt(0);
-                modeMasterEssences.Add(chosenScore);
-                UpdateModeMasterSelection();
-             
-            }
-            else
-            {
-                modeMasterEssences.Add(chosenScore);
-            }
-        }
-
-        public void UpdateModeMasterSelection()
-        {
-            int mostRecentData = originBoostOptions.Count() - 1;
-            foreach(SkillTF x in modeMasterEssences[mostRecentData].CorrespondingSkills)
-            {
-                SkillsToBoost.Add(x);
-            }
-            foreach(SkillTF x in SkillsToBoost)
-            {
-                if (!modeMasterEssences[0].CorrespondingSkills.Contains(x) && !modeMasterEssences[1].CorrespondingSkills.Contains(x))
-                {
-                    SkillsToBoost.Remove(x); //basically if neither list has them we no they're from an early pass.
-                }
-            }
-            
-        }
+       
         private void NotifyPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
