@@ -260,6 +260,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 case "Mode Master":
                     foreach (var score in Scores)
                     {
+
                         score.PropertyChanged += ScoreSetAsKey;
                     }
 
@@ -286,29 +287,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             
         }
 
-        public ObservableCollection<SkillTF> ModemasterSelections(string choiceone, string choicetwo)
-        {
-            ObservableCollection<SkillTF> merged = new ObservableCollection<SkillTF>();
-            var targetOne = TFCharacterSession.CurrentTransfomer.fullScoreList.FirstOrDefault(s => s.Name == choiceone);
-            var targetTwo = TFCharacterSession.CurrentTransfomer.fullScoreList.FirstOrDefault(s => s.Name == choicetwo);
-            foreach( var s in targetOne.CorrespondingSkills)
-            {
-                merged.Add(s);
-            }
-            foreach(var s in targetTwo.CorrespondingSkills)
-            {
-                merged.Add(s);
-            }
-            foreach(var i in merged) // when list is updated by new selection has to be observable collection because components change 
-            {
-                if(!targetOne.CorrespondingSkills.Contains(i) || !targetTwo.CorrespondingSkills.Contains(i))
-                {
-                    merged.Remove(i);
-                }
-            }
-            return merged;
-            
-        }
+      
         public ObservableCollection<SkillTF> defineScoresAndSkillChoice( ScoreTF IncreaseOne, ScoreTF IncreaseTwo, List<SkillTF> Choices )
         {
             IncreaseOne.CurrentRank += 1;
@@ -354,6 +333,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     count++;
                 }
             }
+            foreach (SkillTF skill in SkillsToBoost)
+            {
+                skill.PropertyChanged -= SkillChanged;
+                skill.PropertyChanged += SkillChanged;
+            }
 
         }
         private void SkillChanged(object sender, PropertyChangedEventArgs e)
@@ -372,26 +356,28 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     return;
                 }
                 SelectedKeySkills.Add(skill);
+                skill.IsKeySkill = true;
+                skill.SkillScore += 1;
             }
             else
             {
-                skill.IsKeySkill = false;
-                skill.SkillScore -= 1;
-                SelectedKeySkills.Remove(skill);
+                
+                if (SelectedKeySkills.Remove(skill))
+                {
+                    skill.IsKeySkill = false;
+                    skill.SkillScore -= 1;
+                }
+                
                 return;
             }
 
-            if(SelectedKeySkills.Count == 2)
-            {
-                defineKeySkills(SelectedKeySkills[0], SelectedKeySkills[1]);
-            }
 
         }
        public void defineKeySkills(SkillTF skill1, SkillTF skill2)
         {
-            skill1.SkillScore = 1;
+            skill1.SkillScore += 1;
             skill1.IsKeySkill = true;
-            skill2.SkillScore = 1;
+            skill2.SkillScore += 1;
             skill2.IsKeySkill = true;
 
             // so because this fires twice it makes the skill add 2 to the role, lets see if equals fixes that

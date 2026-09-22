@@ -926,3 +926,5 @@ effect others
 
 TODO: MAKE THE score increase add +1 to all selected scores.
 find out why it's skill list isn't bound like the others
+
+copied over the watch for skill change property from define skills to mode masters conditonas now it works like a dream!
