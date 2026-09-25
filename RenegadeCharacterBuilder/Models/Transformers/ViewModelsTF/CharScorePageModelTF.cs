@@ -24,6 +24,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public List<SkillTF> originBoostOptions { get; set; } = new();
 
+        public ScoreTF modemasterScore1 { get; set; }
+        public ScoreTF modemasterScore2 { get; set; }
+        public ScoreTF modemasterScore3 { get; set; }
+        public ScoreTF modemasterScore4 { get; set; }
         private SkillTF _skillBoostFromOrigin;
         public SkillTF SkillBoostFromOrigin
         {

@@ -28,77 +28,9 @@
             
       
         <Grid Grid.Row="1">
-            
-                <TabControl>
-                    
-                        <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <Ellipse Width="10" Height="10" Fill="DimGray"/>
-                            <TextBlock Text="1) Key Esscencse"/>
-                        </StackPanel>
-                    </TabItem.Header>
-                     
-                            <Grid x:Name="StatsToDisplay">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="330"/>
-                                    <ColumnDefinition Width="300"/>
-                                </Grid.ColumnDefinitions>
-                                <StackPanel>
-                                    <TextBlock Text="Drag and drop your stats" FontSize="24"/>
-                                    <ItemsControl ItemsSource="{Binding Scores}" Grid.Column="0">
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate>
 
-                                                <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5" MouseMove="DragStat">
-                                                    <TextBlock Text="{Binding Name}" FontSize="20" FontWeight="Bold" />
-                                                </Border>
-
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                    </ItemsControl>
-                                    
-                                    
-                            <TextBlock Margin="10,10,10,10" Text="Pick two scores to raise at level 1"/>
-                            <ItemsControl ItemsSource="{Binding Scores}">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <CheckBox Content="{Binding Name}" IsChecked="{Binding IsKeyScore, Mode=TwoWay}">
-                                            
-                                        </CheckBox>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-                                   
-                                </StackPanel>
-                                <StackPanel Grid.Column="1" Margin="10,10,10,10">
-                                    <TextBlock Text="Rank Your score Choices"/>
-                                    <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5">
-                                        <TextBlock x:Name="Stat1" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore"></TextBlock>
-                                    </Border>
-                                    <TextBlock Text="Increases on levels 2,5,9,14,18,20" Margin="0,-2,10,10"/>
-
-                                    <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5">
-                                        <TextBlock x:Name="Stat2" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore"></TextBlock>
-                                    </Border>
-                                    <TextBlock Text="Increases on levels 3,7,11,15,19" Margin="0,-2,10,10"/>
-
-                                    <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5">
-                                        <TextBlock x:Name="Stat3" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore"></TextBlock>
-                                    </Border>
-                                    <TextBlock Text="Increases on levels 4,8,13,16" Margin="0,-2,10,10"/>
-
-                                    <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5">
-                                        <TextBlock x:Name="Stat4" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore"></TextBlock>
-                                    </Border>
-                                    <TextBlock Text="Increases on levels 6,12,17" Margin="0,-2,10,10"/>
-
-
-                                </StackPanel>
-                            </Grid>
-                    </TabItem>
-                
-                    <TabItem>
+            <TabControl>
+                <TabItem>
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal">
                                 <Ellipse Width="10" Height="10" Fill="DimGray"/>
@@ -191,7 +123,75 @@
                 
             </ItemsControl>
                 </TabItem>
-                    
+
+
+                <TabItem Visibility="Hidden" x:Name="ModeMasterEsccenceTab">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Width="10" Height="10" Fill="DimGray"/>
+                            <TextBlock Text="1) Key Esscencse"/>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <Grid x:Name="StatsToDisplay">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="330"/>
+                            <ColumnDefinition Width="300"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="Drag and drop your stats" FontSize="24"/>
+                            <ItemsControl ItemsSource="{Binding Scores}" Grid.Column="0">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+
+                                        <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5" MouseMove="DragStat">
+                                            <TextBlock Text="{Binding Name}" FontSize="20" FontWeight="Bold" />
+                                        </Border>
+
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+
+
+                            <TextBlock Margin="10,10,10,10" Text="Pick two scores to raise at level 1"/>
+                            <ItemsControl ItemsSource="{Binding Scores}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <CheckBox Content="{Binding Name}" IsChecked="{Binding IsKeyScore, Mode=TwoWay}">
+
+                                        </CheckBox>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="10,10,10,10">
+                            <TextBlock Text="Rank Your score Choices"/>
+                            <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5">
+                                <TextBlock x:Name="Stat1" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore"></TextBlock>
+                            </Border>
+                            <TextBlock Text="Increases on levels 2,5,9,14,18,20" Margin="0,-2,10,10"/>
+
+                            <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5">
+                                <TextBlock x:Name="Stat2" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore"></TextBlock>
+                            </Border>
+                            <TextBlock Text="Increases on levels 3,7,11,15,19" Margin="0,-2,10,10"/>
+
+                            <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5">
+                                <TextBlock x:Name="Stat3" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore"></TextBlock>
+                            </Border>
+                            <TextBlock Text="Increases on levels 4,8,13,16" Margin="0,-2,10,10"/>
+
+                            <Border BorderBrush="Black" BorderThickness="2" Padding="5" CornerRadius="5">
+                                <TextBlock x:Name="Stat4" DragOver="stat_dragOver" AllowDrop="True" Drop="SetScore"></TextBlock>
+                            </Border>
+                            <TextBlock Text="Increases on levels 6,12,17" Margin="0,-2,10,10"/>
+
+
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+
             </TabControl>
             
         </Grid>

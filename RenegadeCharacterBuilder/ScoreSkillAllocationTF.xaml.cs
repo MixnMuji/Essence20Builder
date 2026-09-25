@@ -34,8 +34,7 @@ namespace RenegadeCharacterBuilder
     public partial class ScoreSkillAllocationTF : Page
     {
 
-        private Popup? dragPopup;
-        private bool feedbackMessageShown = false;
+  
 
         public CharScorePageModelTF Viewmodel { get; }
 
@@ -43,6 +42,7 @@ namespace RenegadeCharacterBuilder
         public ScoreSkillAllocationTF()
         {
             InitializeComponent();
+            CheckIfClassIsModemaster();
             Viewmodel = new CharScorePageModelTF();
             Viewmodel.findRoleForStats();
            DataContext = Viewmodel;
@@ -60,6 +60,14 @@ namespace RenegadeCharacterBuilder
                 );
             if( result == MessageBoxResult.Yes)
             {
+                if(TFCharacterSession.CurrentTransfomer.Role.Name =="Mode Master"){
+
+                    TFCharacterSession.CurrentTransfomer.stat1 = Viewmodel.modemasterScore1;
+                    TFCharacterSession.CurrentTransfomer.stat2 = Viewmodel.modemasterScore2;
+                    TFCharacterSession.CurrentTransfomer.stat3 = Viewmodel.modemasterScore3;
+                    TFCharacterSession.CurrentTransfomer.stat4 = Viewmodel.modemasterScore4;
+
+                }
                 TFCharacterSession.CurrentTransfomer.AssignScoresAndSkills(Viewmodel.Strength, Viewmodel.Speed, Viewmodel.Smarts, Viewmodel.Soical,
                     Viewmodel.Athletics, Viewmodel.Brawn, Viewmodel.Conditioning, Viewmodel.Intimidation, Viewmodel.Might,
                     Viewmodel.Acrobatics, Viewmodel.Driving, Viewmodel.Finesse, Viewmodel.Inflitration, Viewmodel.Inititave, Viewmodel.Targeting,
@@ -107,21 +115,25 @@ namespace RenegadeCharacterBuilder
             {
                 Stat1.Text = score.Name;
                 CheckforDubplicateStats(target, Stat2, Stat3, Stat4);
+                Viewmodel.modemasterScore1 = score;
             }
             else if(target == Stat2)
             {
                 Stat2.Text = score.Name;
                 CheckforDubplicateStats(target, Stat1, Stat3, Stat4);
+                Viewmodel.modemasterScore2 = score;
             }
             else if(target == Stat3)
             {
                 Stat3.Text = score.Name;
                 CheckforDubplicateStats(target, Stat1, Stat2, Stat4);
+                Viewmodel.modemasterScore3 = score;
             }
             else if(target == Stat4)
             {
                 Stat4.Text = score.Name;
                 CheckforDubplicateStats(target, Stat1, Stat2, Stat3);
+                Viewmodel.modemasterScore4 = score;
             }
         }
 
@@ -152,6 +164,16 @@ namespace RenegadeCharacterBuilder
             {
                 three.Text = string.Empty;
             }
+        }
+
+        private void CheckIfClassIsModemaster()
+        {
+            if(TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master")
+            {
+                ModeMasterEsccenceTab.Visibility = Visibility.Visible;
+ 
+            }
+            return;
         }
         private void Doupdate(object sender, RoutedEventArgs e)
         {

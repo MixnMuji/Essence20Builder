@@ -928,3 +928,14 @@ TODO: MAKE THE score increase add +1 to all selected scores.
 find out why it's skill list isn't bound like the others
 
 copied over the watch for skill change property from define skills to mode masters conditonas now it works like a dream!
+
+Todo: set the values for stat1 - 4 if they're a mode master
+
+9-24 Long break
+
+ANyways 
+made score containers for modemaster stats, assigns on page completion
+
+made method for testing setting visibity of key score tab it works no problem
+
+TDOO: next up is set nubmers right and set view for skill points and set up skills then general perk page
