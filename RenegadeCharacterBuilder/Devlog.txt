@@ -939,3 +939,12 @@ made score containers for modemaster stats, assigns on page completion
 made method for testing setting visibity of key score tab it works no problem
 
 TDOO: next up is set nubmers right and set view for skill points and set up skills then general perk page
+
+9-27
+
+Took 2 days off but also this is technically happening at 12am
+
+Made assigment for remaining general perk points
+Made xaml binding to show skill points
+
+TODO: Fix Mode master to actually navigate do to focuses, then work on general perk page.

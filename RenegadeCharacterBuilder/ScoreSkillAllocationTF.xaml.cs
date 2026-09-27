@@ -22,6 +22,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages;
 using RenegadeCharacterBuilder.Models.Transformers;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
@@ -74,8 +75,23 @@ namespace RenegadeCharacterBuilder
                 Viewmodel.Alertness, Viewmodel.Culture, Viewmodel.Science, Viewmodel.Survival, Viewmodel.Technology,
                 Viewmodel.AnimalHandling,Viewmodel.Deception,Viewmodel.Preformance, Viewmodel.Persuasion, Viewmodel.Streetwise);
 
+                TFCharacterSession.CurrentTransfomer.SkillsPointBankForFutureLevels = Viewmodel.SkillsPointBank; // tracts points for future levels
+
+
+                if(TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master" && TFCharacterSession.CurrentTransfomer.CurrentLevel >= 4)
+                {
+                    if(TFCharacterSession.CurrentTransfomer.sub.subclassName == "Microlnked")
+                    {
+                        NavigationService.Navigate(new HumanCompanion());
+                    }
+                    else
+                    {
+                        NavigationService.Navigate(new AAMPerpage());
+                    }
+                }
                 if(TFCharacterSession.CurrentTransfomer.CurrentLevel >= 4)
                 {
+                
                     NavigationService.Navigate(new GeneralPerksTF());
                 }
                 else

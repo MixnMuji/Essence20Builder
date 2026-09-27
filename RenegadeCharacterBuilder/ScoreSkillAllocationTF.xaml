@@ -19,14 +19,24 @@
 
         <Grid x:Name="MainGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="360"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-     
+        <StackPanel Grid.Row="0" Margin="0,0,0,2">
+            <TextBlock  Text="Scores and Skills:" FontSize="33"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding PointsBank, StringFormat= Remaining Esscense Points : {0}}" Margin="10,0,10,10"/>
+                <TextBlock Text="{Binding SkillsPointBank, StringFormat= Remaining Skill Points : {0}}" Margin="10,0,10,10"/>
+            </StackPanel>
+
+        </StackPanel>
+
+
+        <!-- GRID Row 1-->
+        
             
-      
         <Grid Grid.Row="1">
 
             <TabControl>
@@ -196,11 +206,8 @@
             
         </Grid>
       
-        <!-- Header Stuff-->
-        <TextBlock Grid.Row="0" Text="Scores and Skills:" FontSize="33"/>
-        <TextBlock Grid.Row="0" HorizontalAlignment="Right" Text="{Binding PointsBank, StringFormat= Remaining Points : {0}}"/>
 
-        <Button Grid.Row="2" HorizontalAlignment="Right" Width="200" Content="Proceed" Click="SaveScoresAndSkillsAndProcced" />
+                <Button Grid.Row="2" HorizontalAlignment="Right" Width="200" Content="Proceed" Click="SaveScoresAndSkillsAndProcced" />
 
     </Grid>
 
