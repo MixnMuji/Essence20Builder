@@ -9,6 +9,7 @@ using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
+using System.Windows;
 using System.Windows.Media.Animation;
 using RenegadeCharacterBuilder.CharacterModels.TransfomersCompaions;
 using RenegadeCharacterBuilder.Models.Transformers.Enums;
@@ -106,7 +107,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public TransfomersCharacterModel()
 
         {
-
+            ActualPerksToSpend = 0;
 
         }
 
@@ -178,23 +179,18 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         
         public void GetGeneralPerkPonts()
         {
-            string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Jsoncollection", "TransformersJsons", "Roles.json");
-            var json = File.ReadAllText(path);
-            var RoleRoot = JsonSerializer.Deserialize<TFRolesRoot>(json);
-            var role = RoleRoot.Roles.First(r => r.Name == Role.Name);
-            int i = 0;
-            while (i < CurrentLevel)
-            {
-                if (role.Levels[i].GeneralPerkCount != null)
-                {
-                    ActualPerksToSpend++;
-                }
-                i++;
-            }
+            ActualPerksToSpend = 0;
 
-            // find current level
-            // go to the json and look through it until we hit our level ie while Json.index >= level
-            // then we say if the level contains general perk, general perk count ++; which means we need a forloop
+            foreach (LevelTF level in Role.Levels)
+            {
+                if (level.Level > CurrentLevel)
+                    break;
+
+                if (level.GeneralPerkCount > 0)
+                {
+                    ActualPerksToSpend += level.GeneralPerkCount;
+                }
+            }
         }
     }
 

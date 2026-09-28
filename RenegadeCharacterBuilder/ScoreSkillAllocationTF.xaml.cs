@@ -80,7 +80,7 @@ namespace RenegadeCharacterBuilder
 
                 if(TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master" && TFCharacterSession.CurrentTransfomer.CurrentLevel >= 4)
                 {
-                    if(TFCharacterSession.CurrentTransfomer.sub.subclassName == "Microlnked")
+                    if (TFCharacterSession.CurrentTransfomer.sub.subclassName == "Microlinked")
                     {
                         NavigationService.Navigate(new HumanCompanion());
                     }
@@ -89,7 +89,7 @@ namespace RenegadeCharacterBuilder
                         NavigationService.Navigate(new AAMPerpage());
                     }
                 }
-                if(TFCharacterSession.CurrentTransfomer.CurrentLevel >= 4)
+                else if(TFCharacterSession.CurrentTransfomer.CurrentLevel >= 4)
                 {
                 
                     NavigationService.Navigate(new GeneralPerksTF());

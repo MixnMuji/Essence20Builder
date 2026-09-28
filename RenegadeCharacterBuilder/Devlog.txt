@@ -948,3 +948,11 @@ Made assigment for remaining general perk points
 Made xaml binding to show skill points
 
 TODO: Fix Mode master to actually navigate do to focuses, then work on general perk page.
+
+9-27 flip side
+
+Made modemaster go straigt to a genearl perk page after selection was an else if loop
+need to have a way to actually apply perks in loop.
+Messed with loop and got right value by having it eject when the level is greater than current level
+
+TODO: likewise running the loop crashes after perk selection.

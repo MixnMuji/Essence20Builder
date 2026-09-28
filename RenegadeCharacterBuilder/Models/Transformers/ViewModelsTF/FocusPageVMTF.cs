@@ -103,7 +103,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     break;
 
                 case "Mode Master": //this needs its own method unfortunately
-                    GetSubclassesFromJson("Microlnked", "Triple Changer");
+                    GetSubclassesFromJson("Microlinked", "Triple Changer");
                     break;
 
                 case "Scientist":

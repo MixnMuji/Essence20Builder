@@ -146,7 +146,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             public void getLinkedSkillForScore()
             {
                 //may need new object or boolean called linked skill
-                ScoreTF target = Scores.First(s => s.Name == TFCharacterSession.CurrentTransfomer.sub.statToBoost); // this searches array for score
+                ScoreTF target = Scores.First(s => s.Name == TFCharacterSession.CurrentTransfomer.sub.statToBoost); // this searches array for score, has problem with mode master
                 string skilltolink = TFCharacterSession.CurrentTransfomer.ChosenLinkedSkill;
                 target.LinkedbyFocus = target.CorrespondingSkills.First(c => c.Name == skilltolink);
                 // we got the linked skill sweet

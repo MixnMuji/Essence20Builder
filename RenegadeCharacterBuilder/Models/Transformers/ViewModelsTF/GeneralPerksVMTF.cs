@@ -6,6 +6,7 @@ using System.IO;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Windows;
 using System.Windows.Input;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.Roots;
@@ -81,9 +82,17 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public GeneralPerksVMTF()
         {
 
-             TFCharacterSession.CurrentTransfomer.GetGeneralPerkPonts();
-            _generalPerksPointBank = TFCharacterSession.CurrentTransfomer.ActualPerksToSpend;
-
+            if (TFCharacterSession.CurrentTransfomer.ActualPerksToSpend == 0)
+            {
+                MessageBox.Show("Fired");
+                TFCharacterSession.CurrentTransfomer.GetGeneralPerkPonts();
+                GeneralPerksPointBank = TFCharacterSession.CurrentTransfomer.ActualPerksToSpend;
+                GeneralPerksPointBank += 1; //count starts at -1 to count for orignal operation can't say if at zero because if they reach zero it'll reset.
+            }
+            else
+            {
+                GeneralPerksPointBank = TFCharacterSession.CurrentTransfomer.ActualPerksToSpend; // will st it equal to whatever current count is
+            }
 
             NextPage = new RelayCommand<Object>(NextPageOfResults);
             PreviousPage = new RelayCommand<Object>(PreviousPageofResults);

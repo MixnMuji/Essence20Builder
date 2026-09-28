@@ -17,10 +17,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.TFServices
             _effects = new()
             {
              {"Dodgy", ApplyDodgy},
-             {"Durabyllium Super Alloy", ApplyDSA },
-           
-         
-         
+             {"Durabyllium Super Alloy", ApplyDSA }, 
              {"Razor Tongue", ApplyRT },
             
 
