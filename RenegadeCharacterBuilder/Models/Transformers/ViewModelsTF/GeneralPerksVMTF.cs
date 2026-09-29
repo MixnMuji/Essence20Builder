@@ -83,8 +83,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         {
 
             if (TFCharacterSession.CurrentTransfomer.ActualPerksToSpend == 0)
-            {
-                MessageBox.Show("Fired");
+            { 
                 TFCharacterSession.CurrentTransfomer.GetGeneralPerkPonts();
                 GeneralPerksPointBank = TFCharacterSession.CurrentTransfomer.ActualPerksToSpend;
                 GeneralPerksPointBank += 1; //count starts at -1 to count for orignal operation can't say if at zero because if they reach zero it'll reset.

@@ -23,7 +23,7 @@
         <ItemsControl Grid.Row="1" ItemsSource="{Binding CurrentPagePerks}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <CheckBox IsChecked="{Binding isSelected, Mode=TwoWay}">
+                    <CheckBox IsChecked="{Binding isSelected, Mode=TwoWay}" Click="DecreaseValue">
                         <StackPanel>
                             <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
                             <TextBlock Text="{Binding Text}" TextWrapping="Wrap"/>

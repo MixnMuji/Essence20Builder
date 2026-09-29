@@ -118,13 +118,37 @@ namespace RenegadeCharacterBuilder
                     default:
                         {
                             gpService.ApplyPerk(TFCharacterSession.CurrentTransfomer, perk);// shouldapply perks now
-                            NavigationService.Navigate(new LevelUpAfter1());
-                            
+                       
                         }
                     break;
                 }
+                
             }
-     
+                 NavigationService.Navigate(new LevelUpAfter1());
+        }
+
+        private void DecreaseValue(object sender, RoutedEventArgs e)
+        {
+            int limit = viewmodel.GeneralPerksPointBank;
+            var target = sender as CheckBox;
+            if(target.IsChecked == true)
+            {
+                if (viewmodel.GeneralPerksPointBank > 0)
+                {
+                    viewmodel.GeneralPerksPointBank -= 1;
+                }
+                else
+                {
+                    MessageBox.Show("You can't take anymore Perks");
+                    target.IsChecked = false;
+                    
+                }
+            }
+            else
+            {
+                // It was unchecked, so return the point
+                viewmodel.GeneralPerksPointBank += 1;
+            }
         }
     }
 }

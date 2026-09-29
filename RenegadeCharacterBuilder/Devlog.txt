@@ -956,3 +956,12 @@ need to have a way to actually apply perks in loop.
 Messed with loop and got right value by having it eject when the level is greater than current level
 
 TODO: likewise running the loop crashes after perk selection.
+
+9-28 
+
+Made it so that the navigation to levelup after 1 happens after the for loop, meaning no condition is met.
+checked to see if text is being added it is so that's an up
+Made it so that when it's clicked it will check decrease points
+
+
+TODO:Make sure that if it is turned false it is removed from list
