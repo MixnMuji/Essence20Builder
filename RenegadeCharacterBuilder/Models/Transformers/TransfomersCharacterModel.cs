@@ -157,19 +157,36 @@ namespace RenegadeCharacterBuilder.Models.Transformers
 
         public void ApplylevlesAfter1()
         {
+            Dictionary<int[], ScoreTF> levelsToScoreIncrease = new Dictionary<int[], ScoreTF>()
+            {
+                {[2, 5, 9, 14, 18, 20], stat1},
+                {[3, 7, 11, 15, 19], stat2 },
+                {[4,8,13,16], stat3 },
+                {[6,12,17], stat4}
+             };
             int i = 0;
             foreach (LevelTF level in Role.Levels)
             {
-                if (level.Level > 1 && level.Level <= CurrentLevel)
+                if(Role.Name == "Mode Master" && level.Level <= CurrentLevel)
                 {
 
-                    Strenght.CurrentRank += level.StrengthBoost;
-                    Speed.CurrentRank += level.SpeedBoost;
-                    Smarts.CurrentRank += level.SmartsBoost;
-                    Social.CurrentRank += level.SocialBoost;
-                    //ActualPerksToSpend += level.GeneralPerkCount; Check these later
-                    i++;
-                    // FocusProgression
+                    ScoreTF currentTarget = levelsToScoreIncrease.FirstOrDefault(x => x.Key.Contains(level.Level)).Value;
+                    currentTarget.CurrentRank += 1;
+                }
+                else
+                {
+                    if (level.Level > 1 && level.Level <= CurrentLevel)
+                    {
+
+
+                        Strenght.CurrentRank += level.StrengthBoost;
+                        Speed.CurrentRank += level.SpeedBoost;
+                        Smarts.CurrentRank += level.SmartsBoost;
+                        Social.CurrentRank += level.SocialBoost;
+                        //ActualPerksToSpend += level.GeneralPerkCount; Check these later
+                        i++;
+                        // FocusProgression
+                    }
                 }
 
             }

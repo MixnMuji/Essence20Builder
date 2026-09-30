@@ -965,3 +965,9 @@ Made it so that when it's clicked it will check decrease points
 
 
 TODO:Make sure that if it is turned false it is removed from list
+
+9-28
+
+Modifyed levels after 1 to work with mode master by adding else if statment and a diciionary for stat1 etc with an array so search array to get value pair.
+
+TODO TEST PAGE AND MOVE ON TO GEAR AND FINALLY CHECK PAGE AND THEN PDF REWRITE.
