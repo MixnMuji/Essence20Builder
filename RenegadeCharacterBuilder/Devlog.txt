@@ -966,8 +966,14 @@ Made it so that when it's clicked it will check decrease points
 
 TODO:Make sure that if it is turned false it is removed from list
 
-9-28
+9-29
 
 Modifyed levels after 1 to work with mode master by adding else if statment and a diciionary for stat1 etc with an array so search array to get value pair.
 
 TODO TEST PAGE AND MOVE ON TO GEAR AND FINALLY CHECK PAGE AND THEN PDF REWRITE.
+
+9-30
+
+Got rid of corresponding skills for socres made level up after 1 work for mode master
+
+TODO: have altnate move mode and companion check for modemaster and a zero at skill score. and check for double state taken for naviagtion purposes have chosen skill add 1 to score for mode amster

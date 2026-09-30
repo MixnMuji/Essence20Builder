@@ -47,8 +47,8 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
 
         private void figureOutWhatToDo(object sender, RoutedEventArgs e)
         {
-            GernalPerkNavMethod.GoToNextPerk(NavigationService, PerkBeingApplied.AAM);
-          
+            // GernalPerkNavMethod.GoToNextPerk(NavigationService, PerkBeingApplied.AAM);
+            NavigationService.Navigate(new LevelUpAfter1());
 
 
         }

@@ -122,7 +122,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
                 Scores = TFCharacterSession.CurrentTransfomer.fullScoreList;
 
-                getLinkedSkillForScore();
+               // getLinkedSkillForScore();
 
 
             }
@@ -143,17 +143,18 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 }
             }
 
-            public void getLinkedSkillForScore()
-            {
-                //may need new object or boolean called linked skill
-                ScoreTF target = Scores.First(s => s.Name == TFCharacterSession.CurrentTransfomer.sub.statToBoost); // this searches array for score, has problem with mode master
-                string skilltolink = TFCharacterSession.CurrentTransfomer.ChosenLinkedSkill;
-                target.LinkedbyFocus = target.CorrespondingSkills.First(c => c.Name == skilltolink);
-                // we got the linked skill sweet
+        //what is this?
+        /* public void getLinkedSkillForScore() //what the fuck even is this?
+        {
+            //may need new object or boolean called linked skill 
+            ScoreTF target = Scores.First(s => s.Name == TFCharacterSession.CurrentTransfomer.sub.statToBoost); // this searches array for score, has problem with mode master
+            string skilltolink = TFCharacterSession.CurrentTransfomer.ChosenLinkedSkill;
+            target.LinkedbyFocus = target.CorrespondingSkills.First(c => c.Name == skilltolink);
+            // we got the linked skill sweet
 
+        } */
 
-            }
-            public void AddPointsToSkil(SkillTF skill)
+        public void AddPointsToSkil(SkillTF skill)
             {
                 var score = Scores.First(s => s.CorrespondingSkills.Contains(skill));
                 if (SkillsPointBank == 0)

@@ -167,7 +167,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
             int i = 0;
             foreach (LevelTF level in Role.Levels)
             {
-                if(Role.Name == "Mode Master" && level.Level <= CurrentLevel)
+                if(Role.Name == "Mode Master" && level.Level <= CurrentLevel && level.Level >1)
                 {
 
                     ScoreTF currentTarget = levelsToScoreIncrease.FirstOrDefault(x => x.Key.Contains(level.Level)).Value;
