@@ -976,4 +976,10 @@ TODO TEST PAGE AND MOVE ON TO GEAR AND FINALLY CHECK PAGE AND THEN PDF REWRITE.
 
 Got rid of corresponding skills for socres made level up after 1 work for mode master
 
-TODO: have altnate move mode and companion check for modemaster and a zero at skill score. and check for double state taken for naviagtion purposes have chosen skill add 1 to score for mode amster
+TODO: have altnate move mode and companion check for modemaster and a zero at skill score. and check for double state taken for naviagtion purposes have chosen skill add 1 to score for mode master
+
+9-31
+
+added purpsoe for minicons as list added way to assign it
+
+TODO: Figure out navigation from there, likewise minicons can have mulitple purposes etc. so need to refine method

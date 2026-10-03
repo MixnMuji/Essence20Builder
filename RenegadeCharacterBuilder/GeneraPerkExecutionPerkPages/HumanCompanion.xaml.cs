@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RenegadeCharacterBuilder.CharacterModels.TransfomersCompaions;
 using RenegadeCharacterBuilder.GlobalMethods;
+using RenegadeCharacterBuilder.Models.Transformers;
 using RenegadeCharacterBuilder.Models.Transformers.Enums;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
@@ -25,10 +26,12 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
     {
         public CharScorePageModelTF Viewmodel { get; set; }
         public pet human = new pet();
+
         public HumanCompanion()
         {
             Viewmodel = new CharScorePageModelTF();
             InitializeComponent();
+            Viewmodel.SetPuroseList();
             DataContext = Viewmodel;
         }
 
@@ -54,6 +57,14 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
                 TFCharacterSession.CurrentTransfomer.companions.Add(human);
             }
             GernalPerkNavMethod.GoToNextPerk(NavigationService, PerkBeingApplied.HC);
+        }
+
+        private void SetPurpose(object sender, RoutedEventArgs e)
+        {
+            var target = (RadioButton)sender;
+            SkillTF selectedPurpose = (SkillTF)target.DataContext;
+            pet minicon = TFCharacterSession.CurrentTransfomer.companions.FirstOrDefault(x => x.Name == CompanionsName.Text);
+            minicon.purpose = selectedPurpose;
         }
     }
 }

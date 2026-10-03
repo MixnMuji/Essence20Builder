@@ -17,7 +17,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
     public class CharScorePageModelTF:INotifyPropertyChanged
     {
-
+        public List<SkillTF> purposeOptions { get; set; } = new List<SkillTF>();
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string oringName { get; set; }
@@ -267,7 +267,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
                         score.PropertyChanged += ScoreSetAsKey;
                     }
-
+                  
                     break;
 
                 case "Scientist":
@@ -492,7 +492,15 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             }
         }
 
-       
+        public void SetPuroseList() // for minicon
+        {
+            foreach (SkillTF s in TFCharacterSession.CurrentTransfomer.fullSkillList)
+            {
+                purposeOptions.Add(s);
+            }
+
+        }
+
         private void NotifyPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
