@@ -44,6 +44,7 @@ namespace RenegadeCharacterBuilder
             gpService = new TFGeneralPerkService();
             var pickedPerks = viewmodel._qualifyingPerks.Where(p => p.isSelected == true).ToList();
             TFCharacterSession.CurrentTransfomer.PickedPerks = pickedPerks;
+            TFCharacterSession.CurrentTransfomer.hasSpentGeneralPerkPoints = true; //bool will actually do the problem of sorting
 
             foreach(GeneralPerkTF s in pickedPerks)
             {

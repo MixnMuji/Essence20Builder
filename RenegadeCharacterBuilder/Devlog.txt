@@ -983,3 +983,12 @@ TODO: have altnate move mode and companion check for modemaster and a zero at sk
 added purpsoe for minicons as list added way to assign it
 
 TODO: Figure out navigation from there, likewise minicons can have mulitple purposes etc. so need to refine method
+
+10-4
+
+woah huge break I guess
+Added nav method for modmaster in HumanCompanion
+added bool to character model to determine if they had spent genral perks for nav
+
+TODO Modemaster triple changer.
+add things based on levels for modemasters alt companions

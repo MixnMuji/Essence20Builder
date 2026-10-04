@@ -56,7 +56,19 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
 
                 TFCharacterSession.CurrentTransfomer.companions.Add(human);
             }
+            if(TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master" && TFCharacterSession.CurrentTransfomer.hasSpentGeneralPerkPoints == false)
+            {
+                NavigationService.Navigate(new GeneralPerksTF());
+            }
             GernalPerkNavMethod.GoToNextPerk(NavigationService, PerkBeingApplied.HC);
+        }
+
+        private void SetModeMasterVisibitlity()
+        {
+            if(TFCharacterSession.CurrentTransfomer.Role.Name== "Mode Master")
+            {
+                ModeMasterBit.Visibility = Visibility.Visible;
+            }
         }
 
         private void SetPurpose(object sender, RoutedEventArgs e)
