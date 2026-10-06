@@ -1000,3 +1000,9 @@ added visibility things for modmeaster level 10 to decide if they set second con
 made method that will add bonus for skills score
 
 //need to set values for each value if second con
+
+//error page no longer builds visibility right on startup, page also can't find purpose name in object
+
+fixed build to show purposes by changing methods or building new one to sperate and initali set and then an update
+
+//error minicon does not exist yet set logic to have two holder skills in place and then transfer them 

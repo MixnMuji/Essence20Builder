@@ -32,18 +32,13 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
             Viewmodel = new CharScorePageModelTF();
             InitializeComponent();
             Viewmodel.SetPuroseList();
+            InitialPageSet();
             DataContext = Viewmodel;
         }
 
         private void Countinue(object sender, RoutedEventArgs e)
         {
-            if(SecondPurpose.IsChecked == true)
-            { 
-                var miniconPurpose = TFCharacterSession.CurrentTransfomer.companions.FirstOrDefault(x=> x.Name == CompanionsName.Text)
-                {
-
-                }
-            }
+           
             MessageBoxResult result = MessageBox.Show(
                 "Save Scores and Skills For Companion",
                 "Confirm",
@@ -70,7 +65,7 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
                     human.AssignPurpsoe(human.purposeTwo, human.Name);
                 }
                 if (TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master" && TFCharacterSession.CurrentTransfomer.companions[0] != null && 
-                    TFCharacterSession.CurrentTransfomer.CurrentLevel == 10 && TFCharacterSession.CurrentTransfomer.companions[1] == null)
+                    TFCharacterSession.CurrentTransfomer.CurrentLevel >= 10 && TFCharacterSession.CurrentTransfomer.companions[1] == null)
                 {
                     MessageBox.Show("Loading page again. At 10th level Mode Master, you may choose to make a new companion or add a purpose to your companion");
                     NavigationService.Navigate(new GeneralPerksTF());
@@ -80,14 +75,26 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
             GernalPerkNavMethod.GoToNextPerk(NavigationService, PerkBeingApplied.HC);
         }
 
-        private void SetModeMasterVisibitlity()
+
+        private void InitialPageSet()
         {
+            if (TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master")
+            {
+                ModeMasterBit.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void SetModeMasterVisibitlity(object sender, RoutedEventArgs e)
+        {
+          
+
+
             if(TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master" && TFCharacterSession.CurrentTransfomer.companions[0] != null)
             {
                 SecondCon.Visibility = Visibility.Visible;
                 SecondPurpose.Visibility = Visibility.Visible;
             }
-            if( SecondPurpose.IsChecked == true)
+            else if( SecondPurpose.IsChecked == true)
             {
                 ModeMasterBit.Visibility = Visibility.Visible;
                 ScoreView.Visibility = Visibility.Hidden;
@@ -97,7 +104,7 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
                 ModeMasterBit.Visibility = Visibility.Visible;
                 ScoreView.Visibility = Visibility.Visible;
             }
-
+            
         }
 
         
@@ -119,5 +126,7 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
        
             
         }
+
+        
     }
 }
