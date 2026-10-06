@@ -59,12 +59,17 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
                     Viewmodel.Acrobatics, Viewmodel.Driving, Viewmodel.Finesse, Viewmodel.Inflitration, Viewmodel.Inititave, Viewmodel.Targeting,
                 Viewmodel.Alertness, Viewmodel.Culture, Viewmodel.Science, Viewmodel.Survival, Viewmodel.Technology,
                 Viewmodel.AnimalHandling, Viewmodel.Deception, Viewmodel.Preformance, Viewmodel.Persuasion, Viewmodel.Streetwise);
-                if()
+                
                 TFCharacterSession.CurrentTransfomer.companions.Add(human);
             }
             if(TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master" && TFCharacterSession.CurrentTransfomer.hasSpentGeneralPerkPoints == false)
             {
-                if(TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master" && TFCharacterSession.CurrentTransfomer.companions[0] != null && 
+                human.AssignPurpsoe(human.purpose, human.Name);
+                if(human.purposeTwo != null)
+                {
+                    human.AssignPurpsoe(human.purposeTwo, human.Name);
+                }
+                if (TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master" && TFCharacterSession.CurrentTransfomer.companions[0] != null && 
                     TFCharacterSession.CurrentTransfomer.CurrentLevel == 10 && TFCharacterSession.CurrentTransfomer.companions[1] == null)
                 {
                     MessageBox.Show("Loading page again. At 10th level Mode Master, you may choose to make a new companion or add a purpose to your companion");
@@ -95,6 +100,7 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
 
         }
 
+        
         private void SetPurpose(object sender, RoutedEventArgs e)
         {
             var target = (RadioButton)sender;

@@ -996,3 +996,7 @@ add things based on levels for modemasters alt companions
 10-5 
 
 added visibility things for modmeaster level 10 to decide if they set second con or additional purpose.
+
+made method that will add bonus for skills score
+
+//need to set values for each value if second con

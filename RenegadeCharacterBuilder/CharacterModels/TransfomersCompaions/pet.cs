@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using RenegadeCharacterBuilder.GlobalMethods;
 using RenegadeCharacterBuilder.Models.Transformers;
+using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 
 namespace RenegadeCharacterBuilder.CharacterModels.TransfomersCompaions
 {
@@ -12,8 +13,23 @@ namespace RenegadeCharacterBuilder.CharacterModels.TransfomersCompaions
 
         public SkillTF purpose { get; set; }
 
-        public SkillTF purposeTwo { get; set; }         
-    }
+        public SkillTF purposeTwo { get; set; }
+
+        
+        public void AssignPurpsoe(SkillTF Purpose, string CompanionName)
+        {
+            //this will make it so that the character will get the bonus from the mode master perk
+            int bonus = TFCharacterSession.CurrentTransfomer.fullSkillList.First(x => x.Name == Purpose.Name).SkillScore / 2;
+            pet target = TFCharacterSession.CurrentTransfomer.companions.FirstOrDefault(x => x.Name == CompanionName);
+            foreach(ScoreTF s in target.fullScoreList)
+            {
+                if (s.CorrespondingSkills.Contains(purpose))
+                {
+                    s.CurrentRank += bonus;
+                }
+            }
+        }
+    
 
     }
 
