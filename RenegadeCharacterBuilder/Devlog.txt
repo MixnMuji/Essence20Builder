@@ -992,3 +992,7 @@ added bool to character model to determine if they had spent genral perks for na
 
 TODO Modemaster triple changer.
 add things based on levels for modemasters alt companions
+
+10-5 
+
+added visibility things for modmeaster level 10 to decide if they set second con or additional purpose.

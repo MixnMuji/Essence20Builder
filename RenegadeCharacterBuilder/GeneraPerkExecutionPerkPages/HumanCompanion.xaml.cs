@@ -37,9 +37,15 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
 
         private void Countinue(object sender, RoutedEventArgs e)
         {
+            if(SecondPurpose.IsChecked == true)
+            { 
+                var miniconPurpose = TFCharacterSession.CurrentTransfomer.companions.FirstOrDefault(x=> x.Name == CompanionsName.Text)
+                {
 
+                }
+            }
             MessageBoxResult result = MessageBox.Show(
-                "Save Scores and Skills For Human Companion",
+                "Save Scores and Skills For Companion",
                 "Confirm",
                 MessageBoxButton.YesNo,
                 MessageBoxImage.Question
@@ -53,11 +59,17 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
                     Viewmodel.Acrobatics, Viewmodel.Driving, Viewmodel.Finesse, Viewmodel.Inflitration, Viewmodel.Inititave, Viewmodel.Targeting,
                 Viewmodel.Alertness, Viewmodel.Culture, Viewmodel.Science, Viewmodel.Survival, Viewmodel.Technology,
                 Viewmodel.AnimalHandling, Viewmodel.Deception, Viewmodel.Preformance, Viewmodel.Persuasion, Viewmodel.Streetwise);
-
+                if()
                 TFCharacterSession.CurrentTransfomer.companions.Add(human);
             }
             if(TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master" && TFCharacterSession.CurrentTransfomer.hasSpentGeneralPerkPoints == false)
             {
+                if(TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master" && TFCharacterSession.CurrentTransfomer.companions[0] != null && 
+                    TFCharacterSession.CurrentTransfomer.CurrentLevel == 10 && TFCharacterSession.CurrentTransfomer.companions[1] == null)
+                {
+                    MessageBox.Show("Loading page again. At 10th level Mode Master, you may choose to make a new companion or add a purpose to your companion");
+                    NavigationService.Navigate(new GeneralPerksTF());
+                }
                 NavigationService.Navigate(new GeneralPerksTF());
             }
             GernalPerkNavMethod.GoToNextPerk(NavigationService, PerkBeingApplied.HC);
@@ -65,10 +77,22 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
 
         private void SetModeMasterVisibitlity()
         {
-            if(TFCharacterSession.CurrentTransfomer.Role.Name== "Mode Master")
+            if(TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master" && TFCharacterSession.CurrentTransfomer.companions[0] != null)
+            {
+                SecondCon.Visibility = Visibility.Visible;
+                SecondPurpose.Visibility = Visibility.Visible;
+            }
+            if( SecondPurpose.IsChecked == true)
             {
                 ModeMasterBit.Visibility = Visibility.Visible;
+                ScoreView.Visibility = Visibility.Hidden;
             }
+            else if(SecondCon.IsChecked == true)
+            {
+                ModeMasterBit.Visibility = Visibility.Visible;
+                ScoreView.Visibility = Visibility.Visible;
+            }
+
         }
 
         private void SetPurpose(object sender, RoutedEventArgs e)
@@ -76,7 +100,18 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
             var target = (RadioButton)sender;
             SkillTF selectedPurpose = (SkillTF)target.DataContext;
             pet minicon = TFCharacterSession.CurrentTransfomer.companions.FirstOrDefault(x => x.Name == CompanionsName.Text);
-            minicon.purpose = selectedPurpose;
+            if (SecondPurpose.IsChecked == true) // basically checks to see if this should be purpose 1 or 2
+            {
+                
+                minicon.purpose = selectedPurpose;
+            }
+            else
+            {
+                minicon.purpose = selectedPurpose;
+            }
+            
+       
+            
         }
     }
 }

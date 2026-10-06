@@ -12,6 +12,9 @@ namespace RenegadeCharacterBuilder.CharacterModels.TransfomersCompaions
 
         public SkillTF purpose { get; set; }
 
+        public SkillTF purposeTwo { get; set; }         
+    }
+
     }
 
     public enum type
