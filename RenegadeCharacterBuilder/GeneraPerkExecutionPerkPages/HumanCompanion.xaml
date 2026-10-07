@@ -42,8 +42,10 @@
         <!-- row 1-->
         <Grid Grid.Row="1">
             <StackPanel>
-                <RadioButton Name="SecondPurpose" GroupName="Modemaster10Options" Visibility="Hidden" Click="SetModeMasterVisibitlity"/>
-                <RadioButton Name="SecondCon" GroupName="Modemaster10Options" Visibility="Hidden" Click="SetModeMasterVisibitlity"/>
+                <StackPanel x:Name="MiniconSettingsAfter10"  Orientation="Horizontal" Visibility="Hidden">
+                <RadioButton Name="SecondPurpose" GroupName="Modemaster10Options" Content="Give MiniCon Second Purpose"  Click="SetModeMasterVisibitlity" Margin="10,10,10,10"/>
+                <RadioButton Name="SecondCon" GroupName="Modemaster10Options" Content="Make a new MiniCon" Click="SetModeMasterVisibitlity" Margin="10,10,10,10"/>
+                </StackPanel>
                 <ItemsControl ItemsSource="{Binding Scores}" Grid.Row="1" x:Name="ScoreView" Visibility="Visible">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>

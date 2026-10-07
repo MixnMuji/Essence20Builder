@@ -1006,3 +1006,10 @@ made method that will add bonus for skills score
 fixed build to show purposes by changing methods or building new one to sperate and initali set and then an update
 
 //error minicon does not exist yet set logic to have two holder skills in place and then transfer them 
+
+10-7
+
+Fixed bugs in program null eceptions, mostly then visibility issues,
+solved by making stackpannel, return in the loop if it has a secon minicon
+
+TODO: Add check for same name, add check for no purpose selected make sure loop doesn't infinitely loop.

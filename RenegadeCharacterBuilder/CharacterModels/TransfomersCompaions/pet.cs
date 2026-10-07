@@ -19,7 +19,7 @@ namespace RenegadeCharacterBuilder.CharacterModels.TransfomersCompaions
         public void AssignPurpsoe(SkillTF Purpose, string CompanionName)
         {
             //this will make it so that the character will get the bonus from the mode master perk
-            int bonus = TFCharacterSession.CurrentTransfomer.fullSkillList.First(x => x.Name == Purpose.Name).SkillScore / 2;
+            int bonus = TFCharacterSession.CurrentTransfomer.fullSkillList.FirstOrDefault(x => x.Name == Purpose.Name).SkillScore / 2;
             pet target = TFCharacterSession.CurrentTransfomer.companions.FirstOrDefault(x => x.Name == CompanionName);
             foreach(ScoreTF s in target.fullScoreList)
             {
