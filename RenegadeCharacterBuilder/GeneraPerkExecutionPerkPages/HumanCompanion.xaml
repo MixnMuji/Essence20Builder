@@ -26,7 +26,8 @@
         <!-- row 0 -->
         <StackPanel Grid.Row="0" Grid.Column="0">
             <TextBlock Text="Build Your Companion" FontSize="32"/>
-            <TextBox x:Name="CompanionsName" HorizontalAlignment="Left" FontSize="18" Width="200">Enter Companion's name:</TextBox>
+            <TextBox x:Name="CompanionsName" HorizontalAlignment="Left" FontSize="18" Width="200" Visibility="Visible">Enter Companion's name:</TextBox>
+           
         </StackPanel>
        
         
@@ -38,15 +39,17 @@
             <TextBlock Text="Skills PointsBank:" Margin="10,0,20,10"  FontSize="20"/>
             <TextBlock Grid.Column="1" Text="{Binding SkillsPointBank}" Margin="10,5,20,10" FontSize="20"/>
         </StackPanel>
-                  
-        <!-- row 1-->
-        <Grid Grid.Row="1">
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
+            <!-- row 1-->
+        <Grid >
             <StackPanel>
                 <StackPanel x:Name="MiniconSettingsAfter10"  Orientation="Horizontal" Visibility="Hidden">
                 <RadioButton Name="SecondPurpose" GroupName="Modemaster10Options" Content="Give MiniCon Second Purpose"  Click="SetModeMasterVisibitlity" Margin="10,10,10,10"/>
                 <RadioButton Name="SecondCon" GroupName="Modemaster10Options" Content="Make a new MiniCon" Click="SetModeMasterVisibitlity" Margin="10,10,10,10"/>
+                
                 </StackPanel>
-                <ItemsControl ItemsSource="{Binding Scores}" Grid.Row="1" x:Name="ScoreView" Visibility="Visible">
+                <ItemsControl ItemsSource="{Binding Scores}"  x:Name="ScoreView" Visibility="Visible">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <UniformGrid Columns="4"/>
@@ -62,6 +65,7 @@
                                     <Button Grid.Row= "0" Content= "+" Command="{Binding DataContext.AddpointsToScore, RelativeSource= {RelativeSource AncestorType=Page}}" CommandParameter="{Binding}" Height= "15" Width= "10"  Margin= "5,0,-50,0"  />
                                 </StackPanel>
 
+                                
 
                                 <!-- Skills-->
                                 <ItemsControl ItemsSource="{Binding CorrespondingSkills}">
@@ -83,6 +87,46 @@
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
+                
+                <!-- If Compainion Exist -->
+                <StackPanel Grid.Row="1"  x:Name="ExistingMinicon" Visibility="Hidden">
+                    <TextBlock Text="{Binding MiniconHelperVm.MiniconName,StringFormat= Your MiniCon: {0}}"  HorizontalAlignment="Left" FontSize="18" Width="200"/>
+                    <TextBlock Text="{Binding MiniconHelperVm.originalPurpose,StringFormat=Purpose 1: {0}}" />
+                    <ItemsControl ItemsSource="{Binding MiniconHelperVm.scoreValues}" >
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="4"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Name}"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding CurrentRank}" HorizontalAlignment= "Center" Margin= "0,0,0,2"  />
+                                </StackPanel>
+
+
+
+                                <!-- Skills-->
+                                <ItemsControl ItemsSource="{Binding CorrespondingSkills}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding Name}"/>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding SkillScore, Converter={StaticResource intToDie}}" HorizontalAlignment= "Center" Margin= "0,0,0,2" VerticalAlignment= "Bottom" />
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+
+                                </ItemsControl>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                </StackPanel>
                 <!-- Companion Choices-->
                 <StackPanel x:Name="ModeMasterBit" Visibility="Hidden">
                     <TextBlock Text="Pick a skill to determine your Companion's Purpose:" Margin="0,20,10,10" FontSize="15"/>
@@ -103,8 +147,8 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
-            
-      
+        </ScrollViewer>
+
         <!-- row 2-->
         <Button Grid.Row="2" HorizontalAlignment="Right" Margin="10,0,10,10" Height="40" Width="200" Content="Make Companion and move on" Click="Countinue"/>
     </Grid>

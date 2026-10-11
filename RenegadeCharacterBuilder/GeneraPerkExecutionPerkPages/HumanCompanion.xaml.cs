@@ -108,11 +108,17 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
             {
                 ModeMasterBit.Visibility = Visibility.Visible;
                 ScoreView.Visibility = Visibility.Hidden;
+                CompanionsName.Visibility = Visibility.Hidden;
+                ExistingMinicon.Visibility = Visibility.Visible;
+
+
             }
             else if(SecondCon.IsChecked == true)
             {
                 ModeMasterBit.Visibility = Visibility.Visible;
                 ScoreView.Visibility = Visibility.Visible;
+                ExistingMinicon.Visibility = Visibility.Hidden;
+                CompanionsName.Visibility = Visibility.Visible;
             }
             
         }

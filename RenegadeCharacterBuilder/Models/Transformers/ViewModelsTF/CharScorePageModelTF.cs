@@ -11,12 +11,14 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
+using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHelpers;
 using static RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.CharScorePageModelTF;
 
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
     public class CharScorePageModelTF:INotifyPropertyChanged
     {
+        public ModeMasterMiniconHelperVM  MiniconHelperVm { get; set; }
         public List<SkillTF> purposeOptions { get; set; } = new List<SkillTF>();
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -109,7 +111,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public CharScorePageModelTF()
         {
-           
+            MiniconHelperVm = new ModeMasterMiniconHelperVM();  
             oringName = TFCharacterSession.CurrentTransfomer.Origns[0].Name;
             SelectedKeySkills = new List<SkillTF>();
             AddpointsToScore = new RelayCommand<ScoreTF>(AddPointsToScore);

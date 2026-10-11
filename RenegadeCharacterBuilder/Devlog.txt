@@ -1013,3 +1013,17 @@ Fixed bugs in program null eceptions, mostly then visibility issues,
 solved by making stackpannel, return in the loop if it has a secon minicon
 
 TODO: Add check for same name, add check for no purpose selected make sure loop doesn't infinitely loop.
+
+10-11
+
+Started on 1oth but whatever 
+
+Moved into new house so break in flow, Happy birthday to me!!!
+
+Anyways, added vm helper, made logic so it deosn't crash when null will display other companions stats , because of new visuall hierarchy scroll bar was added to deal with negative space
+all is goo
+time to move on to triple changer!.
+
+TODO:Fix Triple Changer or modoify
+
+
