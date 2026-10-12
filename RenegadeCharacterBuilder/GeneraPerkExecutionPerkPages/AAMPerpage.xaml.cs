@@ -25,7 +25,8 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
     /// </summary>
     public partial class AAMPerpage : Page
     {
-        public TFGeneralPerkService gpService { get; set; }
+  
+        public Altmode newAltModeSelection { get; set; }
         public AAMPerpage()
         {
             var calldata = new GlobalCall();
@@ -35,6 +36,7 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
             MessageBox.Show(filteredlist.Count.ToString());
             InitializeComponent();
             DataContext = filteredlist; // this should let our datacontext be the altmodes not taken
+            newAltModeSelection = new Altmode();
 
         }
 
@@ -42,15 +44,31 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
         {
             RadioButton rb = sender as RadioButton;
             var choice = rb.DataContext as TransformersOrign;
-            TFCharacterSession.CurrentTransfomer.Altmodes.Add(choice.AltMode);
+            newAltModeSelection = choice.AltMode;
         }
 
         private void figureOutWhatToDo(object sender, RoutedEventArgs e)
         {
+
+            if (newAltModeSelection == null)
+            {
+                MessageBox.Show("You need to make a selection for your new altmode");
+                return;
+            }
+            if (TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master" && TFCharacterSession.CurrentTransfomer.hasSpentGeneralPerkPoints == false)
+            {
+                
+                TFCharacterSession.CurrentTransfomer.Altmodes.Add(newAltModeSelection);
+                NavigationService.Navigate(new GeneralPerksTF());
+                return;
+            }
+            
             // GernalPerkNavMethod.GoToNextPerk(NavigationService, PerkBeingApplied.AAM);
             NavigationService.Navigate(new LevelUpAfter1());
 
 
         }
+
+        
     }
 }

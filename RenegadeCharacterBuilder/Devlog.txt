@@ -1027,3 +1027,10 @@ time to move on to triple changer!.
 TODO:Fix Triple Changer or modoify
 
 
+10-12
+
+Made the mode master conditions work need to find out why additional alt modes aren't all generating
+
+
+
+
