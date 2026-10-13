@@ -11,16 +11,16 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="300"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
         
         <TextBlock Text="Choose An additonal Alt mode" FontWeight="Bold" FontSize="33"/>
         
         <!--List of almodes -->
-        
-            <ItemsControl ItemsSource="{Binding}" Grid.Row="1">
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding}" >
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -47,7 +47,7 @@
                 
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-
+        </ScrollViewer>
         <Button Grid.Row="2" Content="Continue" Click="figureOutWhatToDo" Width="300" Height="50" HorizontalAlignment="Right" Margin="10"/>
     </Grid>
 </Page>

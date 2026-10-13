@@ -1030,7 +1030,9 @@ TODO:Fix Triple Changer or modoify
 10-12
 
 Made the mode master conditions work need to find out why additional alt modes aren't all generating
+fix made: added scrollbar but also the view was on a set where on auto fill, I shifted it so that the biggest part is on auto fill and the others are on fixed 
 
+TODO:Modify gear page in relation to origins, make hybidrization page
 
 
 
