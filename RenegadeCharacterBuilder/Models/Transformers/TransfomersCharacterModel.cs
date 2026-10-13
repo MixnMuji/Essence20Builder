@@ -193,6 +193,17 @@ namespace RenegadeCharacterBuilder.Models.Transformers
 
             }
             generalPointBank += i;
+            if (Origns[0].Name == "Rainmaker")
+            {
+                if(CurrentLevel >= 14)
+                {
+                    Role.Qualifications.Weapons += " You are trained to use Artilery Cannons and Missiles.";
+                }
+                if (CurrentLevel >= 7)
+                {
+                    Role.Qualifications.Weapons += "You are trained to use Heavy Machine Guns and Rocket Launchers.";
+                }
+            }
 
         }
         

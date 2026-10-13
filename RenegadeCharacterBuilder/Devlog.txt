@@ -1036,3 +1036,8 @@ TODO:Modify gear page in relation to origins, make hybidrization page
 
 
 
+10-13
+
+made adjsutments to the gear page in order to compensate for additon of support handpoints for the support origin with it's own point bank
+also made an adjustment for the level up to add qualifications to the role if the orign is rainmaker.
+TODO Modify the pdf display and the coutinue page as well to display gear.

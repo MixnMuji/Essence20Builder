@@ -29,6 +29,16 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
     "Support Equipment"
 ];
 
+        private int _supportGearPointBank = 2;
+        public int SupportGearPointBank
+        {
+            get => _supportGearPointBank;
+            set
+            {
+                _supportGearPointBank = value;
+                NotifyPropertyChanged();
+            }
+        }
         private IEnumerable<object> currentViewdList;
         public IEnumerable<Object> CurrentViewedList
         {
@@ -130,6 +140,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             RoleName = TFCharacterSession.CurrentTransfomer.Role.Name;
 
             HardpointLimit = TFCharacterSession.CurrentTransfomer.Origns[0].AltMode.FirePoints;
+            if (TFCharacterSession.CurrentTransfomer.Origns[0].Name == "Rainmaker")
+            {
+                HardpointLimit += 1;
+            }
 
           GetArmor();
           GetWeapons();
@@ -143,10 +157,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
             //need to deserialize all 4 lists
         }
-        public void makedictory(string feeditem)
-        {
-            //if(string == Armor)
-        }
+      
        
        public bool checkIfAdditonISpossible(object slection)// plug into pages call
         {
@@ -258,7 +269,14 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                             }
                             TakenSupportEquipment.Add(Se);
                             SupportEquipment.Remove(Se);
-                            HardpointLimit -= 1;
+                            if(SupportGearPointBank != 0 && TFCharacterSession.CurrentTransfomer.Origns[0].AltMode.OrignName == "Support")
+                            {
+                                SupportGearPointBank -= 1;
+                            }
+                            else 
+                            {
+                                HardpointLimit -= 1;
+                            }
                         }
                         break;
                 }
@@ -287,14 +305,14 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     {
                         TakenKits.Remove(upgrade);
                         Kits.Add(upgrade);
-                        requistionPoints -= 1;
+                        requistionPoints += 1;
                     }
                     if (ArmorUpgrades.Contains(upgrade))
                     {
                         
                         TakenArmorUpgrade.Remove(upgrade);
                         ArmorUpgrades.Add(upgrade);
-                        requistionPoints -= 1;
+                        requistionPoints += 1;
                     }
                     if (TrainedArmorUpgrades.Contains(upgrade))
                     {
@@ -322,7 +340,15 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                         }
                         TakenSupportEquipment.Add(Se);
                         SupportEquipment.Remove(Se);
-                        HardpointLimit -= 1;
+                        if (SupportGearPointBank >= 2 && TFCharacterSession.CurrentTransfomer.Origns[0].AltMode.OrignName == "Support") // handles support origin
+                        {
+                            SupportGearPointBank += 1;
+                        }
+                        else
+                        {
+                            HardpointLimit += 1;
+                        }
+                        
                     }
                     break;
             }
