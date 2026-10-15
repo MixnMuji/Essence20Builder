@@ -105,6 +105,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public List<Upgrades> KitsLoadout { get; set; } = new();
         public List<SupportEqupmentTF> SupportEquipmentLoadOut { get; set; } = new();
 
+        public List<string> MiscilaniousData { get; set; } = new();
+
         public bool hasSpentGeneralPerkPoints { get; set; } = false;
         public TransfomersCharacterModel()
 

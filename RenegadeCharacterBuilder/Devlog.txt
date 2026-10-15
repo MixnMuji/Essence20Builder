@@ -1041,3 +1041,12 @@ TODO:Modify gear page in relation to origins, make hybidrization page
 made adjsutments to the gear page in order to compensate for additon of support handpoints for the support origin with it's own point bank
 also made an adjustment for the level up to add qualifications to the role if the orign is rainmaker.
 TODO Modify the pdf display and the coutinue page as well to display gear.
+
+10-15
+
+Seems like I took a two day break almost but you fools my sleep is evicerated anywas.
+
+Made hybrization page for the last bit of mode master, this included using the process I've mastered so far, grid set up, collections property change, logic for getting
+the values for points banks etc. 
+
+TODO: link navigation and test page!
