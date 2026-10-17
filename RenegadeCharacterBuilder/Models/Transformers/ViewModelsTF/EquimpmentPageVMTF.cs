@@ -29,7 +29,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
     "Support Equipment"
 ];
 
-        private int _supportGearPointBank = 2;
+        private int _supportGearPointBank = 0; // this is false
         public int SupportGearPointBank
         {
             get => _supportGearPointBank;
@@ -140,13 +140,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             RoleName = TFCharacterSession.CurrentTransfomer.Role.Name;
 
             HardpointLimit = TFCharacterSession.CurrentTransfomer.Origns[0].AltMode.FirePoints;
-            if (TFCharacterSession.CurrentTransfomer.Origns[0].Name == "Rainmaker")
-            {
-                HardpointLimit += 1;
-            }
-
+            
           GetArmor();
           GetWeapons();
+          RainMakerCheck();
+          SupportFrameCheck();
           GetKits();
           Getsup();
 
@@ -373,7 +371,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     RefferenceForTrianedWeapons = new ObservableCollection<WeaponTF>(TrainedWeapons);
                     Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons); 
                     break;
-                case "Modemaster":
+                case "Mode Master":
                     TrainedWeapons = GetItemsForObserablecollection<WeaponTF>(["standard"], weaponsfull.weapons);
                     RefferenceForTrianedWeapons = new ObservableCollection<WeaponTF>(TrainedWeapons);
                     Weapons = GetNonTrainedList<WeaponTF>(TrainedWeapons, weaponsfull.weapons);
@@ -426,7 +424,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     TrainedArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard", "limited"], ArmorEquipment.Armors);
                     ArmorUpgrades = GetNonTrainedList<Upgrades>(TrainedArmorUpgrades, ArmorEquipment.Armors);
                     break;
-                case "Modemaster":
+                case "Mode Master":
                     TrainedArmorUpgrades = GetItemsForObserablecollection<Upgrades>(["Standard"], ArmorEquipment.Armors);
                     ArmorUpgrades = GetNonTrainedList<Upgrades>(TrainedArmorUpgrades, ArmorEquipment.Armors);
                     break;
@@ -454,6 +452,43 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 Kits.Add(k);
             }
 
+        }
+
+
+        public void RainMakerCheck()
+        {
+            var weaponsfull = getdata.LoadJson<WeaponRoot>("WeaponsCore.json", "TransformersJsons");
+            if (TFCharacterSession.CurrentTransfomer.Origns[0].Name == "Rainmaker")
+            {
+                HardpointLimit += 1;
+                if (TFCharacterSession.CurrentTransfomer.CurrentLevel >= 14)
+                {
+                    var transition = GetItemsForObserablecollection<WeaponTF>(["Artillery Cannon", "Missile"], weaponsfull.weapons);
+                    foreach(WeaponTF w in transition)
+                    {
+                        TrainedWeapons.Add(w);
+                    }
+                }
+                if (TFCharacterSession.CurrentTransfomer.CurrentLevel >= 7)
+                {
+
+                    var transition = GetItemsForObserablecollection<WeaponTF>(["Heavy Machine Gun", "Rocket Launcher"], weaponsfull.weapons);
+                    foreach (WeaponTF w in transition)
+                    {
+                        TrainedWeapons.Add(w);
+                    }
+               
+                }
+            }
+        }
+
+        public void SupportFrameCheck()
+        {
+            if (TFCharacterSession.CurrentTransfomer.Origns[0].Name == "Support")
+            {
+                _supportGearPointBank += 2;
+            }
+            
         }
         
         public ObservableCollection<T> GetItemsForObserablecollection<T>(string[] Include, List<T> root) where T : GearTF

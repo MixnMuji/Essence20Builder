@@ -1057,4 +1057,14 @@ TODO: link navigation and test page!
 Fixed hybridization page works as intended. called methods and set data context
 
 
-Level up after 1 not adding to skill bank for modemaster, Equipment page is not loading anything for mode master
+Level up after 1 not adding to skill bank for modemaster, Equipment page is not loading anything for mode master fixed
+
+Update:
+
+Added method to check for frames might as well add the into one, eh nevermind made two perfect is the enemy of good enuogh
+method checks for Rainmaker, and support
+
+TODO: CHECK EQUPIMENT PAGES,
+ADD EQUIMPENT RECAP,
+ADD TO PDF PAGE
+FIX MODE MASTER CHARACTER PAGE so close to done. omg

@@ -176,6 +176,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
 
                     ScoreTF currentTarget = levelsToScoreIncrease.FirstOrDefault(x => x.Key.Contains(level.Level)).Value;
                     currentTarget.CurrentRank += 1;
+                    i++;
                 }
                 else
                 {
@@ -197,7 +198,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
             generalPointBank += i;
             if (Origns[0].Name == "Rainmaker")
             {
-                if(CurrentLevel >= 14)
+                if (CurrentLevel >= 14)
                 {
                     Role.Qualifications.Weapons += " You are trained to use Artilery Cannons and Missiles.";
                 }
@@ -206,7 +207,6 @@ namespace RenegadeCharacterBuilder.Models.Transformers
                     Role.Qualifications.Weapons += "You are trained to use Heavy Machine Guns and Rocket Launchers.";
                 }
             }
-
         }
         
         public void GetGeneralPerkPonts()
