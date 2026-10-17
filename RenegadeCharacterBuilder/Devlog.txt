@@ -1,4 +1,4 @@
-﻿- 3/2/24
+﻿- 3/2/26
 Soon I would like to run the transformers rpg so I'm making a character builder app, but first I must familize myself with winfomrs and the like. Today we explored the grids and things
 the first page should be able to have a dropbar where you select yoursystem and build accordinlying
 todo - add drobbox, with games, each game will have static buttons to select expansions and whatnot, also make it so that if one game is selected others can not be because I'm
@@ -1050,3 +1050,11 @@ Made hybrization page for the last bit of mode master, this included using the p
 the values for points banks etc. 
 
 TODO: link navigation and test page!
+
+10-17 
+
+
+Fixed hybridization page works as intended. called methods and set data context
+
+
+Level up after 1 not adding to skill bank for modemaster, Equipment page is not loading anything for mode master

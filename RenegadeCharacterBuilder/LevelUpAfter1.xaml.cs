@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF;
 
 namespace RenegadeCharacterBuilder
@@ -34,6 +35,11 @@ namespace RenegadeCharacterBuilder
 
         private void MoveOn(object sender, RoutedEventArgs e)
         {
+            if(TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master")
+            {
+                NavigationService.Navigate(new HybridizationPage());
+                return;
+            }else
             NavigationService.Navigate(new EquipmentPageTF());
         }
     }

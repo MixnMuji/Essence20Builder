@@ -38,6 +38,9 @@ namespace RenegadeCharacterBuilder
         public HybridizationPage()
         {
             InitializeComponent();
+            SetPointBankValue();
+            DataContext = this;
+            ChosenOptions = new List<string>();
             HybridOptions = new ObservableCollection<string>
             {
                 { "Change Sie: Temporariliy increase or decrease your Size by one full Size Class" },
@@ -98,6 +101,7 @@ namespace RenegadeCharacterBuilder
 
             if(HybridPointBank == 0 && currentbox.IsChecked== true)
             {
+                MessageBox.Show("You have no More points to spend");
                 currentbox.IsChecked = false;
                 return;
             }
