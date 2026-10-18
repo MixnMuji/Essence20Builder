@@ -1068,3 +1068,10 @@ TODO: CHECK EQUPIMENT PAGES,
 ADD EQUIMPENT RECAP,
 ADD TO PDF PAGE
 FIX MODE MASTER CHARACTER PAGE so close to done. omg
+
+
+10-18
+
+Made rainmaker add and subtract from list based on level
+Made support equipment show changed formating so tabs don't bleed into points display
+Made it so requistion points are set and all items work as intended Equipment page is now done

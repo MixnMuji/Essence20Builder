@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
+using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Documents;
 using Microsoft.VisualBasic;
@@ -203,11 +204,21 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         }
         public void AddEquuipment(object selection)
         {
+            if (requistionPoints == 0)
             {
+                MessageBox.Show("No more Requestion Ponints to spend");
+                return;
+            }
+          
                 switch (selection)
                 {
                     case WeaponTF weapon:
-                        TakenWeapons.Add(weapon);
+                    if (HardpointLimit == 0)
+                    {
+                        MessageBox.Show("No more Hardpoints to hold weapons");
+                        return;
+                    }
+                    TakenWeapons.Add(weapon);
                         if (TrainedWeapons.Contains(weapon))
                         {
                             TrainedWeapons.Remove(weapon);
@@ -230,7 +241,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                         }
                         if (ArmorUpgrades.Contains(upgrade))
                         {
-                            if (TakenArmorUpgrade[0] != null)
+                            if (TakenArmorUpgrade[0].Name =="")
                             {
                                 return;
                             }
@@ -278,7 +289,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                         }
                         break;
                 }
-            }
+            
         }
         public void removeitem(object selection)
         {
@@ -468,6 +479,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     {
                         TrainedWeapons.Add(w);
                     }
+                    var target = Weapons.FirstOrDefault(x => x.Name == "Artilery Cannon");
+                    Weapons.Remove(target);
+                    target = Weapons.FirstOrDefault(x => x.Name == "Missile");
+                    Weapons.Remove(target);
                 }
                 if (TFCharacterSession.CurrentTransfomer.CurrentLevel >= 7)
                 {
@@ -477,7 +492,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     {
                         TrainedWeapons.Add(w);
                     }
-               
+                    var target = Weapons.FirstOrDefault(x => x.Name == "Heavy Machine Gun");
+                    Weapons.Remove(target);
+                    target = Weapons.FirstOrDefault(x => x.Name == "Rocket Launcher");
+                    Weapons.Remove(target);
+
                 }
             }
         }

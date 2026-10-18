@@ -30,6 +30,7 @@ namespace RenegadeCharacterBuilder
         public EquipmentPageTF()
         {
             InitializeComponent();
+            CheckOrigin();
             vm = new EquimpmentPageVMTF();
             DataContext = vm;
             
@@ -79,5 +80,29 @@ namespace RenegadeCharacterBuilder
             NavigationService.Navigate(new FinalPageAndConfirmation());
         }
 
+        private void CheckOrigin()
+        {
+            if (TFCharacterSession.CurrentTransfomer.Origns[0].Name == "Support")
+            {
+                ifSupportOrign.Visibility = Visibility.Visible;
+                return;
+            }
+        }
+
+        private void SetRquestionPonts(object sender, RoutedEventArgs e)
+        {
+            string passedData = UsersRecVal.Text;
+            int updatedReqValue;
+            if(int.TryParse(passedData, out updatedReqValue))
+            {
+                vm.requistionPoints = updatedReqValue;
+            }
+            else
+            {
+                MessageBox.Show("Value in requisition box is not a number. Input a number or integer value");
+                UsersRecVal.Text = "     ";
+                return;
+            }
+        }
     }
 }

@@ -16,7 +16,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="120"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
@@ -24,18 +24,20 @@
         <StackPanel Grid.Row ="0">
             <TextBlock Text="Equipment Page" FontSize="24"/>
             <TextBlock Text="Choose your equipment"/>
+            <TextBlock Text="Set your requisition points per Game Master Specification"/>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                <TextBox Text="Set your Reqesution point per gm" x:Name="UsersRecVal"/>
-                <Button Content="Sumbit" Width="30"/>
+                <TextBox Name="UsersRecVal" Text="        "/>
+                <Button Content="Sumbit" Width="80" Click="SetRquestionPonts"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                <TextBlock Text="{Binding  requistionPoints, StringFormat= Requistion Points: {0}}"/>
+                <TextBlock Text="{Binding  requistionPoints, StringFormat= Requistion Points: {0}}" Margin="10,0,10,10"/>
+                <TextBlock Text="{Binding SupportGearPointBank, StringFormat= Points for Support Equipment: {0}}" x:Name="ifSupportOrign" Visibility="Hidden" Margin="10,0,10,10"/>
                 <TextBlock Text="{Binding HardpointLimit, StringFormat= Free Hardpoints: {0}}"/>
             </StackPanel>
         </StackPanel>
         
         <!-- TAB STUFF BEGINS-->
-        <TabControl Grid.Row="1" SelectionChanged="EquipmentTabChanged">
+        <TabControl Grid.Row="1" SelectionChanged="EquipmentTabChanged" Margin="0,5,0,0">
             <!-- TAB ONE  -->
             <TabItem Tag="Trained">
                 <TabItem.Header>
