@@ -101,7 +101,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public List<pet> companions { get; set; } = new();
 
         public List<WeaponTF> WeaponsLoadOut { get; set; } = new();
-        public List<Upgrades> ArmorLoadout { get; set; } = new();
+        public Upgrades ArmorLoadout { get; set; } = new();
         public List<Upgrades> KitsLoadout { get; set; } = new();
         public List<SupportEqupmentTF> SupportEquipmentLoadOut { get; set; } = new();
 

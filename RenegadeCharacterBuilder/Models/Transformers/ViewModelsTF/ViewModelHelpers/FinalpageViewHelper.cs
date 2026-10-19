@@ -97,7 +97,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
         public List<DirivedStat> dirivedStatsForXaml { get; set; } = new();
 
         public List<WeaponTF> WeaponsLoadOut { get; set; } = new();
-        public List<Upgrades> ArmorLoadout { get; set; } = new();
+        public Upgrades ArmorLoadout { get; set; } = new();
         public List<Upgrades> KitsLoadout { get; set; } = new();
         public List<SupportEqupmentTF> SupportEquipmentLoadOut { get; set; } = new();
 
@@ -204,29 +204,24 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
                 companions.Count > 0 &&
                 !string.IsNullOrWhiteSpace(companions[0].Name);
 
-            if (!hasCompanion)
-            {
-                CurrentIndex = (CurrentIndex >= 2) ? 0 : CurrentIndex + 1;
-            }
-            else
-            {
-                CurrentIndex = (CurrentIndex >= 4) ? 0 : CurrentIndex + 1;
-            }
+            int lastPage = hasCompanion ? 4 : 3;
+
+            CurrentIndex = (CurrentIndex >= lastPage)
+                ? 0
+                : CurrentIndex + 1;
         }
+        
         public void PreviousPage()
         {
             bool hasCompanion =
                 companions.Count > 0 &&
                 !string.IsNullOrWhiteSpace(companions[0].Name);
 
-            if (hasCompanion)
-            {
-                CurrentIndex = (CurrentIndex <= 0) ? 4 : CurrentIndex - 1;
-            }
-            else
-            {
-                CurrentIndex = (CurrentIndex <= 0) ? 2 : CurrentIndex - 1;
-            }
+            int lastPage = hasCompanion ? 4 : 3;
+
+            CurrentIndex = (CurrentIndex <= 0)
+                ? lastPage
+                : CurrentIndex - 1;
         }
         private void NotifyPropertyChanged(string name)
         {

@@ -73,7 +73,7 @@ namespace RenegadeCharacterBuilder
 
         private void MoveOn(object sender, RoutedEventArgs e)
         {
-           TFCharacterSession.CurrentTransfomer.ArmorLoadout = vm.TakenArmorUpgrade.ToList();
+            TFCharacterSession.CurrentTransfomer.ArmorLoadout = vm.TakenArmorUpgrade;
            TFCharacterSession.CurrentTransfomer.KitsLoadout = vm.TakenKits.ToList();
            TFCharacterSession.CurrentTransfomer.WeaponsLoadOut = vm.TakenWeapons.ToList();
            TFCharacterSession.CurrentTransfomer.SupportEquipmentLoadOut= vm.TakenSupportEquipment.ToList();

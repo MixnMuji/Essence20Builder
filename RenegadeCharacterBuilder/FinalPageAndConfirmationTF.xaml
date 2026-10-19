@@ -200,7 +200,7 @@
                             <TextBlock Text="{Binding availibility, StringFormat= Avalibility: {0}}"/>
                             <TextBlock Text="{Binding Classification, StringFormat= Classification: {0}}"/>
                             <TextBlock Text="{Binding Range, StringFormat= Range: {0}}"/>
-                            <TextBlock Text="{Binding Hands, , StringFormat= Hands: {0}}"/>
+                            <TextBlock Text="{Binding Hands, StringFormat= Hands: {0}}"/>
                             <TextBlock Text="{Binding Effect, StringFormat= Main effect:{0}}"/>
                             <TextBlock Text="{Binding AlternateEffect, StringFormat= Alternate Effect:{0}}"/>
                             <TextBlock Text="{Binding Traits, StringFormat= Traits: {0}}"/>

@@ -1082,3 +1082,7 @@ Made it so requistion points are set and all items work as intended Equipment pa
 Updated final confirmation page to show Equipment
 
 Last is to fix bug with mode master ofc and to make sure the pdf actually generates characters gear
+
+Got display page to work had to fix indexing logic
+
+armor is busted if you add a new armor while you have and existing one. need a way to swap

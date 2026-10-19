@@ -59,6 +59,7 @@ namespace RenegadeCharacterBuilder
                     view2.Visibility = Visibility.Collapsed;
                     view3.Visibility = Visibility.Visible;
                     View4.Visibility = Visibility.Collapsed;
+                    View5.Visibility = Visibility.Collapsed;
                     return;
                 case 3:
                     view1.Visibility = Visibility.Collapsed;

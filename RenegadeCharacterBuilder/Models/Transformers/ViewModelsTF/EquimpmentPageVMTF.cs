@@ -73,7 +73,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 NotifyPropertyChanged(nameof(requistionPoints));
             }
         }
-        public ObservableCollection<Upgrades> TakenArmorUpgrade { get; set; }
+        public Upgrades TakenArmorUpgrade { get; set; }
         public ObservableCollection<Upgrades> TakenKits { get; set; }
         public ObservableCollection<WeaponTF> TakenWeapons { get; set; }
 
@@ -134,7 +134,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             Dictionary<string, ObservableCollection<GearTF>> GearpairsUnTrained = new Dictionary<string, ObservableCollection<GearTF>>();
 
             TakenWeapons = new ObservableCollection<WeaponTF>();
-            TakenArmorUpgrade = new ObservableCollection<Upgrades>();
+            TakenArmorUpgrade = new Upgrades();
             TakenKits = new ObservableCollection<Upgrades>();
             TakenSupportEquipment = new ObservableCollection<SupportEqupmentTF>();
 
@@ -241,21 +241,29 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                         }
                         if (ArmorUpgrades.Contains(upgrade))
                         {
-                            if (TakenArmorUpgrade[0].Name =="")
+                            if (TakenArmorUpgrade.Name =="")
                             {
-                                return;
-                            }
-                            TakenArmorUpgrade.Add(upgrade);
-                            ArmorUpgrades.Remove(upgrade);
-                            requistionPoints -= 1;
+                                TakenArmorUpgrade = (upgrade);
+                                ArmorUpgrades.Remove(upgrade);
+                                requistionPoints -= 1;
+                            return;
+                             }
+                             else{
+                              removeitem(TakenArmorUpgrade);
+                              TakenArmorUpgrade = (upgrade);
+                              ArmorUpgrades.Remove(upgrade);
+                               return;
+                        }
+                            
+                            
                         }
                         if (TrainedArmorUpgrades.Contains(upgrade))
                         {
-                            if (TakenArmorUpgrade[0] != null)
+                            if (TakenArmorUpgrade != null)
                             {
                                 return;
                             }
-                            TakenArmorUpgrade.Add(upgrade);
+                            TakenArmorUpgrade = upgrade;
                             TrainedArmorUpgrades.Remove(upgrade);
                             
                         }
@@ -318,16 +326,17 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     }
                     if (ArmorUpgrades.Contains(upgrade))
                     {
-                        
-                        TakenArmorUpgrade.Remove(upgrade);
+
+                        TakenArmorUpgrade = new Upgrades();
                         ArmorUpgrades.Add(upgrade);
                         requistionPoints += 1;
+                        
                     }
                     if (TrainedArmorUpgrades.Contains(upgrade))
                     {
                      
-                        TakenArmorUpgrade.Remove(upgrade);
-                        TrainedArmorUpgrades.Add(upgrade);
+                        TakenArmorUpgrade = new Upgrades();
+                        ArmorUpgrades.Add(upgrade);
 
                     }
                     break;
@@ -546,7 +555,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
             if (string.IsNullOrEmpty(ChosenListToView))
                 return;
-
+            ObservableCollection<Upgrades> transition = new();
+            transition.Add(TakenArmorUpgrade);
             CurrentViewedList = CurrentTab switch
             {
                 EquipmentTab.Trained => ChosenListToView switch
@@ -569,7 +579,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
                 EquipmentTab.Taken => ChosenListToView switch
                 {
-                    "Armor" => TakenArmorUpgrade,
+                     
+                    "Armor" => transition,
                     "Weapons" => TakenWeapons,
                     "Kits" => TakenKits,
                     "Support Equipment" => TakenSupportEquipment,
