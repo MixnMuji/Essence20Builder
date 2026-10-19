@@ -173,8 +173,72 @@
             </ItemsControl>
         </StackPanel>
         
-        <!-- Extra stuff -->
-        <StackPanel Grid.Row="1" x:Name="View4">
+        <!-- view 4 Equipment-->
+
+        <StackPanel x:Name="View4" Grid.Row="1">
+            <TextBlock Text="Equipment" FontSize="23" FontWeight="Bold"/>
+            <TextBlock Text="Armor" FontSize="22" FontWeight="Bold"/>
+            <ItemsControl ItemsSource="{Binding ArmorLoadout}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding availibility, StringFormat= Availibility: {0}}"/>
+                            <TextBlock Text="{Binding Benefit, StringFormat= Armor Benefit: {0}}"/>   
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            
+            <!--Weapons -->
+            <TextBlock Text="Weapons" FontSize="22" FontWeight="Bold"/>
+            <ItemsControl ItemsSource="{Binding  WeaponsLoadOut}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding availibility, StringFormat= Avalibility: {0}}"/>
+                            <TextBlock Text="{Binding Classification, StringFormat= Classification: {0}}"/>
+                            <TextBlock Text="{Binding Range, StringFormat= Range: {0}}"/>
+                            <TextBlock Text="{Binding Hands, , StringFormat= Hands: {0}}"/>
+                            <TextBlock Text="{Binding Effect, StringFormat= Main effect:{0}}"/>
+                            <TextBlock Text="{Binding AlternateEffect, StringFormat= Alternate Effect:{0}}"/>
+                            <TextBlock Text="{Binding Traits, StringFormat= Traits: {0}}"/>
+                            
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            
+            <!-- Support Equipment-->
+            <TextBlock Text="Support Equipment" FontSize="22" FontWeight="Bold"/>
+            <ItemsControl ItemsSource="{Binding  SupportEquipmentLoadOut}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding altmodeEffect, StringFormat= Alt Mode effect:{0}}"/>
+                            <TextBlock Text="{Binding botmodeEffect, StringFormat= Bot Mode Effect:{0}}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <!-- Kits -->
+            <TextBlock Text="Kits" FontSize="22" FontWeight="Bold"/>
+            <ItemsControl ItemsSource="{Binding  KitsLoadout}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Benefit,StringFormat= Kit Benefit:{0}}"/>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+        <!-- View 5 if Companion(s) exist -->
+        <StackPanel Grid.Row="1" x:Name="View5">
             <TextBlock Text="Companion Stuff" FontSize="22" FontWeight="Black"/>
             <StackPanel>
                 <ItemsControl ItemsSource="{Binding companions}">

@@ -1075,3 +1075,10 @@ FIX MODE MASTER CHARACTER PAGE so close to done. omg
 Made rainmaker add and subtract from list based on level
 Made support equipment show changed formating so tabs don't bleed into points display
 Made it so requistion points are set and all items work as intended Equipment page is now done
+
+
+10-!9 
+
+Updated final confirmation page to show Equipment
+
+Last is to fix bug with mode master ofc and to make sure the pdf actually generates characters gear

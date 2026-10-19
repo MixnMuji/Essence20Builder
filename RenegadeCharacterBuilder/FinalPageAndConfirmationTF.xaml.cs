@@ -43,6 +43,7 @@ namespace RenegadeCharacterBuilder
                     view2.Visibility = Visibility.Collapsed;
                     view3.Visibility = Visibility.Collapsed;
                     View4.Visibility = Visibility.Collapsed;
+                    View5.Visibility = Visibility.Collapsed;
                 return;
                 case 1:
                     
@@ -50,6 +51,7 @@ namespace RenegadeCharacterBuilder
                     view2.Visibility = Visibility.Visible;
                     view3.Visibility = Visibility.Collapsed;
                     View4.Visibility = Visibility.Collapsed;
+                    View5.Visibility = Visibility.Collapsed;
                     return;
                 case 2:
                    
@@ -63,6 +65,14 @@ namespace RenegadeCharacterBuilder
                     view2.Visibility = Visibility.Collapsed;
                     view3.Visibility = Visibility.Collapsed;
                     View4.Visibility = Visibility.Visible;
+                    View5.Visibility = Visibility.Collapsed;
+                    return;
+                case 4:
+                    view1.Visibility = Visibility.Collapsed;
+                    view2.Visibility = Visibility.Collapsed;
+                    view3.Visibility = Visibility.Collapsed;
+                    View4.Visibility = Visibility.Collapsed;
+                    View5.Visibility = Visibility.Visible;
                     return;
 
             }

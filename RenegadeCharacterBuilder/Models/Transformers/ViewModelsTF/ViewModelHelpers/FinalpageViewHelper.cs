@@ -6,6 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Xml.Linq;
 using RenegadeCharacterBuilder.CharacterModels.TransfomersCompaions;
+using RenegadeCharacterBuilder.Models.Transformers.GearTFChildrenClasses;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHelpers
@@ -95,6 +96,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
         public List<pet> companions { get; set; } = new();
         public List<DirivedStat> dirivedStatsForXaml { get; set; } = new();
 
+        public List<WeaponTF> WeaponsLoadOut { get; set; } = new();
+        public List<Upgrades> ArmorLoadout { get; set; } = new();
+        public List<Upgrades> KitsLoadout { get; set; } = new();
+        public List<SupportEqupmentTF> SupportEquipmentLoadOut { get; set; } = new();
+
         public FinalpageViewHelper()
         {
             CurrentIndex = 0;
@@ -121,8 +127,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
             Smarts = TFCharacterSession.CurrentTransfomer.Smarts;
             Social = TFCharacterSession.CurrentTransfomer.Social;
 
+            WeaponsLoadOut = TFCharacterSession.CurrentTransfomer.WeaponsLoadOut;
+            ArmorLoadout = TFCharacterSession.CurrentTransfomer.ArmorLoadout;
+            KitsLoadout = TFCharacterSession.CurrentTransfomer.KitsLoadout;
+            SupportEquipmentLoadOut = TFCharacterSession.CurrentTransfomer.SupportEquipmentLoadOut;
 
-         
             Toughness = new DirivedStat {
                 Name = "Toughness",
                 Value = TFCharacterSession.CurrentTransfomer.Toughness.Value + 10 + Strenght.CurrentRank};
@@ -201,7 +210,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
             }
             else
             {
-                CurrentIndex = (CurrentIndex >= 3) ? 0 : CurrentIndex + 1;
+                CurrentIndex = (CurrentIndex >= 4) ? 0 : CurrentIndex + 1;
             }
         }
         public void PreviousPage()
@@ -212,7 +221,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF.ViewModelHel
 
             if (hasCompanion)
             {
-                CurrentIndex = (CurrentIndex <= 0) ? 3 : CurrentIndex - 1;
+                CurrentIndex = (CurrentIndex <= 0) ? 4 : CurrentIndex - 1;
             }
             else
             {
