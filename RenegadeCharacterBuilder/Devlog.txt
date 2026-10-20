@@ -1077,7 +1077,7 @@ Made support equipment show changed formating so tabs don't bleed into points di
 Made it so requistion points are set and all items work as intended Equipment page is now done
 
 
-10-!9 
+10-19 
 
 Updated final confirmation page to show Equipment
 
@@ -1086,3 +1086,7 @@ Last is to fix bug with mode master ofc and to make sure the pdf actually genera
 Got display page to work had to fix indexing logic
 
 armor is busted if you add a new armor while you have and existing one. need a way to swap
+
+10-20
+
+Addded text to pdf builder to show gear found more bugs in earlier parts of projeect
