@@ -390,7 +390,7 @@ namespace RenegadeCharacterBuilder
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
                     int count = 0;
-                    c.Item().Text("Hardpoints").Bold().FontSize(14);
+                    c.Item().Text("Gear").Bold().FontSize(14);
                     c.Item().Text("NAME   RANGE   HARDPOINT   TRAITS   EFFECTS  ALTENRATE EFFECTS").FontSize(13);
 
                         foreach (var Weapon in TFCharacterSession.CurrentTransfomer.WeaponsLoadOut)

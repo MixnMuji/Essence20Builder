@@ -1090,3 +1090,5 @@ armor is busted if you add a new armor while you have and existing one. need a w
 10-20
 
 Addded text to pdf builder to show gear found more bugs in earlier parts of projeect
+
+made a scroolview for  final display found more bugs need to write pdf better
