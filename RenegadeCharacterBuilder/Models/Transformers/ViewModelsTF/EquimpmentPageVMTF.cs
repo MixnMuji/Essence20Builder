@@ -293,6 +293,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                             else 
                             {
                                 HardpointLimit -= 1;
+                            requistionPoints -= 1;
                             }
                         }
                         break;
@@ -365,6 +366,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                         else
                         {
                             HardpointLimit += 1;
+                            requistionPoints += 1;
                         }
                         
                     }

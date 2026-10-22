@@ -1092,3 +1092,11 @@ armor is busted if you add a new armor while you have and existing one. need a w
 Addded text to pdf builder to show gear found more bugs in earlier parts of projeect
 
 made a scroolview for  final display found more bugs need to write pdf better
+
+10-22
+
+-fixed method to get field commander skill list was a simple typo
+- added command to increase skill rank when  two skills are selected for mode master they do that or fuck up it's now a feature not a bug lol.
+-minor fix with adding subtraction and additoin to req points for support equipment
+-Changed finished and export name to continue in level up after 1
+-Got traits in recap page to display properly

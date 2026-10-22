@@ -320,7 +320,26 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         private void ScoreSetAsKey(object sender, PropertyChangedEventArgs e)
         {
-            if(e.PropertyName != nameof(ScoreTF.IsKeyScore) || TFCharacterSession.CurrentTransfomer.Role.Name == "Mode master")
+        
+            int keyScoreLimit = 0;
+            foreach(ScoreTF s in Scores)
+            {
+                if (s.IsKeyScore == true)
+                {
+                    keyScoreLimit++;
+                    if (keyScoreLimit >= 3)
+                    {
+                        MessageBox.Show("You may only have two key scores");
+                        s.IsKeyScore = false;
+                       
+                        return;
+                    }
+
+
+                }
+            }
+
+            if (e.PropertyName != nameof(ScoreTF.IsKeyScore) || TFCharacterSession.CurrentTransfomer.Role.Name == "Mode master")
             {
                 return;
             }
@@ -344,7 +363,17 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 skill.PropertyChanged -= SkillChanged;
                 skill.PropertyChanged += SkillChanged;
             }
-
+            if(keyScoreLimit == 2)
+            {
+                foreach(ScoreTF s in Scores)
+                {
+                    if (s.IsKeyScore)
+                    {
+                        s.CurrentRank += 1;
+                    }
+                }
+            }
+           
         }
         private void SkillChanged(object sender, PropertyChangedEventArgs e)
         {

@@ -59,7 +59,7 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <Button Grid.Row="2" Content="Finish and Export" Height="40" Width="100" HorizontalAlignment="Right" Margin="10,10,10,10" Click="MoveOn"/>
+        <Button Grid.Row="2" Content="Continue" Height="40" Width="100" HorizontalAlignment="Right" Margin="10,10,10,10" Click="MoveOn"/>
     </Grid>
 
  

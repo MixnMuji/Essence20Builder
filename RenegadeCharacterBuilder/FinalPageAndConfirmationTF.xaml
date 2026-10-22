@@ -204,9 +204,26 @@
                             <TextBlock Text="{Binding Hands, StringFormat= Hands: {0}}" FontSize="13"/>
                                 <TextBlock Text="{Binding Effect, StringFormat= Main effect:{0}}" FontSize="13" TextWrapping="Wrap"/>
                                 <TextBlock Text="{Binding AlternateEffect, StringFormat= Alternate Effect:{0}}" FontSize="13" TextWrapping="Wrap"/>
-                            <TextBlock Text="{Binding Traits, StringFormat= Traits: {0}}" FontSize="13"/>
-                            
-                        </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Traits :   "/>
+                                        <ItemsControl ItemsSource="{Binding Traits}">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <StackPanel Orientation="Horizontal"/>
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+
+                                                    <TextBlock Text="{Binding}" Margin="0,0,3,0"/>
+
+                                                </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                    </StackPanel>
+
+
+                                </StackPanel>
                         </ScrollViewer>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>

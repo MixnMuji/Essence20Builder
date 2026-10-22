@@ -94,7 +94,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     GetSubclassesFromJson("Manipulator", "Spec Ops");
                     break;
 
-                case "FieldCommander":
+                case "Field Commander":
                     GetSubclassesFromJson("Ambassador", "Strategist");
                     break;
 
