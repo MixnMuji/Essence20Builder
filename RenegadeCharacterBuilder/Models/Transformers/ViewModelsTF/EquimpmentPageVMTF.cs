@@ -241,17 +241,15 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                         }
                         if (ArmorUpgrades.Contains(upgrade))
                         {
-                            if (TakenArmorUpgrade.Name =="")
+                            if (TakenArmorUpgrade.Name == null)
                             {
                                 TakenArmorUpgrade = (upgrade);
                                 ArmorUpgrades.Remove(upgrade);
                                 requistionPoints -= 1;
-                            return;
+                                return;
                              }
                              else{
-                              removeitem(TakenArmorUpgrade);
-                              TakenArmorUpgrade = (upgrade);
-                              ArmorUpgrades.Remove(upgrade);
+                            MessageBox.Show("Got to remove item for armor");
                                return;
                         }
                             
@@ -328,18 +326,12 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     if (ArmorUpgrades.Contains(upgrade))
                     {
 
-                        TakenArmorUpgrade = new Upgrades();
+                        TakenArmorUpgrade = null;
                         ArmorUpgrades.Add(upgrade);
                         requistionPoints += 1;
                         
                     }
-                    if (TrainedArmorUpgrades.Contains(upgrade))
-                    {
-                     
-                        TakenArmorUpgrade = new Upgrades();
-                        ArmorUpgrades.Add(upgrade);
-
-                    }
+                   
                     break;
 
                 case SupportEqupmentTF Se:

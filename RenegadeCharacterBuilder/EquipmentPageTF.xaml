@@ -210,7 +210,7 @@ ItemsSource="{Binding CurrentViewedList}">
                                     <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="16"/>
                                     <TextBlock Text="{Binding availibility}"/>
                                     <TextBlock Text="{Binding Benefit}"/>
-                                    <Button Content="Add Item" Click="RemoveItem"/>
+                                    <Button Content="Remove item" Click="RemoveItem"/>
                                 </StackPanel>
                             </DataTemplate>
 
@@ -223,7 +223,7 @@ ItemsSource="{Binding CurrentViewedList}">
                                     <TextBlock Text="{Binding prereq}"/>
                                     <TextBlock Text="{Binding altmodeEffect}"/>
                                     <TextBlock Text="{Binding botmodeEffect}"/>
-                                    <Button Content="Add Item" Click="RemoveItem"/>
+                                    <Button Content="Remove item" Click="RemoveItem"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.Resources>
