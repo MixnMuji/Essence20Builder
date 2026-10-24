@@ -380,7 +380,95 @@ namespace RenegadeCharacterBuilder
 
         private void WeaponsORHardPoints(IContainer container)
         {
-            container.Table(t =>
+
+            container.Column(main =>
+            {
+                main.Item().Table(t =>
+                {
+                    t.ColumnsDefinition(c =>
+                    {
+                        c.RelativeColumn(3); //name
+                        c.RelativeColumn(1); //Range
+                        c.RelativeColumn(2); // traits
+                        c.RelativeColumn(2); //hands
+                        c.RelativeColumn(3); //effects
+                        c.RelativeColumn(3); // alt effects
+                    });
+
+                    t.Header(h =>
+                    {
+                        h.Cell().Border(1).Padding(4).Text("Name").Bold();
+                        h.Cell().Border(1).Padding(4).Text("Range").Bold();
+                        h.Cell().Border(1).Padding(4).Text("Traits").Bold();
+                        h.Cell().Border(1).Padding(4).Text("Hands").Bold();
+                        h.Cell().Border(1).Padding(4).Text("Effects").Bold();
+                        h.Cell().Border(1).Padding(4).Text("Alt effects").Bold();
+                    });
+                    
+                    foreach (var weapon in TFCharacterSession.CurrentTransfomer.WeaponsLoadOut)
+                    {
+                        string joinedList = string.Join(",", weapon.Traits);
+                        t.Cell().Border(1).Padding(4).Text(weapon.Name).FontSize(12);
+                        t.Cell().Border(1).Padding(4).Text(weapon.Range).FontSize(12);
+                        t.Cell().Border(1).Padding(4).Text(joinedList).FontSize(12); 
+                        t.Cell().Border(1).Padding(4).Text(weapon.Hands.ToString()).FontSize(12);
+                        t.Cell().Border(1).Padding(4).Text(weapon.Effect).FontSize(12);
+                        t.Cell().Border(1).Padding(4).Text(weapon.AlternateEffect).FontSize(12);
+                    }
+
+                    foreach (var gear in TFCharacterSession.CurrentTransfomer.SupportEquipmentLoadOut)
+                    {
+                        t.Cell().Border(1).Padding(4).Text(gear.name).FontSize(12);
+                        t.Cell().Border(1).Padding(4).Text("").FontSize(12);
+                        t.Cell().Border(1).Padding(4).Text("").FontSize(12);
+                        t.Cell().Border(1).Padding(4).Text("").FontSize(12);
+                        t.Cell().Border(1).Padding(4).Text(gear.botmodeEffect).FontSize(12);
+                        t.Cell().Border(1).Padding(4).Text(gear.altmodeEffect).FontSize(12);
+                    }
+
+                    foreach (var kit in TFCharacterSession.CurrentTransfomer.KitsLoadout)
+                    {
+                        t.Cell().Border(1).Padding(4).Text(kit.Name).FontSize(12);
+                        t.Cell().Border(1).Padding(4).Text("").FontSize(12);
+                        t.Cell().Border(1).Padding(4).Text("").FontSize(12);
+                        t.Cell().Border(1).Padding(4).Text("").FontSize(12);
+                        t.Cell().Border(1).Padding(4).Text(kit.Benefit).FontSize(12);
+                        t.Cell().Border(1).Padding(4).Text("").FontSize(12);
+                    }
+           
+            });
+
+
+
+                // Armor section
+                var armor = TFCharacterSession.CurrentTransfomer.ArmorLoadout;
+
+                main.Item().PaddingTop(10).Text("Armor")
+                    .Bold()
+                    .FontSize(14);
+
+                main.Item().Table(t =>
+                {
+                    t.ColumnsDefinition(c =>
+                    {
+                        c.RelativeColumn(1);
+                        c.RelativeColumn(3);
+                    });
+
+                    t.Header(header =>
+                    {
+                        header.Cell().Border(1).Padding(4).Text("Name").Bold();
+                        header.Cell().Border(1).Padding(4).Text("Benefit").Bold();
+                    });
+
+                    t.Cell().Border(1).Padding(4).Text(armor.Name);
+                    t.Cell().Border(1).Padding(4).Text(armor.Benefit).FontSize(12);
+                });
+            });
+
+
+            /*   OLD Implementation
+             * container.Table(t =>
             {
                 t.ColumnsDefinition(c =>
                 {
@@ -416,7 +504,7 @@ namespace RenegadeCharacterBuilder
                  
                     
                 });
-            });
+            }); */
         }
         
         private void Altmodes(IContainer container)

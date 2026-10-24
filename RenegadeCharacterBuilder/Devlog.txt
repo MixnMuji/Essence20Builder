@@ -1100,3 +1100,7 @@ made a scroolview for  final display found more bugs need to write pdf better
 -minor fix with adding subtraction and additoin to req points for support equipment
 -Changed finished and export name to continue in level up after 1
 -Got traits in recap page to display properly
+
+10-24
+
+Can breath almost alomst done fixed pdf display for weapons by making actual columns and the like
