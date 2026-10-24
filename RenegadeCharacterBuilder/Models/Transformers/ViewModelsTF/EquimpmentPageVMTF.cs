@@ -29,7 +29,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
     "Weapons",
     "Support Equipment"
 ];
-
+        public Upgrades defaultArmor { get; set; }
         private int _supportGearPointBank = 0; // this is false
         public int SupportGearPointBank
         {
@@ -79,6 +79,8 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 
         public ObservableCollection<SupportEqupmentTF> TakenSupportEquipment { get; set; }
 
+
+
         public GlobalCall getdata { get; set; }
 
         public string RoleName { get; set; }
@@ -118,6 +120,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         }
         public EquimpmentPageVMTF()
         {
+            
             getdata = new GlobalCall();
 
             TrainedWeapons = new ObservableCollection<WeaponTF>();
@@ -141,6 +144,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             RoleName = TFCharacterSession.CurrentTransfomer.Role.Name;
 
             HardpointLimit = TFCharacterSession.CurrentTransfomer.Origns[0].AltMode.FirePoints;
+
+            defaultArmor = new Upgrades();
+            defaultArmor.Name = "Empty";
+            TakenArmorUpgrade = defaultArmor;
             
           GetArmor();
           GetWeapons();
@@ -241,7 +248,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                         }
                         if (ArmorUpgrades.Contains(upgrade))
                         {
-                            if (TakenArmorUpgrade.Name == null)
+                            if (TakenArmorUpgrade == defaultArmor)
                             {
                                 TakenArmorUpgrade = (upgrade);
                                 ArmorUpgrades.Remove(upgrade);
@@ -249,9 +256,11 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                                 return;
                              }
                              else{
-                            MessageBox.Show("Got to remove item for armor");
-                               return;
-                        }
+                            removeitem(TakenArmorUpgrade);
+                            TakenArmorUpgrade = (upgrade);
+                            ArmorUpgrades.Remove(upgrade);
+                            return;
+                            }
                             
                             
                         }
@@ -323,10 +332,10 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                         Kits.Add(upgrade);
                         requistionPoints += 1;
                     }
-                    if (ArmorUpgrades.Contains(upgrade))
+                    if (!ArmorUpgrades.Contains(upgrade))
                     {
 
-                        TakenArmorUpgrade = null;
+                        TakenArmorUpgrade = defaultArmor;
                         ArmorUpgrades.Add(upgrade);
                         requistionPoints += 1;
                         
