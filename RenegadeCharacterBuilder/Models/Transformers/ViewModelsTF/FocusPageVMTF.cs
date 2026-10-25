@@ -27,8 +27,31 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public ICommand DispalyNextSubclass { get; set; }
         public ICommand DisplayPreviousSubclass { get; set; }
 
-        public string[] ModeMasterEsscenceOptions = ["Strength", "Speed", "Smarts","Soical"];
-        public string[] CorrespondingSkills { get; set; } = [];
+        private string _chosenModeMasterEssence; 
+
+        public string ChosenModeMasterEssence
+        {
+            get => _chosenModeMasterEssence;
+            set
+            {
+                _chosenModeMasterEssence = value;
+                FindChosespondingList();
+                OnPropertyChanged(nameof(ChosenModeMasterEssence));
+            }
+        }
+
+        public string[] ModeMasterEsscenceOptions { get; set; } = ["Strength", "Speed", "Smarts", "Social"];
+
+        private string[] _correspondingSkills;
+        public string[] CorrespondingSkills
+        {
+            get => _correspondingSkills;
+            set
+            {
+                _correspondingSkills = value;
+                OnPropertyChanged(nameof(CorrespondingSkills));
+            }
+        }
         public Dictionary<string, string[]> ScoresToValues = new Dictionary<string, string[]>
         {
                 {"Speed", [ "Acrobatics", "Driving","Finesse","Infiltration","Inititave","Targeting"]},
@@ -146,6 +169,19 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 Currentindex = 0;
             }
            
+        }
+
+        public void FindChosespondingList()
+        {
+            if (ChosenModeMasterEssence != null &&
+       ScoresToValues.TryGetValue(ChosenModeMasterEssence, out var skills))
+            {
+                CorrespondingSkills = skills;
+            }
+            else
+            {
+                CorrespondingSkills = Array.Empty<string>();
+            }
         }
        public void GetNextClass(object obj)
         {
