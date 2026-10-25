@@ -61,10 +61,10 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
                 TFCharacterSession.CurrentTransfomer.Altmodes.Add(newAltModeSelection);
                 NavigationService.Navigate(new GeneralPerksTF());
                 return;
-            }
-            
-            // GernalPerkNavMethod.GoToNextPerk(NavigationService, PerkBeingApplied.AAM);
-            NavigationService.Navigate(new LevelUpAfter1());
+            }else
+                TFCharacterSession.CurrentTransfomer.Altmodes.Add(newAltModeSelection);
+            GernalPerkNavMethod.GoToNextPerk(NavigationService, PerkBeingApplied.AAM);
+        
 
 
         }

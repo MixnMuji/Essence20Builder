@@ -1118,3 +1118,7 @@ got listboxes set up need method to handle visiblity and assigning hte choices
 Huge bug pass over but rectified item is ready for launch
 
 edit mutiple bugs found need to make way to  show companions and additonal alt modes
+
+
+LETSSSSSSSSSSSSSSSSSS GOOOOOOOOOOOOOOOOOOOOOOOOOOOOO Fixed issues with variables not exisiting also dashed out lines for more than one alt mode
+we chill

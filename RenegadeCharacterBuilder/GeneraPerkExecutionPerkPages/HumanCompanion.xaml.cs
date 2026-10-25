@@ -56,8 +56,8 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
                     Viewmodel.Acrobatics, Viewmodel.Driving, Viewmodel.Finesse, Viewmodel.Infiltration, Viewmodel.Inititave, Viewmodel.Targeting,
                 Viewmodel.Alertness, Viewmodel.Culture, Viewmodel.Science, Viewmodel.Survival, Viewmodel.Technology,
                 Viewmodel.AnimalHandling, Viewmodel.Deception, Viewmodel.Preformance, Viewmodel.Persuasion, Viewmodel.Streetwise);
-                
-                TFCharacterSession.CurrentTransfomer.companions.Add(human);
+                human.SetDeiveredStatValues();
+
             }
             if(TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master" && TFCharacterSession.CurrentTransfomer.hasSpentGeneralPerkPoints == false)
             {
@@ -82,8 +82,11 @@ namespace RenegadeCharacterBuilder.GeneraPerkExecutionPerkPages
                     NavigationService.Navigate(new HumanCompanion());
                     return;
                 }
+                TFCharacterSession.CurrentTransfomer.companions.Add(human);
                 NavigationService.Navigate(new GeneralPerksTF());
+                return;
             }
+            TFCharacterSession.CurrentTransfomer.companions.Add(human);
             GernalPerkNavMethod.GoToNextPerk(NavigationService, PerkBeingApplied.HC);
         }
 

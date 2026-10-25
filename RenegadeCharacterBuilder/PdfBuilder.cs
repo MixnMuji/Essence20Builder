@@ -31,50 +31,10 @@ namespace RenegadeCharacterBuilder
         public void GenerateCharacterPDf(int decider)
         {
             designLogic = decider;
-            // Int decider will be a number code that will determine what character object is ie transformers,mlp, powerrangers, etc
-            /*
-             * 0 Title
-             * 1) Define each sections as blocks  So really we need a blocks
-             *  Visual representaiton of blocks  editors note || represents column devision
-                [
-                "Character Info: name, pronouns, Description, Level, Role, subclass, || alliegence, Languages" : Row 1
-                Influences, Hang ups, Energon, Movement, Health, || Attack (This will be from weapons and that will be done after character creation: Row 2
-                This row is the stat row ripped one to one from the xaml for stat: Row 3
-
-                NewPage,
-
-                Perk || Gear || Boned row 1
-
-                Hardpoints (research this) Row 2
-
-                Armor Row 3
-
-                Altmode || Altmode Row 4
-                
             
-                NewPage
-
-                General Perks Row 1
-
-                New Page
-
-                Companions
-
-                Remake page 1 baiscally
-                
              
              
              
-             */
-
-            /* Hierarchy of items in quest pdf is  column.Item()
-        .Border(1)
-        .Background(Colors.Blue.Lighten4)
-        .Padding(15)
-        .Text("border → background → padding");
-             
-             
-             */
 
             switch (decider)
             {
@@ -120,16 +80,19 @@ namespace RenegadeCharacterBuilder
                             c.Item().Element(OriginNotes); // Other things seem to have different things at the end here
                             c.Item().PageBreak();
                             c.Item().Element(RoleAndSubclassInfo); // sheets lack this and I think they need the in depth reminder of skills and abilites with levels
-                            if(TFCharacterSession.CurrentTransfomer.companions.Count != 0) 
+                            if (TFCharacterSession.CurrentTransfomer.companions.Count > 0)
                             {
-                                for(int i = 0; i< TFCharacterSession.CurrentTransfomer.companions.Count ; i++)
-                                {
-                                    c.Item().Element(container => Companion( container, i));
-                                    c.Item().Element(container=> Statblock2(container, i));
+                                c.Item().PageBreak();
 
-                                } 
+                                for (int i = 0;
+                                     i < TFCharacterSession.CurrentTransfomer.companions.Count;
+                                     i++)
+                                {
+                                    c.Item().Element(container => Companion(container, i));
+                                    c.Item().Element(container => Statblock2(container, i));
+                                }
                             }
-                                                    
+
 
 
                         });
@@ -454,45 +417,6 @@ namespace RenegadeCharacterBuilder
                 });
             });
 
-
-            /*   OLD Implementation
-             * container.Table(t =>
-            {
-                t.ColumnsDefinition(c =>
-                {
-                    c.RelativeColumn();
-                });
-
-                t.Cell().Border(1).Padding(5).Column(c =>
-                {
-                    int count = 0;
-                    c.Item().Text("Gear").Bold().FontSize(14);
-                    c.Item().Text("NAME   RANGE   HARDPOINT   TRAITS   EFFECTS  ALTENRATE EFFECTS").FontSize(13);
-
-                        foreach (var Weapon in TFCharacterSession.CurrentTransfomer.WeaponsLoadOut)
-                        {
-                            c.Item().Text($"{Weapon.Name}   {Weapon.Range}    {Weapon.Effect}   {Weapon.AlternateEffect}").FontSize(13); ;
-                        }
-                        foreach (var supGear in TFCharacterSession.CurrentTransfomer.SupportEquipmentLoadOut)
-                        {
-                            c.Item().Text($"{supGear.name}                    {supGear.botmodeEffect}   {supGear.altmodeEffect}").FontSize(13); ;
-                        }
-                        foreach (var kits in TFCharacterSession.CurrentTransfomer.KitsLoadout)
-                        {
-                            c.Item().Text($"{kits.Name}                       {kits.Benefit}                       ").FontSize(13); ;
-                        }
-
-
-
-             
-                        var h = TFCharacterSession.CurrentTransfomer.ArmorLoadout;
-                        c.Item().Text("Armor");
-                        c.Item().Text("Name                                               Benefit");
-                        c.Item().Text($"{h.Name}      {h.Benefit}").FontSize(13); ;
-                 
-                    
-                });
-            }); */
         }
         
         private void Altmodes(IContainer container)
@@ -521,27 +445,7 @@ namespace RenegadeCharacterBuilder
                 }
             });
 
-            /*t.Cell().Border(1).Padding(5).Text("ALTMODES");
-
-            foreach (Altmode a in TFCharacterSession.CurrentTransfomer.Altmodes) // theorectically we can make a column for every altmode this way 
-            {
-                    t.Cell().Border(1).Padding(5).Column(c =>
-                    {
-                        c.Item().Text($" Origin Name: {a.OrignName}").FontSize(14); //add name to altmode
-                        c.Item().Text($" Crew: {a.Crew}").FontSize(12);
-                        c.Item().Text($" Size: {a.Size}").FontSize(12);
-                        c.Item().Text($" Movement {a.Movement}").FontSize(12);
-                        c.Item().Text($" Movement Type: {a.Type}").FontSize(12);
-                        if(a.Movement2 != null) 
-                        {
-                            c.Item().Text($"Movement 2: {a.Movement2}").FontSize(12);
-                            c.Item().Text($"Movement Type: {a.Type2}").FontSize(12);
-                        }
-                    });
-            };
-
-                
-            }); */
+            
         }
         private void OriginNotes(IContainer container)
         {
@@ -670,19 +574,16 @@ namespace RenegadeCharacterBuilder
         private void Statblock2(IContainer container, int index)
         {
             var convert = new DieConverter();
-           
-            TFCharacterSession.CurrentTransfomer.companions[index].SetDeiveredStatValues();
             container.Table(t =>
             {
                 t.ColumnsDefinition(c =>
                 {
-                    c.RelativeColumn(2);
                     c.RelativeColumn(3);
-                    c.RelativeColumn(4);
-                    c.ConstantColumn(1);
+                    c.RelativeColumn(3);
+                    c.RelativeColumn(3);
+                    c.RelativeColumn(3);
 
                 });
-                foreach(pet p in TFCharacterSession.CurrentTransfomer.companions)
                 //column 1
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
@@ -692,7 +593,7 @@ namespace RenegadeCharacterBuilder
                     foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.companions[index].Strenght.CorrespondingSkills)
                     {
                         string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
-                        c.Item().Text($"{skill.Name.ToUpper()}: {die}");
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}").FontSize(12);
                     }
 
                 });
@@ -706,7 +607,7 @@ namespace RenegadeCharacterBuilder
                     foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.companions[index].Speed.CorrespondingSkills)
                     {
                         string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
-                        c.Item().Text($"{skill.Name.ToUpper()}: {die}");
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}").FontSize(12);
                     }
 
                 });
@@ -720,7 +621,7 @@ namespace RenegadeCharacterBuilder
                     foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.companions[index].Smarts.CorrespondingSkills)
                     {
                         string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
-                        c.Item().Text($"{skill.Name.ToUpper()}: {die}");
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}").FontSize(12);
                     }
 
 
@@ -735,7 +636,7 @@ namespace RenegadeCharacterBuilder
                     foreach (SkillTF skill in TFCharacterSession.CurrentTransfomer.companions[index].Social.CorrespondingSkills)
                     {
                         string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
-                        c.Item().Text($"{skill.Name.ToUpper()}: {die}");
+                        c.Item().Text($"{skill.Name.ToUpper()}: {die}").FontSize(12);
                     }
 
 
