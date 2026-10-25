@@ -264,10 +264,15 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     break;
 
                 case "Mode Master":
+                    ScoreTF target1 = Scores.FirstOrDefault(x => x.Name == TFCharacterSession.CurrentTransfomer.scoreBoostFromSubclss);
+                    target1.CurrentRank += 1;
+                    SkillTF target2 = target1.CorrespondingSkills.FirstOrDefault(x => x.Name == TFCharacterSession.CurrentTransfomer.skillBoostFromSubclass);
+                    target2.SkillScore += 1;
                     foreach (var score in Scores)
                     {
 
                         score.PropertyChanged += ScoreSetAsKey;
+                       
                     }
                   
                     break;

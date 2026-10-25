@@ -312,21 +312,21 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             switch (selection)
             {
                 case WeaponTF weapon:
-                    if (TakenWeapons.Contains(weapon) && RefferenceForTrianedWeapons.Contains(weapon))
+                    if (!TakenWeapons.Contains(weapon) && RefferenceForTrianedWeapons.Contains(weapon))
                     {
-                        TakenWeapons.Remove(weapon);
+                        TakenWeapons.Add(weapon);
                         HardpointLimit += 1;
                         // need method to see if item was trained or not.
                     }
-                    if (TakenWeapons.Contains(weapon))
+                    if (!TakenWeapons.Contains(weapon))
                     {
-                        TakenWeapons.Remove(weapon);
+                        TakenWeapons.Add(weapon);
                         HardpointLimit += 1;
                         requistionPoints += 1;
                     }
                     break;
                 case Upgrades upgrade:
-                    if (Kits.Contains(upgrade))
+                    if (!Kits.Contains(upgrade))
                     {
                         TakenKits.Remove(upgrade);
                         Kits.Add(upgrade);
@@ -353,13 +353,13 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                             {
                                 if (item.prereq == "Extra Crew capacity")
                                 {
-                                    SupportEquipment.Add(item);
+                                    SupportEquipment.Remove(item);
                                 }
                             }
 
                         }
-                        TakenSupportEquipment.Add(Se);
-                        SupportEquipment.Remove(Se);
+                        TakenSupportEquipment.Remove(Se);
+                        SupportEquipment.Add(Se);
                         if (SupportGearPointBank >= 2 && TFCharacterSession.CurrentTransfomer.Origns[0].AltMode.OrignName == "Support") // handles support origin
                         {
                             SupportGearPointBank += 1;

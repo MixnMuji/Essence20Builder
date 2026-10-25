@@ -21,6 +21,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
     public class FocusPageVMTF : INotifyPropertyChanged
     {
+        public bool isModeMaster { get; set; } = false;
         public event PropertyChangedEventHandler PropertyChanged;
         public ObservableCollection<FocusTF> twoChoices { get; set; }
         public string CharactersRoleToGetSubclasses { get; set; }
@@ -40,6 +41,16 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             }
         }
 
+        public string _chosenModeMasterSkill;
+        public string ChosenModeMasterSkill
+        {
+            get => _chosenModeMasterSkill;
+            set
+            {
+                _chosenModeMasterSkill = value;
+                OnPropertyChanged(nameof(ChosenModeMasterSkill));
+            }
+        }
         public string[] ModeMasterEsscenceOptions { get; set; } = ["Strength", "Speed", "Smarts", "Social"];
 
         private string[] _correspondingSkills;
@@ -110,13 +121,9 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         {
 
             CharactersRoleToGetSubclasses = TFCharacterSession.CurrentTransfomer.Role.Name;
-
-      
-
-            if (string.IsNullOrWhiteSpace(CharactersRoleToGetSubclasses))
+            if(CharactersRoleToGetSubclasses == "Mode Master")
             {
-
-                CharactersRoleToGetSubclasses = "Analyst";
+                isModeMaster = true;
             }
 
             DispalyNextSubclass = new RelayCommand<Object>(GetNextClass);

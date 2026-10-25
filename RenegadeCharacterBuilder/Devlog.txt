@@ -1112,3 +1112,7 @@ fixed skill adding by using the right variable
 Need to make mode master subclass. truly it is the ghost haunting this project made a listbox made arrays and dictionary to handle choices
 
 got listboxes set up need method to handle visiblity and assigning hte choices
+
+10-25
+
+Huge bug pass over but rectified item is ready for launch

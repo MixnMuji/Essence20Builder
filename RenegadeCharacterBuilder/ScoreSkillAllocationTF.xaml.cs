@@ -52,6 +52,11 @@ namespace RenegadeCharacterBuilder
 
         private void SaveScoresAndSkillsAndProcced(object sender, RoutedEventArgs e)
         {
+            if(Viewmodel.PointsBank != 0)
+            {
+                MessageBox.Show("Skill points are carried over but all Essance Boosts must be spent before continuing");
+                return;
+            }
             MessageBoxResult result = MessageBox.Show(
                 "Save Scores and Skills",
                 "Confirm",

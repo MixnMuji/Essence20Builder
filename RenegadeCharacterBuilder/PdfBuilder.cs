@@ -265,16 +265,16 @@ namespace RenegadeCharacterBuilder
         private void Statblock(IContainer container) // problem container has too much info?
         {
             var convert = new DieConverter();
-            
+            TFCharacterSession.CurrentTransfomer.SetDeiveredStatValues();
 
             container.Table(t =>
             {
                 t.ColumnsDefinition(c =>
                 {
-                    c.RelativeColumn(2);
                     c.RelativeColumn(3);
-                    c.RelativeColumn(4);
-                    c.RelativeColumn(1);
+                    c.RelativeColumn(3);
+                    c.RelativeColumn(3);
+                    c.RelativeColumn(3);
 
                 });
 
@@ -283,7 +283,7 @@ namespace RenegadeCharacterBuilder
                 {
                     c.Item().Text($"STRENGTH {TFCharacterSession.CurrentTransfomer.Strenght.CurrentRank}").FontSize(12);
                     c.Item().Text($"TOUGHNESS: {TFCharacterSession.CurrentTransfomer.Toughness.Value}").FontSize(12);
-                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.Strenght.CurrentRank} +  + ").FontSize(12); // add armor and way to track perks taken
+                    c.Item().Text($"10 + {TFCharacterSession.CurrentTransfomer.Strenght.CurrentRank}").FontSize(12); // add armor and way to track perks taken
                     foreach(SkillTF skill in TFCharacterSession.CurrentTransfomer.Strenght.CorrespondingSkills)
                     {
                         string die = (string)convert.Convert(skill.SkillScore, typeof(string), null, CultureInfo.InvariantCulture);
@@ -347,7 +347,7 @@ namespace RenegadeCharacterBuilder
                 t.ColumnsDefinition(c =>
                 {
                     c.RelativeColumn(2);
-                    c.RelativeColumn(3);
+                    
                     c.RelativeColumn(10);
                 });
 
@@ -361,15 +361,7 @@ namespace RenegadeCharacterBuilder
                     }
                 });
                 
-                t.Cell().Border(1).Padding(5).Column(c =>
-                {
-                    c.Item().Text("Gear").Bold();
-                    foreach (GearTF g in TFCharacterSession.CurrentTransfomer.Gear)
-                    {
-                        c.Item().Text($"{g.Name}").Bold().FontSize(14);
-                        //c.Item().Text($"{g.Notes}").FontSize(12);
-                    }
-                });
+   
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
                     c.Item().Text("Background Bonds").Bold().FontSize(14);

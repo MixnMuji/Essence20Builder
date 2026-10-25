@@ -30,6 +30,7 @@ namespace RenegadeCharacterBuilder
             viewmodel.GetSubClass();
             DataContext = viewmodel;
             
+            
         }
 
         private void SetSubclassandContinue(object sender, RoutedEventArgs e)
@@ -50,14 +51,38 @@ namespace RenegadeCharacterBuilder
                 );
             if (result == MessageBoxResult.Yes)
             {
-                
+
                 TFCharacterSession.CurrentTransfomer.sub = viewmodel.CurrentSubclass;
+                if (TFCharacterSession.CurrentTransfomer.Role.Name == "Mode Master")
+                {
+                    CheckForNullsBeforeMovingOn();
+                    TFCharacterSession.CurrentTransfomer.scoreBoostFromSubclss = viewmodel.ChosenModeMasterEssence;
+                    TFCharacterSession.CurrentTransfomer.skillBoostFromSubclass = viewmodel.ChosenModeMasterSkill;
+                }
                 NavigationService.Navigate(new ScoreSkillAllocationTF());
             }
             else
                 return;
-        }
+               
+            }
 
+            
+               
+            
+       
+
+        private void CheckForNullsBeforeMovingOn()
+        {
+            if(viewmodel.ChosenModeMasterEssence == null || viewmodel.ChosenModeMasterEssence == "") {
+                MessageBox.Show("Can not proceed without picking an essacne score to boost");
+                return;
+            }
+            if (viewmodel.ChosenModeMasterSkill == null || viewmodel.ChosenModeMasterSkill == "")
+            {
+                MessageBox.Show("Can not proceed without picking a skill score to boost");
+                return;
+            }
+        }
         private void SkllChosen(object sender, RoutedEventArgs e)
         {
             RadioButton choice = (RadioButton)sender;

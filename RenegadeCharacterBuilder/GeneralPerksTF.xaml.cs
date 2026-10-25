@@ -46,12 +46,7 @@ namespace RenegadeCharacterBuilder
             TFCharacterSession.CurrentTransfomer.PickedPerks = pickedPerks;
             TFCharacterSession.CurrentTransfomer.hasSpentGeneralPerkPoints = true; //bool will actually do the problem of sorting
 
-            foreach(GeneralPerkTF s in pickedPerks)
-            {
-                MessageBox.Show(s.Name);
-            }
-            MessageBox.Show(pickedPerks[0].ToString());
-            MessageBox.Show(pickedPerks[0].PerkBeingApplied.ToString());
+       
             
           
          
@@ -62,15 +57,16 @@ namespace RenegadeCharacterBuilder
                     case PerkBeingApplied.AAM:
 
                         NavigationService.Navigate(new AAMPerpage());
-                    break;
+                        return;
+                    
 
                     case PerkBeingApplied.ATAM:
                         NavigationService.Navigate(new ATAMperkPage());
+                        return;
 
 
 
-
-                     break;
+                    
 
                     case PerkBeingApplied.CT:
                         {
@@ -87,27 +83,27 @@ namespace RenegadeCharacterBuilder
                             */
                             NavigationService.Navigate(new CTperkpage());
                         }
-                        break;
+                        return;
                     case PerkBeingApplied.HC:
                         {
                             //navigate to chracter builder page set new bools that are minicon, and human companion so that if they are sent with the data it will load a different page.
                             NavigationService.Navigate(new HumanCompanion());
                         }
-                        break;
+                        return;
 
                     case PerkBeingApplied.Mentor:
                         {
                             NavigationService.Navigate(new MentorSkill());
                           
                         }
-                        break;
+                        return;
 
                     case PerkBeingApplied.OAM:
                         {
                             NavigationService.Navigate(new OamPerkpage());
 
                         }
-                        break;
+                        return;
                     case PerkBeingApplied.SC:
                         {
                             NavigationService.Navigate(new SCperkpage());
@@ -115,7 +111,7 @@ namespace RenegadeCharacterBuilder
                          
 
                         }
-                        break;
+                        return;
                     default:
                         {
                             gpService.ApplyPerk(TFCharacterSession.CurrentTransfomer, perk);// shouldapply perks now

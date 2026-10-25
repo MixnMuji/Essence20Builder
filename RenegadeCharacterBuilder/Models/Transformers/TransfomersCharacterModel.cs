@@ -46,10 +46,17 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public int generalPointBank { get; set; }
 
         public int SkillsPointBankForFutureLevels { get; set; }
+
+        //Mode Master Helpers Block
         public ScoreTF stat1 { get; set; }
         public ScoreTF stat2 { get; set; }
         public ScoreTF stat3 { get; set; }
         public ScoreTF stat4 { get; set; }
+
+        public string scoreBoostFromSubclss { get; set; }
+        public string skillBoostFromSubclass { get; set; }
+
+        //Mode Master Helpers Block
         public DirivedStat Evasion { get; set; } = new DirivedStat { Value = 0 };
         public DirivedStat Toughness { get; set; } = new DirivedStat { Value = 0 };
         public DirivedStat Cleverness { get; set; } = new DirivedStat { Value = 0 };
@@ -159,6 +166,13 @@ namespace RenegadeCharacterBuilder.Models.Transformers
 
         }
 
+        public void SetDeiveredStatValues()
+        {
+            Toughness.Value += 10 + Strenght.CurrentRank;
+            Willpower.Value += 10 + Smarts.CurrentRank;
+            Cleverness.Value += 10 + Social.CurrentRank;
+            Evasion.Value = +10 + Speed.CurrentRank;
+        }
         public void ApplylevlesAfter1()
         {
             Dictionary<int[], ScoreTF> levelsToScoreIncrease = new Dictionary<int[], ScoreTF>()

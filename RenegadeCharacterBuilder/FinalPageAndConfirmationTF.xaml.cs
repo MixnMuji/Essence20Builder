@@ -94,7 +94,6 @@ namespace RenegadeCharacterBuilder
         private void export(object sender, RoutedEventArgs e)
         {
             pdfbuild = new PdfBuilder();
-            MessageBox.Show("fired");
             pdfbuild.GenerateCharacterPDf(1);
         }
     }
