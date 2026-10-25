@@ -388,9 +388,9 @@ namespace RenegadeCharacterBuilder
                     t.ColumnsDefinition(c =>
                     {
                         c.RelativeColumn(3); //name
-                        c.RelativeColumn(1); //Range
+                        c.RelativeColumn(2); //Range
                         c.RelativeColumn(2); // traits
-                        c.RelativeColumn(2); //hands
+                        c.RelativeColumn(1); //hands
                         c.RelativeColumn(3); //effects
                         c.RelativeColumn(3); // alt effects
                     });

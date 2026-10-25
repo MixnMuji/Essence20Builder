@@ -47,7 +47,6 @@ namespace RenegadeCharacterBuilder
             Viewmodel = new CharScorePageModelTF();
             Viewmodel.findRoleForStats();
            DataContext = Viewmodel;
-            MessageBox.Show(TFCharacterSession.CurrentTransfomer.Role.Name);
 
         }
 

@@ -77,7 +77,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 TFCharacterSession.CurrentTransfomer.ApplylevlesAfter1();
                 AddPointsToSkill = new RelayCommand<SkillTF>(AddPointsToSkil);
                 RemovePointsFromSkill = new RelayCommand<SkillTF>(DecreasePointsFromSkill);
-                SkillsPointBank = TFCharacterSession.CurrentTransfomer.generalPointBank;
+                SkillsPointBank = TFCharacterSession.CurrentTransfomer.SkillsPointBankForFutureLevels;
 
 
                 SkillsToBoost = TFCharacterSession.CurrentTransfomer.fullSkillList;

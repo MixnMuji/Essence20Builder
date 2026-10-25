@@ -195,7 +195,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
                 }
 
             }
-            generalPointBank += i;
+            SkillsPointBankForFutureLevels += i;
             if (Origns[0].Name == "Rainmaker")
             {
                 if (CurrentLevel >= 14)

@@ -11,21 +11,36 @@ using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Media3D;
 using RenegadeCharacterBuilder.Models.Transformers.ModelsForState;
 using RenegadeCharacterBuilder.Models.Transformers.Roots;
+using static QuestPDF.Helpers.Colors;
 
 namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
 {
-    public class FocusPageVMTF: INotifyPropertyChanged
+    public class FocusPageVMTF : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public ObservableCollection<FocusTF> twoChoices { get; set; }
         public string CharactersRoleToGetSubclasses { get; set; }
         public ICommand DispalyNextSubclass { get; set; }
         public ICommand DisplayPreviousSubclass { get; set; }
-       
 
+        public string[] ModeMasterEsscenceOptions = ["Strength", "Speed", "Smarts","Soical"];
+        public string[] CorrespondingSkills { get; set; } = [];
+        public Dictionary<string, string[]> ScoresToValues = new Dictionary<string, string[]>
+        {
+                {"Speed", [ "Acrobatics", "Driving","Finesse","Infiltration","Inititave","Targeting"]},
+                {"Strength",["Athletics","Brawn","Conditioning","Intimidation" ,"Might"] },
+                {"Smarts",["Alertness","Culture","Science","Survival","Technology"]},
+                {"Social",["AnimalHandling","Deception","Preformance", "Persuasion", "Streetwise"] },
+
+        };
+
+            
+            
+       
         private FocusTF _currentSubclass;
         public FocusTF CurrentSubclass
         {

@@ -92,6 +92,7 @@ namespace RenegadeCharacterBuilder
             }
             else
                 TFCharacterSession.CurrentTransfomer.Origns.Add(CurrentView);
+            TFCharacterSession.CurrentTransfomer.Altmodes.Add(CurrentView.AltMode);
             NavigationService.Navigate(new TFInfluencePage());
         }
         private void NotifyPropertyChanged(string name)

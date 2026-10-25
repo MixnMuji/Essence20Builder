@@ -1105,3 +1105,8 @@ made a scroolview for  final display found more bugs need to write pdf better
 
 Can breath almost alomst done fixed pdf display for weapons by making actual columns and the like
 finally fixed armor I had it if it contains but the method removes it from the list so it should be not (!) contains.
+
+Got rid of message boxes from continuing
+fixed skill adding by using the right variable
+
+Need to make mode master subclass. truly it is the ghost haunting this project made a listbox made arrays and dictionary to handle choices

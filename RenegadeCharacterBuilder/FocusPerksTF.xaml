@@ -28,14 +28,33 @@
                         <TextBlock Text="Select a skill to raise whenever you boost your key score"/>
 
                         <!--Should show list of skills -->
-                        <ItemsControl ItemsSource="{Binding skillsToboost}">
+                        <ItemsControl ItemsSource="{Binding skillsToboost}" x:Name="SkillBank" Visibility="Visible">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <RadioButton Content="{Binding}" Checked="SkllChosen" GroupName="Skills"/>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
+                        <!-- Mode master Stuff-->
 
+                        
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=" 400"/>
+                                <ColumnDefinition Width=" 400"/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <ListBox Grid.Column="0">
+
+                            </ListBox>
+                            <ListBox Grid.Column="1" >
+                                <TextBlock Text="Hello"/>
+                            </ListBox>
+                        </Grid>
+                      
+                        <!--Mode master Finished-->
+                        
                         <ItemsControl ItemsSource="{Binding ranks}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>

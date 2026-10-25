@@ -87,7 +87,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
         public SkillTF Acrobatics { get; }
         public SkillTF Driving { get; }
         public SkillTF Finesse { get; }
-        public SkillTF Inflitration { get; }
+        public SkillTF Infiltration { get; }
         public SkillTF Inititave { get; }
         public SkillTF Targeting { get; }
 
@@ -142,7 +142,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             Acrobatics = new SkillTF("Acrobatics");
             Driving = new SkillTF("Driving");
             Finesse = new SkillTF("Finesse");
-            Inflitration = new SkillTF("Inflitration");
+            Infiltration = new SkillTF("Infiltration");
             Inititave = new SkillTF("Inititave");
             Targeting = new SkillTF("Targeting");
 
@@ -177,7 +177,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 Acrobatics,
                 Driving,
                 Finesse,
-                Inflitration,
+                Infiltration,
                 Inititave,
                 Targeting
 
@@ -230,7 +230,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                 ["Rainmaker"] = [Targeting, Inititave],
                 ["Outrider"] = [Alertness,Survival],
                 ["Monolith"] = [Might, Brawn],
-                ["Lookout"] = [Finesse, Deception, Streetwise, Inflitration],
+                ["Lookout"] = [Finesse, Deception, Streetwise, Infiltration],
                 ["Cutter"] = [Athletics, Might],
                 ["Champion"] = [Streetwise, Persuasion]
               
@@ -252,7 +252,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
             switch (CharacterRoleForKeyScores)
             {
                 case "Analyst":
-                    defineScoresAndSkillChoice(Speed, Smarts, new List<SkillTF> { Alertness, Finesse, Inflitration, Inititave, Science, Technology });
+                    defineScoresAndSkillChoice(Speed, Smarts, new List<SkillTF> { Alertness, Finesse, Infiltration, Inititave, Science, Technology });
                     break;
 
                 case "FieldCommander":
@@ -277,7 +277,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers.ViewModelsTF
                     break;
 
                 case "Scout":
-                    defineScoresAndSkillChoice(Speed, Soical, new List<SkillTF> { Alertness, Deception, Inflitration, Inititave, Streetwise });
+                    defineScoresAndSkillChoice(Speed, Soical, new List<SkillTF> { Alertness, Deception, Infiltration, Inititave, Streetwise });
                     break;
 
                 case "Warrior":
