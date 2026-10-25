@@ -24,10 +24,10 @@ namespace RenegadeCharacterBuilder.GlobalMethods
         public List<HangUps> Hang_Ups { get; set; }
         public int Health { get; set; }
 
-        public DirivedStat Evasion { get; set; }
-        public DirivedStat Toughness { get; set; }
-        public DirivedStat Cleverness { get; set; }
-        public DirivedStat Willpower { get; set; }
+        public DirivedStat Evasion { get; set; } = new();
+        public DirivedStat Toughness { get; set; } = new();
+        public DirivedStat Cleverness { get; set; } = new();
+        public DirivedStat Willpower { get; set; } = new();
         public ScoreTF Strenght { get; set; }
         public ScoreTF Speed { get; set; }
         public ScoreTF Smarts { get; set; }
@@ -107,7 +107,10 @@ namespace RenegadeCharacterBuilder.GlobalMethods
                 Persuasion = Pro,
                 Streetwise = Street
                 ]);
-
+            Toughness.Value = 0;
+            Willpower.Value = 0;
+            Cleverness.Value = 0;
+            Evasion.Value = 0;
 
         }
     }

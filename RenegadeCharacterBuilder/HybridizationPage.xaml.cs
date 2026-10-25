@@ -56,7 +56,10 @@ namespace RenegadeCharacterBuilder
                 {"Weaponize:Add A weapon which you are trained in to an Exteranal HardPoint" }
                 
             };
-
+            if(HybridPointBank == 0)
+            {
+                HybridPointBank +=1;
+            }
         }
         private void NotifyPropertyChanged(string name)
         {

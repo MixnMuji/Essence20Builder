@@ -11,10 +11,10 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="300"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="Focuses" FontSize="33"/>
@@ -71,19 +71,22 @@
 
                         <!--Mode master Finished-->
                         
-                        <ItemsControl ItemsSource="{Binding ranks}">
+    
+                                <ItemsControl ItemsSource="{Binding ranks}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel>
-                                        <TextBlock Text="{Binding AbilityName}"/>
-                                        <TextBlock Text="{Binding AbilityEffect}"/>
+                                       
+                                        <StackPanel>
+                                        <TextBlock Text="{Binding AbilityName}" FontWeight="Bold"/>
+                                        <TextBlock Text="{Binding AbilityEffect}" TextWrapping="Wrap"/>
 
 
                                     </StackPanel>
+                                  
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-
+                      
 
 
                     </StackPanel>

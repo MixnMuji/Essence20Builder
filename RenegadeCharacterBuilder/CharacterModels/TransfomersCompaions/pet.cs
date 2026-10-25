@@ -15,7 +15,10 @@ namespace RenegadeCharacterBuilder.CharacterModels.TransfomersCompaions
 
         public SkillTF purposeTwo { get; set; }
 
-        
+        public pet()
+        {
+           
+        }
         public void AssignPurpsoe(SkillTF Purpose, string CompanionName)
         {
             //this will make it so that the character will get the bonus from the mode master perk
@@ -29,7 +32,14 @@ namespace RenegadeCharacterBuilder.CharacterModels.TransfomersCompaions
                 }
             }
         }
-    
+
+        public void SetDeiveredStatValues()
+        {
+            Toughness.Value += 10 + Strenght.CurrentRank;
+            Willpower.Value += 10 + Smarts.CurrentRank;
+            Cleverness.Value += 10 + Social.CurrentRank;
+            Evasion.Value = +10 + Speed.CurrentRank;
+        }
 
     }
 

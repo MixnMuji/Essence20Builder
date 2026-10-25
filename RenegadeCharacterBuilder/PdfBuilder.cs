@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -95,12 +96,7 @@ namespace RenegadeCharacterBuilder
         {
             Directory.CreateDirectory(System.IO.Path.GetDirectoryName(path));
 
-            //add content that needs to be found in deciders
-            /*
-                1)game Name
-             
-             */
-            // thing about return here
+    
             Document
                 .Create(document =>
                 {
@@ -126,7 +122,7 @@ namespace RenegadeCharacterBuilder
                             c.Item().Element(RoleAndSubclassInfo); // sheets lack this and I think they need the in depth reminder of skills and abilites with levels
                             if(TFCharacterSession.CurrentTransfomer.companions.Count != 0) 
                             {
-                                for(int i = 0; i< TFCharacterSession.CurrentTransfomer.companions.Count; i++)
+                                for(int i = 0; i< TFCharacterSession.CurrentTransfomer.companions.Count ; i++)
                                 {
                                     c.Item().Element(container => Companion( container, i));
                                     c.Item().Element(container=> Statblock2(container, i));
@@ -674,8 +670,8 @@ namespace RenegadeCharacterBuilder
         private void Statblock2(IContainer container, int index)
         {
             var convert = new DieConverter();
-
-
+           
+            TFCharacterSession.CurrentTransfomer.companions[index].SetDeiveredStatValues();
             container.Table(t =>
             {
                 t.ColumnsDefinition(c =>
@@ -686,7 +682,7 @@ namespace RenegadeCharacterBuilder
                     c.ConstantColumn(1);
 
                 });
-
+                foreach(pet p in TFCharacterSession.CurrentTransfomer.companions)
                 //column 1
                 t.Cell().Border(1).Padding(5).Column(c =>
                 {
