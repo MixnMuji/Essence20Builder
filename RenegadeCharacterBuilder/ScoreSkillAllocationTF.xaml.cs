@@ -97,10 +97,16 @@ namespace RenegadeCharacterBuilder
                 {
                 
                     NavigationService.Navigate(new GeneralPerksTF());
+                    return;
+                }
+                else if(TFCharacterSession.CurrentTransfomer.CurrentLevel >= 2 && TFCharacterSession.CurrentTransfomer.CurrentLevel < 4)
+                {
+                    NavigationService.Navigate(new LevelUpAfter1());
+                    return;
                 }
                 else
                 {
-                    NavigationService.Navigate(new FinalPageAndConfirmation());
+                    NavigationService.Navigate(new EquipmentPageTF());
                 }
                 //go back to character start and have level set if it's greater than 3 have them go to general perks, also if they have Roles, let them go to focus
                 //otherwise take to finalization page. Make finalization page!

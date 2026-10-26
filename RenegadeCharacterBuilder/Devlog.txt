@@ -1122,3 +1122,7 @@ edit mutiple bugs found need to make way to  show companions and additonal alt m
 
 LETSSSSSSSSSSSSSSSSSS GOOOOOOOOOOOOOOOOOOOOOOOOOOOOO Fixed issues with variables not exisiting also dashed out lines for more than one alt mode
 we chill
+
+10-26
+
+Bug fix or rather flow fix where lower levels don't end up levling up or getting gear if they're lower than level 4
