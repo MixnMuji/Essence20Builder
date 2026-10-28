@@ -1126,3 +1126,7 @@ we chill
 10-26
 
 Bug fix or rather flow fix where lower levels don't end up levling up or getting gear if they're lower than level 4
+
+10-28 
+
+As I do research on other projects I can't divorce myself from wanting to finish this so today I added some skeletons for Origins in the expansions.

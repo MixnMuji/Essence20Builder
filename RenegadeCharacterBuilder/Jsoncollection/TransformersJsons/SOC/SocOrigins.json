@@ -1,0 +1,33 @@
+{
+   "Origins": [
+        {
+            "Name": "",
+            "SocialIncrease":0 ,
+             "StrengthIncrease":0,
+            "SmartsIncrease": 0,
+            "SpeedIncrease":0,
+            "OriginSkill": "",
+            "StartingHealth": 0,
+            "OriginBenefit": {
+                "Name": "",
+                "Effect": ""
+            },
+            "BotMode": {
+                "Movement": 40,
+                "Type": "",
+                "Size": ""
+            },
+            "AltMode":
+            {
+                "OrignName":"",
+                "Movement": 60,
+                "Type": "",
+                "Size": "",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": ""
+                    
+            }
+            
+        }]
+}
