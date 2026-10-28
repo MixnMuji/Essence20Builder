@@ -18,6 +18,7 @@ namespace RenegadeCharacterBuilder.Models.Transformers
         public Botmode BotMode { get; set;}
         public Altmode AltMode { get; set; }
 
+        public string Examples { get; set; }
         public bool isSelected { get; set; }
        
 

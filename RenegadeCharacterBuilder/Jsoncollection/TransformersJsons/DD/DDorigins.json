@@ -1,6 +1,33 @@
 {
   "Origins": [
         {
+            "Name": "Armory Call",
+            "SmartsIncrease": 1,
+            "OriginSkill": "Increase your Survival or Technology SKill, using the Smarts Essence Score increase above",
+            "StartingHealth": 3,
+            "OriginBenefit": {
+                "Name": "In the Right Hands",
+                "Effect": "Your Alt Mode is a wearable piece of equipment that someone else will wield or wear. You gain a benefit, depending on your choice of alt mode. In addition, while being work or wielded you automatically grant the benfits of Lend Assistance to your wielder.wear with the skill listed in the Alt Mode Choices below; this takes no action on your part. These benefits are only applicable while in Alt Mode. \n Body Armor Segment: You and your wearer gain a +2 deflective bonus to both Toughness and Evasion Defenses; Brawn. \n Energy Firearm: None; Alerteness. \n HandHeld Shield: Impose Snag on the first attack targeting the wielder each turn; Might(Push/ Shove Only) \n Melee Weapon: None Intimidation."
+            },
+            "BotMode": {
+                "Movement": 40,
+                "Type": "Ground",
+                "Size": "Large"
+            },
+            "AltMode":
+            {
+                "OrignName":"Armory Call",
+                "Movement": 0,
+                "Type": "May move up to 10 feet in any direction as part of the conversion process to and from this Alt Mode.",
+                "Size": "Small",
+                "Crew": 2,
+                "FirePoints": 0,
+                "Attack": "Special Attack (Body Armor Segment): Body Slam: Might Skill: Reach(1 blunt damage) \n Special Attack (Energy Firearm): Weapon Blast: targeting skill, Range 60ft/100ft (2 Fire or Laser damage); Accurate \u21911 \n Special Attack(Handheld Shield): Shield Bash: Might Skill, Reach(1 blunt damage): Knock Prone \n Special Attack (Melee Weapon): Weapon Strike: Finesse or Might skill, Reach(2 Blunt or Sharp damage); Mutiple (2) Targets (\u21931)"
+                    
+            },
+            "Examples":"Gun, Sword, Gauntlet "
+        },
+        {
             "Name": "",
             "SocialIncrease":0 ,
              "StrengthIncrease":0,
@@ -27,8 +54,40 @@
                 "FirePoints": 2,
                 "Attack": ""
                     
-            }
-            
-        }]
+            },
+            "Examples":""
+        },
+        {
+            "Name": "",
+            "SocialIncrease":0 ,
+             "StrengthIncrease":0,
+            "SmartsIncrease": 0,
+            "SpeedIncrease":0,
+            "OriginSkill": "",
+            "StartingHealth": 0,
+            "OriginBenefit": {
+                "Name": "",
+                "Effect": ""
+            },
+            "BotMode": {
+                "Movement": 40,
+                "Type": "",
+                "Size": ""
+            },
+            "AltMode":
+            {
+                "OrignName":"",
+                "Movement": 60,
+                "Type": "",
+                "Size": "",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": ""
+                    
+            },
+            "Examples":""
+        },
+
+  ]
 
 }
