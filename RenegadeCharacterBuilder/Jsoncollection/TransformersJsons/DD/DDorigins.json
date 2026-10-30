@@ -28,6 +28,36 @@
             "Examples":"Gun, Sword, Gauntlet "
         },
         {
+            "Name": "Drone",
+            "SocialIncrease":0 ,
+            "StrengthIncrease":0,
+            "SmartsIncrease": 0,
+            "SpeedIncrease":0,
+            "OriginSkill": "increase any one skill it must be a skill associated with the Essence Score you chose to increase. ",
+            "StartingHealth": 3,
+            "OriginBenefit": {
+                "Name": "A hint of Independence",
+                "Effect": "Choose any General Perk you meet the qualifications for at the end of Characer Creation. In addition choose and inmperfection \n 1) Poor engine circulation: Your maximum Energon Points is equal to your lowest Essence Score -1\n 2) Fragile:Chasi: You have a -1 penalty to your Toughness Defense.\n 3) Stress Leak: Choose an Element type, one random creature or object adjacent to you takes 1 damage of that type when you Fumble a Skill test.\n 4) Vulnerability: Choose a damage type, your Toughness Defense is halved (round up) to that damage.\n 5) Energon Hunter: Anytime you regenerate Energon, roll 1d4; on a 4, you regenerate 1 less than the normal amount.\n 6) Slow Conversion: Converting Modes takes an entire turn's worth of your actions. \n 7) Fiercely Independent: You never benefit from someone else's Lend Assistance actions (but you can Lend Assistance normally).\n 8) Weak-Willed: All Deception and Persuassion Skill Tests that target you gain Edge."
+            },
+            "BotMode": {
+                "Movement": 0,
+                "Type": "Same as copied Origin",
+                "Size": "Same as copied Origin"
+            },
+            "AltMode":
+            {
+                "OrignName":"Drone",
+                "Movement": 0,
+                "Type": "Same as copied Origin",
+                "Size": "Same as copied Origin",
+                "Crew": 0,
+                "FirePoints": 0,
+                "Attack": "Same as copied Origin"
+                    
+            },
+            "Examples":""
+        },
+        {
             "Name": "",
             "SocialIncrease":0 ,
              "StrengthIncrease":0,
@@ -57,7 +87,67 @@
             },
             "Examples":""
         },
-        {
+          {
+            "Name": "",
+            "SocialIncrease":0 ,
+             "StrengthIncrease":0,
+            "SmartsIncrease": 0,
+            "SpeedIncrease":0,
+            "OriginSkill": "",
+            "StartingHealth": 0,
+            "OriginBenefit": {
+                "Name": "",
+                "Effect": ""
+            },
+            "BotMode": {
+                "Movement": 40,
+                "Type": "",
+                "Size": ""
+            },
+            "AltMode":
+            {
+                "OrignName":"",
+                "Movement": 60,
+                "Type": "",
+                "Size": "",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": ""
+                    
+            },
+            "Examples":""
+        },
+            {
+            "Name": "",
+            "SocialIncrease":0 ,
+             "StrengthIncrease":0,
+            "SmartsIncrease": 0,
+            "SpeedIncrease":0,
+            "OriginSkill": "",
+            "StartingHealth": 0,
+            "OriginBenefit": {
+                "Name": "",
+                "Effect": ""
+            },
+            "BotMode": {
+                "Movement": 40,
+                "Type": "",
+                "Size": ""
+            },
+            "AltMode":
+            {
+                "OrignName":"",
+                "Movement": 60,
+                "Type": "",
+                "Size": "",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": ""
+                    
+            },
+            "Examples":""
+        },
+              {
             "Name": "",
             "SocialIncrease":0 ,
              "StrengthIncrease":0,

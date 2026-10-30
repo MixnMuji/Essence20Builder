@@ -1130,3 +1130,6 @@ Bug fix or rather flow fix where lower levels don't end up levling up or getting
 10-28 
 
 As I do research on other projects I can't divorce myself from wanting to finish this so today I added some skeletons for Origins in the expansions.
+
+10-30 
+added to json for dd origins
