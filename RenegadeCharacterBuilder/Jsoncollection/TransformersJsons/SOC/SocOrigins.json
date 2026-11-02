@@ -31,144 +31,59 @@
                     
             },
             {
-            "Name": "",
-            "SocialIncrease":0 ,
-             "StrengthIncrease":0,
-            "SmartsIncrease": 0,
-            "SpeedIncrease":0,
-            "OriginSkill": "",
-            "StartingHealth": 0,
+            "Name": "Pillar",
+             "StrengthIncrease":1,
+            "OriginSkill": "Increase Vrawn, Conditioning, or Intimidation",
+            "StartingHealth": 4,
             "OriginBenefit": {
-                "Name": "",
-                "Effect": ""
+                "Name": "Face Me!",
+                "Effect": "As a Move action, you taunt an oppent to attack you instead of your friends. You then attempt an Intimidate Skill test against the Willpower Defense of that opponent. On a succces that enemy must attack you on their turn or suffer \u21932 to attack any other opponent."
             },
             "BotMode": {
-                "Movement": 40,
-                "Type": "",
-                "Size": ""
+                "Movement": 20,
+                "Type": "Ground",
+                "Size": "Large or Huge"
             },
             "AltMode":
             {
-                "OrignName":"",
-                "Movement": 60,
-                "Type": "",
-                "Size": "",
+                "OrignName":"Pillar",
+                "Movement": 45,
+                "Type": "Ground",
+                "Size": "Long or Extended",
                 "Crew": 2,
-                "FirePoints": 2,
-                "Attack": ""
+                "FirePoints": 4,
+                "Attack": "Ram (driving: Driving Skill, Reach (1 Blunt Damage), Trip alternate effect."
                     
             },
             {
-            "Name": "",
-            "SocialIncrease":0 ,
-             "StrengthIncrease":0,
-            "SmartsIncrease": 0,
-            "SpeedIncrease":0,
-            "OriginSkill": "",
-            "StartingHealth": 0,
+            "Name": "Speaker",
+            "SocialIncrease":1 ,
+            "OriginSkill": "Increase Culture, Perusasion, or Streetwise",
+            "StartingHealth": 3,
             "OriginBenefit": {
-                "Name": "",
-                "Effect": ""
+                "Name": "'Til All Are One",
+                "Effect": "One per scene, when you roll a Critical Success on a Skill Test, the team gains a Story Point."
             },
             "BotMode": {
-                "Movement": 40,
-                "Type": "",
-                "Size": ""
+                "Movement": 30,
+                "Type": "Ground",
+                "Size": "Common or Large"
             },
             "AltMode":
             {
-                "OrignName":"",
-                "Movement": 60,
-                "Type": "",
-                "Size": "",
+                "OrignName":"Speaker",
+                "Movement": 45,
+                "Type": "Ground",
+                "Size": "Common Or Long",
+                "Movement2": 30,
+                "Type2": "Aerial"
                 "Crew": 2,
                 "FirePoints": 2,
-                "Attack": ""
+                "Attack": "Ram (driving: Driving Skill, Reach (1 Blunt Damage), Trip alternate effect."
                     
-            },
-            {
-            "Name": "",
-            "SocialIncrease":0 ,
-             "StrengthIncrease":0,
-            "SmartsIncrease": 0,
-            "SpeedIncrease":0,
-            "OriginSkill": "",
-            "StartingHealth": 0,
-            "OriginBenefit": {
-                "Name": "",
-                "Effect": ""
-            },
-            "BotMode": {
-                "Movement": 40,
-                "Type": "",
-                "Size": ""
-            },
-            "AltMode":
-            {
-                "OrignName":"",
-                "Movement": 60,
-                "Type": "",
-                "Size": "",
-                "Crew": 2,
-                "FirePoints": 2,
-                "Attack": ""
-                    
-            },
-            {
-            "Name": "",
-            "SocialIncrease":0 ,
-             "StrengthIncrease":0,
-            "SmartsIncrease": 0,
-            "SpeedIncrease":0,
-            "OriginSkill": "",
-            "StartingHealth": 0,
-            "OriginBenefit": {
-                "Name": "",
-                "Effect": ""
-            },
-            "BotMode": {
-                "Movement": 40,
-                "Type": "",
-                "Size": ""
-            },
-            "AltMode":
-            {
-                "OrignName":"",
-                "Movement": 60,
-                "Type": "",
-                "Size": "",
-                "Crew": 2,
-                "FirePoints": 2,
-                "Attack": ""
-                    
-            },
-            {
-            "Name": "",
-            "SocialIncrease":0 ,
-             "StrengthIncrease":0,
-            "SmartsIncrease": 0,
-            "SpeedIncrease":0,
-            "OriginSkill": "",
-            "StartingHealth": 0,
-            "OriginBenefit": {
-                "Name": "",
-                "Effect": ""
-            },
-            "BotMode": {
-                "Movement": 40,
-                "Type": "",
-                "Size": ""
-            },
-            "AltMode":
-            {
-                "OrignName":"",
-                "Movement": 60,
-                "Type": "",
-                "Size": "",
-                "Crew": 2,
-                "FirePoints": 2,
-                "Attack": ""
-                    
-            },
-            }]
+            }
+           
+           }
+
+   ]
 }
