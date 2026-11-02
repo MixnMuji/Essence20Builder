@@ -1,6 +1,36 @@
 {
    "Origins": [
         {
+            "Name": "Charger",
+            "SocialIncrease":0 ,
+             "StrengthIncrease":1,
+            "SmartsIncrease": 0,
+            "SpeedIncrease":1,
+            "OriginSkill": "Athletics or Brawn if you choose a strength increase, Driving or Initative if you choose the Speed Increase.",
+            "StartingHealth": 3,
+            "OriginBenefit": {
+                "Name": "When Push Comes to Shove",
+                "Effect": "When Pushing or Shoving, you are considered one Size Class Larger"
+            },
+            "BotMode": {
+                "Movement": 30,
+                "Type": "Ground",
+                "Size": "Large"
+            },
+            "AltMode":
+            {
+                "OrignName":"Charger",
+                "Movement": 45,
+                "Type": "Ground",
+                "Movement2": 45,
+                "Type2": "Aerial"
+                "Size": "Long",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": "Flyby (Driving) or Ram (Driving); Driving Skill, Reach(2 Blunt Damage), Trip alternate effect."
+                    
+            },
+            {
             "Name": "",
             "SocialIncrease":0 ,
              "StrengthIncrease":0,
@@ -27,7 +57,118 @@
                 "FirePoints": 2,
                 "Attack": ""
                     
-            }
-            
-        }]
+            },
+            {
+            "Name": "",
+            "SocialIncrease":0 ,
+             "StrengthIncrease":0,
+            "SmartsIncrease": 0,
+            "SpeedIncrease":0,
+            "OriginSkill": "",
+            "StartingHealth": 0,
+            "OriginBenefit": {
+                "Name": "",
+                "Effect": ""
+            },
+            "BotMode": {
+                "Movement": 40,
+                "Type": "",
+                "Size": ""
+            },
+            "AltMode":
+            {
+                "OrignName":"",
+                "Movement": 60,
+                "Type": "",
+                "Size": "",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": ""
+                    
+            },
+            {
+            "Name": "",
+            "SocialIncrease":0 ,
+             "StrengthIncrease":0,
+            "SmartsIncrease": 0,
+            "SpeedIncrease":0,
+            "OriginSkill": "",
+            "StartingHealth": 0,
+            "OriginBenefit": {
+                "Name": "",
+                "Effect": ""
+            },
+            "BotMode": {
+                "Movement": 40,
+                "Type": "",
+                "Size": ""
+            },
+            "AltMode":
+            {
+                "OrignName":"",
+                "Movement": 60,
+                "Type": "",
+                "Size": "",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": ""
+                    
+            },
+            {
+            "Name": "",
+            "SocialIncrease":0 ,
+             "StrengthIncrease":0,
+            "SmartsIncrease": 0,
+            "SpeedIncrease":0,
+            "OriginSkill": "",
+            "StartingHealth": 0,
+            "OriginBenefit": {
+                "Name": "",
+                "Effect": ""
+            },
+            "BotMode": {
+                "Movement": 40,
+                "Type": "",
+                "Size": ""
+            },
+            "AltMode":
+            {
+                "OrignName":"",
+                "Movement": 60,
+                "Type": "",
+                "Size": "",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": ""
+                    
+            },
+            {
+            "Name": "",
+            "SocialIncrease":0 ,
+             "StrengthIncrease":0,
+            "SmartsIncrease": 0,
+            "SpeedIncrease":0,
+            "OriginSkill": "",
+            "StartingHealth": 0,
+            "OriginBenefit": {
+                "Name": "",
+                "Effect": ""
+            },
+            "BotMode": {
+                "Movement": 40,
+                "Type": "",
+                "Size": ""
+            },
+            "AltMode":
+            {
+                "OrignName":"",
+                "Movement": 60,
+                "Type": "",
+                "Size": "",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": ""
+                    
+            },
+            }]
 }

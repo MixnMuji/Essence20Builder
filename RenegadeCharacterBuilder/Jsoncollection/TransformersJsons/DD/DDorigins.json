@@ -58,57 +58,59 @@
             "Examples":""
         },
         {
-            "Name": "",
+            "Name": "Insecticon",
             "SocialIncrease":0 ,
-             "StrengthIncrease":0,
+             "StrengthIncrease":1,
             "SmartsIncrease": 0,
             "SpeedIncrease":0,
-            "OriginSkill": "",
-            "StartingHealth": 0,
+            "OriginSkill": "Increase your Athletics or Brawn Skill",
+            "StartingHealth": 3,
             "OriginBenefit": {
-                "Name": "",
-                "Effect": ""
+                "Name": "Insectoid Components",
+                "Effect": "you have natural armor that grants a +2 Deflective bonus to your Toughness Defense. Additonally you gain \u21912 on Brawn Skill Tests in your altmode"
             },
             "BotMode": {
-                "Movement": 40,
-                "Type": "",
-                "Size": ""
+                "Movement": 30,
+                "Type": "Ground",
+                "Size": "Large"
             },
             "AltMode":
             {
-                "OrignName":"",
-                "Movement": 60,
-                "Type": "",
-                "Size": "",
+                "OrignName":"Insecticon",
+                "Movement": 30,
+                "Type": "Ground",
+                "Size": "Long",
+                "Movement2": 40,
+                "Type2":"Aerial",
                 "Crew": 2,
-                "FirePoints": 2,
-                "Attack": ""
+                "FirePoints": 0,
+                "Attack": "Unarmed Strike: Might skill, Reach (1 Blunt damage)"
                     
             },
             "Examples":""
         },
           {
-            "Name": "",
+            "Name": "Mini-Con",
             "SocialIncrease":0 ,
              "StrengthIncrease":0,
             "SmartsIncrease": 0,
-            "SpeedIncrease":0,
-            "OriginSkill": "",
-            "StartingHealth": 0,
+            "SpeedIncrease":1,
+            "OriginSkill": "Increase your Acrobatics or Initiative",
+            "StartingHealth": 2,
             "OriginBenefit": {
-                "Name": "",
-                "Effect": ""
+                "Name": "Frame Efficacy",
+                "Effect": " You gain an additonal different benefit depending on you choice of alt Mode; these benefits are only applicable while in your alt mode. \n Firearm Enchancent Module: When you Lend Assistance to Targeting Skill Tests attempted by the ally wielding the wapon to which you are attached, you can also spend 2 Energon Point to increase the damage of the attack by 1. \n Mini-Cassette: You can join with your linked Modemaster as a Free Action. You also gain Edge on Skill Tests to hide or eavesdrop. \n Mini-Vehicle (Ground): Grant the Accurate (Up \u21911) Trait to 1 Hardpoint Weapon. \n Mini-Vehicle (aerial): Grant the Blast (5ft Radius) effect to 1 Hardpoint weapon. \n Power Conduit: You can join with an ally. When you do so, you can spend 1 Energon Point as a Move action to grant that ally Up \u21911 to one Skill Test they attempt or 5ft of Movement during their next turn."
             },
             "BotMode": {
-                "Movement": 40,
-                "Type": "",
-                "Size": ""
+                "Movement": 30,
+                "Type": "Ground or Aerial",
+                "Size": "Common"
             },
             "AltMode":
             {
-                "OrignName":"",
-                "Movement": 60,
-                "Type": "",
+                "OrignName":"Mini-Con",
+                "Movement": 0,
+                "Type": "varies",
                 "Size": "",
                 "Crew": 2,
                 "FirePoints": 2,
@@ -118,64 +120,61 @@
             "Examples":""
         },
             {
-            "Name": "",
+            "Name": "Monstrosity",
             "SocialIncrease":0 ,
-             "StrengthIncrease":0,
+             "StrengthIncrease":1,
             "SmartsIncrease": 0,
             "SpeedIncrease":0,
-            "OriginSkill": "",
-            "StartingHealth": 0,
+            "OriginSkill": "Increase your Brawn or Might Skill",
+            "StartingHealth": 4,
             "OriginBenefit": {
-                "Name": "",
-                "Effect": ""
+                "Name": "Tooth and Claw",
+                "Effect": "In your Alt Mode, your unarmed attacks are considered Natural Attacks, Inflict Sharp or Blunt damage (based on the attack), and have the Accurate(\u21911) Trait"
             },
             "BotMode": {
-                "Movement": 40,
-                "Type": "",
-                "Size": ""
+                "Movement": 35,
+                "Type": "Ground",
+                "Size": "Huge"
             },
             "AltMode":
             {
-                "OrignName":"",
-                "Movement": 60,
-                "Type": "",
-                "Size": "",
-                "Crew": 2,
-                "FirePoints": 2,
-                "Attack": ""
+                "OrignName":"Monstrosity",
+                "Movement": 40,
+                "Type": "Ground Aerial or Aquatic",
+                "Size": "Hge or Extended",
+                "Crew": 0,
+                "FirePoints": 0,
+                "Attack": "Natural Weapon: Might Skill, Reach (1 Blunt or Shapr Damage); Maneuver alternate effect."
                     
             },
-            "Examples":""
+            "Examples":"Eagle, Dragon, lion, spider"
         },
               {
-            "Name": "",
-            "SocialIncrease":0 ,
-             "StrengthIncrease":0,
-            "SmartsIncrease": 0,
-            "SpeedIncrease":0,
-            "OriginSkill": "",
-            "StartingHealth": 0,
+            "Name": "Salvaged",
+            "SmartsIncrease": 1,
+            "OriginSkill": " Increase your Survival or Technology Skill",
+            "StartingHealth": 3,
             "OriginBenefit": {
-                "Name": "",
-                "Effect": ""
+                "Name": "Welds, Rivets, and Ideas",
+                "Effect": "By succeding a DIF 12 Technology Skill Test that takes 2d6x5 minutes, you can emulate any sinlge piece of equipment, weapon upgrade, or arnir yograde (of no greater than Limited Access)  uisng such materials. The emulated item functions for a single scene."
             },
             "BotMode": {
-                "Movement": 40,
-                "Type": "",
-                "Size": ""
+                "Movement": 35,
+                "Type": "Ground",
+                "Size": "Large"
             },
             "AltMode":
             {
-                "OrignName":"",
-                "Movement": 60,
-                "Type": "",
-                "Size": "",
-                "Crew": 2,
-                "FirePoints": 2,
-                "Attack": ""
+                "OrignName":"Salvaged",
+                "Movement": 45,
+                "Type": "Ground",
+                "Size": "Long",
+                "Crew": 1,
+                "FirePoints": 1,
+                "Attack": "Spiked Ram: Driving Skill, Reach ( 1 Sharp damage); Maneuver alternate effect."
                     
             },
-            "Examples":""
+            "Examples":"Scrapped/ rusted cars, trucks, etc"
         },
 
   ]
