@@ -1,6 +1,118 @@
 {
    "Origins": [
         {
+            "Name": "Fuzor",
+            "SocialIncrease":0 ,
+             "StrengthIncrease":0,
+            "SmartsIncrease": 0,
+            "SpeedIncrease":0,
+            "OriginSkill": "Increase any Skill ",
+            "StartingHealth": 0,
+            "OriginBenefit": {
+                "Name": "Twofer",
+                "Effect": "You gain one benefit from each of the two animals you =;ve chosen as your combined altmode \n Behemoth: Increase your health by 1, Additonally add 10 ft to your Altmodes Ground Movment. \n Carapaced: Increase your Toughness by 1. \n Climber/ Nimble: Increase your Evasion by 1. You also gain a Climb Movement 30 feet. \n Flora: Increase your Health by 1. \n Flyer: you gain an Aerial Movement of 40 feet. You also gain \u21911 on Alertness Skill Tests related to vision. \n Insecticon: Increase your Toughness by 1, and you gain \u21911 on Brawn Skill Tests. \n Many-Armed: You gain \u2191 1 on Acrobatics or Alertness Skill Tests. Monstrous: you natural weapon attacks gain the Accurate (\u21911) Trait. \n Primate: Increase your Willpower by 1. \n Quadruped You gain \u21911 on Skill Tests that predominately utilize your senes of hearing or smell. Additionally, add 10 feet to your Alt Mode Movement. \n Suarian: You are Immune to Poison damage and effects. \n Slitherer: Increase your Cleverness by 1. \n Swimmer: You gain an Aquatic Movement of 40ft. Additionally your melee and natural weapons gain the Amphibious trait."
+            },
+            "BotMode": {
+                "Movement": 30,
+                "Type": "Ground",
+                "Size": "Common, Large, or Long"
+            },
+            "AltMode":
+            {
+                "OrignName":"Fuzor",
+                "Movement": 40,
+                "Type": "Ground",
+                "Size": "Common, Large, or Long",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": "Natural Weapon (Might): Might Skill, Reach (1 Blunt or Sharp damage) Alernate Effect Maneuver. Traits: blunt or Sharp, Intergrated"
+                    
+            }
+            
+        },
+         {
+            "Name": "Behemoth",
+            "StrengthIncrease":1,
+            "OriginSkill": "Brawn or Might",
+            "StartingHealth": 4,
+            "OriginBenefit": {
+                "Name": "Smash!",
+                "Effect": "You gain 1 Toughness. Once per day you gain an Edge on any Might Skill Test. Finally you may spend 1 Energon to add the Wrecker trait, to an attack."
+            },
+            "BotMode": {
+                "Movement": 40,
+                "Type": "Ground",
+                "Size": "Large or Huge"
+            },
+            "AltMode":
+            {
+                "OrignName":"Behemoth",
+                "Movement": 60,
+                "Type": "Ground",
+                "Size": "Large or Huge",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": "Might Skill, Reachx2 (2 Blunt Damage) \n Alternate Effect Stun 2 (\u21931) \n Traits Blunt Integrated"
+                    
+            }
+            
+        },
+          {
+            "Name": "Carapaced",
+            "StrengthIncrease":1,
+            "OriginSkill": "Brawn or Conditioning",
+            "StartingHealth": 3,
+            "OriginBenefit": {
+                "Name": "Knock Knock!",
+                "Effect": "You gain 1 Toughness and reduce incoming Sharp damage by 1 (to a minimum of 0)"
+            },
+            "BotMode": {
+                "Movement": 30,
+                "Type": "Ground",
+                "Size": "Common or Large"
+            },
+            "AltMode":
+            {
+                "OrignName":"Carapaced",
+                "Movement": 40,
+                "Type": "Ground",
+                "Size": "Common or Large",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": "Might Skill, Reach(1 Blunt or Sharp Damage) \n Alternate Effect: Manuever \n Traits: Blunt or Sharp, Integrated"
+                    
+            }
+            
+        },
+           {
+            "Name": "Climber/Nimble",
+            "SmartsIncrease": 1,
+            "SpeedIncrease":1,
+            "OriginSkill": "Finesses or Infiltration, or Alertness or Culuture",
+            "StartingHealth": 2,
+            "OriginBenefit": {
+                "Name": "",
+                "Effect": ""
+            },
+            "BotMode": {
+                "Movement": 40,
+                "Type": "",
+                "Size": ""
+            },
+            "AltMode":
+            {
+                "OrignName":"",
+                "Movement": 60,
+                "Type": "",
+                "Size": "",
+                "Crew": 2,
+                "FirePoints": 2,
+                "Attack": ""
+                    
+            }
+            
+        },
+            {
             "Name": "",
             "SocialIncrease":0 ,
              "StrengthIncrease":0,
@@ -29,5 +141,7 @@
                     
             }
             
-        }]
+        }
+
+   ]
 }

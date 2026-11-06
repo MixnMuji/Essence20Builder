@@ -23,15 +23,16 @@
                 "Movement": 45,
                 "Type": "Ground",
                 "Movement2": 45,
-                "Type2": "Aerial"
+                "Type2": "Aerial",
                 "Size": "Long",
                 "Crew": 2,
                 "FirePoints": 2,
                 "Attack": "Flyby (Driving) or Ram (Driving); Driving Skill, Reach(2 Blunt Damage), Trip alternate effect."
-                    
+            }
+
             },
             {
-            "Name": "Pillar",
+             "Name": "Pillar",
              "StrengthIncrease":1,
             "OriginSkill": "Increase Vrawn, Conditioning, or Intimidation",
             "StartingHealth": 4,
@@ -54,36 +55,7 @@
                 "FirePoints": 4,
                 "Attack": "Ram (driving: Driving Skill, Reach (1 Blunt Damage), Trip alternate effect."
                     
-            },
-            {
-            "Name": "Speaker",
-            "SocialIncrease":1 ,
-            "OriginSkill": "Increase Culture, Perusasion, or Streetwise",
-            "StartingHealth": 3,
-            "OriginBenefit": {
-                "Name": "'Til All Are One",
-                "Effect": "One per scene, when you roll a Critical Success on a Skill Test, the team gains a Story Point."
-            },
-            "BotMode": {
-                "Movement": 30,
-                "Type": "Ground",
-                "Size": "Common or Large"
-            },
-            "AltMode":
-            {
-                "OrignName":"Speaker",
-                "Movement": 45,
-                "Type": "Ground",
-                "Size": "Common Or Long",
-                "Movement2": 30,
-                "Type2": "Aerial"
-                "Crew": 2,
-                "FirePoints": 2,
-                "Attack": "Ram (driving: Driving Skill, Reach (1 Blunt Damage), Trip alternate effect."
-                    
-            }
-           
-           }
-
-   ]
-}
+            }}
+            ]
+   }
+   
