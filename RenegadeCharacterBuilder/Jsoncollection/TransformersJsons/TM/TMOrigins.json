@@ -91,53 +91,53 @@
             "OriginSkill": "Finesses or Infiltration, or Alertness or Culuture",
             "StartingHealth": 2,
             "OriginBenefit": {
-                "Name": "",
-                "Effect": ""
+                "Name": "Over the Candlestick",
+                "Effect": "you gain \u21911 on Acrobatics and Infiltration Skill Tests and are unimpeded by rough terrain. Additoanlly, you chose one:\n Agile Reflexes: once per Scene, when an attack targets your Toughness, you may use Evasion instead. \n Innate Climber: You gain a 40ft Climb Movement while in your Alt Mode."
             },
             "BotMode": {
-                "Movement": 40,
-                "Type": "",
-                "Size": ""
+                "Movement": 35,
+                "Type": "Ground",
+                "Size": "Small or Common"
             },
             "AltMode":
             {
-                "OrignName":"",
-                "Movement": 60,
-                "Type": "",
-                "Size": "",
-                "Crew": 2,
-                "FirePoints": 2,
-                "Attack": ""
+                "OrignName":"Climber/ Nimble",
+                "Movement": 50,
+                "Type": "Ground",
+                "Size": "Small or Common",
+                "Crew": 0,
+                "FirePoints": 0,
+                "Attack": "Finesse or Might SKill, Reach (1 BLunt or Sharp damage)\n Alternate Effect: Manuever \n Traits Blunt or Sharp, Integrated"
                     
             }
             
         },
             {
-            "Name": "",
-            "SocialIncrease":0 ,
+            "Name": "Flora",
+            "SocialIncrease":1 ,
              "StrengthIncrease":0,
-            "SmartsIncrease": 0,
+            "SmartsIncrease": 1,
             "SpeedIncrease":0,
-            "OriginSkill": "",
-            "StartingHealth": 0,
+            "OriginSkill": "Science or Persuasion",
+            "StartingHealth": 4,
             "OriginBenefit": {
-                "Name": "",
-                "Effect": ""
+                "Name": "Plant Plasticity",
+                "Effect": "Once per rest, the first time you are reduced to 0 Health, roll a d4. After that many rounds of combat have passsed, if you have not inccured any furhter damage, you automatically restroe 1 Health. Additionally, your regenerative DNA allows you to recover an additional Essence Point. Finally you gain an additonal Movement type: 25 feet underground"
             },
             "BotMode": {
-                "Movement": 40,
-                "Type": "",
-                "Size": ""
+                "Movement": 30,
+                "Type": "Ground",
+                "Size": "Common or Large"
             },
             "AltMode":
             {
-                "OrignName":"",
-                "Movement": 60,
-                "Type": "",
-                "Size": "",
-                "Crew": 2,
-                "FirePoints": 2,
-                "Attack": ""
+                "OrignName":"Flora",
+                "Movement": 40,
+                "Type": "Ground",
+                "Size": "Common or Large",
+                "Crew": 0,
+                "FirePoints": 0,
+                "Attack": " Finesse or Might, Reachx2 (1 Blunt Damage)\n Altenrate Effect: maneuver (\u21912) \n Traits: Blunt Integrated"
                     
             }
             
